@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { PessoaComponent } from './pessoa.component';
 
 @NgModule({
   imports: [
     CommonModule
   ],
-  declarations: []
+  declarations: [PessoaComponent]
 })
-export class TesteModule { }
+export class PessoaModule { }

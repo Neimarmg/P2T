@@ -1,10 +1,10 @@
-import { AppUsuarioPage } from './app.po';
+import { SgcPage } from './app.po';
 
-describe('app-usuario App', () => {
-  let page: AppUsuarioPage;
+describe('sgc App', () => {
+  let page: SgcPage;
 
   beforeEach(() => {
-    page = new AppUsuarioPage();
+    page = new SgcPage();
   });
 
   it('should display message saying app works', () => {
