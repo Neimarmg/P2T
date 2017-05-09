@@ -1,11 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PessoaComponent } from './pessoa.component';
 
 @NgModule({
   imports: [
     CommonModule
   ],
-  declarations: [PessoaComponent]
+  declarations: []
 })
-export class PessoaModule { }
+export class CadastrosModule { }
