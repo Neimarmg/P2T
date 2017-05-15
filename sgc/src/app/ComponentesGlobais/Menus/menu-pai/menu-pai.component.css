@@ -1,3 +1,5 @@
-tr:nth-child(even) {
-    background-color: #dddddd;
+corpo {
+	Font-family : Arial , Verdana , sans-serif ;
+	Cor :blue ;
+	Background-color : red ;
 }
