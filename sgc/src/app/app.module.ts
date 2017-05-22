@@ -6,14 +6,11 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { TabelaUsuariosComponent } from './tabela-usuarios/tabela-usuarios.component';
 import { UsuarioService } from "app/usuarios.service";
-import { MenuGlobalComponent } from './c-globais/menu-global/menu-global.component';
-
 
 @NgModule({
   declarations: [
     AppComponent,
     TabelaUsuariosComponent,
-    MenuGlobalComponent,
   ],
   imports: [
     BrowserModule,
@@ -23,4 +20,5 @@ import { MenuGlobalComponent } from './c-globais/menu-global/menu-global.compone
   providers: [UsuarioService],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
