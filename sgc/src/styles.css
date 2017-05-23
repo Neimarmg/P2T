@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+
+@Import './app/c-globais/css-global.css';
+
+body{
+    background-color:blueviolet;
+}
+
+small { 
+    font-size: smaller;
+}
