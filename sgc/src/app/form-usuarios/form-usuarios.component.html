@@ -1,0 +1,16 @@
+<br><br>
+
+<form>
+    
+    Nome: <input type="text" name="nome" [(ngModel)]="usuario.nome" /> <br />
+    Email: <input type="text" name="email" [(ngModel)]="usuario.email"> <br />
+    Username: <input type="text" name="username" [(ngModel)]="usuario.username"> <br />
+
+    <input type="button" value="Salvar" (click)="salvarUsuario()">
+    <input type="button" value="Cancelar" (click)="voltar()">
+
+</form>
+
+<br>
+
+{{usuario.nome}}

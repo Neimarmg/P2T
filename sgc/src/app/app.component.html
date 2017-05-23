@@ -1,17 +1,8 @@
-
-<h1> {{title}} </h1>
-
-<app-tabela-usuarios> 
-  
-</app-tabela-usuarios>
-
-<form>
-    Usuário:<br>
-    <input type="text" name="firstname" value="">
-    <br><br><br>
-     Senha:<br>
-    <input type="text" name="lastname" value="">
-    <br><br><br><br>
-    <button type="button" onclick="app-tabela-usuarios" >Entrar</button>
-
-</form> 
+<h1>
+  {{title}}
+</h1>
+<nav>
+  <a routerLink="/novo">Formulario de Cadastro</a> 
+  <a routerLink="/lista">Tabela de Usuarios</a>
+</nav>
+<router-outlet></router-outlet>
