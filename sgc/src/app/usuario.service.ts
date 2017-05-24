@@ -21,13 +21,17 @@ export class UsuarioService {
     return this.usuarios;
   }
 
+
   adicionaUsuario(usuario:Usuario){
     this.usuarios.push(usuario);
   }
 
+
   getUsuario(indice:number){
     return(this.usuarios[indice]);    
   }
+
+
   excluirUsuario(indice:number){
     this.usuarios.splice(indice,1);
   }
