@@ -1,3 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 
-@Import 'c-globais/css-global.css';
+.mainclass
+.maimcalss{
+   Font-family : Arial , Verdana , sans-serif ;
+   Background-color : red 
+}
+
+body{
+    background-color:cadetblue;
+}
+
+small { 
+    font-size: smaller;
+}
