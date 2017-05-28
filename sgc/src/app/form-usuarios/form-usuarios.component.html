@@ -1,17 +1,27 @@
-<br><br>
+<br/>
+
+<h2>Cadastro de usuário</h2>
+
+<br/>
 
 <form>
     
-    Nome: <input class="input" type="text" name="nome" [(ngModel)]="usuario.nome" /> <br /><br><br>
-    Email: <input type="text" name="email" [(ngModel)]="usuario.email"> <br /><br><br>
-    Username: <input type="text" name="username" [(ngModel)]="usuario.username"> <br />
+    Nome: <br/>
+    <input class="input" type="text" name="nome" [(ngModel)]="usuario.nome" /> <br /><br/>
+    
+    Email:<br/>
+    <input type="text" name="email" [(ngModel)]="usuario.email"> <br /><br/>
+    
+    Usuario: <br/>
+    <input type="text" name="username" [(ngModel)]="usuario.username"> <br/>
+    
     <br><br>
-    <input class="button" type="button" value="Salvar" (click)="salvarUsuario()">
+    <input class="button" type="button" value="Salvar    " (click)="salvarUsuario()">
     <br><br>
     <input class="button" type="button" value="Cancelar" (click)="voltar()">
 
 </form>
 
-<br>
+<br/>
 
 {{usuario.nome}}

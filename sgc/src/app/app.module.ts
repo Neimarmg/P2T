@@ -8,6 +8,8 @@ import { TabelaUsuariosComponent } from './tabela-usuarios/tabela-usuarios.compo
 import { UsuarioService } from "app/usuario.service";
 import { FormUsuariosComponent } from './form-usuarios/form-usuarios.component';
 import { Routes, RouterModule } from "@angular/router";
+import { NewComponent } from './c-globais/menus/new/new.component';
+import { HomeComponent } from './c-globais/menus/home/home.component';
 const rotas:Routes=[
   { path:'lista', component:TabelaUsuariosComponent },
   { path:'novo', component:FormUsuariosComponent },
@@ -19,7 +21,9 @@ const rotas:Routes=[
   declarations: [
     AppComponent,
     TabelaUsuariosComponent,
-    FormUsuariosComponent
+    FormUsuariosComponent,
+    NewComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
