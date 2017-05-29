@@ -8,13 +8,17 @@ import { TabelaUsuariosComponent } from './tabela-usuarios/tabela-usuarios.compo
 import { UsuarioService } from "app/usuario.service";
 import { FormUsuariosComponent } from './form-usuarios/form-usuarios.component';
 import { Routes, RouterModule } from "@angular/router";
-import { NewComponent } from './c-globais/menus/new/new.component';
-import { HomeComponent } from './c-globais/menus/home/home.component';
+import { HomeComponent } from "app/Componentes-globais/home/home.component";
+import { MenuGlobalComponent } from './Componentes-globais/menu-global/menu-global.component';
+
+
 const rotas:Routes=[
   { path:'lista', component:TabelaUsuariosComponent },
   { path:'novo', component:FormUsuariosComponent },
   { path:'edicao/:ind', component:FormUsuariosComponent },
-  { path:'',redirectTo:'/lista',pathMatch:'full'}
+  { path:'',redirectTo:'/lista',pathMatch:'full'},
+  { path:'',redirectTo:'/home',pathMatch:'full' },
+  { path:'',redirectTo:'/menu-global',pathMatch:'full' }
 ];
 
 @NgModule({
@@ -22,14 +26,15 @@ const rotas:Routes=[
     AppComponent,
     TabelaUsuariosComponent,
     FormUsuariosComponent,
-    NewComponent,
-    HomeComponent
+    HomeComponent,
+    MenuGlobalComponent
+
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(rotas)
+    RouterModule.forRoot(rotas)    
   ],
   providers: [UsuarioService],
   bootstrap: [AppComponent]

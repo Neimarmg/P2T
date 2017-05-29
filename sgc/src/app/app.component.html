@@ -1,35 +1,6 @@
-<h1>
-  {{title}}
-</h1>
-
-<ul id="menu-bar">
-
-  <li class="active"><a href="#">Home</a></li>
-   
+<h1>{{title}} </h1>
+<app-home></app-home>
  
-  <li><a href="#">Cadastros</a>
-    <ul>
-      <li><a routerLink="/novo">Usuarios</a></li>
-      <li><a routerLink="/novo">Pessoas</a></li>
-      <li><a routerLink="/novo">Contratos</a></li>
-      <li><a routerLink="/novo">Utilitários</a></li>    
-    </ul>
-  </li>
-
-    <li><a href="#">Operações</a>
-    <ul>
-      <li><a routerLink="/novo">Caixa</a></li>     
-    </ul>
-  </li>
-
-    <li><a href="#">Ajuda</a>
-    <ul>
-      <li><a routerLink="/novo">....</a></li>
-    </ul>
-  </li> 
-</ul>
-
-<router-outlet></router-outlet>
+<<!--router-outlet></router-outlet> -->
 
 
-<a routerLink="/lista">Tabela de Usuarios</a>
