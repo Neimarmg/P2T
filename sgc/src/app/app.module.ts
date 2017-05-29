@@ -34,9 +34,13 @@ const rotas:Routes=[
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(rotas)    
+    RouterModule.forRoot(rotas)  
+      
   ],
   providers: [UsuarioService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+
+
+}

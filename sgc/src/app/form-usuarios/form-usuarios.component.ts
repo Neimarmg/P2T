@@ -8,6 +8,7 @@ import { ActivatedRoute, Router } from "@angular/router";
   templateUrl: './form-usuarios.component.html',
   styleUrls: ['./form-usuarios.component.css']
 })
+
 export class FormUsuariosComponent implements OnInit {
   usuario: Usuario = new Usuario();
   indice: number;
@@ -17,7 +18,9 @@ export class FormUsuariosComponent implements OnInit {
     private rota: ActivatedRoute) {    
   }
 
+
   ngOnInit() {
+
     this.indice = this.rota.snapshot.params['ind'];
 
     if(isNaN(this.indice)){
@@ -28,6 +31,7 @@ export class FormUsuariosComponent implements OnInit {
           this.servico.getUsuario(this.indice));
     }
   }
+
 
   salvarUsuario(){
     if(isNaN(this.indice)){
@@ -46,9 +50,8 @@ export class FormUsuariosComponent implements OnInit {
     this.router.navigate(['/lista']);
   }
 
+
   voltar(){ 
     this.router.navigate(['/lista']);
   }
-
-
 }
