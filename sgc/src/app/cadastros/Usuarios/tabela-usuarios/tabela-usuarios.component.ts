@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { Usuario } from "app/usuario";
-import { UsuarioService } from "app/usuario.service";
+import { Usuario } from 'app/cadastros/Usuarios/usuario';
+import { UsuarioService } from 'app/cadastros/Usuarios/usuario.service';
 import { ActivatedRoute, Router } from "@angular/router";
 
 @Component({
   selector: 'app-form-usuarios',
-  templateUrl: './form-usuarios.component.html',
-  styleUrls: ['./form-usuarios.component.css']
+  templateUrl: './usuarios/form-usuarios.component.html',
+  styleUrls: ['./usuarios/form-usuarios.component.css']
 })
 
-export class FormUsuariosComponent implements OnInit {
+export class TabelaUsuariosComponent implements OnInit {
   usuario: Usuario = new Usuario();
   indice: number;
 

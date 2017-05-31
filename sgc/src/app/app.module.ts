@@ -4,18 +4,19 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-import { AppComponent } from './app.component';
-import { TabelaUsuariosComponent } from './tabela-usuarios/tabela-usuarios.component';
+import { AppComponent } from 'app/app.component';
 
-import { UsuarioService } from "app/usuario.service";
-import { FormUsuariosComponent } from './form-usuarios/form-usuarios.component';
+
+import { UsuarioService } from './cadastros/usuarios/usuario.service';
+import { FormUsuariosComponent } from './cadastros/usuarios/form-usuarios/form-usuarios.component';
 import { Routes, RouterModule } from "@angular/router";
 
 import { HomeComponent } from "app/Componentes-globais/home/home.component";
 import { MenuGlobalComponent } from './Componentes-globais/menu-global/menu-global.component';
 
-import { PessoasComponent} from './cadastros/pessoas/pessoas.component';
-
+import { PessoasComponent} from './cadastros/pessoas/form/pessoas.component';
+import { TabPessoaComponent } from './cadastros/pessoas/tabelas/tab-pessoa.component';
+import { TabelaUsuariosComponent} from './cadastros/Usuarios/tabela-usuarios/tabela-usuarios.component';
 
 const rotas:Routes=[
   { path:'lista', component:TabelaUsuariosComponent },
@@ -35,7 +36,8 @@ const rotas:Routes=[
     FormUsuariosComponent,
     HomeComponent,
     MenuGlobalComponent,
-    PessoasComponent
+    PessoasComponent,
+    TabPessoaComponent
 
   ],
   imports: [
