@@ -1,10 +1,10 @@
-import { SGCPage } from './app.po';
+import { SgcPage } from './app.po';
 
 describe('sgc App', () => {
-  let page: SGCPage;
+  let page: SgcPage;
 
   beforeEach(() => {
-    page = new SGCPage();
+    page = new SgcPage();
   });
 
   it('should display message saying app works', () => {
