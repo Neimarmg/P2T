@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-pessoas',
-  templateUrl: './pessoas.component.html',
-  styleUrls: ['./pessoas.component.css']
+  templateUrl: './form-pessoas.component.html',
+  styleUrls: ['./form-pessoas.component.css']
 })
 export class PessoasComponent implements OnInit {
 

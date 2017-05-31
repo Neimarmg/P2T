@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { UsuarioService } from "app/usuario.service";
-import { Usuario } from "app/usuario";
+import { UsuarioService } from "app/cadastros/usuarios/usuario.service";
+import { Usuario } from "app/cadastros/usuarios/usuario";
 
 @Component({
   selector: 'app-tabela-usuarios',
