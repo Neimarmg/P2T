@@ -6,6 +6,14 @@ export class UsuarioService {
   
   usuarios: Usuario[] = [
     {nome:"Fulano",email:"fulano@mail",username:"fulano"},
+    {nome:"Sicrano",email:"sicrano@mail",username:"sicrano"},
+    {nome:"Sicrano",email:"sicrano@mail",username:"sicrano"},
+    {nome:"Sicrano",email:"sicrano@mail",username:"sicrano"},
+    {nome:"Sicrano",email:"sicrano@mail",username:"sicrano"},
+    {nome:"Sicrano",email:"sicrano@mail",username:"sicrano"},
+    {nome:"Sicrano",email:"sicrano@mail",username:"sicrano"},
+    {nome:"Sicrano",email:"sicrano@mail",username:"sicrano"},
+    {nome:"Sicrano",email:"sicrano@mail",username:"sicrano"},    
     {nome:"Sicrano",email:"sicrano@mail",username:"sicrano"}
   ];
 

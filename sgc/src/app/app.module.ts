@@ -15,7 +15,9 @@ import { HomeComponent } from "app/Componentes-globais/home/home.component";
 import { MenuGlobalComponent } from './Componentes-globais/menu-global/menu-global.component';
 
 import { PessoasComponent} from './cadastros/pessoas/form-pessoas/form-pessoas.component';
-import { FormLoguinComponent } from 'app/cadastros/usuarios/form-loguin/form-loguin.component';
+import { FormPrincipalComponent } from './Componentes-globais/form-principal/form-principal.component';
+import { RodapeComponent } from './Componentes-globais/rodape/rodape.component';
+
 
 
 const rotas:Routes=[
@@ -26,8 +28,7 @@ const rotas:Routes=[
   { path:'', component:HomeComponent },
 
   { path:'pessoa', component:PessoasComponent},
-  { path: 'loguin', component:FormLoguinComponent} 
-  
+  { path: 'formPrincipal', component: FormPrincipalComponent }  
 ];
 
 @NgModule({
@@ -38,7 +39,9 @@ const rotas:Routes=[
     HomeComponent,
     MenuGlobalComponent,
     PessoasComponent,
-    FormLoguinComponent
+    FormPrincipalComponent,
+    RodapeComponent,
+
 
   ],
   imports: [

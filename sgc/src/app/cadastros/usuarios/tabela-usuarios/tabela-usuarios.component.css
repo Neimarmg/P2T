@@ -58,9 +58,11 @@ h2{
   font-size: initial;
   background-color: #65d472;
   background: -webkit-gradient(linear, left top, left bottom, from(#424b57), to(#65d472));
-  padding: 10px 145px;
+  padding: 10px 10%;
   -webkit-border-radius: 17px;
   -moz-border-radius: 17px;
   border-radius: 5px;
     
 }
+
+
