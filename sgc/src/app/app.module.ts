@@ -17,6 +17,7 @@ import { MenuGlobalComponent } from './Componentes-globais/menu-global/menu-glob
 import { PessoasComponent} from './cadastros/pessoas/form-pessoas/form-pessoas.component';
 import { FormPrincipalComponent } from './Componentes-globais/form-principal/form-principal.component';
 import { RodapeComponent } from './Componentes-globais/rodape/rodape.component';
+import { TabelaPessoaComponent } from "app/cadastros/pessoas/tabela-pessoa/tabela-pessoa.component";
 
 
 
@@ -28,7 +29,8 @@ const rotas:Routes=[
   { path:'', component:HomeComponent },
 
   { path:'pessoa', component:PessoasComponent},
-  { path: 'formPrincipal', component: FormPrincipalComponent }  
+  { path: 'formPrincipal', component: FormPrincipalComponent } ,
+  { path: 'listaPessoa', component:TabelaPessoaComponent} 
 ];
 
 @NgModule({
@@ -41,7 +43,7 @@ const rotas:Routes=[
     PessoasComponent,
     FormPrincipalComponent,
     RodapeComponent,
-
+    TabelaPessoaComponent
 
   ],
   imports: [
@@ -55,6 +57,6 @@ const rotas:Routes=[
   bootstrap: [AppComponent]
 })
 export class AppModule { 
-
+  
 
 }

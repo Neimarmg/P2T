@@ -24,13 +24,13 @@ tr:nth-child(even) {
 .button {
    border: 1px solid #65d472;
    background: lightsalmon;
-   background: -webkit-gradient(linear, left top, left bottom, from(#424b57), to(#65d472));
+   background: -webkit-gradient(linear, left top, left bottom, from(#424b57), to(darkkhaki));
    padding: 10px 50px;
    -webkit-border-radius: 17px;
    -moz-border-radius: 17px;
    border-radius: 5px;
 
-   color:antiquewhite;
+   color:burlywood;
    font-size: 13px;
    font-family: 'Lucida Grande', Helvetica, Arial, Sans-Serif;
    text-decoration: none;
@@ -65,4 +65,9 @@ h2{
     
 }
 
-
+footer{
+    text-align: left;
+    position:fixed;
+    bottom: 0;
+    padding-bottom: 13px;
+}

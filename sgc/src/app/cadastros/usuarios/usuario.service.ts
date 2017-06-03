@@ -13,8 +13,8 @@ export class UsuarioService {
     {nome:"Sicrano",email:"sicrano@mail",username:"sicrano"},
     {nome:"Sicrano",email:"sicrano@mail",username:"sicrano"},
     {nome:"Sicrano",email:"sicrano@mail",username:"sicrano"},
-    {nome:"Sicrano",email:"sicrano@mail",username:"sicrano"},    
-    {nome:"Sicrano",email:"sicrano@mail",username:"sicrano"}
+    {nome:"Sicrano",email:"sicrano@mail",username:"sicrano"},
+    {nome:"Sicrano",email:"sicrano@mail",username:"sicrano"},
   ];
 
   constructor() { 

@@ -1,11 +1,9 @@
 #menu-bar {
   
-  width: 95%;
-  margin: 0px 0px 0px 0px;
-  
-  padding: 7px 0px 0px 5%;
+  width: 95%  ;
+  margin: 0px 0px 0px 0px;  
+  padding: 7px 0px 0px 66.8px;
   height: 40px;
-  position:fixed;
   line-height: 100%;
   border-radius: 12px;
   -webkit-border-radius: 12px;

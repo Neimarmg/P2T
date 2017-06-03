@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormLoguinComponent } from './usuarios/form-loguin/form-loguin.component';
+import { PessoaService } from "app/cadastros/pessoas/pessoa.service";
 
 @NgModule({
   imports: [
     CommonModule
   ],
-  declarations: [FormLoguinComponent]
+
+  
+  declarations: [PessoaService]
 })
 export class ModuloCadastroModule { }
