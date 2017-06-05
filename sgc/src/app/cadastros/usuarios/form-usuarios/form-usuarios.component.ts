@@ -13,7 +13,8 @@ export class FormUsuariosComponent implements OnInit {
   usuario: Usuario = new Usuario();
   indice: number;
 
-  constructor(private servico:UsuarioService,    
+  constructor(
+    private servico:UsuarioService,    
     private router: Router,
     private rota: ActivatedRoute) {    
   }
@@ -25,8 +26,7 @@ export class FormUsuariosComponent implements OnInit {
 
     if(isNaN(this.indice)){
       this.usuario = new Usuario();    
-    }
-    else{
+    }else{
       this.usuario = Object.assign({},
           this.servico.getUsuario(this.indice));
     }
@@ -40,10 +40,7 @@ export class FormUsuariosComponent implements OnInit {
       this.usuario = new Usuario();    
     }
     else{
-      this.servico.atualizarUsuario(
-        this.indice,
-        this.usuario
-      );
+      this.servico.atualizarUsuario(this.indice, this.usuario );
       alert("Usuario "+this.usuario.nome+" editado com sucesso!");
     }
     

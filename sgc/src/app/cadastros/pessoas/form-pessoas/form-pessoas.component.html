@@ -6,21 +6,22 @@
 <form>
     
     Nome: <br/>
-    <input class="input" type="text" > <br /><br />
-    
+    <input class="input" type="text" [(ngModel)]="pessoas.name" /> <br /><br />
+ 
+
     E-mail:<br/>
-    <input type="text" name="email" > <br /><br />
+    <input type="text" name="email"  [(ngModel)]="pessoas.email"> <br /><br />
     
     telefone: <br/>
-    <input type="text" name="telefone"> <br/><br />
+    <input type="text" name="telefone"  [(ngModel)]="pessoas.telefone"> <br/><br />
 
     cidade: <br/>
-    <input type="text" name="cidade"> <br/><br />
+    <input type="text" name="cidade" [(ngModel)]="pessoas.cidade"> <br/><br />
     
     <br><br>
-    <input class="button" type="button" value="Salvar    ">
+    <input class="button" type="button" value="  Salvar  "  (click)="salvarPessoa()">
     <br><br>
-    <input class="button" type="button" value="Cancelar">
+    <input class="button" type="button" value="Cancelar" (click)="cancelar()">
 
 </form>
 

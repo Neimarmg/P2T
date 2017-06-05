@@ -2,7 +2,7 @@
 
 <app-menu-global></app-menu-global>
 
-<h2>Lista de Pessoas castradas</h2>
+<h2>Lista de pessoas castradas</h2>
 
 <table>
   <tr>
@@ -10,23 +10,26 @@
     <th>E-mail</th>
     <th>Telefone</th>
     <th>Cidade</th>
-    <th>Editar</th>
-    <th>Excluir</th>    
+    <th></th>
+
   </tr>
   
-  <tr *ngFor="let usuario of usuarios;let ind=index">
+  <tr *ngFor="let Pessoa of Pessoa ; let ind=index">
   
-    <td>{{usuario.nome}}</td>
-    <td>{{usuario.email}}</td>
-    <td>{{usuario.usuario}}</td>
+    <td>{{pessoas.nome}}</td>
+    <td>{{Pessoas.email}}</td>
+    <td>{{Pessoas.Telefone}}</td>
+    <td>{{Pessoas.Cidade}}</td>
    
-    <td><a [routerLink]="['/edicao',ind]">Editar</a></td>
-    <td><a routerLink="/lista" (click)="excluirUsuario(ind)">Excluir</a></td>    
+    <td>
+      <a [routerLink]="['/editarPessoa',ind]">Editar</a>
+      <a routerLink="listaPessoa" (click)="excluirPessoa(ind)">Excluir</a>
+    </td>    
   
   </tr>
 </table>
 
 <app-rodape></app-rodape>
 <footer>
-  <a class="button" click routerLink="/novo">Novo Usuario </a> 
+  <a class="button" click routerLink="/novoPessoa">Nova Pessoa </a> 
 </footer>

@@ -1,4 +1,8 @@
+
 import { Component, OnInit } from '@angular/core';
+import { Pessoa } from "app/cadastros/pessoas/pessoa";
+import { PessoaService } from "app/cadastros/pessoas/pessoa.service";
+
 
 @Component({
   selector: 'app-tabela-pessoa',
@@ -6,10 +10,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tabela-pessoa.component.css']
 })
 export class TabelaPessoaComponent implements OnInit {
+  pessoa:Pessoa[];
+  constructor(private servico:PessoaService) { 
 
-  constructor() { }
-
-  ngOnInit() {
   }
 
+  ngOnInit() {
+    this.pessoa = this.servico.getListaPessoa();
+  } 
+
+   excluirPessoa(indice:number){
+    this.servico.excluirPessoa(indice);
+  }
 }

@@ -25,8 +25,8 @@ export class FormUsuariosComponent implements OnInit {
 
     if(isNaN(this.indice)){
       this.usuario = new Usuario();    
-    }
-    else{
+    
+    }else{
       this.usuario = Object.assign({},
           this.servico.getUsuario(this.indice));
     }
