@@ -6,7 +6,7 @@ export class PessoaService {
 
   pessoa: Pessoa[] = [
       {nome:"Neimar",telefone:"3322121130",email:"fulano@mail", cidade:"porto alegre"},
-      {nome:"Neimar",telefone:"3322121130",email:"fulano@mail", cidade:"porto alegre"},
+      {nome:"Neimar",telefone:"3322121130",email:"@mail", cidade:"porto alegre"},
       {nome:"Neimar",telefone:"3322121130",email:"fulano@mail", cidade:"porto alegre"},
 
     ];

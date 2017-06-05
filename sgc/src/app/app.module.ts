@@ -38,7 +38,7 @@ const rotas:Routes=[
   
   { path:'novoPessoa', component:PessoasComponent},
   { path:'editarPessoa/:ind', component:PessoasComponent},
-  { path: 'listaPessoa', component:TabelaPessoaComponent}, 
+  { path:'listaPessoa', component:TabelaPessoaComponent}, 
 
 ];
 
