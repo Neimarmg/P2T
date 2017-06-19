@@ -55,7 +55,7 @@ public class TipoUtilitarioService {
     }
     
        
-    public void remove(TipoUtilitarios tipoUtilitario){
+    public void exclui(TipoUtilitarios tipoUtilitario){
         listaTipoUtilitarios.remove(this.getIndice(tipoUtilitario.getCodTipoUtilitario()));
     }
 }
