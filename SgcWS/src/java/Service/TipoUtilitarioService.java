@@ -8,18 +8,20 @@ package Service;
 import java.util.List;
 import Model.TipoUtilitarios;
 import java.util.ArrayList;
+import javax.ejb.Stateless;
 /**
  *
  * @author neimarmoises
  */
+@Stateless
 public class TipoUtilitarioService {
     private List<TipoUtilitarios> listaTipoUtilitarios;
     
     public TipoUtilitarioService(){
         listaTipoUtilitarios = new ArrayList<>();
     }
- 
-    
+
+   
     public List<TipoUtilitarios> listar(){
         return listaTipoUtilitarios;
     }

@@ -30,6 +30,7 @@ public class ApplicationConfig extends Application {
      */
     private void addRestResourceClasses(Set<Class<?>> resources) {
         resources.add(Ws.TipoUtilitarioWS.class);
+        resources.add(Ws.UtilitariosWS.class);
     }
     
 }
