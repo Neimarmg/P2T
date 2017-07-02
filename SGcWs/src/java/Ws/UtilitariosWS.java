@@ -27,10 +27,7 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.core.MediaType;
 import Service.UtilitariosService;
 import Model.Utilitarios;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.naming.InitialContext;
-import javax.naming.NamingException;
+
 
 /**
  * REST Web Service
@@ -40,7 +37,7 @@ import javax.naming.NamingException;
 @Path("Utilitarios")
 public class UtilitariosWS {
 
-    UtilitariosService utilitariosService1 = lookupUtilitariosServiceBean();
+ 
    @EJB
     private UtilitariosService utilitariosService ;
    
@@ -120,20 +117,11 @@ public class UtilitariosWS {
     
     
     @DELETE
-    @Path("Remver/set/{codigo}")
-    @Consumes(MediaType.APPLICATION_JSON)
+    @Path("Remover/set/{codigo}")
     public void removerUtilitario(@PathParam("codigo") int cod){
         Utilitarios t = utilitariosService.buscarPorCodigo(cod);
+        System.out.println(cod);
+        System.out.println(t);
         utilitariosService.exclui(t);
-    }
-
-    private UtilitariosService lookupUtilitariosServiceBean() {
-        try {
-            javax.naming.Context c = new InitialContext();
-            return (UtilitariosService) c.lookup("java:global/SGcWs/UtilitariosService!Service.UtilitariosService");
-        } catch (NamingException ne) {
-            Logger.getLogger(getClass().getName()).log(Level.SEVERE, "exception caught", ne);
-            throw new RuntimeException(ne);
-        }
     }
 }

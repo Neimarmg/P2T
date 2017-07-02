@@ -5,11 +5,15 @@
  */
 package Model;
 
+import java.io.Serializable;
+import javax.xml.bind.annotation.XmlRootElement;
+
 /**
  *
  * @author neimarmoises
  */
-public class Utilitarios {
+@XmlRootElement
+public class Utilitarios implements Serializable {
     int codUtilitario;
     int codTipoUtilitario;
     String descUtilitario;
@@ -20,6 +24,9 @@ public class Utilitarios {
         this.descUtilitario = descUtilitario;
     }
 
+    public Utilitarios() {
+        
+    }
     public Utilitarios(int codUtilitario, String descUtilitario) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }

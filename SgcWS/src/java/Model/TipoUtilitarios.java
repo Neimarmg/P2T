@@ -1,13 +1,21 @@
 package Model;
 
+import java.io.Serializable;
+import javax.xml.bind.annotation.XmlRootElement;
+
 /**
  *
  * @author neimarmoises
  */
-public class TipoUtilitarios {
-    int codTipoUtilitario;
-    String descTipoUtilitario;
+@XmlRootElement
+public class TipoUtilitarios implements Serializable {
+    private int codTipoUtilitario;
+    private String descTipoUtilitario;
 
+    public TipoUtilitarios() {
+    }
+
+      
     public TipoUtilitarios(int codTipoUtilitario, String descTipoUtilitario) {
         this.codTipoUtilitario = codTipoUtilitario;
         this.descTipoUtilitario = descTipoUtilitario;
@@ -28,7 +36,5 @@ public class TipoUtilitarios {
     public void setDescTipoUtilitario(String descTipoUtilitario) {
         this.descTipoUtilitario = descTipoUtilitario;
     }
-    
-    
     
 }

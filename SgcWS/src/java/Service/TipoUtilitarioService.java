@@ -19,6 +19,7 @@ public class TipoUtilitarioService {
     
     public TipoUtilitarioService(){
         listaTipoUtilitarios = new ArrayList<>();
+        listaTipoUtilitarios.add(new TipoUtilitarios(1, "teste"));
     }
 
    
@@ -57,7 +58,9 @@ public class TipoUtilitarioService {
     }
     
        
-    public void exclui(TipoUtilitarios tipoUtilitario){
-        listaTipoUtilitarios.remove(this.getIndice(tipoUtilitario.getCodTipoUtilitario()));
+    public void exclui(TipoUtilitarios tipoUtilitarios){
+        System.out.println(tipoUtilitarios.getCodTipoUtilitario());
+        System.out.println(this.getIndice(tipoUtilitarios.getCodTipoUtilitario()));
+        listaTipoUtilitarios.remove(this.getIndice(tipoUtilitarios.getCodTipoUtilitario()));
     }
 }

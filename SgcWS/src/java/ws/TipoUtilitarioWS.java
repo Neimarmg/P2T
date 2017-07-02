@@ -35,7 +35,7 @@ public class TipoUtilitarioWS {
    
     @EJB
     private TipoUtilitarioService tipoUtilitarioService ;
-   
+  
     
     @Context
     private UriInfo context;
@@ -61,12 +61,12 @@ public class TipoUtilitarioWS {
     
     
     @GET
-    @Path("InsetManual/Set")
+    @Path("Insert Manual/Set")
     @Produces(MediaType.APPLICATION_JSON)
     public String InsereTipoUtilitario() {
         TipoUtilitarioService lista = new TipoUtilitarioService();
         
-        TipoUtilitarios tu = new TipoUtilitarios(0,null);
+        TipoUtilitarios tu = new TipoUtilitarios();
         tu.setCodTipoUtilitario(1);
         tu.setDescTipoUtilitario("Tipo de pessoa");
         
@@ -81,10 +81,7 @@ public class TipoUtilitarioWS {
         return g.toJson(lista);
     }
     
-    
-    
-    
-    
+       
     @POST   
     @Path("Adiconar/set")
     @Consumes(MediaType.APPLICATION_JSON)
@@ -111,8 +108,7 @@ public class TipoUtilitarioWS {
     
     
     @DELETE
-    @Path("Remver/set/{codigo}")
-    @Consumes(MediaType.APPLICATION_JSON)
+    @Path("Remover/set/{codigo}")
     public void removerTipoUtilitario(@PathParam("codigo") int cod){
         TipoUtilitarios t = tipoUtilitarioService.buscarPorCodigo(cod);
         tipoUtilitarioService.exclui(t);
