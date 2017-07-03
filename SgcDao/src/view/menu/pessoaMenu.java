@@ -9,10 +9,10 @@ public class pessoaMenu {
 
     public static String getOpcoes() {
         return ("\n--------------------------------------\n"
-                + "1- Cadastrar Usuarios\n"
-                + "2- Deletar Usuario\n"
-                + "3- Atualizar dados do Usuario\n"
-                + "4- Listar Usuarios\n"
+                + "1- Cadastrar \n"
+                + "2- Deletar \n"
+                + "3- Atualizar \n"
+                + "4- Listar \n"
                 + "0- Sair"
                 + "\n--------------------------------------");
     }    
