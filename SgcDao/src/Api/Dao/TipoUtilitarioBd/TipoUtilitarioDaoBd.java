@@ -1,6 +1,5 @@
 package Api.Dao.TipoUtilitarioBd;
 
-import Api.Dao.PessoaBd.*;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -9,7 +8,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import Api.conexao.BDException;
 import Api.conexao.ConnectionFactory;
-import dominio.Pessoa;
+
 import dominio.TipoUtilitarios;
 
 public class TipoUtilitarioDaoBd implements TipoUtilitarioDao {

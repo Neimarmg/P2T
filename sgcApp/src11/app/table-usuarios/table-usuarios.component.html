@@ -1,0 +1,17 @@
+<table>
+  <tr>
+    <th>Nome</th>
+    <th>Email</th>
+    <th>Username</th>
+    <th>Editar</th>
+    <th>Excluir</th>
+  </tr>
+  <tr *ngFor='let usuario of usuarios;let ind=index'>
+    <td>{{usuario.nome}}</td>
+    <td>{{usuario.email}}</td>
+    <td>{{usuario.username}}</td>
+    <td><a [routerLink]="['/edicao',ind]">Editar</a></td>
+    <td><a routerLink="/lista" (click)="excluirUsuario(ind)">Excluir</a></td>
+  </tr>
+</table>
+<a routerLink="/novo">Novo Usuario</a>

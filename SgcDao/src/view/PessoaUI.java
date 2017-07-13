@@ -52,7 +52,7 @@ public class PessoaUI {
         } while (opcao != pessoaMenu.OP_SAIR);
     }
 
-    private void cadastrarPessoa() {
+    public  void cadastrarPessoa() {
         String nome = Console.scanString("Nome: ");
         String codCidade = Console.scanString("cod cidade: ");
         String codTipoPessoa = Console.scanString("Cod tipo pessoa: ");
