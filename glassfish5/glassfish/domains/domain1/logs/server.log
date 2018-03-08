@@ -1,0 +1,1046 @@
+[2018-03-08T10:18:21.013-0300] [glassfish 5.0] [INFO] [NCLS-LOGGING-00009] [javax.enterprise.logging] [tid: _ThreadID=18 _ThreadName=RunLevelControllerThread-1520515100807] [timeMillis: 1520515101013] [levelValue: 800] [[
+  Running GlassFish Version: GlassFish Server Open Source Edition  5.0  (build 25)]]
+
+[2018-03-08T10:18:21.013-0300] [glassfish 5.0] [INFO] [NCLS-LOGGING-00010] [javax.enterprise.logging] [tid: _ThreadID=18 _ThreadName=RunLevelControllerThread-1520515100807] [timeMillis: 1520515101013] [levelValue: 800] [[
+  Server log file is using Formatter class: com.sun.enterprise.server.logging.ODLLogFormatter]]
+
+[2018-03-08T10:18:21.141-0300] [glassfish 5.0] [INFO] [NCLS-SECURITY-01115] [javax.enterprise.system.core.security] [tid: _ThreadID=20 _ThreadName=RunLevelControllerThread-1520515100823] [timeMillis: 1520515101141] [levelValue: 800] [[
+  Realm [admin-realm] of classtype [com.sun.enterprise.security.auth.realm.file.FileRealm] successfully created.]]
+
+[2018-03-08T10:18:21.160-0300] [glassfish 5.0] [INFO] [NCLS-SECURITY-01115] [javax.enterprise.system.core.security] [tid: _ThreadID=20 _ThreadName=RunLevelControllerThread-1520515100823] [timeMillis: 1520515101160] [levelValue: 800] [[
+  Realm [file] of classtype [com.sun.enterprise.security.auth.realm.file.FileRealm] successfully created.]]
+
+[2018-03-08T10:18:21.163-0300] [glassfish 5.0] [INFO] [NCLS-SECURITY-01115] [javax.enterprise.system.core.security] [tid: _ThreadID=20 _ThreadName=RunLevelControllerThread-1520515100823] [timeMillis: 1520515101163] [levelValue: 800] [[
+  Realm [certificate] of classtype [com.sun.enterprise.security.auth.realm.certificate.CertificateRealm] successfully created.]]
+
+[2018-03-08T10:18:21.529-0300] [glassfish 5.0] [INFO] [SEC-SVCS-00100] [javax.enterprise.security.services] [tid: _ThreadID=18 _ThreadName=RunLevelControllerThread-1520515100807] [timeMillis: 1520515101529] [levelValue: 800] [[
+  Authorization Service has successfully initialized.]]
+
+[2018-03-08T10:18:21.560-0300] [glassfish 5.0] [INFO] [] [org.glassfish.ha.store.spi.BackingStoreFactoryRegistry] [tid: _ThreadID=19 _ThreadName=RunLevelControllerThread-1520515100823] [timeMillis: 1520515101560] [levelValue: 800] [[
+  Registered org.glassfish.ha.store.adapter.cache.ShoalBackingStoreProxy for persistence-type = replicated in BackingStoreFactoryRegistry]]
+
+[2018-03-08T10:18:21.597-0300] [glassfish 5.0] [INFO] [] [org.hibernate.validator.internal.util.Version] [tid: _ThreadID=18 _ThreadName=RunLevelControllerThread-1520515100807] [timeMillis: 1520515101597] [levelValue: 800] [[
+  HV000001: Hibernate Validator 6.0.2.Final]]
+
+[2018-03-08T10:18:21.728-0300] [glassfish 5.0] [INFO] [NCLS-CORE-00087] [javax.enterprise.system.core] [tid: _ThreadID=20 _ThreadName=RunLevelControllerThread-1520515100823] [timeMillis: 1520515101728] [levelValue: 800] [[
+  Grizzly Framework 2.4.1 started in: 47ms - bound to [/0.0.0.0:8080]]]
+
+[2018-03-08T10:18:21.752-0300] [glassfish 5.0] [INFO] [NCLS-CORE-00087] [javax.enterprise.system.core] [tid: _ThreadID=20 _ThreadName=RunLevelControllerThread-1520515100823] [timeMillis: 1520515101752] [levelValue: 800] [[
+  Grizzly Framework 2.4.1 started in: 0ms - bound to [/0.0.0.0:8181]]]
+
+[2018-03-08T10:18:21.767-0300] [glassfish 5.0] [INFO] [NCLS-CORE-00087] [javax.enterprise.system.core] [tid: _ThreadID=20 _ThreadName=RunLevelControllerThread-1520515100823] [timeMillis: 1520515101767] [levelValue: 800] [[
+  Grizzly Framework 2.4.1 started in: 0ms - bound to [/0.0.0.0:4848]]]
+
+[2018-03-08T10:18:21.845-0300] [glassfish 5.0] [INFO] [NCLS-CORE-00087] [javax.enterprise.system.core] [tid: _ThreadID=19 _ThreadName=RunLevelControllerThread-1520515100823] [timeMillis: 1520515101845] [levelValue: 800] [[
+  Grizzly Framework 2.4.1 started in: 0ms - bound to [/0.0.0.0:3700]]]
+
+[2018-03-08T10:18:22.057-0300] [glassfish 5.0] [INFO] [NCLS-CORE-00017] [javax.enterprise.system.core] [tid: _ThreadID=1 _ThreadName=main] [timeMillis: 1520515102057] [levelValue: 800] [[
+  GlassFish Server Open Source Edition  5.0  (25) startup time : Felix (23.602ms), startup services(1.250ms), total(24.852ms)]]
+
+[2018-03-08T10:18:22.241-0300] [glassfish 5.0] [INFO] [jts.startup_msg] [javax.enterprise.system.core.transaction.com.sun.jts.CosTransactions] [tid: _ThreadID=17 _ThreadName=RunLevelControllerThread-1520515100807] [timeMillis: 1520515102241] [levelValue: 800] [[
+  JTS5014: Recoverable JTS instance, serverId = [100]]]
+
+[2018-03-08T10:18:22.322-0300] [glassfish 5.0] [INFO] [NCLS-BOOTSTRAP-00027] [javax.enterprise.bootstrap] [tid: _ThreadID=1 _ThreadName=main] [timeMillis: 1520515102322] [levelValue: 800] [[
+  Registered com.sun.enterprise.glassfish.bootstrap.osgi.EmbeddedOSGiGlassFishImpl@553bc36c as OSGi service registration: org.apache.felix.framework.ServiceRegistrationImpl@24d61e4.]]
+
+[2018-03-08T10:18:23.440-0300] [glassfish 5.0] [INFO] [NCLS-CORE-00087] [javax.enterprise.system.core] [tid: _ThreadID=54 _ThreadName=pool-10-thread-1] [timeMillis: 1520515103440] [levelValue: 800] [[
+  Grizzly Framework 2.4.1 started in: 16ms - bound to [/0.0.0.0:8181]]]
+
+[2018-03-08T10:18:23.553-0300] [glassfish 5.0] [INFO] [NCLS-CORE-00087] [javax.enterprise.system.core] [tid: _ThreadID=77 _ThreadName=pool-15-thread-1] [timeMillis: 1520515103553] [levelValue: 800] [[
+  Grizzly Framework 2.4.1 started in: 16ms - bound to [/0.0.0.0:8080]]]
+
+[2018-03-08T10:18:24.129-0300] [glassfish 5.0] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=45 _ThreadName=admin-listener(5)] [timeMillis: 1520515104129] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2018-03-08T10:18:24.499-0300] [glassfish 5.0] [INFO] [NCLS-SECURITY-01002] [javax.enterprise.system.core.security] [tid: _ThreadID=45 _ThreadName=admin-listener(5)] [timeMillis: 1520515104499] [levelValue: 800] [[
+  Java security manager is disabled.]]
+
+[2018-03-08T10:18:24.499-0300] [glassfish 5.0] [INFO] [NCLS-SECURITY-01010] [javax.enterprise.system.core.security] [tid: _ThreadID=45 _ThreadName=admin-listener(5)] [timeMillis: 1520515104499] [levelValue: 800] [[
+  Entering Security Startup Service.]]
+
+[2018-03-08T10:18:24.514-0300] [glassfish 5.0] [INFO] [NCLS-SECURITY-01143] [javax.enterprise.system.core.security] [tid: _ThreadID=45 _ThreadName=admin-listener(5)] [timeMillis: 1520515104514] [levelValue: 800] [[
+  Loading policy provider com.sun.enterprise.security.provider.PolicyWrapper.]]
+
+[2018-03-08T10:18:24.566-0300] [glassfish 5.0] [INFO] [NCLS-SECURITY-01011] [javax.enterprise.system.core.security] [tid: _ThreadID=45 _ThreadName=admin-listener(5)] [timeMillis: 1520515104566] [levelValue: 800] [[
+  Security Service(s) started successfully.]]
+
+[2018-03-08T10:18:24.891-0300] [glassfish 5.0] [INFO] [AS-WEB-GLUE-00198] [javax.enterprise.web] [tid: _ThreadID=45 _ThreadName=admin-listener(5)] [timeMillis: 1520515104891] [levelValue: 800] [[
+  Created HTTP listener http-listener-1 on host/port 0.0.0.0:8080]]
+
+[2018-03-08T10:18:24.903-0300] [glassfish 5.0] [INFO] [AS-WEB-GLUE-00198] [javax.enterprise.web] [tid: _ThreadID=45 _ThreadName=admin-listener(5)] [timeMillis: 1520515104903] [levelValue: 800] [[
+  Created HTTP listener http-listener-2 on host/port 0.0.0.0:8181]]
+
+[2018-03-08T10:18:24.913-0300] [glassfish 5.0] [INFO] [AS-WEB-GLUE-00198] [javax.enterprise.web] [tid: _ThreadID=45 _ThreadName=admin-listener(5)] [timeMillis: 1520515104913] [levelValue: 800] [[
+  Created HTTP listener admin-listener on host/port 0.0.0.0:4848]]
+
+[2018-03-08T10:18:24.932-0300] [glassfish 5.0] [INFO] [AS-WEB-GLUE-00200] [javax.enterprise.web] [tid: _ThreadID=45 _ThreadName=admin-listener(5)] [timeMillis: 1520515104932] [levelValue: 800] [[
+  Created virtual server server]]
+
+[2018-03-08T10:18:24.944-0300] [glassfish 5.0] [INFO] [AS-WEB-GLUE-00200] [javax.enterprise.web] [tid: _ThreadID=45 _ThreadName=admin-listener(5)] [timeMillis: 1520515104944] [levelValue: 800] [[
+  Created virtual server __asadmin]]
+
+[2018-03-08T10:18:25.151-0300] [glassfish 5.0] [INFO] [AS-WEB-CORE-00306] [javax.enterprise.web.core] [tid: _ThreadID=45 _ThreadName=admin-listener(5)] [timeMillis: 1520515105151] [levelValue: 800] [[
+  Setting JAAS app name glassfish-web]]
+
+[2018-03-08T10:18:25.165-0300] [glassfish 5.0] [INFO] [AS-WEB-GLUE-00201] [javax.enterprise.web] [tid: _ThreadID=45 _ThreadName=admin-listener(5)] [timeMillis: 1520515105165] [levelValue: 800] [[
+  Virtual server server loaded default web module ]]
+
+[2018-03-08T10:18:25.467-0300] [glassfish 5.0] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=45 _ThreadName=admin-listener(5)] [timeMillis: 1520515105467] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2018-03-08T10:18:25.476-0300] [glassfish 5.0] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=45 _ThreadName=admin-listener(5)] [timeMillis: 1520515105476] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2018-03-08T10:18:26.593-0300] [glassfish 5.0] [INFO] [AS-WEB-GLUE-00172] [javax.enterprise.web] [tid: _ThreadID=45 _ThreadName=admin-listener(5)] [timeMillis: 1520515106593] [levelValue: 800] [[
+  Loading application [AppMotores] at [/AppMotores]]]
+
+[2018-03-08T10:18:26.700-0300] [glassfish 5.0] [INFO] [] [javax.enterprise.system.core] [tid: _ThreadID=45 _ThreadName=admin-listener(5)] [timeMillis: 1520515106700] [levelValue: 800] [[
+  AppMotores was successfully deployed in 2.711 milliseconds.]]
+
+[2018-03-08T10:18:31.435-0300] [glassfish 5.0] [INFO] [NCLS-JMX-00005] [javax.enterprise.system.jmx] [tid: _ThreadID=60 _ThreadName=Thread-13] [timeMillis: 1520515111435] [levelValue: 800] [[
+  JMXStartupService has started JMXConnector on JMXService URL service:jmx:rmi://FPAL157560.fspoaeduc.com.br:8686/jndi/rmi://FPAL157560.fspoaeduc.com.br:8686/jmxrmi]]
+
+[2018-03-08T10:18:57.960-0300] [glassfish 5.0] [INFO] [NCLS-CORE-00092] [javax.enterprise.system.core] [tid: _ThreadID=111 _ThreadName=Thread-23] [timeMillis: 1520515137960] [levelValue: 800] [[
+  Server shutdown initiated]]
+
+[2018-03-08T10:18:57.976-0300] [glassfish 5.0] [INFO] [NCLS-BOOTSTRAP-00028] [javax.enterprise.bootstrap] [tid: _ThreadID=111 _ThreadName=Thread-23] [timeMillis: 1520515137976] [levelValue: 800] [[
+  Unregistered com.sun.enterprise.glassfish.bootstrap.osgi.EmbeddedOSGiGlassFishImpl@553bc36c from service registry.]]
+
+[2018-03-08T10:18:57.986-0300] [glassfish 5.0] [INFO] [] [] [tid: _ThreadID=111 _ThreadName=Thread-8] [timeMillis: 1520515137986] [levelValue: 800] [[
+  FileMonitoring shutdown]]
+
+[2018-03-08T10:18:57.989-0300] [glassfish 5.0] [INFO] [NCLS-JMX-00002] [javax.enterprise.system.jmx] [tid: _ThreadID=111 _ThreadName=Thread-23] [timeMillis: 1520515137989] [levelValue: 800] [[
+  JMXStartupService: Stopped JMXConnectorServer: null]]
+
+[2018-03-08T10:18:57.989-0300] [glassfish 5.0] [INFO] [NCLS-JMX-00001] [javax.enterprise.system.jmx] [tid: _ThreadID=111 _ThreadName=Thread-23] [timeMillis: 1520515137989] [levelValue: 800] [[
+  JMXStartupService and JMXConnectors have been shut down.]]
+
+[2018-03-08T10:18:58.074-0300] [glassfish 5.0] [INFO] [] [] [tid: _ThreadID=115 _ThreadName=Thread-8] [timeMillis: 1520515138074] [levelValue: 800] [[
+  JdbcRuntimeExtension,  getAllSystemRAResourcesAndPools = [GlassFishConfigBean.org.glassfish.jdbc.config.JdbcResource, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcResource, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcResource, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcConnectionPool, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcConnectionPool, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcConnectionPool]]]
+
+[2018-03-08T10:19:58.307-0300] [glassfish 5.0] [INFO] [NCLS-LOGGING-00009] [javax.enterprise.logging] [tid: _ThreadID=17 _ThreadName=RunLevelControllerThread-1520515198102] [timeMillis: 1520515198307] [levelValue: 800] [[
+  Running GlassFish Version: GlassFish Server Open Source Edition  5.0  (build 25)]]
+
+[2018-03-08T10:19:58.309-0300] [glassfish 5.0] [INFO] [NCLS-LOGGING-00010] [javax.enterprise.logging] [tid: _ThreadID=17 _ThreadName=RunLevelControllerThread-1520515198102] [timeMillis: 1520515198309] [levelValue: 800] [[
+  Server log file is using Formatter class: com.sun.enterprise.server.logging.ODLLogFormatter]]
+
+[2018-03-08T10:19:58.462-0300] [glassfish 5.0] [INFO] [NCLS-SECURITY-01115] [javax.enterprise.system.core.security] [tid: _ThreadID=19 _ThreadName=RunLevelControllerThread-1520515198112] [timeMillis: 1520515198462] [levelValue: 800] [[
+  Realm [admin-realm] of classtype [com.sun.enterprise.security.auth.realm.file.FileRealm] successfully created.]]
+
+[2018-03-08T10:19:58.476-0300] [glassfish 5.0] [INFO] [NCLS-SECURITY-01115] [javax.enterprise.system.core.security] [tid: _ThreadID=19 _ThreadName=RunLevelControllerThread-1520515198112] [timeMillis: 1520515198476] [levelValue: 800] [[
+  Realm [file] of classtype [com.sun.enterprise.security.auth.realm.file.FileRealm] successfully created.]]
+
+[2018-03-08T10:19:58.486-0300] [glassfish 5.0] [INFO] [NCLS-SECURITY-01115] [javax.enterprise.system.core.security] [tid: _ThreadID=19 _ThreadName=RunLevelControllerThread-1520515198112] [timeMillis: 1520515198486] [levelValue: 800] [[
+  Realm [certificate] of classtype [com.sun.enterprise.security.auth.realm.certificate.CertificateRealm] successfully created.]]
+
+[2018-03-08T10:19:58.981-0300] [glassfish 5.0] [INFO] [] [org.glassfish.ha.store.spi.BackingStoreFactoryRegistry] [tid: _ThreadID=17 _ThreadName=RunLevelControllerThread-1520515198102] [timeMillis: 1520515198981] [levelValue: 800] [[
+  Registered org.glassfish.ha.store.adapter.cache.ShoalBackingStoreProxy for persistence-type = replicated in BackingStoreFactoryRegistry]]
+
+[2018-03-08T10:19:58.984-0300] [glassfish 5.0] [INFO] [SEC-SVCS-00100] [javax.enterprise.security.services] [tid: _ThreadID=16 _ThreadName=RunLevelControllerThread-1520515198100] [timeMillis: 1520515198984] [levelValue: 800] [[
+  Authorization Service has successfully initialized.]]
+
+[2018-03-08T10:19:59.131-0300] [glassfish 5.0] [INFO] [jts.startup_msg] [javax.enterprise.system.core.transaction.com.sun.jts.CosTransactions] [tid: _ThreadID=18 _ThreadName=RunLevelControllerThread-1520515198112] [timeMillis: 1520515199131] [levelValue: 800] [[
+  JTS5014: Recoverable JTS instance, serverId = [100]]]
+
+[2018-03-08T10:19:59.187-0300] [glassfish 5.0] [INFO] [NCLS-CORE-00087] [javax.enterprise.system.core] [tid: _ThreadID=19 _ThreadName=RunLevelControllerThread-1520515198112] [timeMillis: 1520515199187] [levelValue: 800] [[
+  Grizzly Framework 2.4.1 started in: 48ms - bound to [/0.0.0.0:8080]]]
+
+[2018-03-08T10:19:59.220-0300] [glassfish 5.0] [INFO] [NCLS-CORE-00087] [javax.enterprise.system.core] [tid: _ThreadID=19 _ThreadName=RunLevelControllerThread-1520515198112] [timeMillis: 1520515199220] [levelValue: 800] [[
+  Grizzly Framework 2.4.1 started in: 3ms - bound to [/0.0.0.0:8181]]]
+
+[2018-03-08T10:19:59.243-0300] [glassfish 5.0] [INFO] [NCLS-CORE-00087] [javax.enterprise.system.core] [tid: _ThreadID=19 _ThreadName=RunLevelControllerThread-1520515198112] [timeMillis: 1520515199243] [levelValue: 800] [[
+  Grizzly Framework 2.4.1 started in: 3ms - bound to [/0.0.0.0:4848]]]
+
+[2018-03-08T10:19:59.326-0300] [glassfish 5.0] [INFO] [NCLS-CORE-00087] [javax.enterprise.system.core] [tid: _ThreadID=17 _ThreadName=RunLevelControllerThread-1520515198102] [timeMillis: 1520515199326] [levelValue: 800] [[
+  Grizzly Framework 2.4.1 started in: 0ms - bound to [/0.0.0.0:3700]]]
+
+[2018-03-08T10:19:59.363-0300] [glassfish 5.0] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=18 _ThreadName=RunLevelControllerThread-1520515198112] [timeMillis: 1520515199363] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2018-03-08T10:19:59.777-0300] [glassfish 5.0] [INFO] [NCLS-SECURITY-01002] [javax.enterprise.system.core.security] [tid: _ThreadID=18 _ThreadName=RunLevelControllerThread-1520515198112] [timeMillis: 1520515199777] [levelValue: 800] [[
+  Java security manager is disabled.]]
+
+[2018-03-08T10:19:59.779-0300] [glassfish 5.0] [INFO] [NCLS-SECURITY-01010] [javax.enterprise.system.core.security] [tid: _ThreadID=18 _ThreadName=RunLevelControllerThread-1520515198112] [timeMillis: 1520515199779] [levelValue: 800] [[
+  Entering Security Startup Service.]]
+
+[2018-03-08T10:19:59.794-0300] [glassfish 5.0] [INFO] [NCLS-SECURITY-01143] [javax.enterprise.system.core.security] [tid: _ThreadID=18 _ThreadName=RunLevelControllerThread-1520515198112] [timeMillis: 1520515199794] [levelValue: 800] [[
+  Loading policy provider com.sun.enterprise.security.provider.PolicyWrapper.]]
+
+[2018-03-08T10:19:59.852-0300] [glassfish 5.0] [INFO] [NCLS-SECURITY-01011] [javax.enterprise.system.core.security] [tid: _ThreadID=18 _ThreadName=RunLevelControllerThread-1520515198112] [timeMillis: 1520515199852] [levelValue: 800] [[
+  Security Service(s) started successfully.]]
+
+[2018-03-08T10:20:00.098-0300] [glassfish 5.0] [INFO] [AS-WEB-GLUE-00198] [javax.enterprise.web] [tid: _ThreadID=18 _ThreadName=RunLevelControllerThread-1520515198112] [timeMillis: 1520515200098] [levelValue: 800] [[
+  Created HTTP listener http-listener-1 on host/port 0.0.0.0:8080]]
+
+[2018-03-08T10:20:00.105-0300] [glassfish 5.0] [INFO] [AS-WEB-GLUE-00198] [javax.enterprise.web] [tid: _ThreadID=18 _ThreadName=RunLevelControllerThread-1520515198112] [timeMillis: 1520515200105] [levelValue: 800] [[
+  Created HTTP listener http-listener-2 on host/port 0.0.0.0:8181]]
+
+[2018-03-08T10:20:00.116-0300] [glassfish 5.0] [INFO] [AS-WEB-GLUE-00198] [javax.enterprise.web] [tid: _ThreadID=18 _ThreadName=RunLevelControllerThread-1520515198112] [timeMillis: 1520515200116] [levelValue: 800] [[
+  Created HTTP listener admin-listener on host/port 0.0.0.0:4848]]
+
+[2018-03-08T10:20:00.141-0300] [glassfish 5.0] [INFO] [AS-WEB-GLUE-00200] [javax.enterprise.web] [tid: _ThreadID=18 _ThreadName=RunLevelControllerThread-1520515198112] [timeMillis: 1520515200141] [levelValue: 800] [[
+  Created virtual server server]]
+
+[2018-03-08T10:20:00.150-0300] [glassfish 5.0] [INFO] [AS-WEB-GLUE-00200] [javax.enterprise.web] [tid: _ThreadID=18 _ThreadName=RunLevelControllerThread-1520515198112] [timeMillis: 1520515200150] [levelValue: 800] [[
+  Created virtual server __asadmin]]
+
+[2018-03-08T10:20:00.419-0300] [glassfish 5.0] [INFO] [AS-WEB-CORE-00306] [javax.enterprise.web.core] [tid: _ThreadID=18 _ThreadName=RunLevelControllerThread-1520515198112] [timeMillis: 1520515200419] [levelValue: 800] [[
+  Setting JAAS app name glassfish-web]]
+
+[2018-03-08T10:20:00.422-0300] [glassfish 5.0] [INFO] [AS-WEB-GLUE-00201] [javax.enterprise.web] [tid: _ThreadID=18 _ThreadName=RunLevelControllerThread-1520515198112] [timeMillis: 1520515200422] [levelValue: 800] [[
+  Virtual server server loaded default web module ]]
+
+[2018-03-08T10:20:00.872-0300] [glassfish 5.0] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=18 _ThreadName=RunLevelControllerThread-1520515198112] [timeMillis: 1520515200872] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2018-03-08T10:20:00.878-0300] [glassfish 5.0] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=18 _ThreadName=RunLevelControllerThread-1520515198112] [timeMillis: 1520515200878] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2018-03-08T10:20:01.883-0300] [glassfish 5.0] [INFO] [] [org.hibernate.validator.internal.util.Version] [tid: _ThreadID=18 _ThreadName=RunLevelControllerThread-1520515198112] [timeMillis: 1520515201883] [levelValue: 800] [[
+  HV000001: Hibernate Validator 6.0.2.Final]]
+
+[2018-03-08T10:20:02.125-0300] [glassfish 5.0] [INFO] [AS-WEB-GLUE-00172] [javax.enterprise.web] [tid: _ThreadID=18 _ThreadName=RunLevelControllerThread-1520515198112] [timeMillis: 1520515202125] [levelValue: 800] [[
+  Loading application [AppMotores] at [/AppMotores]]]
+
+[2018-03-08T10:20:02.129-0300] [glassfish 5.0] [INFO] [NCLS-CORE-00022] [javax.enterprise.system.core] [tid: _ThreadID=18 _ThreadName=RunLevelControllerThread-1520515198112] [timeMillis: 1520515202129] [levelValue: 800] [[
+  Loading application AppMotores done in 3.173 ms]]
+
+[2018-03-08T10:20:02.139-0300] [glassfish 5.0] [INFO] [NCLS-CORE-00017] [javax.enterprise.system.core] [tid: _ThreadID=1 _ThreadName=main] [timeMillis: 1520515202139] [levelValue: 800] [[
+  GlassFish Server Open Source Edition  5.0  (25) startup time : Felix (20.539ms), startup services(4.048ms), total(24.587ms)]]
+
+[2018-03-08T10:20:02.306-0300] [glassfish 5.0] [INFO] [NCLS-BOOTSTRAP-00027] [javax.enterprise.bootstrap] [tid: _ThreadID=1 _ThreadName=main] [timeMillis: 1520515202306] [levelValue: 800] [[
+  Registered com.sun.enterprise.glassfish.bootstrap.osgi.EmbeddedOSGiGlassFishImpl@3766c667 as OSGi service registration: org.apache.felix.framework.ServiceRegistrationImpl@441cc260.]]
+
+[2018-03-08T10:20:03.699-0300] [glassfish 5.0] [INFO] [AS-WEB-GLUE-00198] [javax.enterprise.web] [tid: _ThreadID=93 _ThreadName=pool-32-thread-1] [timeMillis: 1520515203699] [levelValue: 800] [[
+  Created HTTP listener http-listener-2 on host/port 0.0.0.0:8181]]
+
+[2018-03-08T10:20:03.772-0300] [glassfish 5.0] [INFO] [NCLS-CORE-00087] [javax.enterprise.system.core] [tid: _ThreadID=93 _ThreadName=pool-32-thread-1] [timeMillis: 1520515203772] [levelValue: 800] [[
+  Grizzly Framework 2.4.1 started in: 0ms - bound to [/0.0.0.0:8181]]]
+
+[2018-03-08T10:20:04.134-0300] [glassfish 5.0] [INFO] [AS-WEB-GLUE-00198] [javax.enterprise.web] [tid: _ThreadID=97 _ThreadName=pool-29-thread-1] [timeMillis: 1520515204134] [levelValue: 800] [[
+  Created HTTP listener http-listener-1 on host/port 0.0.0.0:8080]]
+
+[2018-03-08T10:20:04.252-0300] [glassfish 5.0] [INFO] [NCLS-CORE-00087] [javax.enterprise.system.core] [tid: _ThreadID=97 _ThreadName=pool-29-thread-1] [timeMillis: 1520515204252] [levelValue: 800] [[
+  Grizzly Framework 2.4.1 started in: 87ms - bound to [/0.0.0.0:8080]]]
+
+[2018-03-08T10:20:04.879-0300] [glassfish 5.0] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=45 _ThreadName=admin-listener(4)] [timeMillis: 1520515204879] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2018-03-08T10:20:04.914-0300] [glassfish 5.0] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=45 _ThreadName=admin-listener(4)] [timeMillis: 1520515204914] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2018-03-08T10:20:04.918-0300] [glassfish 5.0] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=45 _ThreadName=admin-listener(4)] [timeMillis: 1520515204918] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2018-03-08T10:20:05.226-0300] [glassfish 5.0] [INFO] [AS-WEB-GLUE-00172] [javax.enterprise.web] [tid: _ThreadID=45 _ThreadName=admin-listener(4)] [timeMillis: 1520515205226] [levelValue: 800] [[
+  Loading application [AppMotores] at [/AppMotores]]]
+
+[2018-03-08T10:20:05.294-0300] [glassfish 5.0] [INFO] [] [javax.enterprise.system.core] [tid: _ThreadID=45 _ThreadName=admin-listener(4)] [timeMillis: 1520515205294] [levelValue: 800] [[
+  AppMotores was successfully deployed in 688 milliseconds.]]
+
+[2018-03-08T10:20:11.452-0300] [glassfish 5.0] [INFO] [NCLS-JMX-00005] [javax.enterprise.system.jmx] [tid: _ThreadID=74 _ThreadName=Thread-17] [timeMillis: 1520515211452] [levelValue: 800] [[
+  JMXStartupService has started JMXConnector on JMXService URL service:jmx:rmi://FPAL157560.fspoaeduc.com.br:8686/jndi/rmi://FPAL157560.fspoaeduc.com.br:8686/jmxrmi]]
+
+[2018-03-08T10:25:25.366-0300] [glassfish 5.0] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=45 _ThreadName=admin-listener(4)] [timeMillis: 1520515525366] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2018-03-08T10:25:25.395-0300] [glassfish 5.0] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=45 _ThreadName=admin-listener(4)] [timeMillis: 1520515525395] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2018-03-08T10:25:25.412-0300] [glassfish 5.0] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=45 _ThreadName=admin-listener(4)] [timeMillis: 1520515525412] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2018-03-08T10:25:25.699-0300] [glassfish 5.0] [INFO] [AS-WEB-GLUE-00172] [javax.enterprise.web] [tid: _ThreadID=45 _ThreadName=admin-listener(4)] [timeMillis: 1520515525699] [levelValue: 800] [[
+  Loading application [AppMotores] at [/AppMotores]]]
+
+[2018-03-08T10:25:25.722-0300] [glassfish 5.0] [INFO] [] [javax.enterprise.system.core] [tid: _ThreadID=45 _ThreadName=admin-listener(4)] [timeMillis: 1520515525722] [levelValue: 800] [[
+  AppMotores was successfully deployed in 387 milliseconds.]]
+
+[2018-03-08T10:32:41.794-0300] [glassfish 5.0] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=45 _ThreadName=admin-listener(4)] [timeMillis: 1520515961794] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2018-03-08T10:32:42.080-0300] [glassfish 5.0] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=45 _ThreadName=admin-listener(4)] [timeMillis: 1520515962080] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2018-03-08T10:32:42.137-0300] [glassfish 5.0] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=45 _ThreadName=admin-listener(4)] [timeMillis: 1520515962137] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2018-03-08T10:32:46.185-0300] [glassfish 5.0] [INFO] [AS-WEB-GLUE-00172] [javax.enterprise.web] [tid: _ThreadID=45 _ThreadName=admin-listener(4)] [timeMillis: 1520515966185] [levelValue: 800] [[
+  Loading application [AppMotores] at [/AppMotores]]]
+
+[2018-03-08T10:32:46.375-0300] [glassfish 5.0] [INFO] [] [javax.enterprise.system.core] [tid: _ThreadID=45 _ThreadName=admin-listener(4)] [timeMillis: 1520515966375] [levelValue: 800] [[
+  AppMotores was successfully deployed in 4.722 milliseconds.]]
+
+[2018-03-08T10:33:51.511-0300] [glassfish 5.0] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=44 _ThreadName=admin-listener(3)] [timeMillis: 1520516031511] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2018-03-08T10:33:51.608-0300] [glassfish 5.0] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=44 _ThreadName=admin-listener(3)] [timeMillis: 1520516031608] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2018-03-08T10:33:51.638-0300] [glassfish 5.0] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=44 _ThreadName=admin-listener(3)] [timeMillis: 1520516031638] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2018-03-08T10:33:53.027-0300] [glassfish 5.0] [INFO] [AS-WEB-GLUE-00172] [javax.enterprise.web] [tid: _ThreadID=44 _ThreadName=admin-listener(3)] [timeMillis: 1520516033027] [levelValue: 800] [[
+  Loading application [AppMotores] at [/AppMotores]]]
+
+[2018-03-08T10:33:53.071-0300] [glassfish 5.0] [INFO] [] [javax.enterprise.system.core] [tid: _ThreadID=44 _ThreadName=admin-listener(3)] [timeMillis: 1520516033071] [levelValue: 800] [[
+  AppMotores was successfully deployed in 2.467 milliseconds.]]
+
+[2018-03-08T10:33:53.681-0300] [glassfish 5.0] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=46 _ThreadName=admin-listener(5)] [timeMillis: 1520516033681] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2018-03-08T10:33:53.795-0300] [glassfish 5.0] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=46 _ThreadName=admin-listener(5)] [timeMillis: 1520516033795] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2018-03-08T10:33:53.891-0300] [glassfish 5.0] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=46 _ThreadName=admin-listener(5)] [timeMillis: 1520516033891] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2018-03-08T10:33:57.008-0300] [glassfish 5.0] [INFO] [AS-WEB-GLUE-00172] [javax.enterprise.web] [tid: _ThreadID=46 _ThreadName=admin-listener(5)] [timeMillis: 1520516037008] [levelValue: 800] [[
+  Loading application [AppMotores] at [/AppMotores]]]
+
+[2018-03-08T10:33:57.158-0300] [glassfish 5.0] [INFO] [] [javax.enterprise.system.core] [tid: _ThreadID=46 _ThreadName=admin-listener(5)] [timeMillis: 1520516037158] [levelValue: 800] [[
+  AppMotores was successfully deployed in 3.555 milliseconds.]]
+
+[2018-03-08T10:34:09.134-0300] [glassfish 5.0] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=46 _ThreadName=admin-listener(5)] [timeMillis: 1520516049134] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2018-03-08T10:34:09.176-0300] [glassfish 5.0] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=46 _ThreadName=admin-listener(5)] [timeMillis: 1520516049176] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2018-03-08T10:34:09.187-0300] [glassfish 5.0] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=46 _ThreadName=admin-listener(5)] [timeMillis: 1520516049187] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2018-03-08T10:34:22.557-0300] [glassfish 5.0] [INFO] [AS-WEB-GLUE-00172] [javax.enterprise.web] [tid: _ThreadID=46 _ThreadName=admin-listener(5)] [timeMillis: 1520516062557] [levelValue: 800] [[
+  Loading application [AppMotores] at [/AppMotores]]]
+
+[2018-03-08T10:34:23.783-0300] [glassfish 5.0] [INFO] [] [javax.enterprise.system.core] [tid: _ThreadID=46 _ThreadName=admin-listener(5)] [timeMillis: 1520516063783] [levelValue: 800] [[
+  AppMotores was successfully deployed in 14.805 milliseconds.]]
+
+[2018-03-08T10:44:27.300-0300] [glassfish 5.0] [WARNING] [] [javax.enterprise.web] [tid: _ThreadID=106 _ThreadName=http-listener-1(2)] [timeMillis: 1520516667300] [levelValue: 900] [[
+  StandardWrapperValve[ws.ApplicationConfig]: Servlet.service() for servlet ws.ApplicationConfig threw exception
+javax.json.bind.JsonbException: Can't deserialize JSON array into: class entidade.Motor
+	at org.eclipse.yasson.internal.serializer.DeserializerBuilder.build(DeserializerBuilder.java:129)
+	at org.eclipse.yasson.internal.Unmarshaller.deserializeItem(Unmarshaller.java:56)
+	at org.eclipse.yasson.internal.Unmarshaller.deserialize(Unmarshaller.java:50)
+	at org.eclipse.yasson.internal.JsonBinding.deserialize(JsonBinding.java:45)
+	at org.eclipse.yasson.internal.JsonBinding.fromJson(JsonBinding.java:85)
+	at org.glassfish.jersey.jsonb.internal.JsonBindingProvider.readFrom(JsonBindingProvider.java:99)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$TerminalReaderInterceptor.invokeReadFrom(ReaderInterceptorExecutor.java:257)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$TerminalReaderInterceptor.aroundReadFrom(ReaderInterceptorExecutor.java:236)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor.proceed(ReaderInterceptorExecutor.java:156)
+	at org.glassfish.jersey.server.internal.MappableExceptionWrapperInterceptor.aroundReadFrom(MappableExceptionWrapperInterceptor.java:73)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor.proceed(ReaderInterceptorExecutor.java:156)
+	at org.glassfish.jersey.message.internal.MessageBodyFactory.readFrom(MessageBodyFactory.java:1091)
+	at org.glassfish.jersey.message.internal.InboundMessageContext.readEntity(InboundMessageContext.java:874)
+	at org.glassfish.jersey.server.ContainerRequest.readEntity(ContainerRequest.java:271)
+	at org.glassfish.jersey.server.internal.inject.EntityParamValueParamProvider$EntityValueSupplier.apply(EntityParamValueParamProvider.java:97)
+	at org.glassfish.jersey.server.internal.inject.EntityParamValueParamProvider$EntityValueSupplier.apply(EntityParamValueParamProvider.java:80)
+	at org.glassfish.jersey.server.spi.internal.ParamValueFactoryWithSource.apply(ParamValueFactoryWithSource.java:74)
+	at org.glassfish.jersey.server.spi.internal.ParameterValueHelper.getParameterValues(ParameterValueHelper.java:92)
+	at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$AbstractMethodParamInvoker.getParamValues(JavaResourceMethodDispatcherProvider.java:133)
+	at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$VoidOutInvoker.doDispatch(JavaResourceMethodDispatcherProvider.java:183)
+	at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.dispatch(AbstractJavaResourceMethodDispatcher.java:103)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:493)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:415)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:104)
+	at org.glassfish.jersey.server.ServerRuntime$1.run(ServerRuntime.java:277)
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:272)
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:268)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:316)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:298)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:268)
+	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:289)
+	at org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:256)
+	at org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:703)
+	at org.glassfish.jersey.servlet.WebComponent.serviceImpl(WebComponent.java:416)
+	at org.glassfish.jersey.servlet.WebComponent.service(WebComponent.java:370)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:389)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:342)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:229)
+	at org.apache.catalina.core.StandardWrapper.service(StandardWrapper.java:1580)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:258)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:160)
+	at org.apache.catalina.core.StandardPipeline.doInvoke(StandardPipeline.java:652)
+	at org.apache.catalina.core.StandardPipeline.invoke(StandardPipeline.java:591)
+	at com.sun.enterprise.web.WebPipeline.invoke(WebPipeline.java:99)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:155)
+	at org.apache.catalina.connector.CoyoteAdapter.doService(CoyoteAdapter.java:371)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:238)
+	at com.sun.enterprise.v3.services.impl.ContainerMapper$HttpHandlerCallable.call(ContainerMapper.java:463)
+	at com.sun.enterprise.v3.services.impl.ContainerMapper.service(ContainerMapper.java:168)
+	at org.glassfish.grizzly.http.server.HttpHandler.runService(HttpHandler.java:206)
+	at org.glassfish.grizzly.http.server.HttpHandler.doHandle(HttpHandler.java:180)
+	at org.glassfish.grizzly.http.server.HttpServerFilter.handleRead(HttpServerFilter.java:242)
+	at org.glassfish.grizzly.filterchain.ExecutorResolver$9.execute(ExecutorResolver.java:119)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeFilter(DefaultFilterChain.java:284)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeChainPart(DefaultFilterChain.java:201)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.execute(DefaultFilterChain.java:133)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.process(DefaultFilterChain.java:112)
+	at org.glassfish.grizzly.ProcessorExecutor.execute(ProcessorExecutor.java:77)
+	at org.glassfish.grizzly.nio.transport.TCPNIOTransport.fireIOEvent(TCPNIOTransport.java:539)
+	at org.glassfish.grizzly.strategies.AbstractIOStrategy.fireIOEvent(AbstractIOStrategy.java:112)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy.run0(WorkerThreadIOStrategy.java:117)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy.access$100(WorkerThreadIOStrategy.java:56)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy$WorkerThreadRunnable.run(WorkerThreadIOStrategy.java:137)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.doWork(AbstractThreadPool.java:593)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.run(AbstractThreadPool.java:573)
+	at java.lang.Thread.run(Thread.java:748)
+]]
+
+[2018-03-08T10:45:50.183-0300] [glassfish 5.0] [WARNING] [] [javax.enterprise.web] [tid: _ThreadID=107 _ThreadName=http-listener-1(3)] [timeMillis: 1520516750183] [levelValue: 900] [[
+  StandardWrapperValve[ws.ApplicationConfig]: Servlet.service() for servlet ws.ApplicationConfig threw exception
+javax.json.bind.JsonbException: Can't deserialize JSON array into: class entidade.Motor
+	at org.eclipse.yasson.internal.serializer.DeserializerBuilder.build(DeserializerBuilder.java:129)
+	at org.eclipse.yasson.internal.Unmarshaller.deserializeItem(Unmarshaller.java:56)
+	at org.eclipse.yasson.internal.Unmarshaller.deserialize(Unmarshaller.java:50)
+	at org.eclipse.yasson.internal.JsonBinding.deserialize(JsonBinding.java:45)
+	at org.eclipse.yasson.internal.JsonBinding.fromJson(JsonBinding.java:85)
+	at org.glassfish.jersey.jsonb.internal.JsonBindingProvider.readFrom(JsonBindingProvider.java:99)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$TerminalReaderInterceptor.invokeReadFrom(ReaderInterceptorExecutor.java:257)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$TerminalReaderInterceptor.aroundReadFrom(ReaderInterceptorExecutor.java:236)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor.proceed(ReaderInterceptorExecutor.java:156)
+	at org.glassfish.jersey.server.internal.MappableExceptionWrapperInterceptor.aroundReadFrom(MappableExceptionWrapperInterceptor.java:73)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor.proceed(ReaderInterceptorExecutor.java:156)
+	at org.glassfish.jersey.message.internal.MessageBodyFactory.readFrom(MessageBodyFactory.java:1091)
+	at org.glassfish.jersey.message.internal.InboundMessageContext.readEntity(InboundMessageContext.java:874)
+	at org.glassfish.jersey.server.ContainerRequest.readEntity(ContainerRequest.java:271)
+	at org.glassfish.jersey.server.internal.inject.EntityParamValueParamProvider$EntityValueSupplier.apply(EntityParamValueParamProvider.java:97)
+	at org.glassfish.jersey.server.internal.inject.EntityParamValueParamProvider$EntityValueSupplier.apply(EntityParamValueParamProvider.java:80)
+	at org.glassfish.jersey.server.spi.internal.ParamValueFactoryWithSource.apply(ParamValueFactoryWithSource.java:74)
+	at org.glassfish.jersey.server.spi.internal.ParameterValueHelper.getParameterValues(ParameterValueHelper.java:92)
+	at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$AbstractMethodParamInvoker.getParamValues(JavaResourceMethodDispatcherProvider.java:133)
+	at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$VoidOutInvoker.doDispatch(JavaResourceMethodDispatcherProvider.java:183)
+	at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.dispatch(AbstractJavaResourceMethodDispatcher.java:103)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:493)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:415)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:104)
+	at org.glassfish.jersey.server.ServerRuntime$1.run(ServerRuntime.java:277)
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:272)
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:268)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:316)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:298)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:268)
+	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:289)
+	at org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:256)
+	at org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:703)
+	at org.glassfish.jersey.servlet.WebComponent.serviceImpl(WebComponent.java:416)
+	at org.glassfish.jersey.servlet.WebComponent.service(WebComponent.java:370)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:389)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:342)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:229)
+	at org.apache.catalina.core.StandardWrapper.service(StandardWrapper.java:1580)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:258)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:160)
+	at org.apache.catalina.core.StandardPipeline.doInvoke(StandardPipeline.java:652)
+	at org.apache.catalina.core.StandardPipeline.invoke(StandardPipeline.java:591)
+	at com.sun.enterprise.web.WebPipeline.invoke(WebPipeline.java:99)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:155)
+	at org.apache.catalina.connector.CoyoteAdapter.doService(CoyoteAdapter.java:371)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:238)
+	at com.sun.enterprise.v3.services.impl.ContainerMapper$HttpHandlerCallable.call(ContainerMapper.java:463)
+	at com.sun.enterprise.v3.services.impl.ContainerMapper.service(ContainerMapper.java:168)
+	at org.glassfish.grizzly.http.server.HttpHandler.runService(HttpHandler.java:206)
+	at org.glassfish.grizzly.http.server.HttpHandler.doHandle(HttpHandler.java:180)
+	at org.glassfish.grizzly.http.server.HttpServerFilter.handleRead(HttpServerFilter.java:242)
+	at org.glassfish.grizzly.filterchain.ExecutorResolver$9.execute(ExecutorResolver.java:119)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeFilter(DefaultFilterChain.java:284)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeChainPart(DefaultFilterChain.java:201)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.execute(DefaultFilterChain.java:133)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.process(DefaultFilterChain.java:112)
+	at org.glassfish.grizzly.ProcessorExecutor.execute(ProcessorExecutor.java:77)
+	at org.glassfish.grizzly.nio.transport.TCPNIOTransport.fireIOEvent(TCPNIOTransport.java:539)
+	at org.glassfish.grizzly.strategies.AbstractIOStrategy.fireIOEvent(AbstractIOStrategy.java:112)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy.run0(WorkerThreadIOStrategy.java:117)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy.access$100(WorkerThreadIOStrategy.java:56)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy$WorkerThreadRunnable.run(WorkerThreadIOStrategy.java:137)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.doWork(AbstractThreadPool.java:593)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.run(AbstractThreadPool.java:573)
+	at java.lang.Thread.run(Thread.java:748)
+]]
+
+[2018-03-08T10:46:11.525-0300] [glassfish 5.0] [WARNING] [] [javax.enterprise.web] [tid: _ThreadID=105 _ThreadName=http-listener-1(1)] [timeMillis: 1520516771525] [levelValue: 900] [[
+  StandardWrapperValve[ws.ApplicationConfig]: Servlet.service() for servlet ws.ApplicationConfig threw exception
+javax.json.bind.JsonbException: Can't deserialize JSON array into: class entidade.Motor
+	at org.eclipse.yasson.internal.serializer.DeserializerBuilder.build(DeserializerBuilder.java:129)
+	at org.eclipse.yasson.internal.Unmarshaller.deserializeItem(Unmarshaller.java:56)
+	at org.eclipse.yasson.internal.Unmarshaller.deserialize(Unmarshaller.java:50)
+	at org.eclipse.yasson.internal.JsonBinding.deserialize(JsonBinding.java:45)
+	at org.eclipse.yasson.internal.JsonBinding.fromJson(JsonBinding.java:85)
+	at org.glassfish.jersey.jsonb.internal.JsonBindingProvider.readFrom(JsonBindingProvider.java:99)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$TerminalReaderInterceptor.invokeReadFrom(ReaderInterceptorExecutor.java:257)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$TerminalReaderInterceptor.aroundReadFrom(ReaderInterceptorExecutor.java:236)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor.proceed(ReaderInterceptorExecutor.java:156)
+	at org.glassfish.jersey.server.internal.MappableExceptionWrapperInterceptor.aroundReadFrom(MappableExceptionWrapperInterceptor.java:73)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor.proceed(ReaderInterceptorExecutor.java:156)
+	at org.glassfish.jersey.message.internal.MessageBodyFactory.readFrom(MessageBodyFactory.java:1091)
+	at org.glassfish.jersey.message.internal.InboundMessageContext.readEntity(InboundMessageContext.java:874)
+	at org.glassfish.jersey.server.ContainerRequest.readEntity(ContainerRequest.java:271)
+	at org.glassfish.jersey.server.internal.inject.EntityParamValueParamProvider$EntityValueSupplier.apply(EntityParamValueParamProvider.java:97)
+	at org.glassfish.jersey.server.internal.inject.EntityParamValueParamProvider$EntityValueSupplier.apply(EntityParamValueParamProvider.java:80)
+	at org.glassfish.jersey.server.spi.internal.ParamValueFactoryWithSource.apply(ParamValueFactoryWithSource.java:74)
+	at org.glassfish.jersey.server.spi.internal.ParameterValueHelper.getParameterValues(ParameterValueHelper.java:92)
+	at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$AbstractMethodParamInvoker.getParamValues(JavaResourceMethodDispatcherProvider.java:133)
+	at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$VoidOutInvoker.doDispatch(JavaResourceMethodDispatcherProvider.java:183)
+	at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.dispatch(AbstractJavaResourceMethodDispatcher.java:103)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:493)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:415)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:104)
+	at org.glassfish.jersey.server.ServerRuntime$1.run(ServerRuntime.java:277)
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:272)
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:268)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:316)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:298)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:268)
+	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:289)
+	at org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:256)
+	at org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:703)
+	at org.glassfish.jersey.servlet.WebComponent.serviceImpl(WebComponent.java:416)
+	at org.glassfish.jersey.servlet.WebComponent.service(WebComponent.java:370)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:389)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:342)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:229)
+	at org.apache.catalina.core.StandardWrapper.service(StandardWrapper.java:1580)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:258)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:160)
+	at org.apache.catalina.core.StandardPipeline.doInvoke(StandardPipeline.java:652)
+	at org.apache.catalina.core.StandardPipeline.invoke(StandardPipeline.java:591)
+	at com.sun.enterprise.web.WebPipeline.invoke(WebPipeline.java:99)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:155)
+	at org.apache.catalina.connector.CoyoteAdapter.doService(CoyoteAdapter.java:371)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:238)
+	at com.sun.enterprise.v3.services.impl.ContainerMapper$HttpHandlerCallable.call(ContainerMapper.java:463)
+	at com.sun.enterprise.v3.services.impl.ContainerMapper.service(ContainerMapper.java:168)
+	at org.glassfish.grizzly.http.server.HttpHandler.runService(HttpHandler.java:206)
+	at org.glassfish.grizzly.http.server.HttpHandler.doHandle(HttpHandler.java:180)
+	at org.glassfish.grizzly.http.server.HttpServerFilter.handleRead(HttpServerFilter.java:242)
+	at org.glassfish.grizzly.filterchain.ExecutorResolver$9.execute(ExecutorResolver.java:119)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeFilter(DefaultFilterChain.java:284)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeChainPart(DefaultFilterChain.java:201)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.execute(DefaultFilterChain.java:133)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.process(DefaultFilterChain.java:112)
+	at org.glassfish.grizzly.ProcessorExecutor.execute(ProcessorExecutor.java:77)
+	at org.glassfish.grizzly.nio.transport.TCPNIOTransport.fireIOEvent(TCPNIOTransport.java:539)
+	at org.glassfish.grizzly.strategies.AbstractIOStrategy.fireIOEvent(AbstractIOStrategy.java:112)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy.run0(WorkerThreadIOStrategy.java:117)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy.access$100(WorkerThreadIOStrategy.java:56)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy$WorkerThreadRunnable.run(WorkerThreadIOStrategy.java:137)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.doWork(AbstractThreadPool.java:593)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.run(AbstractThreadPool.java:573)
+	at java.lang.Thread.run(Thread.java:748)
+]]
+
+[2018-03-08T10:46:27.373-0300] [glassfish 5.0] [WARNING] [] [javax.enterprise.web] [tid: _ThreadID=109 _ThreadName=http-listener-1(5)] [timeMillis: 1520516787373] [levelValue: 900] [[
+  StandardWrapperValve[ws.ApplicationConfig]: Servlet.service() for servlet ws.ApplicationConfig threw exception
+javax.json.bind.JsonbException: Can't deserialize JSON array into: class entidade.Motor
+	at org.eclipse.yasson.internal.serializer.DeserializerBuilder.build(DeserializerBuilder.java:129)
+	at org.eclipse.yasson.internal.Unmarshaller.deserializeItem(Unmarshaller.java:56)
+	at org.eclipse.yasson.internal.Unmarshaller.deserialize(Unmarshaller.java:50)
+	at org.eclipse.yasson.internal.JsonBinding.deserialize(JsonBinding.java:45)
+	at org.eclipse.yasson.internal.JsonBinding.fromJson(JsonBinding.java:85)
+	at org.glassfish.jersey.jsonb.internal.JsonBindingProvider.readFrom(JsonBindingProvider.java:99)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$TerminalReaderInterceptor.invokeReadFrom(ReaderInterceptorExecutor.java:257)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$TerminalReaderInterceptor.aroundReadFrom(ReaderInterceptorExecutor.java:236)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor.proceed(ReaderInterceptorExecutor.java:156)
+	at org.glassfish.jersey.server.internal.MappableExceptionWrapperInterceptor.aroundReadFrom(MappableExceptionWrapperInterceptor.java:73)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor.proceed(ReaderInterceptorExecutor.java:156)
+	at org.glassfish.jersey.message.internal.MessageBodyFactory.readFrom(MessageBodyFactory.java:1091)
+	at org.glassfish.jersey.message.internal.InboundMessageContext.readEntity(InboundMessageContext.java:874)
+	at org.glassfish.jersey.server.ContainerRequest.readEntity(ContainerRequest.java:271)
+	at org.glassfish.jersey.server.internal.inject.EntityParamValueParamProvider$EntityValueSupplier.apply(EntityParamValueParamProvider.java:97)
+	at org.glassfish.jersey.server.internal.inject.EntityParamValueParamProvider$EntityValueSupplier.apply(EntityParamValueParamProvider.java:80)
+	at org.glassfish.jersey.server.spi.internal.ParamValueFactoryWithSource.apply(ParamValueFactoryWithSource.java:74)
+	at org.glassfish.jersey.server.spi.internal.ParameterValueHelper.getParameterValues(ParameterValueHelper.java:92)
+	at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$AbstractMethodParamInvoker.getParamValues(JavaResourceMethodDispatcherProvider.java:133)
+	at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$VoidOutInvoker.doDispatch(JavaResourceMethodDispatcherProvider.java:183)
+	at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.dispatch(AbstractJavaResourceMethodDispatcher.java:103)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:493)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:415)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:104)
+	at org.glassfish.jersey.server.ServerRuntime$1.run(ServerRuntime.java:277)
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:272)
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:268)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:316)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:298)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:268)
+	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:289)
+	at org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:256)
+	at org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:703)
+	at org.glassfish.jersey.servlet.WebComponent.serviceImpl(WebComponent.java:416)
+	at org.glassfish.jersey.servlet.WebComponent.service(WebComponent.java:370)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:389)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:342)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:229)
+	at org.apache.catalina.core.StandardWrapper.service(StandardWrapper.java:1580)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:258)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:160)
+	at org.apache.catalina.core.StandardPipeline.doInvoke(StandardPipeline.java:652)
+	at org.apache.catalina.core.StandardPipeline.invoke(StandardPipeline.java:591)
+	at com.sun.enterprise.web.WebPipeline.invoke(WebPipeline.java:99)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:155)
+	at org.apache.catalina.connector.CoyoteAdapter.doService(CoyoteAdapter.java:371)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:238)
+	at com.sun.enterprise.v3.services.impl.ContainerMapper$HttpHandlerCallable.call(ContainerMapper.java:463)
+	at com.sun.enterprise.v3.services.impl.ContainerMapper.service(ContainerMapper.java:168)
+	at org.glassfish.grizzly.http.server.HttpHandler.runService(HttpHandler.java:206)
+	at org.glassfish.grizzly.http.server.HttpHandler.doHandle(HttpHandler.java:180)
+	at org.glassfish.grizzly.http.server.HttpServerFilter.handleRead(HttpServerFilter.java:242)
+	at org.glassfish.grizzly.filterchain.ExecutorResolver$9.execute(ExecutorResolver.java:119)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeFilter(DefaultFilterChain.java:284)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeChainPart(DefaultFilterChain.java:201)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.execute(DefaultFilterChain.java:133)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.process(DefaultFilterChain.java:112)
+	at org.glassfish.grizzly.ProcessorExecutor.execute(ProcessorExecutor.java:77)
+	at org.glassfish.grizzly.nio.transport.TCPNIOTransport.fireIOEvent(TCPNIOTransport.java:539)
+	at org.glassfish.grizzly.strategies.AbstractIOStrategy.fireIOEvent(AbstractIOStrategy.java:112)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy.run0(WorkerThreadIOStrategy.java:117)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy.access$100(WorkerThreadIOStrategy.java:56)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy$WorkerThreadRunnable.run(WorkerThreadIOStrategy.java:137)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.doWork(AbstractThreadPool.java:593)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.run(AbstractThreadPool.java:573)
+	at java.lang.Thread.run(Thread.java:748)
+]]
+
+[2018-03-08T10:47:32.010-0300] [glassfish 5.0] [WARNING] [] [javax.enterprise.web] [tid: _ThreadID=109 _ThreadName=http-listener-1(5)] [timeMillis: 1520516852010] [levelValue: 900] [[
+  StandardWrapperValve[ws.ApplicationConfig]: Servlet.service() for servlet ws.ApplicationConfig threw exception
+javax.json.bind.JsonbException: Can't deserialize JSON array into: class entidade.Motor
+	at org.eclipse.yasson.internal.serializer.DeserializerBuilder.build(DeserializerBuilder.java:129)
+	at org.eclipse.yasson.internal.Unmarshaller.deserializeItem(Unmarshaller.java:56)
+	at org.eclipse.yasson.internal.Unmarshaller.deserialize(Unmarshaller.java:50)
+	at org.eclipse.yasson.internal.JsonBinding.deserialize(JsonBinding.java:45)
+	at org.eclipse.yasson.internal.JsonBinding.fromJson(JsonBinding.java:85)
+	at org.glassfish.jersey.jsonb.internal.JsonBindingProvider.readFrom(JsonBindingProvider.java:99)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$TerminalReaderInterceptor.invokeReadFrom(ReaderInterceptorExecutor.java:257)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$TerminalReaderInterceptor.aroundReadFrom(ReaderInterceptorExecutor.java:236)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor.proceed(ReaderInterceptorExecutor.java:156)
+	at org.glassfish.jersey.server.internal.MappableExceptionWrapperInterceptor.aroundReadFrom(MappableExceptionWrapperInterceptor.java:73)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor.proceed(ReaderInterceptorExecutor.java:156)
+	at org.glassfish.jersey.message.internal.MessageBodyFactory.readFrom(MessageBodyFactory.java:1091)
+	at org.glassfish.jersey.message.internal.InboundMessageContext.readEntity(InboundMessageContext.java:874)
+	at org.glassfish.jersey.server.ContainerRequest.readEntity(ContainerRequest.java:271)
+	at org.glassfish.jersey.server.internal.inject.EntityParamValueParamProvider$EntityValueSupplier.apply(EntityParamValueParamProvider.java:97)
+	at org.glassfish.jersey.server.internal.inject.EntityParamValueParamProvider$EntityValueSupplier.apply(EntityParamValueParamProvider.java:80)
+	at org.glassfish.jersey.server.spi.internal.ParamValueFactoryWithSource.apply(ParamValueFactoryWithSource.java:74)
+	at org.glassfish.jersey.server.spi.internal.ParameterValueHelper.getParameterValues(ParameterValueHelper.java:92)
+	at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$AbstractMethodParamInvoker.getParamValues(JavaResourceMethodDispatcherProvider.java:133)
+	at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$VoidOutInvoker.doDispatch(JavaResourceMethodDispatcherProvider.java:183)
+	at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.dispatch(AbstractJavaResourceMethodDispatcher.java:103)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:493)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:415)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:104)
+	at org.glassfish.jersey.server.ServerRuntime$1.run(ServerRuntime.java:277)
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:272)
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:268)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:316)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:298)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:268)
+	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:289)
+	at org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:256)
+	at org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:703)
+	at org.glassfish.jersey.servlet.WebComponent.serviceImpl(WebComponent.java:416)
+	at org.glassfish.jersey.servlet.WebComponent.service(WebComponent.java:370)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:389)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:342)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:229)
+	at org.apache.catalina.core.StandardWrapper.service(StandardWrapper.java:1580)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:258)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:160)
+	at org.apache.catalina.core.StandardPipeline.doInvoke(StandardPipeline.java:652)
+	at org.apache.catalina.core.StandardPipeline.invoke(StandardPipeline.java:591)
+	at com.sun.enterprise.web.WebPipeline.invoke(WebPipeline.java:99)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:155)
+	at org.apache.catalina.connector.CoyoteAdapter.doService(CoyoteAdapter.java:371)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:238)
+	at com.sun.enterprise.v3.services.impl.ContainerMapper$HttpHandlerCallable.call(ContainerMapper.java:463)
+	at com.sun.enterprise.v3.services.impl.ContainerMapper.service(ContainerMapper.java:168)
+	at org.glassfish.grizzly.http.server.HttpHandler.runService(HttpHandler.java:206)
+	at org.glassfish.grizzly.http.server.HttpHandler.doHandle(HttpHandler.java:180)
+	at org.glassfish.grizzly.http.server.HttpServerFilter.handleRead(HttpServerFilter.java:242)
+	at org.glassfish.grizzly.filterchain.ExecutorResolver$9.execute(ExecutorResolver.java:119)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeFilter(DefaultFilterChain.java:284)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeChainPart(DefaultFilterChain.java:201)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.execute(DefaultFilterChain.java:133)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.process(DefaultFilterChain.java:112)
+	at org.glassfish.grizzly.ProcessorExecutor.execute(ProcessorExecutor.java:77)
+	at org.glassfish.grizzly.nio.transport.TCPNIOTransport.fireIOEvent(TCPNIOTransport.java:539)
+	at org.glassfish.grizzly.strategies.AbstractIOStrategy.fireIOEvent(AbstractIOStrategy.java:112)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy.run0(WorkerThreadIOStrategy.java:117)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy.access$100(WorkerThreadIOStrategy.java:56)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy$WorkerThreadRunnable.run(WorkerThreadIOStrategy.java:137)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.doWork(AbstractThreadPool.java:593)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.run(AbstractThreadPool.java:573)
+	at java.lang.Thread.run(Thread.java:748)
+]]
+
+[2018-03-08T10:48:18.113-0300] [glassfish 5.0] [WARNING] [] [javax.enterprise.web] [tid: _ThreadID=106 _ThreadName=http-listener-1(2)] [timeMillis: 1520516898113] [levelValue: 900] [[
+  StandardWrapperValve[ws.ApplicationConfig]: Servlet.service() for servlet ws.ApplicationConfig threw exception
+javax.json.bind.JsonbException: Can't deserialize JSON array into: class entidade.Motor
+	at org.eclipse.yasson.internal.serializer.DeserializerBuilder.build(DeserializerBuilder.java:129)
+	at org.eclipse.yasson.internal.Unmarshaller.deserializeItem(Unmarshaller.java:56)
+	at org.eclipse.yasson.internal.Unmarshaller.deserialize(Unmarshaller.java:50)
+	at org.eclipse.yasson.internal.JsonBinding.deserialize(JsonBinding.java:45)
+	at org.eclipse.yasson.internal.JsonBinding.fromJson(JsonBinding.java:85)
+	at org.glassfish.jersey.jsonb.internal.JsonBindingProvider.readFrom(JsonBindingProvider.java:99)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$TerminalReaderInterceptor.invokeReadFrom(ReaderInterceptorExecutor.java:257)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$TerminalReaderInterceptor.aroundReadFrom(ReaderInterceptorExecutor.java:236)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor.proceed(ReaderInterceptorExecutor.java:156)
+	at org.glassfish.jersey.server.internal.MappableExceptionWrapperInterceptor.aroundReadFrom(MappableExceptionWrapperInterceptor.java:73)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor.proceed(ReaderInterceptorExecutor.java:156)
+	at org.glassfish.jersey.message.internal.MessageBodyFactory.readFrom(MessageBodyFactory.java:1091)
+	at org.glassfish.jersey.message.internal.InboundMessageContext.readEntity(InboundMessageContext.java:874)
+	at org.glassfish.jersey.server.ContainerRequest.readEntity(ContainerRequest.java:271)
+	at org.glassfish.jersey.server.internal.inject.EntityParamValueParamProvider$EntityValueSupplier.apply(EntityParamValueParamProvider.java:97)
+	at org.glassfish.jersey.server.internal.inject.EntityParamValueParamProvider$EntityValueSupplier.apply(EntityParamValueParamProvider.java:80)
+	at org.glassfish.jersey.server.spi.internal.ParamValueFactoryWithSource.apply(ParamValueFactoryWithSource.java:74)
+	at org.glassfish.jersey.server.spi.internal.ParameterValueHelper.getParameterValues(ParameterValueHelper.java:92)
+	at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$AbstractMethodParamInvoker.getParamValues(JavaResourceMethodDispatcherProvider.java:133)
+	at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$VoidOutInvoker.doDispatch(JavaResourceMethodDispatcherProvider.java:183)
+	at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.dispatch(AbstractJavaResourceMethodDispatcher.java:103)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:493)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:415)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:104)
+	at org.glassfish.jersey.server.ServerRuntime$1.run(ServerRuntime.java:277)
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:272)
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:268)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:316)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:298)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:268)
+	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:289)
+	at org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:256)
+	at org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:703)
+	at org.glassfish.jersey.servlet.WebComponent.serviceImpl(WebComponent.java:416)
+	at org.glassfish.jersey.servlet.WebComponent.service(WebComponent.java:370)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:389)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:342)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:229)
+	at org.apache.catalina.core.StandardWrapper.service(StandardWrapper.java:1580)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:258)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:160)
+	at org.apache.catalina.core.StandardPipeline.doInvoke(StandardPipeline.java:652)
+	at org.apache.catalina.core.StandardPipeline.invoke(StandardPipeline.java:591)
+	at com.sun.enterprise.web.WebPipeline.invoke(WebPipeline.java:99)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:155)
+	at org.apache.catalina.connector.CoyoteAdapter.doService(CoyoteAdapter.java:371)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:238)
+	at com.sun.enterprise.v3.services.impl.ContainerMapper$HttpHandlerCallable.call(ContainerMapper.java:463)
+	at com.sun.enterprise.v3.services.impl.ContainerMapper.service(ContainerMapper.java:168)
+	at org.glassfish.grizzly.http.server.HttpHandler.runService(HttpHandler.java:206)
+	at org.glassfish.grizzly.http.server.HttpHandler.doHandle(HttpHandler.java:180)
+	at org.glassfish.grizzly.http.server.HttpServerFilter.handleRead(HttpServerFilter.java:242)
+	at org.glassfish.grizzly.filterchain.ExecutorResolver$9.execute(ExecutorResolver.java:119)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeFilter(DefaultFilterChain.java:284)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeChainPart(DefaultFilterChain.java:201)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.execute(DefaultFilterChain.java:133)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.process(DefaultFilterChain.java:112)
+	at org.glassfish.grizzly.ProcessorExecutor.execute(ProcessorExecutor.java:77)
+	at org.glassfish.grizzly.nio.transport.TCPNIOTransport.fireIOEvent(TCPNIOTransport.java:539)
+	at org.glassfish.grizzly.strategies.AbstractIOStrategy.fireIOEvent(AbstractIOStrategy.java:112)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy.run0(WorkerThreadIOStrategy.java:117)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy.access$100(WorkerThreadIOStrategy.java:56)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy$WorkerThreadRunnable.run(WorkerThreadIOStrategy.java:137)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.doWork(AbstractThreadPool.java:593)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.run(AbstractThreadPool.java:573)
+	at java.lang.Thread.run(Thread.java:748)
+]]
+
+[2018-03-08T10:48:26.394-0300] [glassfish 5.0] [WARNING] [] [javax.enterprise.web] [tid: _ThreadID=107 _ThreadName=http-listener-1(3)] [timeMillis: 1520516906394] [levelValue: 900] [[
+  StandardWrapperValve[ws.ApplicationConfig]: Servlet.service() for servlet ws.ApplicationConfig threw exception
+javax.json.bind.JsonbException: Can't deserialize JSON array into: class entidade.Motor
+	at org.eclipse.yasson.internal.serializer.DeserializerBuilder.build(DeserializerBuilder.java:129)
+	at org.eclipse.yasson.internal.Unmarshaller.deserializeItem(Unmarshaller.java:56)
+	at org.eclipse.yasson.internal.Unmarshaller.deserialize(Unmarshaller.java:50)
+	at org.eclipse.yasson.internal.JsonBinding.deserialize(JsonBinding.java:45)
+	at org.eclipse.yasson.internal.JsonBinding.fromJson(JsonBinding.java:85)
+	at org.glassfish.jersey.jsonb.internal.JsonBindingProvider.readFrom(JsonBindingProvider.java:99)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$TerminalReaderInterceptor.invokeReadFrom(ReaderInterceptorExecutor.java:257)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$TerminalReaderInterceptor.aroundReadFrom(ReaderInterceptorExecutor.java:236)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor.proceed(ReaderInterceptorExecutor.java:156)
+	at org.glassfish.jersey.server.internal.MappableExceptionWrapperInterceptor.aroundReadFrom(MappableExceptionWrapperInterceptor.java:73)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor.proceed(ReaderInterceptorExecutor.java:156)
+	at org.glassfish.jersey.message.internal.MessageBodyFactory.readFrom(MessageBodyFactory.java:1091)
+	at org.glassfish.jersey.message.internal.InboundMessageContext.readEntity(InboundMessageContext.java:874)
+	at org.glassfish.jersey.server.ContainerRequest.readEntity(ContainerRequest.java:271)
+	at org.glassfish.jersey.server.internal.inject.EntityParamValueParamProvider$EntityValueSupplier.apply(EntityParamValueParamProvider.java:97)
+	at org.glassfish.jersey.server.internal.inject.EntityParamValueParamProvider$EntityValueSupplier.apply(EntityParamValueParamProvider.java:80)
+	at org.glassfish.jersey.server.spi.internal.ParamValueFactoryWithSource.apply(ParamValueFactoryWithSource.java:74)
+	at org.glassfish.jersey.server.spi.internal.ParameterValueHelper.getParameterValues(ParameterValueHelper.java:92)
+	at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$AbstractMethodParamInvoker.getParamValues(JavaResourceMethodDispatcherProvider.java:133)
+	at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$VoidOutInvoker.doDispatch(JavaResourceMethodDispatcherProvider.java:183)
+	at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.dispatch(AbstractJavaResourceMethodDispatcher.java:103)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:493)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:415)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:104)
+	at org.glassfish.jersey.server.ServerRuntime$1.run(ServerRuntime.java:277)
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:272)
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:268)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:316)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:298)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:268)
+	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:289)
+	at org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:256)
+	at org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:703)
+	at org.glassfish.jersey.servlet.WebComponent.serviceImpl(WebComponent.java:416)
+	at org.glassfish.jersey.servlet.WebComponent.service(WebComponent.java:370)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:389)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:342)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:229)
+	at org.apache.catalina.core.StandardWrapper.service(StandardWrapper.java:1580)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:258)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:160)
+	at org.apache.catalina.core.StandardPipeline.doInvoke(StandardPipeline.java:652)
+	at org.apache.catalina.core.StandardPipeline.invoke(StandardPipeline.java:591)
+	at com.sun.enterprise.web.WebPipeline.invoke(WebPipeline.java:99)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:155)
+	at org.apache.catalina.connector.CoyoteAdapter.doService(CoyoteAdapter.java:371)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:238)
+	at com.sun.enterprise.v3.services.impl.ContainerMapper$HttpHandlerCallable.call(ContainerMapper.java:463)
+	at com.sun.enterprise.v3.services.impl.ContainerMapper.service(ContainerMapper.java:168)
+	at org.glassfish.grizzly.http.server.HttpHandler.runService(HttpHandler.java:206)
+	at org.glassfish.grizzly.http.server.HttpHandler.doHandle(HttpHandler.java:180)
+	at org.glassfish.grizzly.http.server.HttpServerFilter.handleRead(HttpServerFilter.java:242)
+	at org.glassfish.grizzly.filterchain.ExecutorResolver$9.execute(ExecutorResolver.java:119)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeFilter(DefaultFilterChain.java:284)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeChainPart(DefaultFilterChain.java:201)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.execute(DefaultFilterChain.java:133)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.process(DefaultFilterChain.java:112)
+	at org.glassfish.grizzly.ProcessorExecutor.execute(ProcessorExecutor.java:77)
+	at org.glassfish.grizzly.nio.transport.TCPNIOTransport.fireIOEvent(TCPNIOTransport.java:539)
+	at org.glassfish.grizzly.strategies.AbstractIOStrategy.fireIOEvent(AbstractIOStrategy.java:112)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy.run0(WorkerThreadIOStrategy.java:117)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy.access$100(WorkerThreadIOStrategy.java:56)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy$WorkerThreadRunnable.run(WorkerThreadIOStrategy.java:137)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.doWork(AbstractThreadPool.java:593)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.run(AbstractThreadPool.java:573)
+	at java.lang.Thread.run(Thread.java:748)
+]]
+
+[2018-03-08T10:48:32.826-0300] [glassfish 5.0] [WARNING] [] [javax.enterprise.web] [tid: _ThreadID=105 _ThreadName=http-listener-1(1)] [timeMillis: 1520516912826] [levelValue: 900] [[
+  StandardWrapperValve[ws.ApplicationConfig]: Servlet.service() for servlet ws.ApplicationConfig threw exception
+javax.json.bind.JsonbException: Can't deserialize JSON array into: class entidade.Motor
+	at org.eclipse.yasson.internal.serializer.DeserializerBuilder.build(DeserializerBuilder.java:129)
+	at org.eclipse.yasson.internal.Unmarshaller.deserializeItem(Unmarshaller.java:56)
+	at org.eclipse.yasson.internal.Unmarshaller.deserialize(Unmarshaller.java:50)
+	at org.eclipse.yasson.internal.JsonBinding.deserialize(JsonBinding.java:45)
+	at org.eclipse.yasson.internal.JsonBinding.fromJson(JsonBinding.java:85)
+	at org.glassfish.jersey.jsonb.internal.JsonBindingProvider.readFrom(JsonBindingProvider.java:99)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$TerminalReaderInterceptor.invokeReadFrom(ReaderInterceptorExecutor.java:257)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$TerminalReaderInterceptor.aroundReadFrom(ReaderInterceptorExecutor.java:236)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor.proceed(ReaderInterceptorExecutor.java:156)
+	at org.glassfish.jersey.server.internal.MappableExceptionWrapperInterceptor.aroundReadFrom(MappableExceptionWrapperInterceptor.java:73)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor.proceed(ReaderInterceptorExecutor.java:156)
+	at org.glassfish.jersey.message.internal.MessageBodyFactory.readFrom(MessageBodyFactory.java:1091)
+	at org.glassfish.jersey.message.internal.InboundMessageContext.readEntity(InboundMessageContext.java:874)
+	at org.glassfish.jersey.server.ContainerRequest.readEntity(ContainerRequest.java:271)
+	at org.glassfish.jersey.server.internal.inject.EntityParamValueParamProvider$EntityValueSupplier.apply(EntityParamValueParamProvider.java:97)
+	at org.glassfish.jersey.server.internal.inject.EntityParamValueParamProvider$EntityValueSupplier.apply(EntityParamValueParamProvider.java:80)
+	at org.glassfish.jersey.server.spi.internal.ParamValueFactoryWithSource.apply(ParamValueFactoryWithSource.java:74)
+	at org.glassfish.jersey.server.spi.internal.ParameterValueHelper.getParameterValues(ParameterValueHelper.java:92)
+	at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$AbstractMethodParamInvoker.getParamValues(JavaResourceMethodDispatcherProvider.java:133)
+	at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$VoidOutInvoker.doDispatch(JavaResourceMethodDispatcherProvider.java:183)
+	at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.dispatch(AbstractJavaResourceMethodDispatcher.java:103)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:493)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:415)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:104)
+	at org.glassfish.jersey.server.ServerRuntime$1.run(ServerRuntime.java:277)
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:272)
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:268)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:316)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:298)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:268)
+	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:289)
+	at org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:256)
+	at org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:703)
+	at org.glassfish.jersey.servlet.WebComponent.serviceImpl(WebComponent.java:416)
+	at org.glassfish.jersey.servlet.WebComponent.service(WebComponent.java:370)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:389)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:342)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:229)
+	at org.apache.catalina.core.StandardWrapper.service(StandardWrapper.java:1580)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:258)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:160)
+	at org.apache.catalina.core.StandardPipeline.doInvoke(StandardPipeline.java:652)
+	at org.apache.catalina.core.StandardPipeline.invoke(StandardPipeline.java:591)
+	at com.sun.enterprise.web.WebPipeline.invoke(WebPipeline.java:99)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:155)
+	at org.apache.catalina.connector.CoyoteAdapter.doService(CoyoteAdapter.java:371)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:238)
+	at com.sun.enterprise.v3.services.impl.ContainerMapper$HttpHandlerCallable.call(ContainerMapper.java:463)
+	at com.sun.enterprise.v3.services.impl.ContainerMapper.service(ContainerMapper.java:168)
+	at org.glassfish.grizzly.http.server.HttpHandler.runService(HttpHandler.java:206)
+	at org.glassfish.grizzly.http.server.HttpHandler.doHandle(HttpHandler.java:180)
+	at org.glassfish.grizzly.http.server.HttpServerFilter.handleRead(HttpServerFilter.java:242)
+	at org.glassfish.grizzly.filterchain.ExecutorResolver$9.execute(ExecutorResolver.java:119)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeFilter(DefaultFilterChain.java:284)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeChainPart(DefaultFilterChain.java:201)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.execute(DefaultFilterChain.java:133)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.process(DefaultFilterChain.java:112)
+	at org.glassfish.grizzly.ProcessorExecutor.execute(ProcessorExecutor.java:77)
+	at org.glassfish.grizzly.nio.transport.TCPNIOTransport.fireIOEvent(TCPNIOTransport.java:539)
+	at org.glassfish.grizzly.strategies.AbstractIOStrategy.fireIOEvent(AbstractIOStrategy.java:112)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy.run0(WorkerThreadIOStrategy.java:117)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy.access$100(WorkerThreadIOStrategy.java:56)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy$WorkerThreadRunnable.run(WorkerThreadIOStrategy.java:137)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.doWork(AbstractThreadPool.java:593)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.run(AbstractThreadPool.java:573)
+	at java.lang.Thread.run(Thread.java:748)
+]]
+
+[2018-03-08T10:48:36.287-0300] [glassfish 5.0] [WARNING] [] [javax.enterprise.web] [tid: _ThreadID=109 _ThreadName=http-listener-1(5)] [timeMillis: 1520516916287] [levelValue: 900] [[
+  StandardWrapperValve[ws.ApplicationConfig]: Servlet.service() for servlet ws.ApplicationConfig threw exception
+javax.json.bind.JsonbException: Can't deserialize JSON array into: class entidade.Motor
+	at org.eclipse.yasson.internal.serializer.DeserializerBuilder.build(DeserializerBuilder.java:129)
+	at org.eclipse.yasson.internal.Unmarshaller.deserializeItem(Unmarshaller.java:56)
+	at org.eclipse.yasson.internal.Unmarshaller.deserialize(Unmarshaller.java:50)
+	at org.eclipse.yasson.internal.JsonBinding.deserialize(JsonBinding.java:45)
+	at org.eclipse.yasson.internal.JsonBinding.fromJson(JsonBinding.java:85)
+	at org.glassfish.jersey.jsonb.internal.JsonBindingProvider.readFrom(JsonBindingProvider.java:99)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$TerminalReaderInterceptor.invokeReadFrom(ReaderInterceptorExecutor.java:257)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$TerminalReaderInterceptor.aroundReadFrom(ReaderInterceptorExecutor.java:236)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor.proceed(ReaderInterceptorExecutor.java:156)
+	at org.glassfish.jersey.server.internal.MappableExceptionWrapperInterceptor.aroundReadFrom(MappableExceptionWrapperInterceptor.java:73)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor.proceed(ReaderInterceptorExecutor.java:156)
+	at org.glassfish.jersey.message.internal.MessageBodyFactory.readFrom(MessageBodyFactory.java:1091)
+	at org.glassfish.jersey.message.internal.InboundMessageContext.readEntity(InboundMessageContext.java:874)
+	at org.glassfish.jersey.server.ContainerRequest.readEntity(ContainerRequest.java:271)
+	at org.glassfish.jersey.server.internal.inject.EntityParamValueParamProvider$EntityValueSupplier.apply(EntityParamValueParamProvider.java:97)
+	at org.glassfish.jersey.server.internal.inject.EntityParamValueParamProvider$EntityValueSupplier.apply(EntityParamValueParamProvider.java:80)
+	at org.glassfish.jersey.server.spi.internal.ParamValueFactoryWithSource.apply(ParamValueFactoryWithSource.java:74)
+	at org.glassfish.jersey.server.spi.internal.ParameterValueHelper.getParameterValues(ParameterValueHelper.java:92)
+	at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$AbstractMethodParamInvoker.getParamValues(JavaResourceMethodDispatcherProvider.java:133)
+	at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$VoidOutInvoker.doDispatch(JavaResourceMethodDispatcherProvider.java:183)
+	at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.dispatch(AbstractJavaResourceMethodDispatcher.java:103)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:493)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:415)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:104)
+	at org.glassfish.jersey.server.ServerRuntime$1.run(ServerRuntime.java:277)
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:272)
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:268)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:316)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:298)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:268)
+	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:289)
+	at org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:256)
+	at org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:703)
+	at org.glassfish.jersey.servlet.WebComponent.serviceImpl(WebComponent.java:416)
+	at org.glassfish.jersey.servlet.WebComponent.service(WebComponent.java:370)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:389)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:342)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:229)
+	at org.apache.catalina.core.StandardWrapper.service(StandardWrapper.java:1580)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:258)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:160)
+	at org.apache.catalina.core.StandardPipeline.doInvoke(StandardPipeline.java:652)
+	at org.apache.catalina.core.StandardPipeline.invoke(StandardPipeline.java:591)
+	at com.sun.enterprise.web.WebPipeline.invoke(WebPipeline.java:99)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:155)
+	at org.apache.catalina.connector.CoyoteAdapter.doService(CoyoteAdapter.java:371)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:238)
+	at com.sun.enterprise.v3.services.impl.ContainerMapper$HttpHandlerCallable.call(ContainerMapper.java:463)
+	at com.sun.enterprise.v3.services.impl.ContainerMapper.service(ContainerMapper.java:168)
+	at org.glassfish.grizzly.http.server.HttpHandler.runService(HttpHandler.java:206)
+	at org.glassfish.grizzly.http.server.HttpHandler.doHandle(HttpHandler.java:180)
+	at org.glassfish.grizzly.http.server.HttpServerFilter.handleRead(HttpServerFilter.java:242)
+	at org.glassfish.grizzly.filterchain.ExecutorResolver$9.execute(ExecutorResolver.java:119)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeFilter(DefaultFilterChain.java:284)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeChainPart(DefaultFilterChain.java:201)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.execute(DefaultFilterChain.java:133)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.process(DefaultFilterChain.java:112)
+	at org.glassfish.grizzly.ProcessorExecutor.execute(ProcessorExecutor.java:77)
+	at org.glassfish.grizzly.nio.transport.TCPNIOTransport.fireIOEvent(TCPNIOTransport.java:539)
+	at org.glassfish.grizzly.strategies.AbstractIOStrategy.fireIOEvent(AbstractIOStrategy.java:112)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy.run0(WorkerThreadIOStrategy.java:117)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy.access$100(WorkerThreadIOStrategy.java:56)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy$WorkerThreadRunnable.run(WorkerThreadIOStrategy.java:137)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.doWork(AbstractThreadPool.java:593)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.run(AbstractThreadPool.java:573)
+	at java.lang.Thread.run(Thread.java:748)
+]]
+
+[2018-03-08T10:49:26.701-0300] [glassfish 5.0] [WARNING] [] [javax.enterprise.web] [tid: _ThreadID=106 _ThreadName=http-listener-1(2)] [timeMillis: 1520516966701] [levelValue: 900] [[
+  StandardWrapperValve[ws.ApplicationConfig]: Servlet.service() for servlet ws.ApplicationConfig threw exception
+javax.json.bind.JsonbException: Can't deserialize JSON array into: class entidade.Motor
+	at org.eclipse.yasson.internal.serializer.DeserializerBuilder.build(DeserializerBuilder.java:129)
+	at org.eclipse.yasson.internal.Unmarshaller.deserializeItem(Unmarshaller.java:56)
+	at org.eclipse.yasson.internal.Unmarshaller.deserialize(Unmarshaller.java:50)
+	at org.eclipse.yasson.internal.JsonBinding.deserialize(JsonBinding.java:45)
+	at org.eclipse.yasson.internal.JsonBinding.fromJson(JsonBinding.java:85)
+	at org.glassfish.jersey.jsonb.internal.JsonBindingProvider.readFrom(JsonBindingProvider.java:99)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$TerminalReaderInterceptor.invokeReadFrom(ReaderInterceptorExecutor.java:257)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$TerminalReaderInterceptor.aroundReadFrom(ReaderInterceptorExecutor.java:236)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor.proceed(ReaderInterceptorExecutor.java:156)
+	at org.glassfish.jersey.server.internal.MappableExceptionWrapperInterceptor.aroundReadFrom(MappableExceptionWrapperInterceptor.java:73)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor.proceed(ReaderInterceptorExecutor.java:156)
+	at org.glassfish.jersey.message.internal.MessageBodyFactory.readFrom(MessageBodyFactory.java:1091)
+	at org.glassfish.jersey.message.internal.InboundMessageContext.readEntity(InboundMessageContext.java:874)
+	at org.glassfish.jersey.server.ContainerRequest.readEntity(ContainerRequest.java:271)
+	at org.glassfish.jersey.server.internal.inject.EntityParamValueParamProvider$EntityValueSupplier.apply(EntityParamValueParamProvider.java:97)
+	at org.glassfish.jersey.server.internal.inject.EntityParamValueParamProvider$EntityValueSupplier.apply(EntityParamValueParamProvider.java:80)
+	at org.glassfish.jersey.server.spi.internal.ParamValueFactoryWithSource.apply(ParamValueFactoryWithSource.java:74)
+	at org.glassfish.jersey.server.spi.internal.ParameterValueHelper.getParameterValues(ParameterValueHelper.java:92)
+	at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$AbstractMethodParamInvoker.getParamValues(JavaResourceMethodDispatcherProvider.java:133)
+	at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$VoidOutInvoker.doDispatch(JavaResourceMethodDispatcherProvider.java:183)
+	at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.dispatch(AbstractJavaResourceMethodDispatcher.java:103)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:493)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:415)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:104)
+	at org.glassfish.jersey.server.ServerRuntime$1.run(ServerRuntime.java:277)
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:272)
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:268)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:316)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:298)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:268)
+	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:289)
+	at org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:256)
+	at org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:703)
+	at org.glassfish.jersey.servlet.WebComponent.serviceImpl(WebComponent.java:416)
+	at org.glassfish.jersey.servlet.WebComponent.service(WebComponent.java:370)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:389)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:342)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:229)
+	at org.apache.catalina.core.StandardWrapper.service(StandardWrapper.java:1580)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:258)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:160)
+	at org.apache.catalina.core.StandardPipeline.doInvoke(StandardPipeline.java:652)
+	at org.apache.catalina.core.StandardPipeline.invoke(StandardPipeline.java:591)
+	at com.sun.enterprise.web.WebPipeline.invoke(WebPipeline.java:99)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:155)
+	at org.apache.catalina.connector.CoyoteAdapter.doService(CoyoteAdapter.java:371)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:238)
+	at com.sun.enterprise.v3.services.impl.ContainerMapper$HttpHandlerCallable.call(ContainerMapper.java:463)
+	at com.sun.enterprise.v3.services.impl.ContainerMapper.service(ContainerMapper.java:168)
+	at org.glassfish.grizzly.http.server.HttpHandler.runService(HttpHandler.java:206)
+	at org.glassfish.grizzly.http.server.HttpHandler.doHandle(HttpHandler.java:180)
+	at org.glassfish.grizzly.http.server.HttpServerFilter.handleRead(HttpServerFilter.java:242)
+	at org.glassfish.grizzly.filterchain.ExecutorResolver$9.execute(ExecutorResolver.java:119)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeFilter(DefaultFilterChain.java:284)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeChainPart(DefaultFilterChain.java:201)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.execute(DefaultFilterChain.java:133)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.process(DefaultFilterChain.java:112)
+	at org.glassfish.grizzly.ProcessorExecutor.execute(ProcessorExecutor.java:77)
+	at org.glassfish.grizzly.nio.transport.TCPNIOTransport.fireIOEvent(TCPNIOTransport.java:539)
+	at org.glassfish.grizzly.strategies.AbstractIOStrategy.fireIOEvent(AbstractIOStrategy.java:112)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy.run0(WorkerThreadIOStrategy.java:117)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy.access$100(WorkerThreadIOStrategy.java:56)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy$WorkerThreadRunnable.run(WorkerThreadIOStrategy.java:137)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.doWork(AbstractThreadPool.java:593)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.run(AbstractThreadPool.java:573)
+	at java.lang.Thread.run(Thread.java:748)
+]]
+
+[2018-03-08T10:54:54.175-0300] [glassfish 5.0] [INFO] [NCLS-CORE-00092] [javax.enterprise.system.core] [tid: _ThreadID=232 _ThreadName=Thread-33] [timeMillis: 1520517294175] [levelValue: 800] [[
+  Server shutdown initiated]]
+
+[2018-03-08T10:54:54.272-0300] [glassfish 5.0] [INFO] [NCLS-BOOTSTRAP-00028] [javax.enterprise.bootstrap] [tid: _ThreadID=232 _ThreadName=Thread-33] [timeMillis: 1520517294272] [levelValue: 800] [[
+  Unregistered com.sun.enterprise.glassfish.bootstrap.osgi.EmbeddedOSGiGlassFishImpl@3766c667 from service registry.]]
+
+[2018-03-08T10:54:54.379-0300] [glassfish 5.0] [INFO] [] [] [tid: _ThreadID=232 _ThreadName=Thread-8] [timeMillis: 1520517294379] [levelValue: 800] [[
+  FileMonitoring shutdown]]
+
+[2018-03-08T10:54:54.586-0300] [glassfish 5.0] [INFO] [NCLS-JMX-00002] [javax.enterprise.system.jmx] [tid: _ThreadID=232 _ThreadName=Thread-33] [timeMillis: 1520517294586] [levelValue: 800] [[
+  JMXStartupService: Stopped JMXConnectorServer: null]]
+
+[2018-03-08T10:54:54.586-0300] [glassfish 5.0] [INFO] [NCLS-JMX-00001] [javax.enterprise.system.jmx] [tid: _ThreadID=232 _ThreadName=Thread-33] [timeMillis: 1520517294586] [levelValue: 800] [[
+  JMXStartupService and JMXConnectors have been shut down.]]
+
+[2018-03-08T10:54:55.805-0300] [glassfish 5.0] [INFO] [] [] [tid: _ThreadID=240 _ThreadName=Thread-8] [timeMillis: 1520517295805] [levelValue: 800] [[
+  JdbcRuntimeExtension,  getAllSystemRAResourcesAndPools = [GlassFishConfigBean.org.glassfish.jdbc.config.JdbcResource, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcResource, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcResource, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcConnectionPool, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcConnectionPool, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcConnectionPool]]]
+
