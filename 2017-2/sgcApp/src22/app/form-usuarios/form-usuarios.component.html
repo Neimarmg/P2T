@@ -1,0 +1,16 @@
+<form *ngIf='usuario'>
+    <div class="form-group">
+        <label for="usuarioNome">Nome:</label>
+        <input id="usuarioNome" name="nome" type="text" [(ngModel)]="usuario.nome" />
+    </div>
+    <div class="form-group">
+        <label for="usuarioEmail">Email:</label>
+        <input id="usuarioEmail" name="email" type="text" [(ngModel)]="usuario.email" /><br>
+    </div>
+    <div class="form-group">
+        <label for="usuarioEmail">Username:</label>
+        <input id="usuarioEmail" name="<username></username>" type="text" [(ngModel)]="usuario.username" /><br>
+    </div>
+    <button type="button" class="btn btn-primary" (click)="salvar()">Salvar</button>
+</form>    
+<p>{{nome}}</p>

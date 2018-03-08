@@ -1,0 +1,33 @@
+<router-outlet></router-outlet>
+
+<app-menu-global></app-menu-global>
+
+<h2>Lista de usuários castrados</h2>
+
+<table>
+  <tr>
+    <th>Nome</th>
+    <th>E-mail</th>
+    <th>Usuario</th>
+    <th></th>
+  
+  </tr>
+  
+  <tr *ngFor="let usuario of usuarios;let ind=index">
+  
+    <td>{{usuario.nome}}</td>
+    <td>{{usuario.email}}</td>
+    <td>{{usuario.username}}</td>
+   
+    <td>
+        <a [routerLink]="['/edicao',ind]">Editar</a>
+        <a routerLink="/lista" (click)="excluirUsuario(ind)">Excluir</a>
+    </td>    
+  
+  </tr>
+</table>
+
+<app-rodape></app-rodape>
+<footer>
+  <a class="button" click routerLink="/novo">Novo Usuario </a> 
+</footer>

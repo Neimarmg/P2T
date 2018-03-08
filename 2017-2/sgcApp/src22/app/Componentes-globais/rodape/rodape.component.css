@@ -1,0 +1,17 @@
+footer {
+    Font-family: arial, sans-serif;
+    color:aliceblue;
+    text-align: center;
+    font-size: initial;
+    background-color: #65d472;
+    background: -webkit-gradient(linear, left top, left,bottom from(#424b57), to(#65d472));
+    padding: 10px 49.4%;
+    -moz-border-radius: 17px;
+    border-radius: 5px;
+
+    text-align: left;
+    position:fixed;
+    bottom: 0;
+    padding-bottom: 32px;
+
+}

@@ -1,0 +1,35 @@
+<router-outlet></router-outlet>
+
+<app-menu-global></app-menu-global>
+
+<h2>Lista de pessoas castradas</h2>
+
+<table>
+  <tr>
+    <th>Nome</th>
+    <th>E-mail</th>
+    <th>Telefone</th>
+    <th>Cidade</th>
+    <th></th>
+
+  </tr>
+  
+  <tr *ngFor="let Pessoas of pessoa;let ind=index">
+  
+    <td>{{Pessoas.nome}}</td>
+    <td>{{Pessoas.email}}</td>
+    <td>{{Pessoas.Telefone}}</td>
+    <td>{{Pessoas.Cidade}}</td>
+   
+    <td>
+      <a [routerLink]="['/editarPessoa',ind]">Editar</a>
+      <a routerLink="listaPessoa" (click)="excluirPessoa(ind)">Excluir</a>
+    </td>    
+  
+  </tr>
+</table>
+
+<app-rodape></app-rodape>
+<footer>
+  <a class="button" click routerLink="/novoPessoa">Nova Pessoa </a> 
+</footer>
