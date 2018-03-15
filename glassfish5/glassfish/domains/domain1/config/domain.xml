@@ -49,7 +49,9 @@
   </resources>
   <servers>
     <server config-ref="server-config" name="server">
+      <application-ref ref="webservice" virtual-servers="server"></application-ref>
       <application-ref ref="AppMotores" virtual-servers="server"></application-ref>
+      <application-ref ref="AppTests" virtual-servers="server"></application-ref>
       <resource-ref ref="jdbc/__TimerPool"></resource-ref>
       <resource-ref ref="jdbc/__default"></resource-ref>
       <resource-ref ref="jdbc/sample"></resource-ref>
@@ -431,12 +433,32 @@
   </secure-admin>
   <clusters></clusters>
   <applications>
-    <application context-root="/AppMotores" object-type="user" name="AppMotores" directory-deployed="true" location="file:/C:/Users/181100053/Desktop/PI2/2018-1/AppMotores/build/web/">
+    <application context-root="/webservice" object-type="user" name="webservice" directory-deployed="true" location="file:/C:/Users/181100053/Desktop/Corpore/webservice/build/web/">
       <property name="archiveType" value="war"></property>
-      <property name="appLocation" value="file:/C:/Users/181100053/Desktop/PI2/2018-1/AppMotores/build/web/"></property>
+      <property name="appLocation" value="file:/C:/Users/181100053/Desktop/Corpore/webservice/build/web/"></property>
       <property name="defaultAppName" value="web"></property>
       <property name="keepSessions" value="true"></property>
+      <module name="webservice">
+        <engine sniffer="security"></engine>
+        <engine sniffer="web"></engine>
+      </module>
+    </application>
+    <application context-root="/AppMotores" object-type="user" name="AppMotores" directory-deployed="true" location="file:/C:/Users/181100053/Desktop/PI2/2018-1/AppMotores/build/web/">
+      <property name="appLocation" value="file:/C:/Users/181100053/Desktop/PI2/2018-1/AppMotores/build/web/"></property>
+      <property name="archiveType" value="war"></property>
+      <property name="defaultAppName" value="web"></property>
       <module name="AppMotores">
+        <engine sniffer="security"></engine>
+        <engine sniffer="web"></engine>
+      </module>
+    </application>
+    <application context-root="/AppTests" object-type="user" name="AppTests" directory-deployed="true" location="file:/C:/Users/181100053/Desktop/PI2/2018-1/AppTeste/WebApplication1/build/web/">
+      <property name="archiveType" value="war"></property>
+      <property name="appLocation" value="file:/C:/Users/181100053/Desktop/PI2/2018-1/AppTeste/WebApplication1/build/web/"></property>
+      <property name="defaultAppName" value="web"></property>
+      <property name="keepSessions" value="true"></property>
+      <module name="AppTests">
+        <engine sniffer="jpa"></engine>
         <engine sniffer="security"></engine>
         <engine sniffer="web"></engine>
       </module>

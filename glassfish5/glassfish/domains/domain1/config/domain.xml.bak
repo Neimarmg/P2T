@@ -49,6 +49,8 @@
   </resources>
   <servers>
     <server config-ref="server-config" name="server">
+      <application-ref ref="webservice" virtual-servers="server"></application-ref>
+      <application-ref ref="AppMotores" virtual-servers="server"></application-ref>
       <resource-ref ref="jdbc/__TimerPool"></resource-ref>
       <resource-ref ref="jdbc/__default"></resource-ref>
       <resource-ref ref="jdbc/sample"></resource-ref>
@@ -429,5 +431,25 @@
     <secure-admin-principal dn="CN=localhost-instance,OU=GlassFish,O=Oracle Corporation,L=Santa Clara,ST=California,C=US"></secure-admin-principal>
   </secure-admin>
   <clusters></clusters>
-  <applications></applications>
+  <applications>
+    <application context-root="/webservice" object-type="user" name="webservice" directory-deployed="true" location="file:/C:/Users/181100053/Desktop/Corpore/webservice/build/web/">
+      <property name="archiveType" value="war"></property>
+      <property name="appLocation" value="file:/C:/Users/181100053/Desktop/Corpore/webservice/build/web/"></property>
+      <property name="defaultAppName" value="web"></property>
+      <property name="keepSessions" value="true"></property>
+      <module name="webservice">
+        <engine sniffer="security"></engine>
+        <engine sniffer="web"></engine>
+      </module>
+    </application>
+    <application context-root="/AppMotores" object-type="user" name="AppMotores" directory-deployed="true" location="file:/C:/Users/181100053/Desktop/PI2/2018-1/AppMotores/build/web/">
+      <property name="appLocation" value="file:/C:/Users/181100053/Desktop/PI2/2018-1/AppMotores/build/web/"></property>
+      <property name="archiveType" value="war"></property>
+      <property name="defaultAppName" value="web"></property>
+      <module name="AppMotores">
+        <engine sniffer="security"></engine>
+        <engine sniffer="web"></engine>
+      </module>
+    </application>
+  </applications>
 </domain>
