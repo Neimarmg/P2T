@@ -47,8 +47,7 @@ public class UsuariosResource {
     
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
-    public void adicionarUsuario(Usuario u,
-            @Context final HttpServletResponse response){
+    public void adicionarUsuario(Usuario u, @Context final HttpServletResponse response){
         try {
             usuarioNegocio.inserir(u);
             response.setStatus(HttpServletResponse.SC_CREATED);
