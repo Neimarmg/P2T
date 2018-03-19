@@ -6,6 +6,7 @@
 package WebSevice;
 
 import Dao.CursoDAO;
+import javax.ejb.EJB;
 import javax.servlet.http.HttpServletResponse;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.UriInfo;
@@ -23,11 +24,13 @@ import model.Curso;
  */
 @Path("curso")
 public class CursoWs {
-    CursoDAO cursoDAO =  new CursoDAO();
    
     @Context
     private UriInfo context;
 
+    @EJB
+    private CursoDAO cursoDAO;
+    
     public CursoWs() {
     }
     
