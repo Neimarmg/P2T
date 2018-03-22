@@ -15,6 +15,7 @@ import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.InternalServerErrorException;
 import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
@@ -27,39 +28,52 @@ import model.Curso;
  */
 @Path("curso")
 public class CursoWs {
-   
+    static ArrayList<Object> listaMotores = new ArrayList<>();
+    
     @Context
+    
     private UriInfo context;
 
-    @EJB
-    private CursoDAO cursoDAO;
-    
+    /**
+     * Creates a new instance of MotorwsResource
+     */
     public CursoWs() {
+        for (int i = 0; i < 2; i++) { 
+            listaMotores.add(new Curso(i, i+2 ,i+9, "Direito"));
+        }        
     }
+
+    /**
+     * Retrieves representation of an instance of ws.MotorwsResource
+     * @return an instance of java.lang.String
+     */
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public ArrayList<Object> getJson() {
+        //TODO return proper representation object
+        return listaMotores;//throw new UnsupportedOperationException();
+    }
+
+    /**
+     * PUT method for updating or creating an instance of MotorwsResource
+     * @param content representation for the resource
+     */
+    @PUT
+    @Consumes(MediaType.APPLICATION_JSON)
+    public String listar(String content) {
+        return listaMotores.L;
+    }
+    
     
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
-   
-    public void adicionarCurso(Curso curso, @Context final HttpServletResponse response){
-        try {
-            curso.setIdModalidade(1);
-            curso.setIdProjtoCurso(3);
-            curso.setNomeCurso("Graduação em direito");            
-            cursoDAO.inserir(curso);
-            
-            
-            response.setStatus(HttpServletResponse.SC_CREATED);
-            response.flushBuffer();
-            
-        } catch (Exception ex) {
-            throw new InternalServerErrorException(ex.getMessage());
-        }
-    }
-     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public String getJson() {
-        //TODO return proper representation object
-        return "ddd";//throw new UnsupportedOperationException();
+    public ArrayList<Object> inserirMotor(Curso curso) {
+        listaMotores.add(curso);
+        return listaMotores;
     }
-
+    
+    @DELETE
+    
+   
 }
