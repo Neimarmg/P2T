@@ -46,8 +46,8 @@ public class Motorws {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public ArrayList<Object> getJson() {
-        //TODO return proper representation object
-        return listaMotores;//throw new UnsupportedOperationException();
+        
+        return listaMotores;
     }
 
     /**
@@ -56,7 +56,8 @@ public class Motorws {
      */
     @PUT
     @Consumes(MediaType.APPLICATION_JSON)
-    public void putJson(String content) {
+    public String putJson(String content) {
+        return "bbds";
     }
     
     @POST
@@ -66,5 +67,7 @@ public class Motorws {
         listaMotores.add(motor);
         return listaMotores;
     }
+
+    
     
 }
