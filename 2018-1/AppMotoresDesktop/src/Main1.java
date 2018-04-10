@@ -15,9 +15,9 @@ public class Main1 {
         EntityManager manager = factory.createEntityManager();
         
         Motor motor1 = new Motor();
-        motor1.setNome("motor1");
-        motor1.setDescricao("descricao1");
-        motor1.setUso("uso1");
+        motor1.setNome("motor");
+        motor1.setDescricao("descricao");
+        motor1.setUso("uso");
         
         manager.getTransaction().begin();
         manager.persist(motor1);

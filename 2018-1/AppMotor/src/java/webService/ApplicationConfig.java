@@ -3,14 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ws;
+package webService;
 
 import java.util.Set;
 import javax.ws.rs.core.Application;
 
 /**
  *
- * @author 181100053
+ * @author neimarmoises
  */
 @javax.ws.rs.ApplicationPath("api")
 public class ApplicationConfig extends Application {
@@ -29,7 +29,7 @@ public class ApplicationConfig extends Application {
      * If required, comment out calling this method in getClasses().
      */
     private void addRestResourceClasses(Set<Class<?>> resources) {
-        resources.add(ws.Wsmotor.class);
+        resources.add(webService.wsMotor.class);
     }
     
 }

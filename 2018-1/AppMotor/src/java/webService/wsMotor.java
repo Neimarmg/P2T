@@ -3,8 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ws;
+package webService;
 
+import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -13,19 +15,20 @@ import javax.ws.rs.core.UriInfo;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.Produces;
 import javax.ws.rs.GET;
-import javax.ws.rs.POST;
+import static javax.ws.rs.HttpMethod.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PUT;
+import javax.ws.rs.POST;
 import javax.ws.rs.core.MediaType;
 import model.Motor;
 
 /**
  * REST Web Service
  *
- * @author 181100053
+ * @author neimarmoises
  */
 @Path("motor")
-public class Wsmotor {
+public class wsMotor {
 
     @Context
     private UriInfo context;
@@ -33,7 +36,7 @@ public class Wsmotor {
     /**
      * Creates a new instance of Wsmotor
      */
-    public Wsmotor() {
+    public wsMotor() {
     }
 
     /**
@@ -48,11 +51,11 @@ public class Wsmotor {
                 Persistence.createEntityManagerFactory("AppMotor");
         EntityManager manager = factory.createEntityManager();
         
-        /*
+       
         motor.setNome("motor");
         motor.setDescricao("descricao");
         motor.setUso("uso");
-        */
+       
         manager.getTransaction().begin();
         manager.persist(motor);
         manager.getTransaction().commit();
