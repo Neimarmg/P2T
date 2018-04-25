@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.1" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="Aps3PU" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>Model.Gcontatos</class>
+    <class>Model.Gtipomenu</class>
+    <class>Model.Gfiliais</class>
+    <class>Model.Guf</class>
+    <class>Model.Gmatriz</class>
+    <class>Model.Genderecos</class>
+    <class>Model.Adisciplinas</class>
+    <class>Model.Gtipoutilitarios</class>
+    <class>Model.Gmenus</class>
+    <class>Model.Acurso</class>
+    <class>Model.Amodalidadecurso</class>
+    <class>Model.Gpessoa</class>
+    <class>Model.Aprojetocurso</class>
+    <class>Model.Gutilitarios</class>
+    <class>Model.Aconteudocurso</class>
+    <class>Model.Gaplicacao</class>
+    <class>Model.Gcidades</class>
+    <exclude-unlisted-classes>false</exclude-unlisted-classes>
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/bdacademico?zeroDateTimeBehavior=convertToNull"/>
+      <property name="javax.persistence.jdbc.user" value="root"/>
+      <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+      <property name="javax.persistence.jdbc.password" value=""/>
+    </properties>
+  </persistence-unit>
+</persistence>
