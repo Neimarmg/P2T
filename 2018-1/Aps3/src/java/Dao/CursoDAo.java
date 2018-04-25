@@ -12,11 +12,11 @@ import javax.persistence.EntityManager;
  *
  * @author neimarmoises
  */
-public abstract class CursoDAo<T> {
+public abstract class CursoDao<T> {
 
     private Class<T> entityClass;
 
-    public CursoDAo(Class<T> entityClass) {
+    public CursoDao(Class<T> entityClass) {
         this.entityClass = entityClass;
     }
 

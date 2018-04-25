@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ws;
+package Websevice;
 
-import Dao.CursoDAo;
+import Dao.CursoDao;
 import Model.Acurso;
 import java.util.List;
 import javax.persistence.EntityManager;
@@ -20,32 +20,31 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-
 /**
  *
  * @author neimarmoises
  */
-//@javax.ejb.Stateless
+
 @Path("curso")
-public class wsCurso extends CursoDAo<Acurso> {
+public class AcursoFacadeREST extends CursoDao<Acurso> {
 
     @PersistenceContext(unitName = "Aps3PU")
     private EntityManager em;
 
-    public wsCurso() {
+    public AcursoFacadeREST() {
         super(Acurso.class);
     }
 
     @POST
     @Override
-    @Consumes({MediaType.APPLICATION_JSON})
+    @Consumes({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     public void create(Acurso entity) {
-         super.create(entity);
+        super.create(entity);
     }
 
     @PUT
     @Path("{id}")
-    @Consumes({MediaType.APPLICATION_JSON})
+    @Consumes({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     public void edit(@PathParam("id") Integer id, Acurso entity) {
         super.edit(entity);
     }
@@ -69,7 +68,7 @@ public class wsCurso extends CursoDAo<Acurso> {
     public List<Acurso> findAll() {
         return super.findAll();
     }
-/*
+
     @GET
     @Path("{from}/{to}")
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
@@ -83,7 +82,7 @@ public class wsCurso extends CursoDAo<Acurso> {
     public String countREST() {
         return String.valueOf(super.count());
     }
-*/
+
     @Override
     protected EntityManager getEntityManager() {
         return em;
