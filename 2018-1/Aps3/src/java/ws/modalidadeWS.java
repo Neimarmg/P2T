@@ -76,8 +76,6 @@ public class modalidadeWS {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public aModalidadecurso atualiza(@PathParam("id") Long id, aModalidadecurso modalidadecurso) {
-        
-        
         aModalidadecurso modalidadeGerada;
        
         try {
@@ -98,7 +96,7 @@ public class modalidadeWS {
         try{
             modalidadecurso = modalidadeCursoRN.deletar(id);
         }
-        catch(Exception e){
+        catch(Exception ex){
             throw new NotFoundException();
         }
         return modalidadecurso;

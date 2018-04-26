@@ -29,7 +29,7 @@ public class ModalidadeCursoRN {
     public List<aModalidadecurso> listar() {
         EntityManager manager = JPAUtil.getManager();
 
-        TypedQuery<aModalidadecurso> query = manager.createQuery("SELECT m FROM Motor m",aModalidadecurso.class);
+        TypedQuery<aModalidadecurso> query = manager.createQuery("SELECT m FROM aModalidadecurso m",aModalidadecurso.class);
         List<aModalidadecurso> listaMotores = query.getResultList();
 
         System.out.println("Modalidades:");

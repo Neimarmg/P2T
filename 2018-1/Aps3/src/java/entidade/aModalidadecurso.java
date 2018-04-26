@@ -24,7 +24,11 @@ public class aModalidadecurso implements Serializable {
 
     public aModalidadecurso() {
     }
-   
+
+    public aModalidadecurso(Long idModalidade, String descricao) {
+        this.idModalidade = idModalidade;
+        this.descricao = descricao;
+    }
     
     public Long getIdModalidade() {
         return idModalidade;
@@ -66,5 +70,7 @@ public class aModalidadecurso implements Serializable {
     public String toString() {
         return "entidade.Modalidadecurso[idModalidade=" + idModalidade + " ]";
     }
+    
+    
     
 }
