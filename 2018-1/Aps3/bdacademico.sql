@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 25-Abr-2018 às 13:07
+-- Generation Time: 26-Abr-2018 às 13:26
 -- Versão do servidor: 10.1.26-MariaDB
 -- PHP Version: 7.1.9
 
@@ -236,6 +236,13 @@ CREATE TABLE `acurso` (
   `usuarioUpdate` varchar(30) COLLATE utf8_unicode_ci DEFAULT 'MASTER'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Extraindo dados da tabela `acurso`
+--
+
+INSERT INTO `acurso` (`idCurso`, `idModalidade`, `idProjtoCurso`, `nomeCurso`, `datacreate`, `usuarioCreate`, `dataUpdate`, `usuarioUpdate`) VALUES
+(1, 1, 1, 'Dirito penal', '2018-04-25 11:36:21', 'MASTER', '2018-04-25 11:36:21', 'MASTER');
+
 -- --------------------------------------------------------
 
 --
@@ -259,13 +266,21 @@ CREATE TABLE `adisciplinas` (
 --
 
 CREATE TABLE `amodalidadecurso` (
-  `idModalidade` smallint(6) NOT NULL,
+  `idModalidade` smallint(20) UNSIGNED NOT NULL,
   `descricao` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `dataCreate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `usuarioCreate` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `dataUpdate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `usuarioUpdate` varchar(50) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Extraindo dados da tabela `amodalidadecurso`
+--
+
+INSERT INTO `amodalidadecurso` (`idModalidade`, `descricao`, `dataCreate`, `usuarioCreate`, `dataUpdate`, `usuarioUpdate`) VALUES
+(1, 'Graduação', '2018-04-26 08:05:01', '', '2018-04-26 08:05:01', ''),
+(2, 'Pós graduação', '2018-04-26 08:05:01', '', '2018-04-26 08:05:01', '');
 
 -- --------------------------------------------------------
 
@@ -6398,6 +6413,7 @@ ALTER TABLE `adisciplinas`
 --
 ALTER TABLE `amodalidadecurso`
   ADD PRIMARY KEY (`idModalidade`),
+  ADD UNIQUE KEY `idModalidade_2` (`idModalidade`),
   ADD KEY `idModalidade` (`idModalidade`);
 
 --
@@ -6542,7 +6558,7 @@ ALTER TABLE `aconteudocurso`
 -- AUTO_INCREMENT for table `acurso`
 --
 ALTER TABLE `acurso`
-  MODIFY `idCurso` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idCurso` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `adisciplinas`
@@ -6554,7 +6570,7 @@ ALTER TABLE `adisciplinas`
 -- AUTO_INCREMENT for table `amodalidadecurso`
 --
 ALTER TABLE `amodalidadecurso`
-  MODIFY `idModalidade` smallint(6) NOT NULL AUTO_INCREMENT;
+  MODIFY `idModalidade` smallint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `aprojetocurso`
