@@ -59,7 +59,7 @@ public class modalidadeWS {
     @Path("/novo")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public aModalidadecurso adiciona(aModalidadecurso modalidadecurso, @Context HttpServletResponse response) {
+    public aModalidadecurso adiciona(aModalidadecurso modalidadecurso, @Context HttpServletResponse response) throws Exception {
         aModalidadecurso modalidadeGerada = modalidadeCursoRN.inserir(modalidadecurso);
         response.setStatus(HttpServletResponse.SC_CREATED);
         try {

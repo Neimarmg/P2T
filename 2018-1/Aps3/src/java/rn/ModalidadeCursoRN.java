@@ -13,14 +13,7 @@ import util.JPAUtil;
 public class ModalidadeCursoRN {
 
     public aModalidadecurso inserir(aModalidadecurso modalidadecurso) {
-        EntityManager manager = JPAUtil.getManager();
-        
-        manager.getTransaction().begin();
-        manager.persist(modalidadecurso);
-        manager.getTransaction().commit();
-        
-        manager.close();
-        
+        new JPAUtil().executaInsert(modalidadecurso, true);        
         return modalidadecurso;
 
     }
