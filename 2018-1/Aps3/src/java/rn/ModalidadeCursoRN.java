@@ -13,9 +13,8 @@ import util.JPAUtil;
 public class ModalidadeCursoRN {
 
     public aModalidadecurso inserir(aModalidadecurso modalidadecurso) {
-        new JPAUtil().executaInsert(modalidadecurso, true);        
+        new JPAUtil().execInsert(modalidadecurso, true);        
         return modalidadecurso;
-
     }
 
     
@@ -27,13 +26,12 @@ public class ModalidadeCursoRN {
 
         System.out.println("Modalidades:");
         for (aModalidadecurso m : listaMotores) {
-            System.out.println(m.getDescricao()/*+ "-" + m.getUso()*/);
+           view.View.msg(m.getIdModalidade() + "-" + m.getDescricao());
         }
 
         manager.close();
 
         return (listaMotores);
-
     }
 
     
@@ -42,45 +40,36 @@ public class ModalidadeCursoRN {
     
         aModalidadecurso modalidadecurso = manager.find(aModalidadecurso.class, id);
         manager.close();
-        return modalidadecurso;
-        
+        return modalidadecurso;       
     }
     
     
     public aModalidadecurso atualizar(Long id, aModalidadecurso modalidadecurso) throws Exception{
         EntityManager manager = JPAUtil.getManager();
         
-        aModalidadecurso molalidadeAtual = manager.find(aModalidadecurso.class,id);
+        aModalidadecurso modalidadeAtual = manager.find(aModalidadecurso.class,id);
         
-        if(molalidadeAtual == null) throw new Exception();
+        if(modalidadeAtual == null) throw new Exception();
         
         manager.getTransaction().begin();
+     
         if(modalidadecurso.getDescricao()!=null && !modalidadecurso.getDescricao().isEmpty())
-            molalidadeAtual.setDescricao(molalidadeAtual.getDescricao());
-
+            modalidadeAtual.setDescricao(modalidadecurso.getDescricao());
+       
         manager.getTransaction().commit();
         
         manager.close();
         
-        return molalidadeAtual;
+        return modalidadeAtual;
     }
     
     
     public aModalidadecurso deletar(Long id) throws Exception{
         EntityManager manager = JPAUtil.getManager();
         aModalidadecurso modalidadeAtual = manager.find(aModalidadecurso.class,id);
-
-        if(modalidadeAtual == null) throw new Exception();
+        new JPAUtil().execDelete(manager, modalidadeAtual, true);
         
-        manager.getTransaction().begin();
-        manager.remove(modalidadeAtual);
-        manager.getTransaction().commit();
-        
-        manager.close();
-        
-        return (modalidadeAtual);
-        
-
+        return (modalidadeAtual);        
     }
 
 }

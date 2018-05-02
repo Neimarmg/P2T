@@ -18,7 +18,7 @@ public class JPAUtil {
     }
     
     
-    public void executaInsert(Object classe, boolean fecharConexao){
+    public void execInsert(Object classe, boolean fecharConexao){
         EntityManager manager = JPAUtil.getManager();
         
         manager.getTransaction().begin();
@@ -29,11 +29,8 @@ public class JPAUtil {
     }
     
        
-    public Object deletar(EntityManager manager,Object intenAtual, boolean fecharConexao) throws Exception{
-        //EntityManager manager = JPAUtil.getManager();
-        //aModalidadecurso itenAtual = intenAtual;
-
-        if(intenAtual == null) throw new Exception();
+    public Object execDelete(EntityManager manager,Object intenAtual, boolean fecharConexao) throws Exception{
+        if(intenAtual == null) throw new Exception();        
         
         manager.getTransaction().begin();
         manager.remove(intenAtual);
@@ -44,11 +41,10 @@ public class JPAUtil {
         return intenAtual;
     }
     
+    
     public void fecharConexao(EntityManager manager, boolean fecharConexao){
             if (fecharConexao = true){
             manager.close();
         }
     }
-
-
 }

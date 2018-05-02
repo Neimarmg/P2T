@@ -14,28 +14,31 @@ import javax.xml.bind.annotation.XmlRootElement;
  */
 @Entity
 @XmlRootElement
-public class aModalidadecurso implements Serializable {
+public class gMatriz implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idModalidade;
+    private Long idMatriz;
     private String descricao;
+    private String cnpj;
 
-    public aModalidadecurso() {
+    public gMatriz() {
+        
     }
 
-    public aModalidadecurso(Long idModalidade, String descricao) {
-        this.idModalidade = idModalidade;
+    public gMatriz(Long idMatriz, String descricao, String cnpj) {
+        this.idMatriz = idMatriz;
         this.descricao = descricao;
-    }
-    
-    public Long getIdModalidade() {
-        return idModalidade;
+        this.cnpj = cnpj;
     }
 
-    public void setIdModalidade(Long idModalidade) {
-        this.idModalidade = idModalidade;
+    public Long getIdMatriz() {
+        return idMatriz;
+    }
+
+    public void setIdMatriz(Long idMatriz) {
+        this.idMatriz = idMatriz;
     }
 
     public String getDescricao() {
@@ -45,22 +48,33 @@ public class aModalidadecurso implements Serializable {
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
+
+    public String getCnpj() {
+        return cnpj;
+    }
+
+    public void setCnpj(String cnpj) {
+        this.cnpj = cnpj;
+    }
+
+           
+    
     
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (idModalidade != null ? idModalidade.hashCode() : 0);
+        hash += (idMatriz != null ? idMatriz.hashCode() : 0);
         return hash;
     }
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the idModalidade fields are not set
-        if (!(object instanceof aModalidadecurso)) {
+        // TODO: Warning - this method won't work in the case the idMatriz fields are not set
+        if (!(object instanceof gMatriz)) {
             return false;
         }
-        aModalidadecurso other = (aModalidadecurso) object;
-        if ((this.idModalidade == null && other.idModalidade != null) || (this.idModalidade != null && !this.idModalidade.equals(other.idModalidade))) {
+        gMatriz other = (gMatriz) object;
+        if ((this.idMatriz == null && other.idMatriz != null) || (this.idMatriz != null && !this.idMatriz.equals(other.idMatriz))) {
             return false;
         }
         return true;
@@ -68,7 +82,7 @@ public class aModalidadecurso implements Serializable {
 
     @Override
     public String toString() {
-        return "entidade.Modalidadecurso[idModalidade=" + idModalidade + " ]";
+        return "entidade.gMatriz[idMatriz=" + idMatriz + " ]";
     }
     
     
