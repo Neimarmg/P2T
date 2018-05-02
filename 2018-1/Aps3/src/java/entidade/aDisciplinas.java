@@ -2,10 +2,13 @@
 package entidade;
 
 import java.io.Serializable;
+import java.util.Collection;
+import javafx.print.Collation;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
@@ -20,9 +23,14 @@ public class aDisciplinas implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idDisciplina;
+    
+    @OneToMany    
+    private Collection<aCurso> curso;
     private Long idCurso;
+    
     private String nomeDisciplina;
 
+    
     public aDisciplinas(Long idDisciplina, Long idCurso, String nomeDisciplina) {
         this.idDisciplina = idDisciplina;
         this.idCurso = idCurso;
