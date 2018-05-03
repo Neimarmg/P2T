@@ -2,10 +2,13 @@
 package entidade;
 
 import java.io.Serializable;
+import java.util.Collection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
@@ -20,8 +23,14 @@ public class aCurso implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idCurso;
+
+    @OneToMany
+    Collection<aModalidadecurso>modalidadecursos;
     private Long idModalidade;
-    private Long idProjtoCurso;
+    
+    @OneToMany
+    Collection<aProjetocurso>projetocursos;   
+    private Long idProjetoCurso;
     private String nomeCurso;
 
     public aCurso() {
@@ -31,7 +40,7 @@ public class aCurso implements Serializable {
     public aCurso(Long idCurso, Long idModalidade, Long idProjtoCurso, String nomeCurso) {
         this.idCurso = idCurso;
         this.idModalidade = idModalidade;
-        this.idProjtoCurso = idProjtoCurso;
+        this.idProjetoCurso = idProjtoCurso;
         this.nomeCurso = nomeCurso;
     }
 
@@ -51,12 +60,12 @@ public class aCurso implements Serializable {
         this.idModalidade = idModalidade;
     }
 
-    public Long getIdProjtoCurso() {
-        return idProjtoCurso;
+    public Long getIdProjetoCurso() {
+        return idProjetoCurso;
     }
 
-    public void setIdProjtoCurso(Long idProjtoCurso) {
-        this.idProjtoCurso = idProjtoCurso;
+    public void setIdProjetoCurso(Long idProjetoCurso) {
+        this.idProjetoCurso = idProjetoCurso;
     }
 
     public String getNomeCurso() {

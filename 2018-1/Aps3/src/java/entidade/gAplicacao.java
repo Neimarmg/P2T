@@ -14,7 +14,7 @@ import javax.xml.bind.annotation.XmlRootElement;
  */
 @Entity
 @XmlRootElement
-public class gAplicaca implements Serializable {
+public class gAplicacao implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -23,10 +23,10 @@ public class gAplicaca implements Serializable {
     private String descricao;
     private String simbolo;
 
-    public gAplicaca() {
+    public gAplicacao() {
     }
 
-    public gAplicaca(Long idAplicacao, String descricao, String simbolo) {
+    public gAplicacao(Long idAplicacao, String descricao, String simbolo) {
         this.idAplicacao = idAplicacao;
         this.descricao = descricao;
         this.simbolo = simbolo;
@@ -69,10 +69,10 @@ public class gAplicaca implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the idAplicacao fields are not set
-        if (!(object instanceof gAplicaca)) {
+        if (!(object instanceof gAplicacao)) {
             return false;
         }
-        gAplicaca other = (gAplicaca) object;
+        gAplicacao other = (gAplicacao) object;
         if ((this.idAplicacao == null && other.idAplicacao != null) || (this.idAplicacao != null && !this.idAplicacao.equals(other.idAplicacao))) {
             return false;
         }

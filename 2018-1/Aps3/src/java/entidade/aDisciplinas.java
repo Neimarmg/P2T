@@ -23,9 +23,9 @@ public class aDisciplinas implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idDisciplina;
-    
-    @OneToMany    
-    private Collection<aCurso> curso;
+
+    @OneToMany
+    Collection<aCurso>cursos;   
     private Long idCurso;
     
     private String nomeDisciplina;

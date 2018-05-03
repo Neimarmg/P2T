@@ -27,7 +27,7 @@ public class CursoRN {
 
         System.out.println("Curso:");
         for (aCurso m : listaCursos) {
-            view.View.msg(m.getIdCurso()+ "-" + m.getIdModalidade()+ "-" + m.getIdProjtoCurso()+ "-" + m.getNomeCurso());
+            view.View.msg(m.getIdCurso()+ "-" + m.getIdModalidade()+ "-" + m.getIdProjetoCurso()+ "-" + m.getNomeCurso());
         }
 
         manager.close();
@@ -56,8 +56,8 @@ public class CursoRN {
         if(curso.getIdModalidade()!=null && !curso.getIdModalidade().equals(id))
             cursoAtual.setIdModalidade(curso.getIdModalidade());
         
-        if(curso.getIdProjtoCurso()!=null && !curso.getIdProjtoCurso().equals(id))
-            cursoAtual.setIdProjtoCurso(curso.getIdProjtoCurso());
+        if(curso.getIdProjetoCurso()!=null && !curso.getIdProjetoCurso().equals(id))
+            curso.setIdProjetoCurso(curso.getIdProjetoCurso());
         
         if(curso.getNomeCurso()!=null && !curso.getNomeCurso().isEmpty())
             cursoAtual.setNomeCurso(curso.getNomeCurso());     

@@ -2,14 +2,15 @@
 <persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
   <persistence-unit name="Aps3PU" transaction-type="RESOURCE_LOCAL">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
-    <class>entidade.aModalidadecurso</class>
     <class>entidade.aCurso</class>
     <class>entidade.aDisciplinas</class>
+    <class>entidade.aModalidadecurso</class>
+    <class>entidade.aProjetocurso</class>
+    <class>entidade.gAplicacao</class>
     <class>entidade.gFiliais</class>
     <class>entidade.gMatriz</class>
-    <class>entidade.gPessoa</class>
-    <class>entidade.gAplicaca</class>
     <class>entidade.gMenus</class>
+    <class>entidade.gPessoa</class>
     <class>entidade.gTipomenu</class>
     <class>entidade.gTipoutilitarios</class>
     <class>entidade.gUtilitarios</class>

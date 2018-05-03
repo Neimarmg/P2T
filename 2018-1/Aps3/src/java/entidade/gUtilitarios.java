@@ -2,10 +2,12 @@
 package entidade;
 
 import java.io.Serializable;
+import java.util.Collection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
@@ -20,8 +22,15 @@ public class gUtilitarios implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idUtilitario;
+
+    @OneToMany
+    Collection<gAplicacao>aplicacaos;
     private Long idAplicacao;
+    
+    @OneToMany
+    Collection<gUtilitarios>utilitarioses;
     private Long idTipoUtilirario;
+    
     private Long idSubGrupo;
     private String utilitario;
     private String Obs;
