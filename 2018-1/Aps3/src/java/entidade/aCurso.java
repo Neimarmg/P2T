@@ -3,6 +3,7 @@ package entidade;
 
 import java.io.Serializable;
 import java.util.Collection;
+import javax.persistence.CollectionTable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -25,14 +26,15 @@ public class aCurso implements Serializable {
     private Long idCurso;
 
     @OneToMany
-    Collection<aModalidadecurso>modalidadecursos;
+    Collection<aModalidadecurso>modalidadecursos; 
     private Long idModalidade;
     
+    
     @OneToMany
-    Collection<aProjetocurso>projetocursos;   
+    Collection<aProjetocurso>projetocursos; 
     private Long idProjetoCurso;
+    
     private String nomeCurso;
-
     public aCurso() {
         
     }

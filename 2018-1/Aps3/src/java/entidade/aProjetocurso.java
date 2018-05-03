@@ -2,7 +2,6 @@
 package entidade;
 
 import java.io.Serializable;
-import java.time.LocalDate;
 import java.util.Collection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.xml.bind.annotation.XmlRootElement;
+import org.eclipse.persistence.jpa.jpql.parser.DateTime;
 
 /**
  *
@@ -33,19 +33,17 @@ public class aProjetocurso implements Serializable {
     private long idFilial; 
     
     private double valorCurso ;
-    private LocalDate dataInicio;
-    private LocalDate dataFim ;
+
 
     public aProjetocurso() {
     }
 
-    public aProjetocurso(Long idProjetoCurso, Long idModalidade, long idFilial, double valorCurso, LocalDate dataInicio, LocalDate dataFim) {
+    public aProjetocurso(Long idProjetoCurso, Long idModalidade, long idFilial, double valorCurso) {
         this.idProjetoCurso = idProjetoCurso;
         this.idModalidade = idModalidade;
         this.idFilial = idFilial;
         this.valorCurso = valorCurso;
-        this.dataInicio = dataInicio;
-        this.dataFim = dataFim;
+       
     }
 
     public Long getIdProjetoCurso() {
@@ -55,7 +53,6 @@ public class aProjetocurso implements Serializable {
     public void setIdProjetoCurso(Long idProjetoCurso) {
         this.idProjetoCurso = idProjetoCurso;
     }
-
 
     public Long getIdModalidade() {
         return idModalidade;
@@ -80,24 +77,9 @@ public class aProjetocurso implements Serializable {
     public void setValorCurso(double valorCurso) {
         this.valorCurso = valorCurso;
     }
-
-    public LocalDate getDataInicio() {
-        return dataInicio;
-    }
-
-    public void setDataInicio(LocalDate dataInicio) {
-        this.dataInicio = dataInicio;
-    }
-
-    public LocalDate getDataFim() {
-        return dataFim;
-    }
-
-    public void setDataFim(LocalDate dataFim) {
-        this.dataFim = dataFim;
-    }
+ 
     
-    
+      
        
     
     
@@ -125,7 +107,6 @@ public class aProjetocurso implements Serializable {
     public String toString() {
         return "entidade.aProjetocurso[idProjetoCurso=" + idProjetoCurso + " ]";
     }
-    
-    
-    
+  
+       
 }
