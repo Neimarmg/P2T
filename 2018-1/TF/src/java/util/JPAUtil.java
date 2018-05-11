@@ -10,7 +10,7 @@ import javax.persistence.Persistence;
  * @author LHRIES
  */
 public class JPAUtil {
-    private static String PUNAME = "Aps3PU";
+    private static String PUNAME = "tfPU";
     private static EntityManagerFactory factory = Persistence.createEntityManagerFactory(PUNAME);
    
     public static EntityManager getManager(){
@@ -48,3 +48,14 @@ public class JPAUtil {
         }
     }
 }
+
+
+
+
+
+
+/*
+phpmyadmin: mysql.pep.kinghost.net
+Usuário: pep
+Senha: 84d235g4r8h
+*/

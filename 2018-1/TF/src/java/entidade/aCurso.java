@@ -3,7 +3,6 @@ package entidade;
 
 import java.io.Serializable;
 import java.util.Collection;
-import javax.persistence.CollectionTable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -25,24 +24,23 @@ public class aCurso implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idCurso;
 
-    @OneToMany
+    @OneToOne
     Collection<aModalidadecurso>modalidadecursos; 
-    private Long idModalidade;
     
     
-    @OneToMany
+     @OneToOne
     Collection<aProjetocurso>projetocursos; 
-    private Long idProjetoCurso;
     
+     
     private String nomeCurso;
     public aCurso() {
         
     }
 
-    public aCurso(Long idCurso, Long idModalidade, Long idProjtoCurso, String nomeCurso) {
+    public aCurso(Long idCurso, Collection<aModalidadecurso> modalidadecursos, Collection<aProjetocurso> projetocursos, String nomeCurso) {
         this.idCurso = idCurso;
-        this.idModalidade = idModalidade;
-        this.idProjetoCurso = idProjtoCurso;
+        this.modalidadecursos = modalidadecursos;
+        this.projetocursos = projetocursos;
         this.nomeCurso = nomeCurso;
     }
 
@@ -54,20 +52,20 @@ public class aCurso implements Serializable {
         this.idCurso = idCurso;
     }
 
-    public Long getIdModalidade() {
-        return idModalidade;
+    public Collection<aModalidadecurso> getModalidadecursos() {
+        return modalidadecursos;
     }
 
-    public void setIdModalidade(Long idModalidade) {
-        this.idModalidade = idModalidade;
+    public void setModalidadecursos(Collection<aModalidadecurso> modalidadecursos) {
+        this.modalidadecursos = modalidadecursos;
     }
 
-    public Long getIdProjetoCurso() {
-        return idProjetoCurso;
+    public Collection<aProjetocurso> getProjetocursos() {
+        return projetocursos;
     }
 
-    public void setIdProjetoCurso(Long idProjetoCurso) {
-        this.idProjetoCurso = idProjetoCurso;
+    public void setProjetocursos(Collection<aProjetocurso> projetocursos) {
+        this.projetocursos = projetocursos;
     }
 
     public String getNomeCurso() {
@@ -77,6 +75,8 @@ public class aCurso implements Serializable {
     public void setNomeCurso(String nomeCurso) {
         this.nomeCurso = nomeCurso;
     }
+    
+    
 
        
     

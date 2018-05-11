@@ -3,13 +3,14 @@ package entidade;
 
 import java.io.Serializable;
 import java.util.Collection;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.xml.bind.annotation.XmlRootElement;
-import org.eclipse.persistence.jpa.jpql.parser.DateTime;
+
 
 /**
  *
@@ -25,25 +26,26 @@ public class aProjetocurso implements Serializable {
     private Long idProjetoCurso;
  
     @OneToMany
-    Collection<aModalidadecurso>modalidadecursos;
-    private Long idModalidade;
+    //@Column(name="idModalidade")
+    Collection<aModalidadecurso>modalidadecurso;
     
     @OneToMany
-    Collection<gFiliais>filiaises;
-    private long idFilial; 
-    
+    //@Column(name="filial")
+    Collection<gFiliais>filial;
+     
+    private String descricaoProjeto;
     private double valorCurso ;
 
 
     public aProjetocurso() {
     }
 
-    public aProjetocurso(Long idProjetoCurso, Long idModalidade, long idFilial, double valorCurso) {
+    public aProjetocurso(Long idProjetoCurso, Collection<aModalidadecurso> modalidadecursos, Collection<gFiliais> filiaises, String descricaoProjeto, double valorCurso) {
         this.idProjetoCurso = idProjetoCurso;
-        this.idModalidade = idModalidade;
-        this.idFilial = idFilial;
+        this.modalidadecurso = modalidadecursos;
+        this.filial = filiaises;
+        this.descricaoProjeto = descricaoProjeto;
         this.valorCurso = valorCurso;
-       
     }
 
     public Long getIdProjetoCurso() {
@@ -54,20 +56,28 @@ public class aProjetocurso implements Serializable {
         this.idProjetoCurso = idProjetoCurso;
     }
 
-    public Long getIdModalidade() {
-        return idModalidade;
+    public Collection<aModalidadecurso> getModalidadecurso() {
+        return modalidadecurso;
     }
 
-    public void setIdModalidade(Long idModalidade) {
-        this.idModalidade = idModalidade;
+    public void setModalidadecurso(Collection<aModalidadecurso> modalidadecurso) {
+        this.modalidadecurso = modalidadecurso;
     }
 
-    public long getIdFilial() {
-        return idFilial;
+    public Collection<gFiliais> getFilial() {
+        return filial;
     }
 
-    public void setIdFilial(long idFilial) {
-        this.idFilial = idFilial;
+    public void setFilial(Collection<gFiliais> filial) {
+        this.filial = filial;
+    }
+
+    public String getDescricaoProjeto() {
+        return descricaoProjeto;
+    }
+
+    public void setDescricaoProjeto(String descricaoProjeto) {
+        this.descricaoProjeto = descricaoProjeto;
     }
 
     public double getValorCurso() {
@@ -77,9 +87,8 @@ public class aProjetocurso implements Serializable {
     public void setValorCurso(double valorCurso) {
         this.valorCurso = valorCurso;
     }
- 
-    
-      
+
+         
        
     
     
