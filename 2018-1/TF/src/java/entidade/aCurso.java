@@ -25,14 +25,13 @@ public class aCurso implements Serializable {
     private Long idCurso;
 
     @OneToOne
-    Collection<aModalidadecurso>modalidadecursos; 
+    Collection<aModalidadecurso>modalidadecursos;    
     
-    
-     @OneToOne
-    Collection<aProjetocurso>projetocursos; 
-    
+    @OneToOne
+    Collection<aProjetocurso>projetocursos;    
      
     private String nomeCurso;
+    
     public aCurso() {
         
     }

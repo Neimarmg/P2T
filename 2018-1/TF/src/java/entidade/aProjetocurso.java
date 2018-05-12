@@ -12,6 +12,8 @@ import javax.persistence.OneToMany;
 import javax.xml.bind.annotation.XmlRootElement;
 
 
+
+
 /**
  *
  * @author neimarmoises
@@ -35,15 +37,15 @@ public class aProjetocurso implements Serializable {
      
     private String descricaoProjeto;
     private double valorCurso ;
-
+    
 
     public aProjetocurso() {
     }
 
-    public aProjetocurso(Long idProjetoCurso, Collection<aModalidadecurso> modalidadecursos, Collection<gFiliais> filiaises, String descricaoProjeto, double valorCurso) {
+    public aProjetocurso(Long idProjetoCurso, Collection<aModalidadecurso> modalidadecurso, Collection<gFiliais> filial, String descricaoProjeto, double valorCurso) {
         this.idProjetoCurso = idProjetoCurso;
-        this.modalidadecurso = modalidadecursos;
-        this.filial = filiaises;
+        this.modalidadecurso = modalidadecurso;
+        this.filial = filial;
         this.descricaoProjeto = descricaoProjeto;
         this.valorCurso = valorCurso;
     }
@@ -87,9 +89,9 @@ public class aProjetocurso implements Serializable {
     public void setValorCurso(double valorCurso) {
         this.valorCurso = valorCurso;
     }
+    
 
-         
-       
+ 
     
     
     @Override
@@ -116,6 +118,5 @@ public class aProjetocurso implements Serializable {
     public String toString() {
         return "entidade.aProjetocurso[idProjetoCurso=" + idProjetoCurso + " ]";
     }
-  
-       
+           
 }

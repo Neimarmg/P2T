@@ -1,6 +1,10 @@
 package util;
 
 import entidade.aModalidadecurso;
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.Date;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -47,6 +51,19 @@ public class JPAUtil {
             manager.close();
         }
     }
+    
+    
+    public Date convertToDatabaseColumn(LocalDate attribute) {
+	Instant instant = attribute.atStartOfDay().atZone(ZoneId.systemDefault()).toInstant();
+	return Date.from(instant);
+    }
+    
+    
+    
+    
+    
+    
+    
 }
 
 
