@@ -24,10 +24,10 @@ public class aCurso implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idCurso;
 
-    @OneToOne
+    @OneToMany
     Collection<aModalidadecurso>modalidadecursos;    
     
-    @OneToOne
+    @OneToMany
     Collection<aProjetocurso>projetocursos;    
      
     private String nomeCurso;
@@ -74,6 +74,8 @@ public class aCurso implements Serializable {
     public void setNomeCurso(String nomeCurso) {
         this.nomeCurso = nomeCurso;
     }
+
+    
     
     
 

@@ -25,7 +25,6 @@ public class gFiliais implements Serializable {
     
     @OneToMany
     Collection<gMatriz>matrizs;
-    private Long idMatriz;
     
     private String descricao;
     private String cnpj;
@@ -33,9 +32,9 @@ public class gFiliais implements Serializable {
     public gFiliais() {
     }
 
-    public gFiliais(Long idFilial, Long idMatriz, String descricao, String cnpj) {
+    public gFiliais(Long idFilial, Collection<gMatriz> matrizs, String descricao, String cnpj) {
         this.idFilial = idFilial;
-        this.idMatriz = idMatriz;
+        this.matrizs = matrizs;
         this.descricao = descricao;
         this.cnpj = cnpj;
     }
@@ -48,12 +47,12 @@ public class gFiliais implements Serializable {
         this.idFilial = idFilial;
     }
 
-    public Long getIdMatriz() {
-        return idMatriz;
+    public Collection<gMatriz> getMatrizs() {
+        return matrizs;
     }
 
-    public void setIdMatriz(Long idMatriz) {
-        this.idMatriz = idMatriz;
+    public void setMatrizs(Collection<gMatriz> matrizs) {
+        this.matrizs = matrizs;
     }
 
     public String getDescricao() {
@@ -72,6 +71,7 @@ public class gFiliais implements Serializable {
         this.cnpj = cnpj;
     }
 
+    
    
     
     

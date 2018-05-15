@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
@@ -23,7 +24,7 @@ public class gMenus implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idMenu;
 
-    @OneToMany
+    @OneToOne
     Collection<gMenus>menuses;
     private Long idTipoMenu;
     private String nomeMenu;

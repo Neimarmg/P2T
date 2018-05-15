@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
@@ -23,20 +24,20 @@ public class aDisciplinas implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idDisciplina;
 
-    @OneToMany
+    @OneToOne
     Collection<aCurso>cursos;   
-    private Long idCurso;
     
     private String nomeDisciplina;
-
-    
-    public aDisciplinas(Long idDisciplina, Long idCurso, String nomeDisciplina) {
-        this.idDisciplina = idDisciplina;
-        this.idCurso = idCurso;
-        this.nomeDisciplina = nomeDisciplina;
-    }
+    private String ementa;
 
     public aDisciplinas() {
+    }
+
+    public aDisciplinas(Long idDisciplina, Collection<aCurso> cursos, String nomeDisciplina, String ementa) {
+        this.idDisciplina = idDisciplina;
+        this.cursos = cursos;
+        this.nomeDisciplina = nomeDisciplina;
+        this.ementa = ementa;
     }
 
     public Long getIdDisciplina() {
@@ -47,12 +48,12 @@ public class aDisciplinas implements Serializable {
         this.idDisciplina = idDisciplina;
     }
 
-    public Long getIdCurso() {
-        return idCurso;
+    public Collection<aCurso> getCursos() {
+        return cursos;
     }
 
-    public void setIdCurso(Long idCurso) {
-        this.idCurso = idCurso;
+    public void setCursos(Collection<aCurso> cursos) {
+        this.cursos = cursos;
     }
 
     public String getNomeDisciplina() {
@@ -62,6 +63,17 @@ public class aDisciplinas implements Serializable {
     public void setNomeDisciplina(String nomeDisciplina) {
         this.nomeDisciplina = nomeDisciplina;
     }
+
+    public String getEmenta() {
+        return ementa;
+    }
+
+    public void setEmenta(String ementa) {
+        this.ementa = ementa;
+    }
+
+    
+    
     
         
     @Override

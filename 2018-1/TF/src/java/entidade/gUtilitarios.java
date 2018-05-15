@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
@@ -25,13 +26,10 @@ public class gUtilitarios implements Serializable {
 
     @OneToMany
     Collection<gAplicacao>aplicacaos;
-    private Long idAplicacao;
     
-    @OneToMany
-    Collection<gUtilitarios>utilitarioses;
-    private Long idTipoUtilirario;
+    @OneToOne
+    Collection<gTipoutilitarios>tipoutilitarios;    
     
-    private Long idSubGrupo;
     private String utilitario;
     private String Obs;
     private boolean favorita;
@@ -39,11 +37,10 @@ public class gUtilitarios implements Serializable {
     public gUtilitarios() {
     }
 
-    public gUtilitarios(Long idUtilitario, Long idAplicacao, Long idTipoUtilirario, Long idSubGrupo, String utilitario, String Obs, boolean favorita) {
+    public gUtilitarios(Long idUtilitario, Collection<gAplicacao> aplicacaos, Collection<gTipoutilitarios> tipoutilitarios, String utilitario, String Obs, boolean favorita) {
         this.idUtilitario = idUtilitario;
-        this.idAplicacao = idAplicacao;
-        this.idTipoUtilirario = idTipoUtilirario;
-        this.idSubGrupo = idSubGrupo;
+        this.aplicacaos = aplicacaos;
+        this.tipoutilitarios = tipoutilitarios;
         this.utilitario = utilitario;
         this.Obs = Obs;
         this.favorita = favorita;
@@ -57,28 +54,20 @@ public class gUtilitarios implements Serializable {
         this.idUtilitario = idUtilitario;
     }
 
-    public Long getIdAplicacao() {
-        return idAplicacao;
+    public Collection<gAplicacao> getAplicacaos() {
+        return aplicacaos;
     }
 
-    public void setIdAplicacao(Long idAplicacao) {
-        this.idAplicacao = idAplicacao;
+    public void setAplicacaos(Collection<gAplicacao> aplicacaos) {
+        this.aplicacaos = aplicacaos;
     }
 
-    public Long getIdTipoUtilirario() {
-        return idTipoUtilirario;
+    public Collection<gTipoutilitarios> getTipoutilitarios() {
+        return tipoutilitarios;
     }
 
-    public void setIdTipoUtilirario(Long idTipoUtilirario) {
-        this.idTipoUtilirario = idTipoUtilirario;
-    }
-
-    public Long getIdSubGrupo() {
-        return idSubGrupo;
-    }
-
-    public void setIdSubGrupo(Long idSubGrupo) {
-        this.idSubGrupo = idSubGrupo;
+    public void setTipoutilitarios(Collection<gTipoutilitarios> tipoutilitarios) {
+        this.tipoutilitarios = tipoutilitarios;
     }
 
     public String getUtilitario() {
@@ -104,7 +93,8 @@ public class gUtilitarios implements Serializable {
     public void setFavorita(boolean favorita) {
         this.favorita = favorita;
     }
-    
+
+   
     
     
     @Override
