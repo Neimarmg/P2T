@@ -7,7 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -22,58 +22,57 @@ public class gPessoa implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long iPessoa;
+    private Long idPessoa;
     
-    @OneToMany
-    Collection<gUtilitarios>utilitarioses;
-    private Long idTipoPessoa;
+    @OneToOne
+    Collection<gUtilitarios>tipoPessoa;
+      
+    @OneToOne
+    Collection<gUtilitarios>profissao;
     
-    @OneToMany
-    Collection<gUtilitarios>utilitarioses1;
-    private Long idProfissao;    
-
+    
     private String nome;
     private String cpf;
-    private String RG;
-    private boolean Ativa;
+    private String rg;
+    private boolean ativa;
     private String cref;
 
     public gPessoa() {
     }
 
-    public gPessoa(Long iPessoa, Long idTipoPessoa, Long idProfissao, String nome, String cpf, String RG, boolean Ativa, String cref) {
-        this.iPessoa = iPessoa;
-        this.idTipoPessoa = idTipoPessoa;
-        this.idProfissao = idProfissao;
+    public gPessoa(Long idPessoa, Collection<gUtilitarios> tipoPessoa, Collection<gUtilitarios> profissao, String nome, String cpf, String rg, boolean ativa, String cref) {
+        this.idPessoa = idPessoa;
+        this.tipoPessoa = tipoPessoa;
+        this.profissao = profissao;
         this.nome = nome;
         this.cpf = cpf;
-        this.RG = RG;
-        this.Ativa = Ativa;
+        this.rg = rg;
+        this.ativa = ativa;
         this.cref = cref;
     }
 
-    public Long getiPessoa() {
-        return iPessoa;
+    public Long getIdPessoa() {
+        return idPessoa;
     }
 
-    public void setiPessoa(Long iPessoa) {
-        this.iPessoa = iPessoa;
+    public void setIdPessoa(Long idPessoa) {
+        this.idPessoa = idPessoa;
     }
 
-    public Long getIdTipoPessoa() {
-        return idTipoPessoa;
+    public Collection<gUtilitarios> getTipoPessoa() {
+        return tipoPessoa;
     }
 
-    public void setIdTipoPessoa(Long idTipoPessoa) {
-        this.idTipoPessoa = idTipoPessoa;
+    public void setTipoPessoa(Collection<gUtilitarios> tipoPessoa) {
+        this.tipoPessoa = tipoPessoa;
     }
 
-    public Long getIdProfissao() {
-        return idProfissao;
+    public Collection<gUtilitarios> getProfissao() {
+        return profissao;
     }
 
-    public void setIdProfissao(Long idProfissao) {
-        this.idProfissao = idProfissao;
+    public void setProfissao(Collection<gUtilitarios> profissao) {
+        this.profissao = profissao;
     }
 
     public String getNome() {
@@ -92,20 +91,20 @@ public class gPessoa implements Serializable {
         this.cpf = cpf;
     }
 
-    public String getRG() {
-        return RG;
+    public String getRg() {
+        return rg;
     }
 
-    public void setRG(String RG) {
-        this.RG = RG;
+    public void setRg(String rg) {
+        this.rg = rg;
     }
 
     public boolean isAtiva() {
-        return Ativa;
+        return ativa;
     }
 
-    public void setAtiva(boolean Ativa) {
-        this.Ativa = Ativa;
+    public void setAtiva(boolean ativa) {
+        this.ativa = ativa;
     }
 
     public String getCref() {
@@ -115,24 +114,30 @@ public class gPessoa implements Serializable {
     public void setCref(String cref) {
         this.cref = cref;
     }
- 
- 
+
+   
+
+  
+
+    
+    
+   
     
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (iPessoa != null ? iPessoa.hashCode() : 0);
+        hash += (idPessoa != null ? idPessoa.hashCode() : 0);
         return hash;
     }
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the iPessoa fields are not set
+        // TODO: Warning - this method won't work in the case the idPessoa fields are not set
         if (!(object instanceof gPessoa)) {
             return false;
         }
         gPessoa other = (gPessoa) object;
-        if ((this.iPessoa == null && other.iPessoa != null) || (this.iPessoa != null && !this.iPessoa.equals(other.iPessoa))) {
+        if ((this.idPessoa == null && other.idPessoa != null) || (this.idPessoa != null && !this.idPessoa.equals(other.idPessoa))) {
             return false;
         }
         return true;
@@ -140,7 +145,7 @@ public class gPessoa implements Serializable {
 
     @Override
     public String toString() {
-        return "entidade.aPessoa[iPessoa=" + iPessoa + " ]";
+        return "entidade.aPessoa[iPessoa=" + idPessoa + " ]";
     }
     
     
