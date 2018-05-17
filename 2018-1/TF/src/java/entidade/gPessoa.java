@@ -8,6 +8,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -24,10 +26,10 @@ public class gPessoa implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idPessoa;
     
-    @OneToOne
+    @OneToMany           
     Collection<gUtilitarios>tipoPessoa;
       
-    @OneToOne
+    @OneToMany
     Collection<gUtilitarios>profissao;
     
     
@@ -115,12 +117,8 @@ public class gPessoa implements Serializable {
         this.cref = cref;
     }
 
-   
-
-  
-
     
-    
+      
    
     
     @Override
