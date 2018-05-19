@@ -2,6 +2,9 @@
 package entidade;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Collection;
+import javafx.print.Collation;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -21,7 +24,8 @@ public class aModalidadecurso implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idModalidade;
     private String descricao;
-
+    
+  
     public aModalidadecurso() {
     }
 
@@ -45,6 +49,8 @@ public class aModalidadecurso implements Serializable {
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
+
+
     
     @Override
     public int hashCode() {
