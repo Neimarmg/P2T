@@ -35,7 +35,7 @@ public class gPessoa implements Serializable {
     //@JoinColumn(columnDefinition="idProfissao", referencedColumnName="idUtilitario")
     List<gUtilitarios> profissao;
     
-    @OneToOne() 
+    @OneToOne
     //@JoinColumn(columnDefinition ="tipoPessoa", referencedColumnName="idUtilitario")
     List<gUtilitarios> tipoPessoa;
     

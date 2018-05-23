@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
@@ -23,9 +24,9 @@ public class yUsuarios implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToMany
-    Collection<gPessoa>pessoas;
-    private Long idPessoa;
+    @OneToOne
+    Collection<gPessoa>pessoa;
+    
     private String idUsuario;
     private int senha;
     private boolean status;
@@ -33,9 +34,9 @@ public class yUsuarios implements Serializable {
     public yUsuarios() {
     }
 
-    public yUsuarios(Long id, Long idPessoa, String idUsuario, int senha, boolean status) {
+    public yUsuarios(Long id, Collection<gPessoa> pessoas, String idUsuario, int senha, boolean status) {
         this.id = id;
-        this.idPessoa = idPessoa;
+        this.pessoa = pessoas;
         this.idUsuario = idUsuario;
         this.senha = senha;
         this.status = status;
@@ -49,12 +50,12 @@ public class yUsuarios implements Serializable {
         this.id = id;
     }
 
-    public Long getIdPessoa() {
-        return idPessoa;
+    public Collection<gPessoa> getPessoa() {
+        return pessoa;
     }
 
-    public void setIdPessoa(Long idPessoa) {
-        this.idPessoa = idPessoa;
+    public void setPessoa(Collection<gPessoa> pessoa) {
+        this.pessoa = pessoa;
     }
 
     public String getIdUsuario() {
@@ -80,6 +81,7 @@ public class yUsuarios implements Serializable {
     public void setStatus(boolean status) {
         this.status = status;
     }
+
     
     
 
