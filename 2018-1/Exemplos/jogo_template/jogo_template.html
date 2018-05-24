@@ -1,0 +1,45 @@
+<!-- Codigo retirado do site MDN -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Jogo adivinhe o número</title>
+    <style>
+        html {
+            font-family: sans-serif;
+        }
+
+        body {
+            width: 50%;
+            max-width: 800px;
+            min-width: 480px;
+            margin: 0 auto;
+        }
+
+        #ultimoResultado {
+            color: white;
+            padding: 3px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>Jogo Adivinhe um número</h1>
+    <p>Selecionamos um número aleatório entre 1 e 100. Veja se consegue adivinhar em 10 chances ou menos. Lhe diremos se seu
+        palpite está com valor alto ou baixo.</p>
+    <div id="form">
+        <label for="tentativa">Digite seu palpite: </label>
+        <input type="text" id="tentativa">   
+        <input type="submit" value="Enviar palpite" id="botaoTentar" onclick="resultado()"> </div>
+    
+    <div s id="resultado">
+        <p id="tentativas"></p>
+        <p id="ultimoResultado"></p>
+        <p id="baixoAlto"></p>
+    </div>
+</body>
+    <script src="calc.js"></script>
+</html>
