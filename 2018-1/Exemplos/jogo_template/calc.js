@@ -1,36 +1,47 @@
-var tent = 10;
+var palpite;
+var valorRondomico;
+var tentativaRealizadas;
 
 
-function resultado(){
-    var valor = document.querySelector("#tentativa").value;
-    
-    if (tent == valor){
-        return "Parabens";
-    }else{
-        return dica(valor);
-    }
-    console.log(resultado) ;
+function sorteiaRondomico(){ 
+    valorRondomico = Math.floor(Math.random()*100)+1;
 }
 
 
-/*function valorSorteado(valor, index ){
-    for (var index = 1; index < array.length; index++) {
-        if(index.random(index) = index){
-
-            return index;
-        }else{
-            
-        }    
-    }
-    return valor;
-}*/
-
-
-
-function dica(valor){
-    if(tent < valor){
-        return "Mais baixo!"
+function soteiaValor(){
+    palpite =  document.querySelector("#tentativa").value;
+    if (palpite === valorRondomico){
+        document.querySelector("#resultado").innerHTML = "Acertou";
+        return palpite
     }else{
-        return "Mais Alto";
+        document.querySelector("#resultado").innerHTML = "Errou";
+        return 0;
+    }    
+    listaApostas();
+
+}
+
+
+
+function listaApostas(){
+    
+    return tentativas =+ palpite +" ";
+}
+
+function excutaAposta(){
+    palpite =document.querySelector("#tentativa").value;
+    if (soteiaValor != palpite){          
+        document.querySelector("#resultado").innerHTML = soteiaValor();    
+
+    }else{
+
     }
-}   
+}
+
+
+function iniciaJogo(){
+    sorteiaRondomico();
+}
+
+
+
