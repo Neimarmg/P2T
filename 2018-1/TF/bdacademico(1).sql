@@ -1,306 +1,317 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
--- https://www.phpmyadmin.net/
+-- version 4.3.7
+-- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: 02-Maio-2018 às 04:36
--- Versão do servidor: 10.1.26-MariaDB
--- PHP Version: 7.1.9
+-- Host: mysql08-farm62.kinghost.net
+-- Tempo de geração: 25/05/2018 às 14:55
+-- Versão do servidor: 10.2.15-MariaDB-log
+-- Versão do PHP: 5.3.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!40101 SET NAMES utf8 */;
 
 --
--- Database: `bdacademico`
+-- Banco de dados: `pep`
 --
-
-DELIMITER $$
---
--- Procedures
---
-CREATE DEFINER=`root`@`localhost` PROCEDURE `cMenus` (IN `idTipoMenu` INT(11) UNSIGNED ZEROFILL)  NO SQL
-    DETERMINISTIC
-SELECT
-	 gMenus.idMenu
-	,gMenus.nomeMenu
-    ,gMenus.idTipoMenu
-	,gTipomenu.descTipoMenu
-    
-FROM gMenus
-	LEFT JOIN gTipomenu ON		
-    	gMenus.idTipoMenu = gTipomenu.idTipoMenu
-        
- where gMenus.idTipoMenu = filtro(gMenus.idTipoMenu, idTipoMenu)$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `cPerfis` (IN `idPerfil` INT(11) UNSIGNED ZEROFILL, IN `idAplicacao` INT(11) UNSIGNED ZEROFILL)  NO SQL
-SELECT 
-	yPerfil.idPerfil
-    ,yPerfil.descricaoPerfil
-    ,yPerfil.idAplicacao
-    ,yPemissoes.idObjeto
-    ,yPemissoes.nomeObjeto
-    ,yPemissoes.ler
-    ,yPemissoes.criar
-    ,yPemissoes.atualizar
-    ,yPemissoes.deletar
-    ,yPemissoes.statusObjeto
-    ,gAplicacao.descricao
-    ,gAplicacao.simbolo
-
-FROM yPerfil 
- 	
-    LEFT JOIN yPemissoes ON
-      	yPerfil.idPerfil = yPemissoes.idPerfil
-          
-	LEFT JOIN gAplicacao ON
-      	yPerfil.idAplicacao = gAplicacao.idAplicacao
-
-WHERE yPerfil.idPerfil = filtro(yPerfil.idPerfil,idPerfil)
-	AND yPerfil.idAplicacao = filtro(yPerfil.idAplicacao,idAplicacao)$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `cPessoa` ()  NO SQL
-SELECT
-  gpessoa.iPessoa
- ,gpessoa.nome
- ,gpessoa.cpf
- ,gpessoa.cpf
- ,gpessoa.RG
- ,gpessoa.cref
- ,gpessoa.Ativa
- ,gpessoa.idTipoPessoa
- ,tipoPessoa.utilitario As tipoPessoa
- ,gpessoa.idProfissao
- ,profissao.utilitario As profissao
-
-FROM gpessoa
-	LEFT JOIN gUtilitarios AS tipoPessoa ON
-    	gpessoa.idTipoPessoa = tipoPessoa.idUtilitario
-	
-    JOIN gUtilitarios AS profissao ON
-    	gpessoa.idProfissao = profissao.idUtilitario$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `cUtilitarios` (IN `idTipoUtilitarios` INT(11) UNSIGNED ZEROFILL, IN `idSubGrupoUtilitarios` INT(11) UNSIGNED ZEROFILL)  NO SQL
-SELECT 
-	DISTINCT
-	gUtilitarios.idUtilitario
-	,gUtilitarios.utilitario
-	,gUtilitarios.idTipoUtilirario
-	,gUtilitarios.Obs
-	,gUtilitarios.favorita
-	,gTipoutilitarios.descTipoUtilitario
-	,gUtilitarios.idSubGrupo
-
-FROM gUtilitarios
-	LEFT JOIN gTipoutilitarios ON
-		gUtilitarios.idTipoUtilirario = gTipoutilitarios.idTipoUtilitario
-	
-    /*LEFT JOIN gUtilitarios as sub ON
-		 gUtilitarios.idUtilitario = sub.idSubGrupo*/
-            
-WHERE gUtilitarios.idTipoUtilirario = filtro(gUtilitarios.idTipoUtilirario, idTipoUtilitarios)
-	AND gUtilitarios.idSubGrupo = filtro(gUtilitarios.idSubGrupo,idSubGrupoUtilitarios)
-
-ORDER BY gUtilitarios.utilitario, gTipoutilitarios.descTipoUtilitario ASC$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `ObjetosAcessoAtualiza` (IN `tipoObjeto` VARCHAR(20))  NO SQL
-UPDATE yObjetos
-	LEFT JOIN gAplicacao ON	
-    	yObjetos.aplicacao = gAplicacao.simbolo
-        
-    SET yObjetos.idAplicacao = gAplicacao.idAplicacao
-
-WHERE yObjetos.descTipoObjeto = tipoObjeto$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `ObjetosAcessoCria` (IN `tipoObjeto` VARCHAR(20))  NO SQL
-BEGIN
-    INSERT INTO yObjetos(aplicacao, nomeObjeto,detalhesObjeto,descTipoObjeto)
-    SELECT DISTINCT
-        UPPER(TABLE_NAME)
-        ,TABLE_NAME
-        ,null
-        ,tipoObjeto
-
-    FROM information_schema.COLUMNS
-    WHERE COLUMNS.TABLE_NAME IN (
-        SELECT TABLE_NAME 
-        FROM information_schema.TABLES 
-        WHERE TABLES.ENGINE = 'innoDB');        
- 
-END$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `ObjetosAcessoCriaPermissoes` (IN `idPerfil` INT UNSIGNED ZEROFILL)  NO SQL
-BEGIN 
-    DECLARE i INT DEFAULT 0;
-	DECLARE m INT DEFAULT 0;
-    DECLARE mi INT DEFAULT 0;
-    DECLARE a INT DEFAULT 0;
-    DECLARE p INT DEFAULT 0;
-    
-    SET mi = IFNULL((SELECT IFNULL(MIN(yPerfil.idPerfil),0) FROM yPerfil WHERE yPerfil.idPerfil = filtro(yPerfil.idPerfil, idPerfil)),0);
-    
-	SET m = IFNULL((SELECT IFNULL(MAX(yPerfil.idPerfil),0) FROM yPerfil WHERE yPerfil.idPerfil = filtro(yPerfil.idPerfil, idPerfil)),0);
-    
-   	SET i = mi;
- 
-  	d: LOOP
-	    SET p = IFNULL((SELECT IFNULL(yPerfil.idPerfil,0) FROM yPerfil WHERE yPerfil.idPerfil = filtro(i, idPerfil)),0);
-		SET a = IFNULL((SELECT IFNULL(yPerfil.idAplicacao,0) FROM yPerfil WHERE yPerfil.idPerfil = filtro(i, idPerfil)),0);
-        
-		CALL ObjetosAcessoRegistraPermissao(p, a); 
-       
-       if i >= m THEN
-            LEAVE d; 	
-        END IF;     
-        
-     SET i = i+1;  
-        
-	 END LOOP d;
-     
-    call cPerfis(idPerfil, 0);
-     
-END$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `ObjetosAcessoRegistraPermissao` (IN `idPerfil` INT(11) UNSIGNED ZEROFILL, IN `idAplicacao` INT(11) UNSIGNED ZEROFILL)  NO SQL
-INSERT INTO `yPemissoes`(`idPerfil`, `idAplicacao`, `idObjeto`, `nomeObjeto`, `ler`, `criar`, `atualizar`, `deletar`, `statusObjeto`) 
-SELECT 
-	idPerfil
-    ,yObjetos.idAplicacao
-    ,yObjetos.idObjetos
-    ,yObjetos.nomeObjeto
-    ,'1'
-    ,'1'
-    ,'1'
-    ,'1'
-    ,'1'
- 
-from yObjetos 
-WHERE yObjetos.idAplicacao in(SELECT idAplicacao from yPerfil where yPerfil.idPerfil = idPerfil)$$
-
---
--- Functions
---
-CREATE DEFINER=`root`@`localhost` FUNCTION `filtro` (`valorOrigem` VARCHAR(100) CHARSET ascii, `valorFiltro` VARCHAR(100) CHARSET ascii) RETURNS VARCHAR(200) CHARSET ascii NO SQL
-    DETERMINISTIC
-BEGIN
- 	DECLARE f varchar(200);
-    
-    IF valorFiltro > '0' THEN
-        SET f = valorFiltro;
-
-    ELSE 
-        SET f = valorOrigem;
-    END IF;
- 
- RETURN f;
-END$$
-
-DELIMITER ;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `acurso`
+-- Estrutura para tabela `ACURSO`
 --
 
-CREATE TABLE `acurso` (
+CREATE TABLE IF NOT EXISTS `ACURSO` (
   `IDCURSO` bigint(20) NOT NULL,
-  `IDMODALIDADE` bigint(20) DEFAULT NULL,
-  `IDPROJTOCURSO` bigint(20) DEFAULT NULL,
   `NOMECURSO` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `acurso`
+-- Fazendo dump de dados para tabela `ACURSO`
 --
 
-INSERT INTO `acurso` (`IDCURSO`, `IDMODALIDADE`, `IDPROJTOCURSO`, `NOMECURSO`) VALUES
-(1, 5, 4, 'Direito'),
-(2, 6, 9, 'Odonto');
+INSERT INTO `ACURSO` (`IDCURSO`, `NOMECURSO`) VALUES
+(14, 'Odotologia'),
+(15, 'Direito');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `adisciplinas`
+-- Estrutura para tabela `ACURSO_AMODALIDADECURSO`
 --
 
-CREATE TABLE `adisciplinas` (
+CREATE TABLE IF NOT EXISTS `ACURSO_AMODALIDADECURSO` (
+  `aCurso_IDCURSO` bigint(20) NOT NULL,
+  `modalidadecursos_IDMODALIDADE` bigint(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Fazendo dump de dados para tabela `ACURSO_AMODALIDADECURSO`
+--
+
+INSERT INTO `ACURSO_AMODALIDADECURSO` (`aCurso_IDCURSO`, `modalidadecursos_IDMODALIDADE`) VALUES
+(14, 1),
+(15, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `ACURSO_APROJETOCURSO`
+--
+
+CREATE TABLE IF NOT EXISTS `ACURSO_APROJETOCURSO` (
+  `aCurso_IDCURSO` bigint(20) NOT NULL,
+  `projetocursos_IDPROJETOCURSO` bigint(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Fazendo dump de dados para tabela `ACURSO_APROJETOCURSO`
+--
+
+INSERT INTO `ACURSO_APROJETOCURSO` (`aCurso_IDCURSO`, `projetocursos_IDPROJETOCURSO`) VALUES
+(14, 7),
+(15, 10);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `ADISCIPLINAS`
+--
+
+CREATE TABLE IF NOT EXISTS `ADISCIPLINAS` (
   `IDDISCIPLINA` bigint(20) NOT NULL,
-  `IDCURSO` bigint(20) DEFAULT NULL,
+  `EMENTA` varchar(255) DEFAULT NULL,
   `NOMEDISCIPLINA` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+--
+-- Fazendo dump de dados para tabela `ADISCIPLINAS`
+--
+
+INSERT INTO `ADISCIPLINAS` (`IDDISCIPLINA`, `EMENTA`, `NOMEDISCIPLINA`) VALUES
+(1, 'Direito civil da sociedade', 'Direito civil'),
+(2, 'Direito criminal', 'Direito penal'),
+(3, 'Parte geral do direito civil', 'Direito das coisas');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `amodalidadecurso`
+-- Estrutura para tabela `ADISCIPLINAS_ACURSO`
 --
 
-CREATE TABLE `amodalidadecurso` (
+CREATE TABLE IF NOT EXISTS `ADISCIPLINAS_ACURSO` (
+  `aDisciplinas_IDDISCIPLINA` bigint(20) NOT NULL,
+  `cursos_IDCURSO` bigint(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Fazendo dump de dados para tabela `ADISCIPLINAS_ACURSO`
+--
+
+INSERT INTO `ADISCIPLINAS_ACURSO` (`aDisciplinas_IDDISCIPLINA`, `cursos_IDCURSO`) VALUES
+(1, 15),
+(2, 15),
+(3, 15);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `AMODALIDADECURSO`
+--
+
+CREATE TABLE IF NOT EXISTS `AMODALIDADECURSO` (
   `IDMODALIDADE` bigint(20) NOT NULL,
   `DESCRICAO` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `amodalidadecurso`
+-- Fazendo dump de dados para tabela `AMODALIDADECURSO`
 --
 
-INSERT INTO `amodalidadecurso` (`IDMODALIDADE`, `DESCRICAO`) VALUES
-(1, 'Mestrado'),
-(2, 'Doutorado'),
-(3, 'Graduação');
+INSERT INTO `AMODALIDADECURSO` (`IDMODALIDADE`, `DESCRICAO`) VALUES
+(1, 'Graduação'),
+(2, 'Pós graduação'),
+(3, 'Cursos livres'),
+(4, 'Mestrado');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `gaplicaca`
+-- Estrutura para tabela `APROJETOCURSO`
 --
 
-CREATE TABLE `gaplicaca` (
+CREATE TABLE IF NOT EXISTS `APROJETOCURSO` (
+  `IDPROJETOCURSO` bigint(20) NOT NULL,
+  `DESCRICAOPROJETO` varchar(255) DEFAULT NULL,
+  `VALORCURSO` double DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+
+--
+-- Fazendo dump de dados para tabela `APROJETOCURSO`
+--
+
+INSERT INTO `APROJETOCURSO` (`IDPROJETOCURSO`, `DESCRICAOPROJETO`, `VALORCURSO`) VALUES
+(7, 'Curso regular de graduação ', 1000),
+(8, 'Curso regular de pÃ³s graduaÃ§Ã£o 2018', 1000),
+(9, 'Curso regular de pÃ³s graduaÃ§Ã£o', 1000),
+(10, 'Curso regular de pÃ³s graduaÃ§Ã£o 2018', 500);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `APROJETOCURSO_AMODALIDADECURSO`
+--
+
+CREATE TABLE IF NOT EXISTS `APROJETOCURSO_AMODALIDADECURSO` (
+  `aProjetocurso_IDPROJETOCURSO` bigint(20) NOT NULL,
+  `modalidadecurso_IDMODALIDADE` bigint(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Fazendo dump de dados para tabela `APROJETOCURSO_AMODALIDADECURSO`
+--
+
+INSERT INTO `APROJETOCURSO_AMODALIDADECURSO` (`aProjetocurso_IDPROJETOCURSO`, `modalidadecurso_IDMODALIDADE`) VALUES
+(7, 3),
+(8, 1),
+(9, 2),
+(10, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `APROJETOCURSO_GFILIAIS`
+--
+
+CREATE TABLE IF NOT EXISTS `APROJETOCURSO_GFILIAIS` (
+  `aProjetocurso_IDPROJETOCURSO` bigint(20) NOT NULL,
+  `filial_IDFILIAL` bigint(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Fazendo dump de dados para tabela `APROJETOCURSO_GFILIAIS`
+--
+
+INSERT INTO `APROJETOCURSO_GFILIAIS` (`aProjetocurso_IDPROJETOCURSO`, `filial_IDFILIAL`) VALUES
+(7, 2),
+(8, 2),
+(9, 2),
+(10, 2);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `GAPLICACAO`
+--
+
+CREATE TABLE IF NOT EXISTS `GAPLICACAO` (
   `IDAPLICACAO` bigint(20) NOT NULL,
   `DESCRICAO` varchar(255) DEFAULT NULL,
   `SIMBOLO` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=latin1;
+
+--
+-- Fazendo dump de dados para tabela `GAPLICACAO`
+--
+
+INSERT INTO `GAPLICACAO` (`IDAPLICACAO`, `DESCRICAO`, `SIMBOLO`) VALUES
+(1, 'Tabelas globais', 'G'),
+(2, 'Educacional', 'A'),
+(3, 'Saúde', 'B'),
+(4, 'Financeiro', 'F'),
+(5, '', 'C'),
+(6, '', 'D'),
+(7, '', 'E'),
+(8, '', 'H'),
+(9, '', 'I'),
+(10, '', 'J'),
+(11, '', 'L'),
+(12, '', 'M'),
+(13, '', 'N'),
+(14, '', 'O'),
+(15, '', 'P'),
+(16, '', 'Q'),
+(17, '', 'R'),
+(18, '', 'S'),
+(19, '', 'T'),
+(20, '', 'U'),
+(21, '', 'V'),
+(22, '', 'X'),
+(23, '', 'Z'),
+(24, '', 'K'),
+(25, 'Administracão do sistesma', 'Y'),
+(26, '', 'W');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `gfiliais`
+-- Estrutura para tabela `GFILIAIS`
 --
 
-CREATE TABLE `gfiliais` (
+CREATE TABLE IF NOT EXISTS `GFILIAIS` (
   `IDFILIAL` bigint(20) NOT NULL,
   `CNPJ` varchar(255) DEFAULT NULL,
-  `DESCRICAO` varchar(255) DEFAULT NULL,
-  `IDMATRIZ` bigint(20) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `DESCRICAO` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+--
+-- Fazendo dump de dados para tabela `GFILIAIS`
+--
+
+INSERT INTO `GFILIAIS` (`IDFILIAL`, `CNPJ`, `DESCRICAO`) VALUES
+(1, '12323252-5363', 'Senac faculdade'),
+(2, '45544-5224/211', 'Senac comunidade');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `gmatriz`
+-- Estrutura para tabela `GFILIAIS_GMATRIZ`
 --
 
-CREATE TABLE `gmatriz` (
+CREATE TABLE IF NOT EXISTS `GFILIAIS_GMATRIZ` (
+  `gFiliais_IDFILIAL` bigint(20) NOT NULL,
+  `matrizs_IDMATRIZ` bigint(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Fazendo dump de dados para tabela `GFILIAIS_GMATRIZ`
+--
+
+INSERT INTO `GFILIAIS_GMATRIZ` (`gFiliais_IDFILIAL`, `matrizs_IDMATRIZ`) VALUES
+(1, 1),
+(2, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `GMATRIZ`
+--
+
+CREATE TABLE IF NOT EXISTS `GMATRIZ` (
   `IDMATRIZ` bigint(20) NOT NULL,
   `CNPJ` varchar(255) DEFAULT NULL,
   `DESCRICAO` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Fazendo dump de dados para tabela `GMATRIZ`
+--
+
+INSERT INTO `GMATRIZ` (`IDMATRIZ`, `CNPJ`, `DESCRICAO`) VALUES
+(1, '165165-25122-/111', 'Senac');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `gmenus`
+-- Estrutura para tabela `GMENUS`
 --
 
-CREATE TABLE `gmenus` (
+CREATE TABLE IF NOT EXISTS `GMENUS` (
   `IDMENU` bigint(20) NOT NULL,
   `IDTIPOMENU` bigint(20) DEFAULT NULL,
   `NOMEMENU` varchar(255) DEFAULT NULL
@@ -309,27 +320,63 @@ CREATE TABLE `gmenus` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `gpessoa`
+-- Estrutura para tabela `GMENUS_GMENUS`
 --
 
-CREATE TABLE `gpessoa` (
-  `IPESSOA` bigint(20) NOT NULL,
-  `ATIVA` tinyint(1) DEFAULT '0',
-  `RG` varchar(255) DEFAULT NULL,
+CREATE TABLE IF NOT EXISTS `GMENUS_GMENUS` (
+  `gMenus_IDMENU` bigint(20) NOT NULL,
+  `menuses_IDMENU` bigint(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `GPESSOA`
+--
+
+CREATE TABLE IF NOT EXISTS `GPESSOA` (
+  `IDPESSOA` bigint(20) NOT NULL,
+  `ATIVA` tinyint(1) DEFAULT 0,
   `CPF` varchar(255) DEFAULT NULL,
   `CREF` varchar(255) DEFAULT NULL,
-  `IDPROFISSAO` bigint(20) DEFAULT NULL,
-  `IDTIPOPESSOA` bigint(20) DEFAULT NULL,
-  `NOME` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `NOME` varchar(255) DEFAULT NULL,
+  `RG` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+--
+-- Fazendo dump de dados para tabela `GPESSOA`
+--
+
+INSERT INTO `GPESSOA` (`IDPESSOA`, `ATIVA`, `CPF`, `CREF`, `NOME`, `RG`) VALUES
+(3, 0, '23325521-54', '123-565', 'Neimar moises ', '231556-562');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `gtipomenu`
+-- Estrutura para tabela `GPESSOA_GUTILITARIOS`
 --
 
-CREATE TABLE `gtipomenu` (
+CREATE TABLE IF NOT EXISTS `GPESSOA_GUTILITARIOS` (
+  `gPessoa_IDPESSOA` bigint(20) NOT NULL,
+  `profissao_IDUTILITARIO` bigint(20) NOT NULL,
+  `tipoPessoa_IDUTILITARIO` bigint(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Fazendo dump de dados para tabela `GPESSOA_GUTILITARIOS`
+--
+
+INSERT INTO `GPESSOA_GUTILITARIOS` (`gPessoa_IDPESSOA`, `profissao_IDUTILITARIO`, `tipoPessoa_IDUTILITARIO`) VALUES
+(3, 1, 3),
+(3, 2, 4);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `GTIPOMENU`
+--
+
+CREATE TABLE IF NOT EXISTS `GTIPOMENU` (
   `IDTIPOMENU` bigint(20) NOT NULL,
   `NOMEMENU` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -337,37 +384,94 @@ CREATE TABLE `gtipomenu` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `gtipoutilitarios`
+-- Estrutura para tabela `GTIPOUTILITARIOS`
 --
 
-CREATE TABLE `gtipoutilitarios` (
+CREATE TABLE IF NOT EXISTS `GTIPOUTILITARIOS` (
   `IDTIPOMENU` bigint(20) NOT NULL,
   `NOMEMENU` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+--
+-- Fazendo dump de dados para tabela `GTIPOUTILITARIOS`
+--
+
+INSERT INTO `GTIPOUTILITARIOS` (`IDTIPOMENU`, `NOMEMENU`) VALUES
+(1, 'Tipo pessoa'),
+(2, 'Profissão');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `gutilitarios`
+-- Estrutura para tabela `GUTILITARIOS`
 --
 
-CREATE TABLE `gutilitarios` (
+CREATE TABLE IF NOT EXISTS `GUTILITARIOS` (
   `IDUTILITARIO` bigint(20) NOT NULL,
   `OBS` varchar(255) DEFAULT NULL,
-  `FAVORITA` tinyint(1) DEFAULT '0',
-  `IDAPLICACAO` bigint(20) DEFAULT NULL,
-  `IDSUBGRUPO` bigint(20) DEFAULT NULL,
-  `IDTIPOUTILIRARIO` bigint(20) DEFAULT NULL,
+  `FAVORITA` tinyint(1) DEFAULT 0,
   `UTILITARIO` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+
+--
+-- Fazendo dump de dados para tabela `GUTILITARIOS`
+--
+
+INSERT INTO `GUTILITARIOS` (`IDUTILITARIO`, `OBS`, `FAVORITA`, `UTILITARIO`) VALUES
+(1, '', 0, 'Cliente'),
+(2, '', 0, 'Fornecedor'),
+(3, ' ', 0, 'Programador'),
+(4, ' ', 0, 'Atedente');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `yobjetos`
+-- Estrutura para tabela `GUTILITARIOS_GAPLICACAO`
 --
 
-CREATE TABLE `yobjetos` (
+CREATE TABLE IF NOT EXISTS `GUTILITARIOS_GAPLICACAO` (
+  `gUtilitarios_IDUTILITARIO` bigint(20) NOT NULL,
+  `aplicacaos_IDAPLICACAO` bigint(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Fazendo dump de dados para tabela `GUTILITARIOS_GAPLICACAO`
+--
+
+INSERT INTO `GUTILITARIOS_GAPLICACAO` (`gUtilitarios_IDUTILITARIO`, `aplicacaos_IDAPLICACAO`) VALUES
+(1, 1),
+(2, 1),
+(3, 1),
+(4, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `GUTILITARIOS_GTIPOUTILITARIOS`
+--
+
+CREATE TABLE IF NOT EXISTS `GUTILITARIOS_GTIPOUTILITARIOS` (
+  `gUtilitarios_IDUTILITARIO` bigint(20) NOT NULL,
+  `tipoutilitarios_IDTIPOMENU` bigint(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Fazendo dump de dados para tabela `GUTILITARIOS_GTIPOUTILITARIOS`
+--
+
+INSERT INTO `GUTILITARIOS_GTIPOUTILITARIOS` (`gUtilitarios_IDUTILITARIO`, `tipoutilitarios_IDTIPOMENU`) VALUES
+(1, 1),
+(2, 1),
+(3, 2),
+(4, 2);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `YOBJETOS`
+--
+
+CREATE TABLE IF NOT EXISTS `YOBJETOS` (
   `IDOBJETOS` bigint(20) NOT NULL,
   `APLICACAO` varchar(255) DEFAULT NULL,
   `DESCTIPOOBJETO` varchar(255) DEFAULT NULL,
@@ -381,10 +485,10 @@ CREATE TABLE `yobjetos` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `ypemissoes`
+-- Estrutura para tabela `YPEMISSOES`
 --
 
-CREATE TABLE `ypemissoes` (
+CREATE TABLE IF NOT EXISTS `YPEMISSOES` (
   `IDPERMISSOES` bigint(20) NOT NULL,
   `ATUALIZAR` int(11) DEFAULT NULL,
   `CRIAR` int(11) DEFAULT NULL,
@@ -400,10 +504,10 @@ CREATE TABLE `ypemissoes` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `yperfil`
+-- Estrutura para tabela `YPERFIL`
 --
 
-CREATE TABLE `yperfil` (
+CREATE TABLE IF NOT EXISTS `YPERFIL` (
   `IDPERFIL` bigint(20) NOT NULL,
   `IDTIPOPERFIL` bigint(20) DEFAULT NULL,
   `DESCRICAOPERFIL` varchar(255) DEFAULT NULL,
@@ -413,206 +517,374 @@ CREATE TABLE `yperfil` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `yusuarios`
+-- Estrutura para tabela `YUSUARIOS`
 --
 
-CREATE TABLE `yusuarios` (
+CREATE TABLE IF NOT EXISTS `YUSUARIOS` (
   `ID` bigint(20) NOT NULL,
-  `IDPESSOA` bigint(20) DEFAULT NULL,
   `IDUSUARIO` varchar(255) DEFAULT NULL,
   `SENHA` int(11) DEFAULT NULL,
-  `STATUS` tinyint(1) DEFAULT '0'
+  `STATUS` tinyint(1) DEFAULT 0
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Fazendo dump de dados para tabela `YUSUARIOS`
+--
+
+INSERT INTO `YUSUARIOS` (`ID`, `IDUSUARIO`, `SENHA`, `STATUS`) VALUES
+(1, 'naimar', 123456, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `YUSUARIOS_GPESSOA`
+--
+
+CREATE TABLE IF NOT EXISTS `YUSUARIOS_GPESSOA` (
+  `yUsuarios_ID` bigint(20) NOT NULL,
+  `pessoa_IDPESSOA` bigint(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Indexes for dumped tables
+-- Fazendo dump de dados para tabela `YUSUARIOS_GPESSOA`
+--
+
+INSERT INTO `YUSUARIOS_GPESSOA` (`yUsuarios_ID`, `pessoa_IDPESSOA`) VALUES
+(1, 3);
+
+--
+-- Índices de tabelas apagadas
 --
 
 --
--- Indexes for table `acurso`
+-- Índices de tabela `ACURSO`
 --
-ALTER TABLE `acurso`
+ALTER TABLE `ACURSO`
   ADD PRIMARY KEY (`IDCURSO`);
 
 --
--- Indexes for table `adisciplinas`
+-- Índices de tabela `ACURSO_AMODALIDADECURSO`
 --
-ALTER TABLE `adisciplinas`
+ALTER TABLE `ACURSO_AMODALIDADECURSO`
+  ADD PRIMARY KEY (`aCurso_IDCURSO`,`modalidadecursos_IDMODALIDADE`), ADD KEY `ACURSOAMODALIDADECURSOmodalidadecursosIDMODALIDADE` (`modalidadecursos_IDMODALIDADE`);
+
+--
+-- Índices de tabela `ACURSO_APROJETOCURSO`
+--
+ALTER TABLE `ACURSO_APROJETOCURSO`
+  ADD PRIMARY KEY (`aCurso_IDCURSO`,`projetocursos_IDPROJETOCURSO`), ADD KEY `ACURSO_APROJETOCURSO_projetocursos_IDPROJETOCURSO` (`projetocursos_IDPROJETOCURSO`);
+
+--
+-- Índices de tabela `ADISCIPLINAS`
+--
+ALTER TABLE `ADISCIPLINAS`
   ADD PRIMARY KEY (`IDDISCIPLINA`);
 
 --
--- Indexes for table `amodalidadecurso`
+-- Índices de tabela `ADISCIPLINAS_ACURSO`
 --
-ALTER TABLE `amodalidadecurso`
+ALTER TABLE `ADISCIPLINAS_ACURSO`
+  ADD PRIMARY KEY (`aDisciplinas_IDDISCIPLINA`,`cursos_IDCURSO`), ADD KEY `FK_ADISCIPLINAS_ACURSO_cursos_IDCURSO` (`cursos_IDCURSO`);
+
+--
+-- Índices de tabela `AMODALIDADECURSO`
+--
+ALTER TABLE `AMODALIDADECURSO`
   ADD PRIMARY KEY (`IDMODALIDADE`);
 
 --
--- Indexes for table `gaplicaca`
+-- Índices de tabela `APROJETOCURSO`
 --
-ALTER TABLE `gaplicaca`
+ALTER TABLE `APROJETOCURSO`
+  ADD PRIMARY KEY (`IDPROJETOCURSO`);
+
+--
+-- Índices de tabela `APROJETOCURSO_AMODALIDADECURSO`
+--
+ALTER TABLE `APROJETOCURSO_AMODALIDADECURSO`
+  ADD PRIMARY KEY (`aProjetocurso_IDPROJETOCURSO`,`modalidadecurso_IDMODALIDADE`), ADD KEY `PRJTOCURSOAMODALIDADECURSOmdldadecursoIDMODALIDADE` (`modalidadecurso_IDMODALIDADE`);
+
+--
+-- Índices de tabela `APROJETOCURSO_GFILIAIS`
+--
+ALTER TABLE `APROJETOCURSO_GFILIAIS`
+  ADD PRIMARY KEY (`aProjetocurso_IDPROJETOCURSO`,`filial_IDFILIAL`), ADD KEY `FK_APROJETOCURSO_GFILIAIS_filial_IDFILIAL` (`filial_IDFILIAL`);
+
+--
+-- Índices de tabela `GAPLICACAO`
+--
+ALTER TABLE `GAPLICACAO`
   ADD PRIMARY KEY (`IDAPLICACAO`);
 
 --
--- Indexes for table `gfiliais`
+-- Índices de tabela `GFILIAIS`
 --
-ALTER TABLE `gfiliais`
+ALTER TABLE `GFILIAIS`
   ADD PRIMARY KEY (`IDFILIAL`);
 
 --
--- Indexes for table `gmatriz`
+-- Índices de tabela `GFILIAIS_GMATRIZ`
 --
-ALTER TABLE `gmatriz`
+ALTER TABLE `GFILIAIS_GMATRIZ`
+  ADD PRIMARY KEY (`gFiliais_IDFILIAL`,`matrizs_IDMATRIZ`), ADD KEY `FK_GFILIAIS_GMATRIZ_matrizs_IDMATRIZ` (`matrizs_IDMATRIZ`);
+
+--
+-- Índices de tabela `GMATRIZ`
+--
+ALTER TABLE `GMATRIZ`
   ADD PRIMARY KEY (`IDMATRIZ`);
 
 --
--- Indexes for table `gmenus`
+-- Índices de tabela `GMENUS`
 --
-ALTER TABLE `gmenus`
+ALTER TABLE `GMENUS`
   ADD PRIMARY KEY (`IDMENU`);
 
 --
--- Indexes for table `gpessoa`
+-- Índices de tabela `GMENUS_GMENUS`
 --
-ALTER TABLE `gpessoa`
-  ADD PRIMARY KEY (`IPESSOA`);
+ALTER TABLE `GMENUS_GMENUS`
+  ADD PRIMARY KEY (`gMenus_IDMENU`,`menuses_IDMENU`), ADD KEY `FK_GMENUS_GMENUS_menuses_IDMENU` (`menuses_IDMENU`);
 
 --
--- Indexes for table `gtipomenu`
+-- Índices de tabela `GPESSOA`
 --
-ALTER TABLE `gtipomenu`
+ALTER TABLE `GPESSOA`
+  ADD PRIMARY KEY (`IDPESSOA`);
+
+--
+-- Índices de tabela `GPESSOA_GUTILITARIOS`
+--
+ALTER TABLE `GPESSOA_GUTILITARIOS`
+  ADD PRIMARY KEY (`gPessoa_IDPESSOA`,`profissao_IDUTILITARIO`,`tipoPessoa_IDUTILITARIO`), ADD KEY `FK_GPESSOA_GUTILITARIOS_profissao_IDUTILITARIO` (`profissao_IDUTILITARIO`), ADD KEY `FK_GPESSOA_GUTILITARIOS_tipoPessoa_IDUTILITARIO` (`tipoPessoa_IDUTILITARIO`);
+
+--
+-- Índices de tabela `GTIPOMENU`
+--
+ALTER TABLE `GTIPOMENU`
   ADD PRIMARY KEY (`IDTIPOMENU`);
 
 --
--- Indexes for table `gtipoutilitarios`
+-- Índices de tabela `GTIPOUTILITARIOS`
 --
-ALTER TABLE `gtipoutilitarios`
+ALTER TABLE `GTIPOUTILITARIOS`
   ADD PRIMARY KEY (`IDTIPOMENU`);
 
 --
--- Indexes for table `gutilitarios`
+-- Índices de tabela `GUTILITARIOS`
 --
-ALTER TABLE `gutilitarios`
+ALTER TABLE `GUTILITARIOS`
   ADD PRIMARY KEY (`IDUTILITARIO`);
 
 --
--- Indexes for table `yobjetos`
+-- Índices de tabela `GUTILITARIOS_GAPLICACAO`
 --
-ALTER TABLE `yobjetos`
+ALTER TABLE `GUTILITARIOS_GAPLICACAO`
+  ADD PRIMARY KEY (`gUtilitarios_IDUTILITARIO`,`aplicacaos_IDAPLICACAO`), ADD KEY `FK_GUTILITARIOS_GAPLICACAO_aplicacaos_IDAPLICACAO` (`aplicacaos_IDAPLICACAO`);
+
+--
+-- Índices de tabela `GUTILITARIOS_GTIPOUTILITARIOS`
+--
+ALTER TABLE `GUTILITARIOS_GTIPOUTILITARIOS`
+  ADD PRIMARY KEY (`gUtilitarios_IDUTILITARIO`,`tipoutilitarios_IDTIPOMENU`), ADD KEY `GTLITARIOSGTIPOUTILITARIOStpoutilitariosIDTIPOMENU` (`tipoutilitarios_IDTIPOMENU`);
+
+--
+-- Índices de tabela `YOBJETOS`
+--
+ALTER TABLE `YOBJETOS`
   ADD PRIMARY KEY (`IDOBJETOS`);
 
 --
--- Indexes for table `ypemissoes`
+-- Índices de tabela `YPEMISSOES`
 --
-ALTER TABLE `ypemissoes`
+ALTER TABLE `YPEMISSOES`
   ADD PRIMARY KEY (`IDPERMISSOES`);
 
 --
--- Indexes for table `yperfil`
+-- Índices de tabela `YPERFIL`
 --
-ALTER TABLE `yperfil`
+ALTER TABLE `YPERFIL`
   ADD PRIMARY KEY (`IDPERFIL`);
 
 --
--- Indexes for table `yusuarios`
+-- Índices de tabela `YUSUARIOS`
 --
-ALTER TABLE `yusuarios`
+ALTER TABLE `YUSUARIOS`
   ADD PRIMARY KEY (`ID`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- Índices de tabela `YUSUARIOS_GPESSOA`
+--
+ALTER TABLE `YUSUARIOS_GPESSOA`
+  ADD PRIMARY KEY (`yUsuarios_ID`,`pessoa_IDPESSOA`), ADD KEY `FK_YUSUARIOS_GPESSOA_pessoa_IDPESSOA` (`pessoa_IDPESSOA`);
+
+--
+-- AUTO_INCREMENT de tabelas apagadas
 --
 
 --
--- AUTO_INCREMENT for table `acurso`
+-- AUTO_INCREMENT de tabela `ACURSO`
 --
-ALTER TABLE `acurso`
-  MODIFY `IDCURSO` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
+ALTER TABLE `ACURSO`
+  MODIFY `IDCURSO` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=16;
 --
--- AUTO_INCREMENT for table `adisciplinas`
+-- AUTO_INCREMENT de tabela `ADISCIPLINAS`
 --
-ALTER TABLE `adisciplinas`
-  MODIFY `IDDISCIPLINA` bigint(20) NOT NULL AUTO_INCREMENT;
-
+ALTER TABLE `ADISCIPLINAS`
+  MODIFY `IDDISCIPLINA` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
--- AUTO_INCREMENT for table `amodalidadecurso`
+-- AUTO_INCREMENT de tabela `AMODALIDADECURSO`
 --
-ALTER TABLE `amodalidadecurso`
-  MODIFY `IDMODALIDADE` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
+ALTER TABLE `AMODALIDADECURSO`
+  MODIFY `IDMODALIDADE` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
--- AUTO_INCREMENT for table `gaplicaca`
+-- AUTO_INCREMENT de tabela `APROJETOCURSO`
 --
-ALTER TABLE `gaplicaca`
-  MODIFY `IDAPLICACAO` bigint(20) NOT NULL AUTO_INCREMENT;
-
+ALTER TABLE `APROJETOCURSO`
+  MODIFY `IDPROJETOCURSO` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
 --
--- AUTO_INCREMENT for table `gfiliais`
+-- AUTO_INCREMENT de tabela `GAPLICACAO`
 --
-ALTER TABLE `gfiliais`
-  MODIFY `IDFILIAL` bigint(20) NOT NULL AUTO_INCREMENT;
-
+ALTER TABLE `GAPLICACAO`
+  MODIFY `IDAPLICACAO` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=27;
 --
--- AUTO_INCREMENT for table `gmatriz`
+-- AUTO_INCREMENT de tabela `GFILIAIS`
 --
-ALTER TABLE `gmatriz`
-  MODIFY `IDMATRIZ` bigint(20) NOT NULL AUTO_INCREMENT;
-
+ALTER TABLE `GFILIAIS`
+  MODIFY `IDFILIAL` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
--- AUTO_INCREMENT for table `gmenus`
+-- AUTO_INCREMENT de tabela `GMATRIZ`
 --
-ALTER TABLE `gmenus`
+ALTER TABLE `GMATRIZ`
+  MODIFY `IDMATRIZ` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT de tabela `GMENUS`
+--
+ALTER TABLE `GMENUS`
   MODIFY `IDMENU` bigint(20) NOT NULL AUTO_INCREMENT;
-
 --
--- AUTO_INCREMENT for table `gpessoa`
+-- AUTO_INCREMENT de tabela `GPESSOA`
 --
-ALTER TABLE `gpessoa`
-  MODIFY `IPESSOA` bigint(20) NOT NULL AUTO_INCREMENT;
-
+ALTER TABLE `GPESSOA`
+  MODIFY `IDPESSOA` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
--- AUTO_INCREMENT for table `gtipomenu`
+-- AUTO_INCREMENT de tabela `GTIPOMENU`
 --
-ALTER TABLE `gtipomenu`
+ALTER TABLE `GTIPOMENU`
   MODIFY `IDTIPOMENU` bigint(20) NOT NULL AUTO_INCREMENT;
-
 --
--- AUTO_INCREMENT for table `gtipoutilitarios`
+-- AUTO_INCREMENT de tabela `GTIPOUTILITARIOS`
 --
-ALTER TABLE `gtipoutilitarios`
-  MODIFY `IDTIPOMENU` bigint(20) NOT NULL AUTO_INCREMENT;
-
+ALTER TABLE `GTIPOUTILITARIOS`
+  MODIFY `IDTIPOMENU` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
--- AUTO_INCREMENT for table `gutilitarios`
+-- AUTO_INCREMENT de tabela `GUTILITARIOS`
 --
-ALTER TABLE `gutilitarios`
-  MODIFY `IDUTILITARIO` bigint(20) NOT NULL AUTO_INCREMENT;
-
+ALTER TABLE `GUTILITARIOS`
+  MODIFY `IDUTILITARIO` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
--- AUTO_INCREMENT for table `yobjetos`
+-- AUTO_INCREMENT de tabela `YOBJETOS`
 --
-ALTER TABLE `yobjetos`
+ALTER TABLE `YOBJETOS`
   MODIFY `IDOBJETOS` bigint(20) NOT NULL AUTO_INCREMENT;
-
 --
--- AUTO_INCREMENT for table `ypemissoes`
+-- AUTO_INCREMENT de tabela `YPEMISSOES`
 --
-ALTER TABLE `ypemissoes`
+ALTER TABLE `YPEMISSOES`
   MODIFY `IDPERMISSOES` bigint(20) NOT NULL AUTO_INCREMENT;
-
 --
--- AUTO_INCREMENT for table `yperfil`
+-- AUTO_INCREMENT de tabela `YPERFIL`
 --
-ALTER TABLE `yperfil`
+ALTER TABLE `YPERFIL`
   MODIFY `IDPERFIL` bigint(20) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de tabela `YUSUARIOS`
+--
+ALTER TABLE `YUSUARIOS`
+  MODIFY `ID` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+--
+-- Restrições para dumps de tabelas
+--
 
 --
--- AUTO_INCREMENT for table `yusuarios`
+-- Restrições para tabelas `ACURSO_AMODALIDADECURSO`
 --
-ALTER TABLE `yusuarios`
-  MODIFY `ID` bigint(20) NOT NULL AUTO_INCREMENT;
-COMMIT;
+ALTER TABLE `ACURSO_AMODALIDADECURSO`
+ADD CONSTRAINT `ACURSOAMODALIDADECURSOmodalidadecursosIDMODALIDADE` FOREIGN KEY (`modalidadecursos_IDMODALIDADE`) REFERENCES `AMODALIDADECURSO` (`IDMODALIDADE`),
+ADD CONSTRAINT `FK_ACURSO_AMODALIDADECURSO_aCurso_IDCURSO` FOREIGN KEY (`aCurso_IDCURSO`) REFERENCES `ACURSO` (`IDCURSO`);
+
+--
+-- Restrições para tabelas `ACURSO_APROJETOCURSO`
+--
+ALTER TABLE `ACURSO_APROJETOCURSO`
+ADD CONSTRAINT `ACURSO_APROJETOCURSO_projetocursos_IDPROJETOCURSO` FOREIGN KEY (`projetocursos_IDPROJETOCURSO`) REFERENCES `APROJETOCURSO` (`IDPROJETOCURSO`),
+ADD CONSTRAINT `FK_ACURSO_APROJETOCURSO_aCurso_IDCURSO` FOREIGN KEY (`aCurso_IDCURSO`) REFERENCES `ACURSO` (`IDCURSO`);
+
+--
+-- Restrições para tabelas `ADISCIPLINAS_ACURSO`
+--
+ALTER TABLE `ADISCIPLINAS_ACURSO`
+ADD CONSTRAINT `FK_ADISCIPLINAS_ACURSO_aDisciplinas_IDDISCIPLINA` FOREIGN KEY (`aDisciplinas_IDDISCIPLINA`) REFERENCES `ADISCIPLINAS` (`IDDISCIPLINA`),
+ADD CONSTRAINT `FK_ADISCIPLINAS_ACURSO_cursos_IDCURSO` FOREIGN KEY (`cursos_IDCURSO`) REFERENCES `ACURSO` (`IDCURSO`);
+
+--
+-- Restrições para tabelas `APROJETOCURSO_AMODALIDADECURSO`
+--
+ALTER TABLE `APROJETOCURSO_AMODALIDADECURSO`
+ADD CONSTRAINT `PRJTOCURSOAMODALIDADECURSOPrjtocursoIDPROJETOCURSO` FOREIGN KEY (`aProjetocurso_IDPROJETOCURSO`) REFERENCES `APROJETOCURSO` (`IDPROJETOCURSO`),
+ADD CONSTRAINT `PRJTOCURSOAMODALIDADECURSOmdldadecursoIDMODALIDADE` FOREIGN KEY (`modalidadecurso_IDMODALIDADE`) REFERENCES `AMODALIDADECURSO` (`IDMODALIDADE`);
+
+--
+-- Restrições para tabelas `APROJETOCURSO_GFILIAIS`
+--
+ALTER TABLE `APROJETOCURSO_GFILIAIS`
+ADD CONSTRAINT `APROJETOCURSO_GFILIAISaProjetocurso_IDPROJETOCURSO` FOREIGN KEY (`aProjetocurso_IDPROJETOCURSO`) REFERENCES `APROJETOCURSO` (`IDPROJETOCURSO`),
+ADD CONSTRAINT `FK_APROJETOCURSO_GFILIAIS_filial_IDFILIAL` FOREIGN KEY (`filial_IDFILIAL`) REFERENCES `GFILIAIS` (`IDFILIAL`);
+
+--
+-- Restrições para tabelas `GFILIAIS_GMATRIZ`
+--
+ALTER TABLE `GFILIAIS_GMATRIZ`
+ADD CONSTRAINT `FK_GFILIAIS_GMATRIZ_gFiliais_IDFILIAL` FOREIGN KEY (`gFiliais_IDFILIAL`) REFERENCES `GFILIAIS` (`IDFILIAL`),
+ADD CONSTRAINT `FK_GFILIAIS_GMATRIZ_matrizs_IDMATRIZ` FOREIGN KEY (`matrizs_IDMATRIZ`) REFERENCES `GMATRIZ` (`IDMATRIZ`);
+
+--
+-- Restrições para tabelas `GMENUS_GMENUS`
+--
+ALTER TABLE `GMENUS_GMENUS`
+ADD CONSTRAINT `FK_GMENUS_GMENUS_gMenus_IDMENU` FOREIGN KEY (`gMenus_IDMENU`) REFERENCES `GMENUS` (`IDMENU`),
+ADD CONSTRAINT `FK_GMENUS_GMENUS_menuses_IDMENU` FOREIGN KEY (`menuses_IDMENU`) REFERENCES `GMENUS` (`IDMENU`);
+
+--
+-- Restrições para tabelas `GPESSOA_GUTILITARIOS`
+--
+ALTER TABLE `GPESSOA_GUTILITARIOS`
+ADD CONSTRAINT `FK_GPESSOA_GUTILITARIOS_gPessoa_IDPESSOA` FOREIGN KEY (`gPessoa_IDPESSOA`) REFERENCES `GPESSOA` (`IDPESSOA`),
+ADD CONSTRAINT `FK_GPESSOA_GUTILITARIOS_profissao_IDUTILITARIO` FOREIGN KEY (`profissao_IDUTILITARIO`) REFERENCES `GUTILITARIOS` (`IDUTILITARIO`),
+ADD CONSTRAINT `FK_GPESSOA_GUTILITARIOS_tipoPessoa_IDUTILITARIO` FOREIGN KEY (`tipoPessoa_IDUTILITARIO`) REFERENCES `GUTILITARIOS` (`IDUTILITARIO`);
+
+--
+-- Restrições para tabelas `GUTILITARIOS_GAPLICACAO`
+--
+ALTER TABLE `GUTILITARIOS_GAPLICACAO`
+ADD CONSTRAINT `FK_GUTILITARIOS_GAPLICACAO_aplicacaos_IDAPLICACAO` FOREIGN KEY (`aplicacaos_IDAPLICACAO`) REFERENCES `GAPLICACAO` (`IDAPLICACAO`),
+ADD CONSTRAINT `GUTILITARIOS_GAPLICACAO_gUtilitarios_IDUTILITARIO` FOREIGN KEY (`gUtilitarios_IDUTILITARIO`) REFERENCES `GUTILITARIOS` (`IDUTILITARIO`);
+
+--
+-- Restrições para tabelas `GUTILITARIOS_GTIPOUTILITARIOS`
+--
+ALTER TABLE `GUTILITARIOS_GTIPOUTILITARIOS`
+ADD CONSTRAINT `GTILITARIOSGTIPOUTILITARIOSgtilitariosIDUTILITARIO` FOREIGN KEY (`gUtilitarios_IDUTILITARIO`) REFERENCES `GUTILITARIOS` (`IDUTILITARIO`),
+ADD CONSTRAINT `GTLITARIOSGTIPOUTILITARIOStpoutilitariosIDTIPOMENU` FOREIGN KEY (`tipoutilitarios_IDTIPOMENU`) REFERENCES `GTIPOUTILITARIOS` (`IDTIPOMENU`);
+
+--
+-- Restrições para tabelas `YUSUARIOS_GPESSOA`
+--
+ALTER TABLE `YUSUARIOS_GPESSOA`
+ADD CONSTRAINT `FK_YUSUARIOS_GPESSOA_pessoa_IDPESSOA` FOREIGN KEY (`pessoa_IDPESSOA`) REFERENCES `GPESSOA` (`IDPESSOA`),
+ADD CONSTRAINT `FK_YUSUARIOS_GPESSOA_yUsuarios_ID` FOREIGN KEY (`yUsuarios_ID`) REFERENCES `YUSUARIOS` (`ID`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+

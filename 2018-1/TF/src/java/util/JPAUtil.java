@@ -75,4 +75,14 @@ public class JPAUtil {
 phpmyadmin: mysql.pep.kinghost.net
 Usuário: pep
 Senha: 84d235g4r8h
+
+
+
+
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://mysql.pep.kinghost.net:3306/pep?zeroDateTimeBehavior=convertToNull"/>
+      <property name="javax.persistence.jdbc.user" value="pep"/>
+      <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+      <property name="javax.persistence.jdbc.password" value="84d235g4r8h"/>
+      <property name="javax.persistence.schema-generation.database.action" value="create"/>
 */
