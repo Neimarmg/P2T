@@ -1,0 +1,14 @@
+APS 4 – Layout do Trabalho 2
+Instruções Gerais
+
+Realizar o layout (páginas Web com HTML e CSS) do sistema a ser desenvolvido no Trabalho 2.
+Avaliação
+O aluno deverá realizar pelo menos o layout das seguintes páginas do seu sistema:
+- Página principal com menu de navegação;
+- Formulário de cadastro de uma entidade do trabalho (produto, usuário, cliente, etc)
+- Visualização dos dados de uma entidade do trabalho (preferencialmente por Grid, mas pode até ser por tabela).
+Entre essas páginas, deve haver navegação adequada.
+Entrega
+O trabalho deverá ser realizado individualmente. Em caso de dupla na realização do trabalho, os alunos poderão utilizar a mesma página principal, mas cada aluno deverá desenvolver o layout de uma entidade diferente. Assim, todos os alunos deverão postar o código-fonte zipado (.zip).
+
+Data de Entrega: 07/06 [09h30]
