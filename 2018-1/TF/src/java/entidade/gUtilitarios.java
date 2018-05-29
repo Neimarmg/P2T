@@ -25,23 +25,23 @@ public class gUtilitarios implements Serializable {
     private Long idUtilitario;
 
     @OneToMany
-    Collection<gAplicacao>aplicacaos;
+    Collection<gAplicacao>aplicacao;
     
-    @OneToOne
-    Collection<gTipoutilitarios>tipoutilitarios;    
+    @OneToMany
+    Collection<gTipoutilitarios>tipoutilitario;    
     
-    private String utilitario;
+    private String nemeUtilitario;
     private String Obs;
     private boolean favorita;
 
     public gUtilitarios() {
     }
 
-    public gUtilitarios(Long idUtilitario, Collection<gAplicacao> aplicacaos, Collection<gTipoutilitarios> tipoutilitarios, String utilitario, String Obs, boolean favorita) {
+    public gUtilitarios(Long idUtilitario, Collection<gAplicacao> aplicacao, Collection<gTipoutilitarios> tipoutilitarios, String utilitario, String Obs, boolean favorita) {
         this.idUtilitario = idUtilitario;
-        this.aplicacaos = aplicacaos;
-        this.tipoutilitarios = tipoutilitarios;
-        this.utilitario = utilitario;
+        this.aplicacao = aplicacao;
+        this.tipoutilitario = tipoutilitarios;
+        this.nemeUtilitario = utilitario;
         this.Obs = Obs;
         this.favorita = favorita;
     }
@@ -54,28 +54,28 @@ public class gUtilitarios implements Serializable {
         this.idUtilitario = idUtilitario;
     }
 
-    public Collection<gAplicacao> getAplicacaos() {
-        return aplicacaos;
+    public Collection<gAplicacao> getAplicacao() {
+        return aplicacao;
     }
 
-    public void setAplicacaos(Collection<gAplicacao> aplicacaos) {
-        this.aplicacaos = aplicacaos;
+    public void setAplicacao(Collection<gAplicacao> aplicacao) {
+        this.aplicacao = aplicacao;
     }
 
-    public Collection<gTipoutilitarios> getTipoutilitarios() {
-        return tipoutilitarios;
+    public Collection<gTipoutilitarios> getTipoutilitario() {
+        return tipoutilitario;
     }
 
-    public void setTipoutilitarios(Collection<gTipoutilitarios> tipoutilitarios) {
-        this.tipoutilitarios = tipoutilitarios;
+    public void setTipoutilitario(Collection<gTipoutilitarios> tipoutilitario) {
+        this.tipoutilitario = tipoutilitario;
     }
 
-    public String getUtilitario() {
-        return utilitario;
+    public String getNemeUtilitario() {
+        return nemeUtilitario;
     }
 
-    public void setUtilitario(String utilitario) {
-        this.utilitario = utilitario;
+    public void setNemeUtilitario(String nemeUtilitario) {
+        this.nemeUtilitario = nemeUtilitario;
     }
 
     public String getObs() {
@@ -94,6 +94,7 @@ public class gUtilitarios implements Serializable {
         this.favorita = favorita;
     }
 
+    
    
     
     

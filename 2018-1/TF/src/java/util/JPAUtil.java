@@ -14,7 +14,7 @@ import javax.persistence.Persistence;
  * @author LHRIES
  */
 public class JPAUtil {
-    private static String PUNAME = "tfPU";
+    private static String PUNAME = "TFPU";
     private static EntityManagerFactory factory = Persistence.createEntityManagerFactory(PUNAME);
    
     public static EntityManager getManager(){

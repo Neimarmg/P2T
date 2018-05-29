@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: mysql08-farm62.kinghost.net
--- Tempo de geração: 25/05/2018 às 14:55
+-- Tempo de geração: 29/05/2018 às 06:35
 -- Versão do servidor: 10.2.15-MariaDB-log
 -- Versão do PHP: 5.3.28
 
@@ -887,4 +887,3 @@ ADD CONSTRAINT `FK_YUSUARIOS_GPESSOA_yUsuarios_ID` FOREIGN KEY (`yUsuarios_ID`) 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-

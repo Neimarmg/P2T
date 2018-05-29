@@ -2,10 +2,13 @@
 package entidade;
 
 import java.io.Serializable;
+import java.util.Collection;
+import javafx.print.Collation;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
@@ -20,17 +23,20 @@ public class yPerfil implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idPerfil;
-    private Long idAplicacao;
-    private Long IdTipoPerfil;
+    @OneToOne
+    Collection<gFiliais>filial;
+    
+    @OneToOne
+    Collection<gUtilitarios>tipoPerfil;
     private String descricaoPerfil;
 
     public yPerfil() {
     }
 
-    public yPerfil(Long idPerfil, Long idAplicacao, Long IdTipoPerfil, String descricaoPerfil) {
+    public yPerfil(Long idPerfil, Collection<gFiliais> filial, Collection<gUtilitarios> tipoPerfil, String descricaoPerfil) {
         this.idPerfil = idPerfil;
-        this.idAplicacao = idAplicacao;
-        this.IdTipoPerfil = IdTipoPerfil;
+        this.filial = filial;
+        this.tipoPerfil = tipoPerfil;
         this.descricaoPerfil = descricaoPerfil;
     }
 
@@ -42,20 +48,20 @@ public class yPerfil implements Serializable {
         this.idPerfil = idPerfil;
     }
 
-    public Long getIdAplicacao() {
-        return idAplicacao;
+    public Collection<gFiliais> getFilial() {
+        return filial;
     }
 
-    public void setIdAplicacao(Long idAplicacao) {
-        this.idAplicacao = idAplicacao;
+    public void setFilial(Collection<gFiliais> filial) {
+        this.filial = filial;
     }
 
-    public Long getIdTipoPerfil() {
-        return IdTipoPerfil;
+    public Collection<gUtilitarios> getTipoPerfil() {
+        return tipoPerfil;
     }
 
-    public void setIdTipoPerfil(Long IdTipoPerfil) {
-        this.IdTipoPerfil = IdTipoPerfil;
+    public void setTipoPerfil(Collection<gUtilitarios> tipoPerfil) {
+        this.tipoPerfil = tipoPerfil;
     }
 
     public String getDescricaoPerfil() {
@@ -66,6 +72,7 @@ public class yPerfil implements Serializable {
         this.descricaoPerfil = descricaoPerfil;
     }
 
+   
     
     
     

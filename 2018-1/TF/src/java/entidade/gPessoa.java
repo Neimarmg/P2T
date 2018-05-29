@@ -3,18 +3,11 @@ package entidade;
 
 import java.io.Serializable;
 import java.util.Collection;
-import java.util.Date;
-import java.util.List;
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
@@ -33,11 +26,11 @@ public class gPessoa implements Serializable {
     @OneToOne           
      
     //@JoinColumn(columnDefinition="idProfissao", referencedColumnName="idUtilitario")
-    List<gUtilitarios> profissao;
+    Collection<gUtilitarios> profissao;
     
     @OneToOne
     //@JoinColumn(columnDefinition ="tipoPessoa", referencedColumnName="idUtilitario")
-    List<gUtilitarios> tipoPessoa;
+    Collection<gUtilitarios> tipoPessoa;
     
     
     private String nome;
@@ -52,7 +45,7 @@ public class gPessoa implements Serializable {
     public gPessoa() {
     }
 
-    public gPessoa(Long idPessoa, List<gUtilitarios> profissao, List<gUtilitarios> tipoPessoa, String nome, String cpf, String rg, boolean ativa, String cref) {
+    public gPessoa(Long idPessoa, Collection<gUtilitarios> profissao, Collection<gUtilitarios> tipoPessoa, String nome, String cpf, String rg, boolean ativa, String cref) {
         this.idPessoa = idPessoa;
         this.profissao = profissao;
         this.tipoPessoa = tipoPessoa;
@@ -71,19 +64,19 @@ public class gPessoa implements Serializable {
         this.idPessoa = idPessoa;
     }
 
-    public List<gUtilitarios> getProfissao() {
+    public Collection<gUtilitarios> getProfissao() {
         return profissao;
     }
 
-    public void setProfissao(List<gUtilitarios> profissao) {
+    public void setProfissao(Collection<gUtilitarios> profissao) {
         this.profissao = profissao;
     }
 
-    public List<gUtilitarios> getTipoPessoa() {
+    public Collection<gUtilitarios> getTipoPessoa() {
         return tipoPessoa;
     }
 
-    public void setTipoPessoa(List<gUtilitarios> tipoPessoa) {
+    public void setTipoPessoa(Collection<gUtilitarios> tipoPessoa) {
         this.tipoPessoa = tipoPessoa;
     }
 
@@ -127,6 +120,7 @@ public class gPessoa implements Serializable {
         this.cref = cref;
     }
 
+    
     
         
 

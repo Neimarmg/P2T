@@ -1,6 +1,5 @@
 
 package entidade;
-
 import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -19,41 +18,39 @@ public class gTipoutilitarios implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idTipoMenu;
-    private String nomeMenu;
+    private Long idTipoUtilitario;
+    
+    private String descricao;
 
     public gTipoutilitarios() {
     }
 
-    public gTipoutilitarios(Long idTipoMenu, String nomeMenu) {
-        this.idTipoMenu = idTipoMenu;
-        this.nomeMenu = nomeMenu;
+    public gTipoutilitarios(Long idTipoUtilitario, String descricao) {
+        this.idTipoUtilitario = idTipoUtilitario;
+        this.descricao = descricao;
     }
 
-    public Long getIdTipoMenu() {
-        return idTipoMenu;
+    public Long getIdTipoUtilitario() {
+        return idTipoUtilitario;
     }
 
-    public void setIdTipoMenu(Long idTipoMenu) {
-        this.idTipoMenu = idTipoMenu;
+    public void setIdTipoUtilitario(Long idTipoUtilitario) {
+        this.idTipoUtilitario = idTipoUtilitario;
     }
 
-    public String getNomeMenu() {
-        return nomeMenu;
+    public String getDescricao() {
+        return descricao;
     }
 
-    public void setNomeMenu(String nomeMenu) {
-        this.nomeMenu = nomeMenu;
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
 
-    
-       
-    
-    
+           
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (idTipoMenu != null ? idTipoMenu.hashCode() : 0);
+        hash += (idTipoUtilitario != null ? idTipoUtilitario.hashCode() : 0);
         return hash;
     }
 
@@ -64,7 +61,7 @@ public class gTipoutilitarios implements Serializable {
             return false;
         }
         gTipoutilitarios other = (gTipoutilitarios) object;
-        if ((this.idTipoMenu == null && other.idTipoMenu != null) || (this.idTipoMenu != null && !this.idTipoMenu.equals(other.idTipoMenu))) {
+        if ((this.idTipoUtilitario == null && other.idTipoUtilitario != null) || (this.idTipoUtilitario != null && !this.idTipoUtilitario.equals(other.idTipoUtilitario))) {
             return false;
         }
         return true;
@@ -72,7 +69,7 @@ public class gTipoutilitarios implements Serializable {
 
     @Override
     public String toString() {
-        return "entidade.gTipomenu[idTipoMenu=" + idTipoMenu + " ]";
+        return "entidade.gTipoutilitarios[idTipoUtilitario=" + idTipoUtilitario + " ]";
     }
     
     
