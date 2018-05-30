@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 29-Maio-2018 às 16:20
+-- Generation Time: 30-Maio-2018 às 17:10
 -- Versão do servidor: 10.1.26-MariaDB
 -- PHP Version: 7.1.9
 
@@ -497,19 +497,26 @@ INSERT INTO `gmatriz` (`IDMATRIZ`, `CNPJ`, `DESCRICAO`) VALUES
 
 CREATE TABLE `gmenus` (
   `IDMENU` bigint(20) NOT NULL,
-  `IDTIPOMENU` bigint(20) DEFAULT NULL,
+  `FAVORITO` tinyint(1) DEFAULT '0',
   `NOMEMENU` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `gmenus`
+--
+
+INSERT INTO `gmenus` (`IDMENU`, `FAVORITO`, `NOMEMENU`) VALUES
+(1, 1, 'relatorios financeiros');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `gmenus_gmenus`
+-- Estrutura da tabela `gmenus_gtipomenu`
 --
 
-CREATE TABLE `gmenus_gmenus` (
+CREATE TABLE `gmenus_gtipomenu` (
   `gMenus_IDMENU` bigint(20) NOT NULL,
-  `menuses_IDMENU` bigint(20) NOT NULL
+  `tipomenus_IDTIPOMENU` bigint(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -549,6 +556,13 @@ CREATE TABLE `gtipomenu` (
   `IDTIPOMENU` bigint(20) NOT NULL,
   `NOMEMENU` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `gtipomenu`
+--
+
+INSERT INTO `gtipomenu` (`IDTIPOMENU`, `NOMEMENU`) VALUES
+(1, 'Relatorios');
 
 -- --------------------------------------------------------
 
@@ -823,11 +837,11 @@ ALTER TABLE `gmenus`
   ADD PRIMARY KEY (`IDMENU`);
 
 --
--- Indexes for table `gmenus_gmenus`
+-- Indexes for table `gmenus_gtipomenu`
 --
-ALTER TABLE `gmenus_gmenus`
-  ADD PRIMARY KEY (`gMenus_IDMENU`,`menuses_IDMENU`),
-  ADD KEY `FK_GMENUS_GMENUS_menuses_IDMENU` (`menuses_IDMENU`);
+ALTER TABLE `gmenus_gtipomenu`
+  ADD PRIMARY KEY (`gMenus_IDMENU`,`tipomenus_IDTIPOMENU`),
+  ADD KEY `FK_GMENUS_GTIPOMENU_tipomenus_IDTIPOMENU` (`tipomenus_IDTIPOMENU`);
 
 --
 -- Indexes for table `gpessoa`
@@ -970,19 +984,19 @@ ALTER TABLE `gmatriz`
 -- AUTO_INCREMENT for table `gmenus`
 --
 ALTER TABLE `gmenus`
-  MODIFY `IDMENU` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `IDMENU` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `gpessoa`
 --
 ALTER TABLE `gpessoa`
-  MODIFY `IDPESSOA` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `IDPESSOA` bigint(20) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `gtipomenu`
 --
 ALTER TABLE `gtipomenu`
-  MODIFY `IDTIPOMENU` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `IDTIPOMENU` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `gtipoutilitarios`
@@ -1012,13 +1026,13 @@ ALTER TABLE `ypemissoes`
 -- AUTO_INCREMENT for table `yperfil`
 --
 ALTER TABLE `yperfil`
-  MODIFY `IDPERFIL` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `IDPERFIL` bigint(20) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `yusuarios`
 --
 ALTER TABLE `yusuarios`
-  MODIFY `ID` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `ID` bigint(20) NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints for dumped tables
@@ -1067,11 +1081,11 @@ ALTER TABLE `gfiliais_gmatriz`
   ADD CONSTRAINT `FK_GFILIAIS_GMATRIZ_matrizs_IDMATRIZ` FOREIGN KEY (`matrizs_IDMATRIZ`) REFERENCES `gmatriz` (`IDMATRIZ`);
 
 --
--- Limitadores para a tabela `gmenus_gmenus`
+-- Limitadores para a tabela `gmenus_gtipomenu`
 --
-ALTER TABLE `gmenus_gmenus`
-  ADD CONSTRAINT `FK_GMENUS_GMENUS_gMenus_IDMENU` FOREIGN KEY (`gMenus_IDMENU`) REFERENCES `gmenus` (`IDMENU`),
-  ADD CONSTRAINT `FK_GMENUS_GMENUS_menuses_IDMENU` FOREIGN KEY (`menuses_IDMENU`) REFERENCES `gmenus` (`IDMENU`);
+ALTER TABLE `gmenus_gtipomenu`
+  ADD CONSTRAINT `FK_GMENUS_GTIPOMENU_gMenus_IDMENU` FOREIGN KEY (`gMenus_IDMENU`) REFERENCES `gmenus` (`IDMENU`),
+  ADD CONSTRAINT `FK_GMENUS_GTIPOMENU_tipomenus_IDTIPOMENU` FOREIGN KEY (`tipomenus_IDTIPOMENU`) REFERENCES `gtipomenu` (`IDTIPOMENU`);
 
 --
 -- Limitadores para a tabela `gpessoa_gutilitarios`

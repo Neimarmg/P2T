@@ -3,11 +3,15 @@ package entidade;
 
 import java.io.Serializable;
 import java.util.Collection;
+import javax.jws.Oneway;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
+import javax.persistence.TableGenerator;
+import javax.persistence.UniqueConstraint;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
@@ -23,13 +27,12 @@ public class gPessoa implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idPessoa;
     
-    @OneToOne           
+    @OneToMany         
      
     //@JoinColumn(columnDefinition="idProfissao", referencedColumnName="idUtilitario")
     Collection<gUtilitarios> profissao;
     
-    @OneToOne
-    //@JoinColumn(columnDefinition ="tipoPessoa", referencedColumnName="idUtilitario")
+    @OneToMany
     Collection<gUtilitarios> tipoPessoa;
     
     

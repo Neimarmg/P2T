@@ -24,18 +24,20 @@ public class gMenus implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idMenu;
 
-    @OneToOne
-    Collection<gMenus>menuses;
-    private Long idTipoMenu;
+    @OneToMany
+    Collection<gTipomenu>tipomenus;  
+    
     private String nomeMenu;
-
+    private boolean favorito;
+    
     public gMenus() {
     }
 
-    public gMenus(Long idMenu, Long idTipoMenu, String nomeMenu) {
+    public gMenus(Long idMenu, Collection<gTipomenu> tipomenus, String nomeMenu, boolean favorito) {
         this.idMenu = idMenu;
-        this.idTipoMenu = idTipoMenu;
+        this.tipomenus = tipomenus;
         this.nomeMenu = nomeMenu;
+        this.favorito = favorito;
     }
 
     public Long getIdMenu() {
@@ -46,12 +48,12 @@ public class gMenus implements Serializable {
         this.idMenu = idMenu;
     }
 
-    public Long getIdTipoMenu() {
-        return idTipoMenu;
+    public Collection<gTipomenu> getTipomenus() {
+        return tipomenus;
     }
 
-    public void setIdTipoMenu(Long idTipoMenu) {
-        this.idTipoMenu = idTipoMenu;
+    public void setTipomenus(Collection<gTipomenu> tipomenus) {
+        this.tipomenus = tipomenus;
     }
 
     public String getNomeMenu() {
@@ -62,9 +64,18 @@ public class gMenus implements Serializable {
         this.nomeMenu = nomeMenu;
     }
 
-    
+    public boolean isFavorito() {
+        return favorito;
+    }
 
-       
+    public void setFavorito(boolean favorito) {
+        this.favorito = favorito;
+    }
+
+   
+    
+    
+           
     
     
     @Override
