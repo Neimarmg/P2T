@@ -7,7 +7,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -24,13 +23,13 @@ public class gUtilitarios implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idUtilitario;
 
-    @OneToMany
+    @OneToOne
     Collection<gAplicacao>aplicacao;
     
-    @OneToMany
+    @OneToOne
     Collection<gTipoutilitarios>tipoutilitario;    
     
-    private String nemeUtilitario;
+    private String nomeUtilitario;
     private String Obs;
     private boolean favorita;
 
@@ -41,7 +40,7 @@ public class gUtilitarios implements Serializable {
         this.idUtilitario = idUtilitario;
         this.aplicacao = aplicacao;
         this.tipoutilitario = tipoutilitarios;
-        this.nemeUtilitario = utilitario;
+        this.nomeUtilitario = utilitario;
         this.Obs = Obs;
         this.favorita = favorita;
     }
@@ -70,12 +69,12 @@ public class gUtilitarios implements Serializable {
         this.tipoutilitario = tipoutilitario;
     }
 
-    public String getNemeUtilitario() {
-        return nemeUtilitario;
+    public String getNomeUtilitario() {
+        return nomeUtilitario;
     }
 
-    public void setNemeUtilitario(String nemeUtilitario) {
-        this.nemeUtilitario = nemeUtilitario;
+    public void setNomeUtilitario(String nomeUtilitario) {
+        this.nomeUtilitario = nomeUtilitario;
     }
 
     public String getObs() {

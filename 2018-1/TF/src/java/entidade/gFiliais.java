@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.websocket.OnOpen;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
@@ -26,15 +27,18 @@ public class gFiliais implements Serializable {
     @OneToMany
     Collection<gMatriz>matrizs;
     
+    @OneToMany
+    Collection<gUtilitarios>utilitarios;        
     private String descricao;
     private String cnpj;
 
     public gFiliais() {
     }
 
-    public gFiliais(Long idFilial, Collection<gMatriz> matrizs, String descricao, String cnpj) {
+    public gFiliais(Long idFilial, Collection<gMatriz> matrizs, Collection<gUtilitarios> utilitarios, String descricao, String cnpj) {
         this.idFilial = idFilial;
         this.matrizs = matrizs;
+        this.utilitarios = utilitarios;
         this.descricao = descricao;
         this.cnpj = cnpj;
     }
@@ -55,6 +59,14 @@ public class gFiliais implements Serializable {
         this.matrizs = matrizs;
     }
 
+    public Collection<gUtilitarios> getUtilitarios() {
+        return utilitarios;
+    }
+
+    public void setUtilitarios(Collection<gUtilitarios> utilitarios) {
+        this.utilitarios = utilitarios;
+    }
+
     public String getDescricao() {
         return descricao;
     }
@@ -70,6 +82,9 @@ public class gFiliais implements Serializable {
     public void setCnpj(String cnpj) {
         this.cnpj = cnpj;
     }
+
+    
+    
 
     
    

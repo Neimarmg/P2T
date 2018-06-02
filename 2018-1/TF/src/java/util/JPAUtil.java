@@ -1,6 +1,5 @@
 package util;
 
-import entidade.aModalidadecurso;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.ZoneId;
@@ -8,6 +7,7 @@ import java.util.Date;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+
 
 /**
  *
@@ -24,12 +24,16 @@ public class JPAUtil {
     
     public void execInsert(Object classe, boolean fecharConexao){
         EntityManager manager = JPAUtil.getManager();
-        
-        manager.getTransaction().begin();
-        manager.persist(classe);
-        manager.getTransaction().commit();
-        fecharConexao(manager, fecharConexao);
-
+        try {
+            manager.getTransaction().begin();
+            manager.persist(classe);
+            manager.getTransaction().commit();
+        } catch (Exception e) {
+           manager.getTransaction().rollback();
+        }finally{
+            fecharConexao(manager, fecharConexao);
+           
+        }
     }
     
        
@@ -76,7 +80,8 @@ phpmyadmin: mysql.pep.kinghost.net
 Usuário: pep
 Senha: 84d235g4r8h
 
-
+    SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+    Date data = format.parse(tuaVariavelString);
 
 
     <properties>

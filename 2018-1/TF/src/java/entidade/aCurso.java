@@ -24,21 +24,17 @@ public class aCurso implements Serializable {
     private Long idCurso;
 
     @OneToOne
-    Collection<aModalidadecurso>modalidadecursos;    
-    
-    @OneToOne
-    Collection<aProjetocurso>projetocursos;    
-     
+    Collection<aModalidadecurso>modalidadecursos;       
     private String nomeCurso;
+    
     
     public aCurso() {
         
     }
 
-    public aCurso(Long idCurso, Collection<aModalidadecurso> modalidadecursos, Collection<aProjetocurso> projetocursos, String nomeCurso) {
+    public aCurso(Long idCurso, Collection<aModalidadecurso> modalidadecursos, String nomeCurso) {
         this.idCurso = idCurso;
         this.modalidadecursos = modalidadecursos;
-        this.projetocursos = projetocursos;
         this.nomeCurso = nomeCurso;
     }
 
@@ -58,14 +54,6 @@ public class aCurso implements Serializable {
         this.modalidadecursos = modalidadecursos;
     }
 
-    public Collection<aProjetocurso> getProjetocursos() {
-        return projetocursos;
-    }
-
-    public void setProjetocursos(Collection<aProjetocurso> projetocursos) {
-        this.projetocursos = projetocursos;
-    }
-
     public String getNomeCurso() {
         return nomeCurso;
     }
@@ -75,13 +63,6 @@ public class aCurso implements Serializable {
     }
 
    
-    
-    
-    
-
-       
-    
-    
     @Override
     public int hashCode() {
         int hash = 0;

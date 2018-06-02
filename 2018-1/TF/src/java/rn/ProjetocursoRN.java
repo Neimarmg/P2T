@@ -27,7 +27,7 @@ public class ProjetocursoRN {
 
         System.out.println("Projetos:");
         for (aProjetocurso m : listaProjetos) {
-            view.View.msg(m.getIdProjetoCurso()+ "-" +m.getDescricaoProjeto()+ "-" + m.getModalidadecurso()+ "-" + m.getFilial()+ "-" +m.getValorCurso());
+            view.View.msg(m.getIdProjetoCurso()+ "-" +m.getDescricaoProjeto()+"-" +m.getDatacriacao()+ "-" + m.getModalidadecurso()+ "-" + m.getFilial()+ "-" +m.getValorCurso());
         }
 
         manager.close();
@@ -56,11 +56,11 @@ public class ProjetocursoRN {
         if(projetoAtual.getModalidadecurso()!=null && !projetocurso.getModalidadecurso().equals(id))
             projetoAtual.setModalidadecurso(projetocurso.getModalidadecurso());
         
-         projetoAtual.setDescricaoProjeto(projetocurso.getDescricaoProjeto());      
+        projetoAtual.setDescricaoProjeto(projetocurso.getDescricaoProjeto());      
         
         projetoAtual.setFilial(projetocurso.getFilial());
         
-        //projetoAtual.getDataInicio(projetocurso.getDataInicio());
+        projetoAtual.setDatacriacao(projetocurso.getDatacriacao());
         //projetoAtual.getDataFim(projetocurso.getDataFim());   
         
         manager.getTransaction().commit();

@@ -24,13 +24,13 @@ public class aProjetocurso implements Serializable {
     private Long idProjetoCurso;
  
     @OneToMany
-    //@Column(name="idModalidade")
     Collection<aModalidadecurso>modalidadecurso;
     
     @OneToMany
-    //@Column(name="filial")
     Collection<gFiliais>filial;
-     
+    
+    private String datacriacao;
+    
     private String descricaoProjeto;
     private double valorCurso ;
     
@@ -38,10 +38,11 @@ public class aProjetocurso implements Serializable {
     public aProjetocurso() {
     }
 
-    public aProjetocurso(Long idProjetoCurso, Collection<aModalidadecurso> modalidadecurso, Collection<gFiliais> filial, String descricaoProjeto, double valorCurso) {
+    public aProjetocurso(Long idProjetoCurso, Collection<aModalidadecurso> modalidadecurso, Collection<gFiliais> filial, String datacriacao, String descricaoProjeto, double valorCurso) {
         this.idProjetoCurso = idProjetoCurso;
         this.modalidadecurso = modalidadecurso;
         this.filial = filial;
+        this.datacriacao = datacriacao;
         this.descricaoProjeto = descricaoProjeto;
         this.valorCurso = valorCurso;
     }
@@ -70,6 +71,16 @@ public class aProjetocurso implements Serializable {
         this.filial = filial;
     }
 
+    public String getDatacriacao() {
+        return datacriacao;
+    }
+
+    public void setDatacriacao(String datacriacao) {
+        this.datacriacao = datacriacao;
+    }
+
+
+
     public String getDescricaoProjeto() {
         return descricaoProjeto;
     }
@@ -86,8 +97,7 @@ public class aProjetocurso implements Serializable {
         this.valorCurso = valorCurso;
     }
     
-
- 
+    
     
     
     @Override
@@ -114,5 +124,5 @@ public class aProjetocurso implements Serializable {
     public String toString() {
         return "entidade.aProjetocurso[idProjetoCurso=" + idProjetoCurso + " ]";
     }
-           
+      
 }

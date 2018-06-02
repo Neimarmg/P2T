@@ -7,7 +7,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+
 import javax.persistence.OneToOne;
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -25,7 +27,7 @@ public class gMenus implements Serializable {
     private Long idMenu;
 
     @OneToMany
-    Collection<gTipomenu>tipomenus;  
+    Collection<gTipomenu>tipomenu;  
     
     private String nomeMenu;
     private boolean favorito;
@@ -33,9 +35,9 @@ public class gMenus implements Serializable {
     public gMenus() {
     }
 
-    public gMenus(Long idMenu, Collection<gTipomenu> tipomenus, String nomeMenu, boolean favorito) {
+    public gMenus(Long idMenu, Collection<gTipomenu> tipomenu, String nomeMenu, boolean favorito) {
         this.idMenu = idMenu;
-        this.tipomenus = tipomenus;
+        this.tipomenu = tipomenu;
         this.nomeMenu = nomeMenu;
         this.favorito = favorito;
     }
@@ -48,12 +50,12 @@ public class gMenus implements Serializable {
         this.idMenu = idMenu;
     }
 
-    public Collection<gTipomenu> getTipomenus() {
-        return tipomenus;
+    public Collection<gTipomenu> getTipomenu() {
+        return tipomenu;
     }
 
-    public void setTipomenus(Collection<gTipomenu> tipomenus) {
-        this.tipomenus = tipomenus;
+    public void setTipomenu(Collection<gTipomenu> tipomenu) {
+        this.tipomenu = tipomenu;
     }
 
     public String getNomeMenu() {

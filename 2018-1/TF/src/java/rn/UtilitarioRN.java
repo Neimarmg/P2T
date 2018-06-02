@@ -27,7 +27,7 @@ public class UtilitarioRN {
 
         System.out.println("Curso:");
         for (gUtilitarios u : listaUtilitarios) {
-            view.View.msg(u.getIdUtilitario()+ "-" + u.getNemeUtilitario()+ "-" + u.getTipoutilitario()+ "-" + u.getObs()+ "-" + u.isFavorita());
+            view.View.msg(u.getIdUtilitario()+ "-" + u.getNomeUtilitario()+ "-" + u.getTipoutilitario()+ "-" + u.getObs()+ "-" + u.isFavorita());
         }
 
         manager.close();
@@ -59,8 +59,8 @@ public class UtilitarioRN {
         if(utilitarios.getTipoutilitario()!=null && !utilitarios.getTipoutilitario().equals(id))
             utilitarios.setTipoutilitario(utilitarios.getTipoutilitario());
         
-        if(utilitarios.getNemeUtilitario()!=null && !utilitarios.getNemeUtilitario().isEmpty())
-            utilitariosAtual.setNemeUtilitario(utilitarios.getNemeUtilitario());     
+        if(utilitarios.getNomeUtilitario()!=null && !utilitarios.getNomeUtilitario().isEmpty())
+            utilitariosAtual.setNomeUtilitario(utilitarios.getNomeUtilitario());     
         
         utilitariosAtual.setObs(utilitarios.getObs());  
         utilitariosAtual.setFavorita(utilitarios.isFavorita());  

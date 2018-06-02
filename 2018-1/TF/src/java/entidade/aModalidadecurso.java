@@ -2,9 +2,6 @@
 package entidade;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Collection;
-import javafx.print.Collation;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;

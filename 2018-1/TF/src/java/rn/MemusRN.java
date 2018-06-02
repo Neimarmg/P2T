@@ -1,6 +1,4 @@
 package rn;
-
-
 import entidade.gMenus;
 import java.util.List;
 import javax.persistence.EntityManager;
@@ -27,7 +25,7 @@ public class MemusRN {
 
         System.out.println("Menus:");
         for (gMenus m : listaMenus) {
-            view.View.msg(m.getIdMenu()+ "-" + m.getNomeMenu()+ "-" + m.getTipomenus());
+            view.View.msg(m.getIdMenu()+ "-" + m.getNomeMenu()+ "-" + m.getTipomenu());
         }
 
         manager.close();
@@ -53,8 +51,8 @@ public class MemusRN {
         
         manager.getTransaction().begin();
      
-        if(menus.getTipomenus()!=null && !menus.getTipomenus().equals(id))
-            menusAtual.setTipomenus(menus.getTipomenus());
+        if(menus.getTipomenu()!=null && !menus.getTipomenu().equals(id))
+            menusAtual.setTipomenu(menus.getTipomenu());
        
         if(menus.getNomeMenu()!=null && !menus.getNomeMenu().isEmpty())
             menusAtual.setNomeMenu(menus.getNomeMenu());     

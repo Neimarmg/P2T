@@ -34,6 +34,8 @@ public class ApplicationConfig extends Application {
         resources.add(ws.PessoaWS.class);
         resources.add(ws.ProjetoCursoWS.class);
         resources.add(ws.TipoUtilitarioWS.class);
+        resources.add(ws.TurmaDisciplinasWS.class);
+        resources.add(ws.UnidadeHabilitacaoWS.class);
         resources.add(ws.UsuarioWS.class);
         resources.add(ws.UtilitarioWS.class);
         resources.add(ws.disciplinaWS.class);
