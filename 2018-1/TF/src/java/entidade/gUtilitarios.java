@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -26,7 +27,7 @@ public class gUtilitarios implements Serializable {
     @OneToOne
     Collection<gAplicacao>aplicacao;
     
-    @OneToOne
+    @OneToMany
     Collection<gTipoutilitarios>tipoutilitario;    
     
     private String nomeUtilitario;

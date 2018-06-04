@@ -36,7 +36,7 @@ public class TurmaDisciplinasWS {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public List<aTurmaDisciplinas> getModalidadeCurso() {
+    public List<aTurmaDisciplinas> getTuromaDisciplina() {
         try {
             return turmaDisciplinasRN.listar();
             
@@ -49,7 +49,7 @@ public class TurmaDisciplinasWS {
     @GET
     @Path("/{id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public aTurmaDisciplinas getModalidadePorId(@PathParam("id") Long id){
+    public aTurmaDisciplinas getTuromaDisciplinaPorId(@PathParam("id") Long id){
         aTurmaDisciplinas turmaDisciplinas = turmaDisciplinasRN.buscarPorId(id);
         if(turmaDisciplinas == null) throw new NotFoundException();
         return turmaDisciplinas;

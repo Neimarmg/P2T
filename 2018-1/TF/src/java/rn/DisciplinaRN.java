@@ -27,9 +27,13 @@ public class DisciplinaRN {
         aCurso curso = new aCurso();
         CursoRN  cursoRN = new CursoRN();
         
-        System.out.println("Disciplinas:");
+        view.View.msg("Disciplinas:");
         for (aDisciplinas m : listaDisciplinas) {
-            view.View.msg(m.getIdDisciplina()+ "-" + m.getCursos()+ "-" + m.getNomeDisciplina()+ "-" + m.getEmenta()+ "-" + curso.getNomeCurso());
+            view.View.msg(m.getIdDisciplina()
+                    + "-" + m.getCursos()
+                    + "-" + m.getNomeDisciplina()
+                    + "-" + m.getEmenta()
+                    + "-" + curso.getNomeCurso());
             
         }
 
@@ -61,7 +65,10 @@ public class DisciplinaRN {
         
         if(disciplinas.getNomeDisciplina()!=null && !disciplinas.getNomeDisciplina().isEmpty())
             disciplinaAtual.setNomeDisciplina(disciplinas.getNomeDisciplina());
-       
+        
+        if(disciplinas.getProjetocurso()!=null && !disciplinas.getProjetocurso().isEmpty())
+            disciplinaAtual.setProjetocurso(disciplinas.getProjetocurso());
+        
         disciplinaAtual.setEmenta(disciplinas.getEmenta());
         
         manager.getTransaction().commit();

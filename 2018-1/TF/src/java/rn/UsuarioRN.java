@@ -24,7 +24,7 @@ public class UsuarioRN {
         TypedQuery<yUsuarios> query = manager.createQuery("SELECT m FROM yUsuarios m",yUsuarios.class);
         List<yUsuarios> listaUsutarios = query.getResultList();
 
-        System.out.println("Usuario:");
+        view.View.msg("Usuario:");
         for (yUsuarios m : listaUsutarios) {
             view.View.msg(m.getId()+ "-" + m.getPessoa()+ "-" + m.getIdUsuario()+ "-" + m.getSenha());
         }

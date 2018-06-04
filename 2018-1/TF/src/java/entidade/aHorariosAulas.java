@@ -7,7 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.OneToMany;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
@@ -23,14 +23,12 @@ public class aHorariosAulas implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idHorariosAulas;
     
-    @OneToOne
+    @OneToMany
     Collection<gTurnos>turno;
     
-    @OneToOne
+    @OneToMany
     Collection<aTurmaDisciplinas>turmaDisciplinas;
-    
-  
-    
+       
     private String dataInicio;    
     private String dataFim;
   

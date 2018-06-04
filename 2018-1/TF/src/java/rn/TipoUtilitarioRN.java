@@ -25,7 +25,7 @@ public class TipoUtilitarioRN {
         TypedQuery<gTipoutilitarios> query = manager.createQuery("SELECT m FROM gTipoutilitarios m",gTipoutilitarios.class);
         List<gTipoutilitarios> listaTipoUtilitarios = query.getResultList();
 
-        System.out.println("TipoUtilitarios:");
+        view.View.msg("TipoUtilitarios:");
         for (gTipoutilitarios g : listaTipoUtilitarios) {
             view.View.msg(g.getIdTipoUtilitario()+ "-" + g.getDescricao());
         }

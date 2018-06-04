@@ -23,7 +23,7 @@ public class MemusRN {
         TypedQuery<gMenus> query = manager.createQuery("SELECT m FROM gMenus m",gMenus.class);
         List<gMenus> listaMenus = query.getResultList();
 
-        System.out.println("Menus:");
+        view.View.msg("Menus:");
         for (gMenus m : listaMenus) {
             view.View.msg(m.getIdMenu()+ "-" + m.getNomeMenu()+ "-" + m.getTipomenu());
         }

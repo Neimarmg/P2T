@@ -1,6 +1,6 @@
 package ws;
 
-import entidade.aCurso;
+import entidade.gPredio;
 import java.io.IOException;
 import java.util.List;
 import javax.servlet.http.HttpServletResponse;
@@ -17,28 +17,28 @@ import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.core.MediaType;
-import rn.CursoRN;
+import rn.PredioRN;
 
 /**
  * REST Web Service
  *
  *  @author neimarmoises
  */
-@Path("curso")
-public class CursoWS {
-    private CursoRN cursoRN;
+@Path("predio")
+public class PredioWS {
+    private PredioRN predioRN;
     @Context
     private UriInfo context;
 
-    public CursoWS() {
-        cursoRN = new CursoRN();
+    public PredioWS() {
+        predioRN = new PredioRN();
     }
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public List<aCurso> getModalidadeCurso() {
+    public List<gPredio> getPredio() {
         try {
-            return cursoRN.listar();
+            return predioRN.listar();
             
         } catch (IllegalArgumentException e) {
                e.getMessage();
@@ -49,25 +49,25 @@ public class CursoWS {
     @GET
     @Path("/{id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public aCurso getModalidadePorId(@PathParam("id") Long id){
-        aCurso curso = cursoRN.buscarPorId(id);
-        if(curso == null) throw new NotFoundException();
-        return curso;
+    public gPredio getPredioPorId(@PathParam("id") Long id){
+        gPredio predio = predioRN.buscarPorId(id);
+        if(predio == null) throw new NotFoundException();
+        return predio;
     }
 
     @POST
     @Path("/novo")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public aCurso adiciona(aCurso curso, @Context HttpServletResponse response) throws Exception {
-        aCurso cursoGerado = cursoRN.inserir(curso);
+    public gPredio adiciona(gPredio predio, @Context HttpServletResponse response) throws Exception {
+        gPredio predioGerado = predioRN.inserir(predio);
         response.setStatus(HttpServletResponse.SC_CREATED);
         try {
             response.flushBuffer();
         } catch (IOException e) {
             throw new InternalServerErrorException();
         }
-        return cursoGerado;
+        return predioGerado;
     }
 
 
@@ -75,30 +75,30 @@ public class CursoWS {
     @Path("/{id}")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public aCurso atualiza(@PathParam("id") Long id, aCurso curso) {
-        aCurso cursoGerado;
+    public gPredio atualiza(@PathParam("id") Long id, gPredio predio) {
+        gPredio predioGerado;
        
         try {
-            cursoGerado = cursoRN.atualizar(id, curso);
+            predioGerado = predioRN.atualizar(id, predio);
         } catch (Exception e) {
             throw new NotFoundException();
         }
         
-        return cursoGerado;
+        return predioGerado;
     }
     
     
     @DELETE
     @Path("/{id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public aCurso deleta(@PathParam("id") Long id){
-        aCurso curso = null;
+    public gPredio deleta(@PathParam("id") Long id){
+        gPredio predio = null;
         try{
-            curso = cursoRN.deletar(id);
+            predio = predioRN.deletar(id);
         }
         catch(Exception ex){
             throw new NotFoundException();
         }
-        return curso;
+        return predio;
     }
 }

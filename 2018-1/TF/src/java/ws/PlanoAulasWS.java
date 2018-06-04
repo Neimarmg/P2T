@@ -1,6 +1,6 @@
 package ws;
 
-import entidade.aCurso;
+import entidade.aPlanoDeAula;
 import java.io.IOException;
 import java.util.List;
 import javax.servlet.http.HttpServletResponse;
@@ -17,28 +17,28 @@ import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.core.MediaType;
-import rn.CursoRN;
+import rn.PlanoAulaRN;
 
 /**
  * REST Web Service
  *
  *  @author neimarmoises
  */
-@Path("curso")
-public class CursoWS {
-    private CursoRN cursoRN;
+@Path("planodeaula")
+public class PlanoAulasWS {
+    private PlanoAulaRN planoAulaRN;
     @Context
     private UriInfo context;
 
-    public CursoWS() {
-        cursoRN = new CursoRN();
+    public PlanoAulasWS() {
+        planoAulaRN = new PlanoAulaRN();
     }
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public List<aCurso> getModalidadeCurso() {
+    public List<aPlanoDeAula> getPlanoDeAulas() {
         try {
-            return cursoRN.listar();
+            return planoAulaRN.listar();
             
         } catch (IllegalArgumentException e) {
                e.getMessage();
@@ -49,25 +49,25 @@ public class CursoWS {
     @GET
     @Path("/{id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public aCurso getModalidadePorId(@PathParam("id") Long id){
-        aCurso curso = cursoRN.buscarPorId(id);
-        if(curso == null) throw new NotFoundException();
-        return curso;
+    public aPlanoDeAula getPlanoDeAulasPorId(@PathParam("id") Long id){
+        aPlanoDeAula planoDeAula = planoAulaRN.buscarPorId(id);
+        if(planoDeAula == null) throw new NotFoundException();
+        return planoDeAula;
     }
 
     @POST
     @Path("/novo")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public aCurso adiciona(aCurso curso, @Context HttpServletResponse response) throws Exception {
-        aCurso cursoGerado = cursoRN.inserir(curso);
+    public aPlanoDeAula adiciona(aPlanoDeAula planoDeAula, @Context HttpServletResponse response) throws Exception {
+        aPlanoDeAula planoDeAulaGerado = planoAulaRN.inserir(planoDeAula);
         response.setStatus(HttpServletResponse.SC_CREATED);
         try {
             response.flushBuffer();
         } catch (IOException e) {
             throw new InternalServerErrorException();
         }
-        return cursoGerado;
+        return planoDeAulaGerado;
     }
 
 
@@ -75,30 +75,30 @@ public class CursoWS {
     @Path("/{id}")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public aCurso atualiza(@PathParam("id") Long id, aCurso curso) {
-        aCurso cursoGerado;
+    public aPlanoDeAula atualiza(@PathParam("id") Long id, aPlanoDeAula planoDeAula) {
+        aPlanoDeAula planoDeAulaGerado;
        
         try {
-            cursoGerado = cursoRN.atualizar(id, curso);
+            planoDeAulaGerado = planoAulaRN.atualizar(id, planoDeAula);
         } catch (Exception e) {
             throw new NotFoundException();
         }
         
-        return cursoGerado;
+        return planoDeAulaGerado;
     }
     
     
     @DELETE
     @Path("/{id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public aCurso deleta(@PathParam("id") Long id){
-        aCurso curso = null;
+    public aPlanoDeAula deleta(@PathParam("id") Long id){
+        aPlanoDeAula planoDeAula = null;
         try{
-            curso = cursoRN.deletar(id);
+            planoDeAula = planoAulaRN.deletar(id);
         }
         catch(Exception ex){
             throw new NotFoundException();
         }
-        return curso;
+        return planoDeAula;
     }
 }

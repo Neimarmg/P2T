@@ -24,7 +24,7 @@ public class ModalidadeCursoRN {
         TypedQuery<aModalidadecurso> query = manager.createQuery("SELECT m FROM aModalidadecurso m",aModalidadecurso.class);
         List<aModalidadecurso> listaMotores = query.getResultList();
 
-        System.out.println("Modalidades:");
+        view.View.msg("Modalidades:");
         for (aModalidadecurso m : listaMotores) {
            view.View.msg(m.getIdModalidade() + "-" + m.getDescricao());
         }

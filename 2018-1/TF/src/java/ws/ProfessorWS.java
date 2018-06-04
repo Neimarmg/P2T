@@ -1,6 +1,6 @@
 package ws;
 
-import entidade.aCurso;
+import entidade.aProfessor;
 import java.io.IOException;
 import java.util.List;
 import javax.servlet.http.HttpServletResponse;
@@ -17,28 +17,28 @@ import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.core.MediaType;
-import rn.CursoRN;
+import rn.ProfessorRN;
 
 /**
  * REST Web Service
  *
  *  @author neimarmoises
  */
-@Path("curso")
-public class CursoWS {
-    private CursoRN cursoRN;
+@Path("professor")
+public class ProfessorWS {
+    private ProfessorRN professorRN;
     @Context
     private UriInfo context;
 
-    public CursoWS() {
-        cursoRN = new CursoRN();
+    public ProfessorWS() {
+        professorRN = new ProfessorRN();
     }
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public List<aCurso> getModalidadeCurso() {
-        try {
-            return cursoRN.listar();
+    public List<aProfessor> getProfessor() {
+       try {
+            return professorRN.listar();
             
         } catch (IllegalArgumentException e) {
                e.getMessage();
@@ -49,25 +49,25 @@ public class CursoWS {
     @GET
     @Path("/{id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public aCurso getModalidadePorId(@PathParam("id") Long id){
-        aCurso curso = cursoRN.buscarPorId(id);
-        if(curso == null) throw new NotFoundException();
-        return curso;
+    public aProfessor getProfessorPorId(@PathParam("id") Long id){
+        aProfessor professor = professorRN.buscarPorId(id);
+        if(professor == null) throw new NotFoundException();
+        return professor;
     }
 
     @POST
     @Path("/novo")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public aCurso adiciona(aCurso curso, @Context HttpServletResponse response) throws Exception {
-        aCurso cursoGerado = cursoRN.inserir(curso);
+    public aProfessor adiciona(aProfessor professor, @Context HttpServletResponse response) throws Exception {
+        aProfessor professorGerada = professorRN.inserir(professor);
         response.setStatus(HttpServletResponse.SC_CREATED);
         try {
             response.flushBuffer();
         } catch (IOException e) {
             throw new InternalServerErrorException();
         }
-        return cursoGerado;
+        return professorGerada;
     }
 
 
@@ -75,30 +75,30 @@ public class CursoWS {
     @Path("/{id}")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public aCurso atualiza(@PathParam("id") Long id, aCurso curso) {
-        aCurso cursoGerado;
+    public aProfessor atualiza(@PathParam("id") Long id, aProfessor professor) {
+        aProfessor professorGerada;
        
         try {
-            cursoGerado = cursoRN.atualizar(id, curso);
+            professorGerada = professorRN.atualizar(id, professor);
         } catch (Exception e) {
             throw new NotFoundException();
         }
         
-        return cursoGerado;
+        return professorGerada;
     }
     
     
     @DELETE
     @Path("/{id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public aCurso deleta(@PathParam("id") Long id){
-        aCurso curso = null;
+    public aProfessor deleta(@PathParam("id") Long id){
+        aProfessor professor = null;
         try{
-            curso = cursoRN.deletar(id);
+            professor = professorRN.deletar(id);
         }
         catch(Exception ex){
             throw new NotFoundException();
         }
-        return curso;
+        return professor;
     }
 }

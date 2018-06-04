@@ -36,7 +36,7 @@ public class UnidadeHabilitacaoWS {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public List<aUnidadeHabiltacao> getModalidadeCurso() {
+    public List<aUnidadeHabiltacao> getUnidadeHablilitacao() {
         try {
             return unidadeHabilitacaoRN.listar();
             
@@ -49,7 +49,7 @@ public class UnidadeHabilitacaoWS {
     @GET
     @Path("/{id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public aUnidadeHabiltacao getModalidadePorId(@PathParam("id") Long id){
+    public aUnidadeHabiltacao getUnidadeHablilitacaoId(@PathParam("id") Long id){
         aUnidadeHabiltacao unidadeHabiltacao = unidadeHabilitacaoRN.buscarPorId(id);
         if(unidadeHabiltacao == null) throw new NotFoundException();
         return unidadeHabiltacao;

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 02-Jun-2018 às 18:47
+-- Generation Time: 04-Jun-2018 às 06:09
 -- Versão do servidor: 10.1.26-MariaDB
 -- PHP Version: 7.1.9
 
@@ -262,8 +262,9 @@ CREATE TABLE `adisciplinas` (
 
 INSERT INTO `adisciplinas` (`IDDISCIPLINA`, `EMENTA`, `NOMEDISCIPLINA`) VALUES
 (1, 'Direito civil da sociedade', 'Direito civil'),
-(2, 'Direito criminal', 'Direito penal'),
-(3, 'Parte geral do direito civil', 'Direito das coisas');
+(3, 'Parte geral do direito civil', 'Direito das coisas'),
+(6, 'Parte geral', 'Antibioticos'),
+(7, 'Criterios de modelagem e materias', 'Modelagem de proteses e anelise de materiais');
 
 -- --------------------------------------------------------
 
@@ -282,8 +283,87 @@ CREATE TABLE `adisciplinas_acurso` (
 
 INSERT INTO `adisciplinas_acurso` (`aDisciplinas_IDDISCIPLINA`, `cursos_IDCURSO`) VALUES
 (1, 15),
-(2, 15),
-(3, 15);
+(3, 15),
+(6, 14),
+(7, 14);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `adisciplinas_aprojetocurso`
+--
+
+CREATE TABLE `adisciplinas_aprojetocurso` (
+  `aDisciplinas_IDDISCIPLINA` bigint(20) NOT NULL,
+  `projetocurso_IDPROJETOCURSO` bigint(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `adisciplinas_aprojetocurso`
+--
+
+INSERT INTO `adisciplinas_aprojetocurso` (`aDisciplinas_IDDISCIPLINA`, `projetocurso_IDPROJETOCURSO`) VALUES
+(1, 9),
+(3, 9),
+(6, 14),
+(7, 14);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `ahorarioprofessor`
+--
+
+CREATE TABLE `ahorarioprofessor` (
+  `IDAHORARIOPROFESSOR` bigint(20) NOT NULL,
+  `VALORAULA` double DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `ahorarioprofessor`
+--
+
+INSERT INTO `ahorarioprofessor` (`IDAHORARIOPROFESSOR`, `VALORAULA`) VALUES
+(2, 300),
+(3, 300);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `ahorarioprofessor_aplanodeaula`
+--
+
+CREATE TABLE `ahorarioprofessor_aplanodeaula` (
+  `aHorarioProfessor_IDAHORARIOPROFESSOR` bigint(20) NOT NULL,
+  `planoDeAulas_IDPLANODEAULA` bigint(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `ahorarioprofessor_aplanodeaula`
+--
+
+INSERT INTO `ahorarioprofessor_aplanodeaula` (`aHorarioProfessor_IDAHORARIOPROFESSOR`, `planoDeAulas_IDPLANODEAULA`) VALUES
+(2, 1),
+(3, 2);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `ahorarioprofessor_aprofessor`
+--
+
+CREATE TABLE `ahorarioprofessor_aprofessor` (
+  `aHorarioProfessor_IDAHORARIOPROFESSOR` bigint(20) NOT NULL,
+  `professor_IDPROFESSOR` bigint(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `ahorarioprofessor_aprofessor`
+--
+
+INSERT INTO `ahorarioprofessor_aprofessor` (`aHorarioProfessor_IDAHORARIOPROFESSOR`, `professor_IDPROFESSOR`) VALUES
+(2, 1),
+(3, 2);
 
 -- --------------------------------------------------------
 
@@ -297,6 +377,14 @@ CREATE TABLE `ahorariosaulas` (
   `DATAINICIO` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Extraindo dados da tabela `ahorariosaulas`
+--
+
+INSERT INTO `ahorariosaulas` (`IDHORARIOSAULAS`, `DATAFIM`, `DATAINICIO`) VALUES
+(1, '2018-06-01', '2018-02-02'),
+(2, '2018-06-01', '2018-02-02');
+
 -- --------------------------------------------------------
 
 --
@@ -308,6 +396,14 @@ CREATE TABLE `ahorariosaulas_aturmadisciplinas` (
   `turmaDisciplinas_IDTURMADISCIPLINA` bigint(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Extraindo dados da tabela `ahorariosaulas_aturmadisciplinas`
+--
+
+INSERT INTO `ahorariosaulas_aturmadisciplinas` (`aHorariosAulas_IDHORARIOSAULAS`, `turmaDisciplinas_IDTURMADISCIPLINA`) VALUES
+(1, 2),
+(2, 3);
+
 -- --------------------------------------------------------
 
 --
@@ -318,6 +414,14 @@ CREATE TABLE `ahorariosaulas_gturnos` (
   `aHorariosAulas_IDHORARIOSAULAS` bigint(20) NOT NULL,
   `turno_IDTURNO` bigint(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `ahorariosaulas_gturnos`
+--
+
+INSERT INTO `ahorariosaulas_gturnos` (`aHorariosAulas_IDHORARIOSAULAS`, `turno_IDTURNO`) VALUES
+(1, 1),
+(2, 1);
 
 -- --------------------------------------------------------
 
@@ -343,6 +447,103 @@ INSERT INTO `amodalidadecurso` (`IDMODALIDADE`, `DESCRICAO`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `aplanodeaula`
+--
+
+CREATE TABLE `aplanodeaula` (
+  `IDPLANODEAULA` bigint(20) NOT NULL,
+  `CONFIRMADA` tinyint(1) DEFAULT '0',
+  `CONTEUDO` varchar(255) DEFAULT NULL,
+  `DATAAULA` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `aplanodeaula`
+--
+
+INSERT INTO `aplanodeaula` (`IDPLANODEAULA`, `CONFIRMADA`, `CONTEUDO`, `DATAAULA`) VALUES
+(1, 0, 'ddddddddddddddddd', '2018-02-02'),
+(2, 0, 'fdgffgfg', '2018-02-03');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `aplanodeaula_ahorariosaulas`
+--
+
+CREATE TABLE `aplanodeaula_ahorariosaulas` (
+  `aPlanoDeAula_IDPLANODEAULA` bigint(20) NOT NULL,
+  `horariosAulas_IDHORARIOSAULAS` bigint(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `aplanodeaula_ahorariosaulas`
+--
+
+INSERT INTO `aplanodeaula_ahorariosaulas` (`aPlanoDeAula_IDPLANODEAULA`, `horariosAulas_IDHORARIOSAULAS`) VALUES
+(1, 2),
+(2, 2);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `aplanodeaula_gturnos`
+--
+
+CREATE TABLE `aplanodeaula_gturnos` (
+  `aPlanoDeAula_IDPLANODEAULA` bigint(20) NOT NULL,
+  `turno_IDTURNO` bigint(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `aplanodeaula_gturnos`
+--
+
+INSERT INTO `aplanodeaula_gturnos` (`aPlanoDeAula_IDPLANODEAULA`, `turno_IDTURNO`) VALUES
+(1, 1),
+(2, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `aprofessor`
+--
+
+CREATE TABLE `aprofessor` (
+  `IDPROFESSOR` bigint(20) NOT NULL,
+  `ATIVO` tinyint(1) DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `aprofessor`
+--
+
+INSERT INTO `aprofessor` (`IDPROFESSOR`, `ATIVO`) VALUES
+(1, 1),
+(2, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `aprofessor_gpessoa`
+--
+
+CREATE TABLE `aprofessor_gpessoa` (
+  `aProfessor_IDPROFESSOR` bigint(20) NOT NULL,
+  `pessoas_IDPESSOA` bigint(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `aprofessor_gpessoa`
+--
+
+INSERT INTO `aprofessor_gpessoa` (`aProfessor_IDPROFESSOR`, `pessoas_IDPESSOA`) VALUES
+(1, 33),
+(2, 34);
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `aprojetocurso`
 --
 
@@ -362,7 +563,7 @@ INSERT INTO `aprojetocurso` (`IDPROJETOCURSO`, `DESCRICAOPROJETO`, `VALORCURSO`,
 (8, 'Cursos preparatórios', 10000, '2018-06-01'),
 (9, ' Graduação em direito  2018', 1000, '2018-06-01'),
 (10, 'Curso pós graduação', 500, '2018-06-01'),
-(14, 'Graduação em gastronomia 2015 ', 50000, '2018-01-02');
+(14, 'Graduação em Odontologia 2015', 50000, '2018-01-02');
 
 -- --------------------------------------------------------
 
@@ -382,7 +583,7 @@ CREATE TABLE `aprojetocurso_amodalidadecurso` (
 INSERT INTO `aprojetocurso_amodalidadecurso` (`aProjetocurso_IDPROJETOCURSO`, `modalidadecurso_IDMODALIDADE`) VALUES
 (7, 1),
 (8, 1),
-(9, 2),
+(9, 1),
 (10, 1),
 (14, 1);
 
@@ -418,18 +619,17 @@ CREATE TABLE `aturmadisciplinas` (
   `IDTURMADISCIPLINA` bigint(20) NOT NULL,
   `ATIVA` tinyint(1) DEFAULT '0',
   `DATAFIM` date DEFAULT NULL,
-  `DATAINICIO` date DEFAULT NULL,
-  `EMF` longblob
+  `DATAINICIO` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `aturmadisciplinas`
 --
 
-INSERT INTO `aturmadisciplinas` (`IDTURMADISCIPLINA`, `ATIVA`, `DATAFIM`, `DATAINICIO`, `EMF`) VALUES
-(2, 1, '2018-06-20', '2018-02-20', NULL),
-(3, 1, '2018-06-20', '2018-02-20', NULL),
-(4, 1, '2018-06-20', '2018-02-20', NULL);
+INSERT INTO `aturmadisciplinas` (`IDTURMADISCIPLINA`, `ATIVA`, `DATAFIM`, `DATAINICIO`) VALUES
+(2, 1, '2018-06-20', '2018-02-20'),
+(3, 1, '2018-06-20', '2018-02-20'),
+(4, 1, '2018-06-20', '2018-02-20');
 
 -- --------------------------------------------------------
 
@@ -449,7 +649,7 @@ CREATE TABLE `aturmadisciplinas_adisciplinas` (
 INSERT INTO `aturmadisciplinas_adisciplinas` (`aTurmaDisciplinas_IDTURMADISCIPLINA`, `disciplina_IDDISCIPLINA`) VALUES
 (2, 1),
 (3, 3),
-(4, 1);
+(4, 3);
 
 -- --------------------------------------------------------
 
@@ -526,7 +726,7 @@ CREATE TABLE `aunidadehabiltacao_acurso` (
 --
 
 INSERT INTO `aunidadehabiltacao_acurso` (`aUnidadeHabiltacao_IDUNIDADEHABILTACAO`, `curso_IDCURSO`) VALUES
-(3, 14),
+(3, 15),
 (4, 14);
 
 -- --------------------------------------------------------
@@ -545,7 +745,7 @@ CREATE TABLE `aunidadehabiltacao_aprojetocurso` (
 --
 
 INSERT INTO `aunidadehabiltacao_aprojetocurso` (`aUnidadeHabiltacao_IDUNIDADEHABILTACAO`, `projetocursos_IDPROJETOCURSO`) VALUES
-(3, 14),
+(3, 9),
 (4, 14);
 
 -- --------------------------------------------------------
@@ -686,7 +886,7 @@ CREATE TABLE `gfiliais_gutilitarios` (
 
 INSERT INTO `gfiliais_gutilitarios` (`gFiliais_IDFILIAL`, `utilitarios_IDUTILITARIO`) VALUES
 (1, 7),
-(2, 8);
+(2, 7);
 
 -- --------------------------------------------------------
 
@@ -769,7 +969,7 @@ CREATE TABLE `gpessoa` (
 
 INSERT INTO `gpessoa` (`IDPESSOA`, `ATIVA`, `CPF`, `CREF`, `NOME`, `RG`) VALUES
 (33, 0, '23325521-54', '123-565', 'Neimar moises', '231556-562'),
-(34, 0, '23325521-54', '123-565', 'Neimar moises', '231556-562');
+(34, 0, '23665-12214', '123-256', 'Carlos da silva', '231556-562');
 
 -- --------------------------------------------------------
 
@@ -782,6 +982,117 @@ CREATE TABLE `gpessoa_gutilitarios` (
   `profissao_IDUTILITARIO` bigint(20) NOT NULL,
   `tipoPessoa_IDUTILITARIO` bigint(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `gpredio`
+--
+
+CREATE TABLE `gpredio` (
+  `IDPREDIO` bigint(20) NOT NULL,
+  `ATIVO` tinyint(1) DEFAULT '0',
+  `NOMEPREDIO` varchar(255) DEFAULT NULL,
+  `QTPAVIMENTOS` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `gpredio`
+--
+
+INSERT INTO `gpredio` (`IDPREDIO`, `ATIVO`, `NOMEPREDIO`, `QTPAVIMENTOS`) VALUES
+(1, 1, 'Predio A', 5),
+(2, 1, 'Predio B', 5),
+(3, 1, 'Predio unico', 3);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `gpredio_gfiliais`
+--
+
+CREATE TABLE `gpredio_gfiliais` (
+  `gPredio_IDPREDIO` bigint(20) NOT NULL,
+  `filial_IDFILIAL` bigint(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `gpredio_gfiliais`
+--
+
+INSERT INTO `gpredio_gfiliais` (`gPredio_IDPREDIO`, `filial_IDFILIAL`) VALUES
+(1, 2),
+(2, 2),
+(3, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `gsalas`
+--
+
+CREATE TABLE `gsalas` (
+  `IDSALA` bigint(20) NOT NULL,
+  `ATIVA` tinyint(1) DEFAULT '0',
+  `CAPACIDADE` int(11) DEFAULT NULL,
+  `PAVIMENTO` varchar(255) DEFAULT NULL,
+  `SALA` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `gsalas`
+--
+
+INSERT INTO `gsalas` (`IDSALA`, `ATIVA`, `CAPACIDADE`, `PAVIMENTO`, `SALA`) VALUES
+(1, 1, 40, 'terreo', '100'),
+(2, 1, 40, 'terreo', '101'),
+(3, 1, 40, 'terreo', '102'),
+(4, 1, 40, 'terreo', '103'),
+(5, 1, 40, 'terreo', '104');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `gsalas_gpredio`
+--
+
+CREATE TABLE `gsalas_gpredio` (
+  `gSalas_IDSALA` bigint(20) NOT NULL,
+  `predios_IDPREDIO` bigint(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `gsalas_gpredio`
+--
+
+INSERT INTO `gsalas_gpredio` (`gSalas_IDSALA`, `predios_IDPREDIO`) VALUES
+(1, 1),
+(2, 1),
+(3, 1),
+(4, 1),
+(5, 2);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `gsalas_gutilitarios`
+--
+
+CREATE TABLE `gsalas_gutilitarios` (
+  `gSalas_IDSALA` bigint(20) NOT NULL,
+  `tipoSala_IDUTILITARIO` bigint(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `gsalas_gutilitarios`
+--
+
+INSERT INTO `gsalas_gutilitarios` (`gSalas_IDSALA`, `tipoSala_IDUTILITARIO`) VALUES
+(1, 11),
+(2, 11),
+(3, 11),
+(4, 11),
+(5, 12);
 
 -- --------------------------------------------------------
 
@@ -822,7 +1133,8 @@ INSERT INTO `gtipoutilitarios` (`IDTIPOUTILITARIO`, `DESCRICAO`) VALUES
 (1, 'Tipo pessoa'),
 (2, 'Profissão'),
 (3, 'Tipo Perfil'),
-(4, 'Tipo filial');
+(4, 'Tipo filial'),
+(5, 'Tipo sala');
 
 -- --------------------------------------------------------
 
@@ -865,16 +1177,19 @@ CREATE TABLE `gutilitarios` (
 --
 
 INSERT INTO `gutilitarios` (`IDUTILITARIO`, `OBS`, `FAVORITA`, `NOMEUTILITARIO`) VALUES
-(1, ' ', 1, 'Cliente'),
-(2, ' ', 1, 'Fornecedor'),
-(3, ' ', 1, 'Programador'),
-(4, ' ', 1, 'Atedente'),
-(5, ' ', 1, 'Encarregado'),
-(6, ' ', 1, 'Unidade'),
-(7, ' ', 1, 'Matriz'),
-(8, ' ', 1, 'Filial'),
-(9, ' ', 1, 'Polo'),
-(10, ' ', 1, 'Campus');
+(1, ' ', 0, 'Cliente'),
+(2, ' ', 0, 'Fornecedor'),
+(3, ' ', 0, 'Programador'),
+(4, ' ', 0, 'Atedente'),
+(5, ' ', 0, 'Encarregado'),
+(6, ' ', 0, 'Unidade'),
+(7, ' ', 0, 'Matriz'),
+(8, ' ', 0, 'Filial'),
+(9, ' ', 0, 'Polo'),
+(10, ' ', 0, 'Campus'),
+(11, ' ', 0, 'Sala de aula'),
+(12, ' ', 0, 'LaboratÃ³rio'),
+(13, ' ', 0, 'Anfitiatro');
 
 -- --------------------------------------------------------
 
@@ -901,7 +1216,10 @@ INSERT INTO `gutilitarios_gaplicacao` (`gUtilitarios_IDUTILITARIO`, `aplicacao_I
 (7, 1),
 (8, 1),
 (9, 1),
-(10, 1);
+(10, 1),
+(11, 1),
+(12, 1),
+(13, 1);
 
 -- --------------------------------------------------------
 
@@ -928,7 +1246,10 @@ INSERT INTO `gutilitarios_gtipoutilitarios` (`gUtilitarios_IDUTILITARIO`, `tipou
 (7, 4),
 (8, 4),
 (9, 4),
-(10, 4);
+(10, 4),
+(11, 5),
+(12, 5),
+(13, 5);
 
 -- --------------------------------------------------------
 
@@ -946,6 +1267,117 @@ CREATE TABLE `yobjetos` (
   `IDTIPOUTILIRARIO` bigint(20) DEFAULT NULL,
   `NOMEOBJETO` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `yobjetos`
+--
+
+INSERT INTO `yobjetos` (`IDOBJETOS`, `APLICACAO`, `DESCTIPOOBJETO`, `DETALHESOBJETO`, `IDAPLICACAO`, `IDSUBGRUPO`, `IDTIPOUTILIRARIO`, `NOMEOBJETO`) VALUES
+(128, 'ACURSO', 'table', NULL, NULL, NULL, NULL, 'acurso'),
+(129, 'ACURSO_AMODALIDADECURSO', 'table', NULL, NULL, NULL, NULL, 'acurso_amodalidadecurso'),
+(130, 'ADISCIPLINAS', 'table', NULL, NULL, NULL, NULL, 'adisciplinas'),
+(131, 'ADISCIPLINAS_ACURSO', 'table', NULL, NULL, NULL, NULL, 'adisciplinas_acurso'),
+(132, 'ADISCIPLINAS_APROJETOCURSO', 'table', NULL, NULL, NULL, NULL, 'adisciplinas_aprojetocurso'),
+(133, 'AHORARIOPROFESSOR', 'table', NULL, NULL, NULL, NULL, 'ahorarioprofessor'),
+(134, 'AHORARIOPROFESSOR_APLANODEAULA', 'table', NULL, NULL, NULL, NULL, 'ahorarioprofessor_aplanodeaula'),
+(135, 'AHORARIOPROFESSOR_APROFESSOR', 'table', NULL, NULL, NULL, NULL, 'ahorarioprofessor_aprofessor'),
+(136, 'AHORARIOSAULAS', 'table', NULL, NULL, NULL, NULL, 'ahorariosaulas'),
+(137, 'AHORARIOSAULAS_ATURMADISCIPLINAS', 'table', NULL, NULL, NULL, NULL, 'ahorariosaulas_aturmadisciplinas'),
+(138, 'AHORARIOSAULAS_GTURNOS', 'table', NULL, NULL, NULL, NULL, 'ahorariosaulas_gturnos'),
+(139, 'AMODALIDADECURSO', 'table', NULL, NULL, NULL, NULL, 'amodalidadecurso'),
+(140, 'APLANODEAULA', 'table', NULL, NULL, NULL, NULL, 'aplanodeaula'),
+(141, 'APLANODEAULA_AHORARIOSAULAS', 'table', NULL, NULL, NULL, NULL, 'aplanodeaula_ahorariosaulas'),
+(142, 'APLANODEAULA_GTURNOS', 'table', NULL, NULL, NULL, NULL, 'aplanodeaula_gturnos'),
+(143, 'APROFESSOR', 'table', NULL, NULL, NULL, NULL, 'aprofessor'),
+(144, 'APROFESSOR_GPESSOA', 'table', NULL, NULL, NULL, NULL, 'aprofessor_gpessoa'),
+(145, 'APROJETOCURSO', 'table', NULL, NULL, NULL, NULL, 'aprojetocurso'),
+(146, 'APROJETOCURSO_AMODALIDADECURSO', 'table', NULL, NULL, NULL, NULL, 'aprojetocurso_amodalidadecurso'),
+(147, 'APROJETOCURSO_GFILIAIS', 'table', NULL, NULL, NULL, NULL, 'aprojetocurso_gfiliais'),
+(148, 'ATURMADISCIPLINAS', 'table', NULL, NULL, NULL, NULL, 'aturmadisciplinas'),
+(149, 'ATURMADISCIPLINAS_ADISCIPLINAS', 'table', NULL, NULL, NULL, NULL, 'aturmadisciplinas_adisciplinas'),
+(150, 'ATURMADISCIPLINAS_AUNIDADEHABILTACAO', 'table', NULL, NULL, NULL, NULL, 'aturmadisciplinas_aunidadehabiltacao'),
+(151, 'ATURMADISCIPLINAS_GTURNOS', 'table', NULL, NULL, NULL, NULL, 'aturmadisciplinas_gturnos'),
+(152, 'AUNIDADEHABILTACAO', 'table', NULL, NULL, NULL, NULL, 'aunidadehabiltacao'),
+(153, 'AUNIDADEHABILTACAO_ACURSO', 'table', NULL, NULL, NULL, NULL, 'aunidadehabiltacao_acurso'),
+(154, 'AUNIDADEHABILTACAO_APROJETOCURSO', 'table', NULL, NULL, NULL, NULL, 'aunidadehabiltacao_aprojetocurso'),
+(155, 'AUNIDADEHABILTACAO_GFILIAIS', 'table', NULL, NULL, NULL, NULL, 'aunidadehabiltacao_gfiliais'),
+(156, 'AUNIDADEHABILTACAO_GMATRIZ', 'table', NULL, NULL, NULL, NULL, 'aunidadehabiltacao_gmatriz'),
+(157, 'GAPLICACAO', 'table', NULL, NULL, NULL, NULL, 'gaplicacao'),
+(158, 'GFILIAIS', 'table', NULL, NULL, NULL, NULL, 'gfiliais'),
+(159, 'GFILIAIS_GMATRIZ', 'table', NULL, NULL, NULL, NULL, 'gfiliais_gmatriz'),
+(160, 'GFILIAIS_GUTILITARIOS', 'table', NULL, NULL, NULL, NULL, 'gfiliais_gutilitarios'),
+(161, 'GMATRIZ', 'table', NULL, NULL, NULL, NULL, 'gmatriz'),
+(162, 'GMENUS', 'table', NULL, NULL, NULL, NULL, 'gmenus'),
+(163, 'GMENUS_GTIPOMENU', 'table', NULL, NULL, NULL, NULL, 'gmenus_gtipomenu'),
+(164, 'GPESSOA', 'table', NULL, NULL, NULL, NULL, 'gpessoa'),
+(165, 'GPESSOA_GUTILITARIOS', 'table', NULL, NULL, NULL, NULL, 'gpessoa_gutilitarios'),
+(166, 'GPREDIO', 'table', NULL, NULL, NULL, NULL, 'gpredio'),
+(167, 'GPREDIO_GFILIAIS', 'table', NULL, NULL, NULL, NULL, 'gpredio_gfiliais'),
+(168, 'GSALAS', 'table', NULL, NULL, NULL, NULL, 'gsalas'),
+(169, 'GSALAS_GPREDIO', 'table', NULL, NULL, NULL, NULL, 'gsalas_gpredio'),
+(170, 'GSALAS_GUTILITARIOS', 'table', NULL, NULL, NULL, NULL, 'gsalas_gutilitarios'),
+(171, 'GTIPOMENU', 'table', NULL, NULL, NULL, NULL, 'gtipomenu'),
+(172, 'GTIPOUTILITARIOS', 'table', NULL, NULL, NULL, NULL, 'gtipoutilitarios'),
+(173, 'GTURNOS', 'table', NULL, NULL, NULL, NULL, 'gturnos'),
+(174, 'GUTILITARIOS', 'table', NULL, NULL, NULL, NULL, 'gutilitarios'),
+(175, 'GUTILITARIOS_GAPLICACAO', 'table', NULL, NULL, NULL, NULL, 'gutilitarios_gaplicacao'),
+(176, 'GUTILITARIOS_GTIPOUTILITARIOS', 'table', NULL, NULL, NULL, NULL, 'gutilitarios_gtipoutilitarios'),
+(177, 'YOBJETOS', 'table', NULL, NULL, NULL, NULL, 'yobjetos'),
+(178, 'YPEMISSOES', 'table', NULL, NULL, NULL, NULL, 'ypemissoes'),
+(179, 'YPERFIL', 'table', NULL, NULL, NULL, NULL, 'yperfil'),
+(180, 'YPERFIL_GFILIAIS', 'table', NULL, NULL, NULL, NULL, 'yperfil_gfiliais'),
+(181, 'YPERFIL_GUTILITARIOS', 'table', NULL, NULL, NULL, NULL, 'yperfil_gutilitarios'),
+(182, 'YUSUARIOS', 'table', NULL, NULL, NULL, NULL, 'yusuarios'),
+(183, 'YUSUARIOS_GPESSOA', 'table', NULL, NULL, NULL, NULL, 'yusuarios_gpessoa'),
+(184, 'MOTOR', 'table', NULL, NULL, NULL, NULL, 'motor'),
+(185, 'CONTA', 'table', NULL, NULL, NULL, NULL, 'conta'),
+(186, 'MENUS', 'table', NULL, NULL, NULL, NULL, 'menus'),
+(187, 'MOVIMENTACAOCONTA', 'table', NULL, NULL, NULL, NULL, 'movimentacaoconta'),
+(188, 'PESSOA', 'table', NULL, NULL, NULL, NULL, 'pessoa'),
+(189, 'PRODUTOS', 'table', NULL, NULL, NULL, NULL, 'produtos'),
+(190, 'TIPOUTILITARIOS', 'table', NULL, NULL, NULL, NULL, 'tipoutilitarios'),
+(191, 'USUARIOS', 'table', NULL, NULL, NULL, NULL, 'usuarios'),
+(192, 'UTILITARIOS', 'table', NULL, NULL, NULL, NULL, 'utilitarios'),
+(193, 'VENDAINTENS', 'table', NULL, NULL, NULL, NULL, 'vendaintens'),
+(194, 'VENDAPEDIDO', 'table', NULL, NULL, NULL, NULL, 'vendapedido'),
+(195, 'ACONTEUDOCURSO', 'table', NULL, NULL, NULL, NULL, 'aconteudocurso'),
+(196, 'GCIDADES', 'table', NULL, NULL, NULL, NULL, 'gcidades'),
+(197, 'GCONTATOS', 'table', NULL, NULL, NULL, NULL, 'gcontatos'),
+(198, 'GENDERECOS', 'table', NULL, NULL, NULL, NULL, 'genderecos'),
+(199, 'GUF', 'table', NULL, NULL, NULL, NULL, 'guf'),
+(200, 'GTID_SLAVE_POS', 'table', NULL, NULL, NULL, NULL, 'gtid_slave_pos'),
+(201, 'INNODB_INDEX_STATS', 'table', NULL, NULL, NULL, NULL, 'innodb_index_stats'),
+(202, 'INNODB_TABLE_STATS', 'table', NULL, NULL, NULL, NULL, 'innodb_table_stats'),
+(203, 'SLAVE_MASTER_INFO', 'table', NULL, NULL, NULL, NULL, 'slave_master_info'),
+(204, 'SLAVE_RELAY_LOG_INFO', 'table', NULL, NULL, NULL, NULL, 'slave_relay_log_info'),
+(205, 'SLAVE_WORKER_INFO', 'table', NULL, NULL, NULL, NULL, 'slave_worker_info'),
+(206, 'PMA__BOOKMARK', 'table', NULL, NULL, NULL, NULL, 'pma__bookmark'),
+(207, 'PMA__CENTRAL_COLUMNS', 'table', NULL, NULL, NULL, NULL, 'pma__central_columns'),
+(208, 'PMA__COLUMN_INFO', 'table', NULL, NULL, NULL, NULL, 'pma__column_info'),
+(209, 'PMA__DESIGNER_SETTINGS', 'table', NULL, NULL, NULL, NULL, 'pma__designer_settings'),
+(210, 'PMA__EXPORT_TEMPLATES', 'table', NULL, NULL, NULL, NULL, 'pma__export_templates'),
+(211, 'PMA__FAVORITE', 'table', NULL, NULL, NULL, NULL, 'pma__favorite'),
+(212, 'PMA__HISTORY', 'table', NULL, NULL, NULL, NULL, 'pma__history'),
+(213, 'PMA__NAVIGATIONHIDING', 'table', NULL, NULL, NULL, NULL, 'pma__navigationhiding'),
+(214, 'PMA__PDF_PAGES', 'table', NULL, NULL, NULL, NULL, 'pma__pdf_pages'),
+(215, 'PMA__RECENT', 'table', NULL, NULL, NULL, NULL, 'pma__recent'),
+(216, 'PMA__RELATION', 'table', NULL, NULL, NULL, NULL, 'pma__relation'),
+(217, 'PMA__SAVEDSEARCHES', 'table', NULL, NULL, NULL, NULL, 'pma__savedsearches'),
+(218, 'PMA__TABLE_COORDS', 'table', NULL, NULL, NULL, NULL, 'pma__table_coords'),
+(219, 'PMA__TABLE_INFO', 'table', NULL, NULL, NULL, NULL, 'pma__table_info'),
+(220, 'PMA__TABLE_UIPREFS', 'table', NULL, NULL, NULL, NULL, 'pma__table_uiprefs'),
+(221, 'PMA__TRACKING', 'table', NULL, NULL, NULL, NULL, 'pma__tracking'),
+(222, 'PMA__USERCONFIG', 'table', NULL, NULL, NULL, NULL, 'pma__userconfig'),
+(223, 'PMA__USERGROUPS', 'table', NULL, NULL, NULL, NULL, 'pma__usergroups'),
+(224, 'PMA__USERS', 'table', NULL, NULL, NULL, NULL, 'pma__users'),
+(225, 'CUSTOMER', 'table', NULL, NULL, NULL, NULL, 'customer'),
+(226, 'DISCOUNT_CODE', 'table', NULL, NULL, NULL, NULL, 'discount_code'),
+(227, 'MANUFACTURER', 'table', NULL, NULL, NULL, NULL, 'manufacturer'),
+(228, 'MICRO_MARKET', 'table', NULL, NULL, NULL, NULL, 'micro_market'),
+(229, 'PRODUCT', 'table', NULL, NULL, NULL, NULL, 'product'),
+(230, 'PRODUCT_CODE', 'table', NULL, NULL, NULL, NULL, 'product_code'),
+(231, 'PURCHASE_ORDER', 'table', NULL, NULL, NULL, NULL, 'purchase_order'),
+(232, 'DBDESIGNER4', 'table', NULL, NULL, NULL, NULL, 'dbdesigner4');
 
 -- --------------------------------------------------------
 
@@ -1054,6 +1486,33 @@ ALTER TABLE `adisciplinas_acurso`
   ADD KEY `FK_ADISCIPLINAS_ACURSO_cursos_IDCURSO` (`cursos_IDCURSO`);
 
 --
+-- Indexes for table `adisciplinas_aprojetocurso`
+--
+ALTER TABLE `adisciplinas_aprojetocurso`
+  ADD PRIMARY KEY (`aDisciplinas_IDDISCIPLINA`,`projetocurso_IDPROJETOCURSO`),
+  ADD KEY `DISCIPLINASAPROJETOCURSOprojetocursoIDPROJETOCURSO` (`projetocurso_IDPROJETOCURSO`);
+
+--
+-- Indexes for table `ahorarioprofessor`
+--
+ALTER TABLE `ahorarioprofessor`
+  ADD PRIMARY KEY (`IDAHORARIOPROFESSOR`);
+
+--
+-- Indexes for table `ahorarioprofessor_aplanodeaula`
+--
+ALTER TABLE `ahorarioprofessor_aplanodeaula`
+  ADD PRIMARY KEY (`aHorarioProfessor_IDAHORARIOPROFESSOR`,`planoDeAulas_IDPLANODEAULA`),
+  ADD KEY `HRRIOPROFESSORAPLANODEAULAplnoDeAulasIDPLANODEAULA` (`planoDeAulas_IDPLANODEAULA`);
+
+--
+-- Indexes for table `ahorarioprofessor_aprofessor`
+--
+ALTER TABLE `ahorarioprofessor_aprofessor`
+  ADD PRIMARY KEY (`aHorarioProfessor_IDAHORARIOPROFESSOR`,`professor_IDPROFESSOR`),
+  ADD KEY `AHORARIOPROFESSOR_APROFESSOR_professor_IDPROFESSOR` (`professor_IDPROFESSOR`);
+
+--
 -- Indexes for table `ahorariosaulas`
 --
 ALTER TABLE `ahorariosaulas`
@@ -1078,6 +1537,39 @@ ALTER TABLE `ahorariosaulas_gturnos`
 --
 ALTER TABLE `amodalidadecurso`
   ADD PRIMARY KEY (`IDMODALIDADE`);
+
+--
+-- Indexes for table `aplanodeaula`
+--
+ALTER TABLE `aplanodeaula`
+  ADD PRIMARY KEY (`IDPLANODEAULA`);
+
+--
+-- Indexes for table `aplanodeaula_ahorariosaulas`
+--
+ALTER TABLE `aplanodeaula_ahorariosaulas`
+  ADD PRIMARY KEY (`aPlanoDeAula_IDPLANODEAULA`,`horariosAulas_IDHORARIOSAULAS`),
+  ADD KEY `PLNDEAULAAHORARIOSAULAShrrosAulasesIDHORARIOSAULAS` (`horariosAulas_IDHORARIOSAULAS`);
+
+--
+-- Indexes for table `aplanodeaula_gturnos`
+--
+ALTER TABLE `aplanodeaula_gturnos`
+  ADD PRIMARY KEY (`aPlanoDeAula_IDPLANODEAULA`,`turno_IDTURNO`),
+  ADD KEY `FK_APLANODEAULA_GTURNOS_turno_IDTURNO` (`turno_IDTURNO`);
+
+--
+-- Indexes for table `aprofessor`
+--
+ALTER TABLE `aprofessor`
+  ADD PRIMARY KEY (`IDPROFESSOR`);
+
+--
+-- Indexes for table `aprofessor_gpessoa`
+--
+ALTER TABLE `aprofessor_gpessoa`
+  ADD PRIMARY KEY (`aProfessor_IDPROFESSOR`,`pessoas_IDPESSOA`),
+  ADD KEY `FK_APROFESSOR_GPESSOA_pessoas_IDPESSOA` (`pessoas_IDPESSOA`);
 
 --
 -- Indexes for table `aprojetocurso`
@@ -1220,6 +1712,39 @@ ALTER TABLE `gpessoa_gutilitarios`
   ADD KEY `FK_GPESSOA_GUTILITARIOS_tipoPessoa_IDUTILITARIO` (`tipoPessoa_IDUTILITARIO`);
 
 --
+-- Indexes for table `gpredio`
+--
+ALTER TABLE `gpredio`
+  ADD PRIMARY KEY (`IDPREDIO`);
+
+--
+-- Indexes for table `gpredio_gfiliais`
+--
+ALTER TABLE `gpredio_gfiliais`
+  ADD PRIMARY KEY (`gPredio_IDPREDIO`,`filial_IDFILIAL`),
+  ADD KEY `FK_GPREDIO_GFILIAIS_filial_IDFILIAL` (`filial_IDFILIAL`);
+
+--
+-- Indexes for table `gsalas`
+--
+ALTER TABLE `gsalas`
+  ADD PRIMARY KEY (`IDSALA`);
+
+--
+-- Indexes for table `gsalas_gpredio`
+--
+ALTER TABLE `gsalas_gpredio`
+  ADD PRIMARY KEY (`gSalas_IDSALA`,`predios_IDPREDIO`),
+  ADD KEY `FK_GSALAS_GPREDIO_predios_IDPREDIO` (`predios_IDPREDIO`);
+
+--
+-- Indexes for table `gsalas_gutilitarios`
+--
+ALTER TABLE `gsalas_gutilitarios`
+  ADD PRIMARY KEY (`gSalas_IDSALA`,`tipoSala_IDUTILITARIO`),
+  ADD KEY `FK_GSALAS_GUTILITARIOS_utilitarios_IDUTILITARIO` (`tipoSala_IDUTILITARIO`);
+
+--
 -- Indexes for table `gtipomenu`
 --
 ALTER TABLE `gtipomenu`
@@ -1316,19 +1841,37 @@ ALTER TABLE `acurso`
 -- AUTO_INCREMENT for table `adisciplinas`
 --
 ALTER TABLE `adisciplinas`
-  MODIFY `IDDISCIPLINA` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `IDDISCIPLINA` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `ahorarioprofessor`
+--
+ALTER TABLE `ahorarioprofessor`
+  MODIFY `IDAHORARIOPROFESSOR` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `ahorariosaulas`
 --
 ALTER TABLE `ahorariosaulas`
-  MODIFY `IDHORARIOSAULAS` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `IDHORARIOSAULAS` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `amodalidadecurso`
 --
 ALTER TABLE `amodalidadecurso`
   MODIFY `IDMODALIDADE` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `aplanodeaula`
+--
+ALTER TABLE `aplanodeaula`
+  MODIFY `IDPLANODEAULA` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `aprofessor`
+--
+ALTER TABLE `aprofessor`
+  MODIFY `IDPROFESSOR` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `aprojetocurso`
@@ -1379,6 +1922,18 @@ ALTER TABLE `gpessoa`
   MODIFY `IDPESSOA` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
+-- AUTO_INCREMENT for table `gpredio`
+--
+ALTER TABLE `gpredio`
+  MODIFY `IDPREDIO` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `gsalas`
+--
+ALTER TABLE `gsalas`
+  MODIFY `IDSALA` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
 -- AUTO_INCREMENT for table `gtipomenu`
 --
 ALTER TABLE `gtipomenu`
@@ -1388,7 +1943,7 @@ ALTER TABLE `gtipomenu`
 -- AUTO_INCREMENT for table `gtipoutilitarios`
 --
 ALTER TABLE `gtipoutilitarios`
-  MODIFY `IDTIPOUTILITARIO` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `IDTIPOUTILITARIO` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `gturnos`
@@ -1400,13 +1955,13 @@ ALTER TABLE `gturnos`
 -- AUTO_INCREMENT for table `gutilitarios`
 --
 ALTER TABLE `gutilitarios`
-  MODIFY `IDUTILITARIO` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `IDUTILITARIO` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `yobjetos`
 --
 ALTER TABLE `yobjetos`
-  MODIFY `IDOBJETOS` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `IDOBJETOS` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=255;
 
 --
 -- AUTO_INCREMENT for table `ypemissoes`
@@ -1445,6 +2000,27 @@ ALTER TABLE `adisciplinas_acurso`
   ADD CONSTRAINT `FK_ADISCIPLINAS_ACURSO_cursos_IDCURSO` FOREIGN KEY (`cursos_IDCURSO`) REFERENCES `acurso` (`IDCURSO`);
 
 --
+-- Limitadores para a tabela `adisciplinas_aprojetocurso`
+--
+ALTER TABLE `adisciplinas_aprojetocurso`
+  ADD CONSTRAINT `ADISCIPLINASAPROJETOCURSOaDisciplinas_IDDISCIPLINA` FOREIGN KEY (`aDisciplinas_IDDISCIPLINA`) REFERENCES `adisciplinas` (`IDDISCIPLINA`),
+  ADD CONSTRAINT `DISCIPLINASAPROJETOCURSOprojetocursoIDPROJETOCURSO` FOREIGN KEY (`projetocurso_IDPROJETOCURSO`) REFERENCES `aprojetocurso` (`IDPROJETOCURSO`);
+
+--
+-- Limitadores para a tabela `ahorarioprofessor_aplanodeaula`
+--
+ALTER TABLE `ahorarioprofessor_aplanodeaula`
+  ADD CONSTRAINT `HRRIOPROFESSORAPLANODEAULAplnoDeAulasIDPLANODEAULA` FOREIGN KEY (`planoDeAulas_IDPLANODEAULA`) REFERENCES `aplanodeaula` (`IDPLANODEAULA`),
+  ADD CONSTRAINT `HRRPRFSSRAPLANODEAULAHrrPrfssorIDAHORARIOPROFESSOR` FOREIGN KEY (`aHorarioProfessor_IDAHORARIOPROFESSOR`) REFERENCES `ahorarioprofessor` (`IDAHORARIOPROFESSOR`);
+
+--
+-- Limitadores para a tabela `ahorarioprofessor_aprofessor`
+--
+ALTER TABLE `ahorarioprofessor_aprofessor`
+  ADD CONSTRAINT `AHORARIOPROFESSOR_APROFESSOR_professor_IDPROFESSOR` FOREIGN KEY (`professor_IDPROFESSOR`) REFERENCES `aprofessor` (`IDPROFESSOR`),
+  ADD CONSTRAINT `HRRPRFSSORAPROFESSORHrrPrfessorIDAHORARIOPROFESSOR` FOREIGN KEY (`aHorarioProfessor_IDAHORARIOPROFESSOR`) REFERENCES `ahorarioprofessor` (`IDAHORARIOPROFESSOR`);
+
+--
 -- Limitadores para a tabela `ahorariosaulas_aturmadisciplinas`
 --
 ALTER TABLE `ahorariosaulas_aturmadisciplinas`
@@ -1457,6 +2033,27 @@ ALTER TABLE `ahorariosaulas_aturmadisciplinas`
 ALTER TABLE `ahorariosaulas_gturnos`
   ADD CONSTRAINT `AHORARIOSAULASGTURNOSaHorariosAulasIDHORARIOSAULAS` FOREIGN KEY (`aHorariosAulas_IDHORARIOSAULAS`) REFERENCES `ahorariosaulas` (`IDHORARIOSAULAS`),
   ADD CONSTRAINT `FK_AHORARIOSAULAS_GTURNOS_turno_IDTURNO` FOREIGN KEY (`turno_IDTURNO`) REFERENCES `gturnos` (`IDTURNO`);
+
+--
+-- Limitadores para a tabela `aplanodeaula_ahorariosaulas`
+--
+ALTER TABLE `aplanodeaula_ahorariosaulas`
+  ADD CONSTRAINT `PLANODEAULAAHORARIOSAULASaPlanoDeAulaIDPLANODEAULA` FOREIGN KEY (`aPlanoDeAula_IDPLANODEAULA`) REFERENCES `aplanodeaula` (`IDPLANODEAULA`),
+  ADD CONSTRAINT `PLNDEAULAAHORARIOSAULAShrrosAulasesIDHORARIOSAULAS` FOREIGN KEY (`horariosAulas_IDHORARIOSAULAS`) REFERENCES `ahorariosaulas` (`IDHORARIOSAULAS`);
+
+--
+-- Limitadores para a tabela `aplanodeaula_gturnos`
+--
+ALTER TABLE `aplanodeaula_gturnos`
+  ADD CONSTRAINT `FK_APLANODEAULA_GTURNOS_aPlanoDeAula_IDPLANODEAULA` FOREIGN KEY (`aPlanoDeAula_IDPLANODEAULA`) REFERENCES `aplanodeaula` (`IDPLANODEAULA`),
+  ADD CONSTRAINT `FK_APLANODEAULA_GTURNOS_turno_IDTURNO` FOREIGN KEY (`turno_IDTURNO`) REFERENCES `gturnos` (`IDTURNO`);
+
+--
+-- Limitadores para a tabela `aprofessor_gpessoa`
+--
+ALTER TABLE `aprofessor_gpessoa`
+  ADD CONSTRAINT `FK_APROFESSOR_GPESSOA_aProfessor_IDPROFESSOR` FOREIGN KEY (`aProfessor_IDPROFESSOR`) REFERENCES `aprofessor` (`IDPROFESSOR`),
+  ADD CONSTRAINT `FK_APROFESSOR_GPESSOA_pessoas_IDPESSOA` FOREIGN KEY (`pessoas_IDPESSOA`) REFERENCES `gpessoa` (`IDPESSOA`);
 
 --
 -- Limitadores para a tabela `aprojetocurso_amodalidadecurso`
@@ -1549,6 +2146,27 @@ ALTER TABLE `gpessoa_gutilitarios`
   ADD CONSTRAINT `FK_GPESSOA_GUTILITARIOS_gPessoa_IDPESSOA` FOREIGN KEY (`gPessoa_IDPESSOA`) REFERENCES `gpessoa` (`IDPESSOA`),
   ADD CONSTRAINT `FK_GPESSOA_GUTILITARIOS_profissao_IDUTILITARIO` FOREIGN KEY (`profissao_IDUTILITARIO`) REFERENCES `gutilitarios` (`IDUTILITARIO`),
   ADD CONSTRAINT `FK_GPESSOA_GUTILITARIOS_tipoPessoa_IDUTILITARIO` FOREIGN KEY (`tipoPessoa_IDUTILITARIO`) REFERENCES `gutilitarios` (`IDUTILITARIO`);
+
+--
+-- Limitadores para a tabela `gpredio_gfiliais`
+--
+ALTER TABLE `gpredio_gfiliais`
+  ADD CONSTRAINT `FK_GPREDIO_GFILIAIS_filial_IDFILIAL` FOREIGN KEY (`filial_IDFILIAL`) REFERENCES `gfiliais` (`IDFILIAL`),
+  ADD CONSTRAINT `FK_GPREDIO_GFILIAIS_gPredio_IDPREDIO` FOREIGN KEY (`gPredio_IDPREDIO`) REFERENCES `gpredio` (`IDPREDIO`);
+
+--
+-- Limitadores para a tabela `gsalas_gpredio`
+--
+ALTER TABLE `gsalas_gpredio`
+  ADD CONSTRAINT `FK_GSALAS_GPREDIO_gSalas_IDSALA` FOREIGN KEY (`gSalas_IDSALA`) REFERENCES `gsalas` (`IDSALA`),
+  ADD CONSTRAINT `FK_GSALAS_GPREDIO_predios_IDPREDIO` FOREIGN KEY (`predios_IDPREDIO`) REFERENCES `gpredio` (`IDPREDIO`);
+
+--
+-- Limitadores para a tabela `gsalas_gutilitarios`
+--
+ALTER TABLE `gsalas_gutilitarios`
+  ADD CONSTRAINT `FK_GSALAS_GUTILITARIOS_gSalas_IDSALA` FOREIGN KEY (`gSalas_IDSALA`) REFERENCES `gsalas` (`IDSALA`),
+  ADD CONSTRAINT `FK_GSALAS_GUTILITARIOS_utilitarios_IDUTILITARIO` FOREIGN KEY (`tipoSala_IDUTILITARIO`) REFERENCES `gutilitarios` (`IDUTILITARIO`);
 
 --
 -- Limitadores para a tabela `gutilitarios_gaplicacao`

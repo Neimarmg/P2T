@@ -24,8 +24,11 @@ public class aDisciplinas implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idDisciplina;
 
-    @OneToOne
+    @OneToMany
     Collection<aCurso>cursos;   
+    
+    @OneToMany
+    Collection<aProjetocurso>projetocurso; 
     
     private String nomeDisciplina;
     private String ementa;
@@ -33,9 +36,10 @@ public class aDisciplinas implements Serializable {
     public aDisciplinas() {
     }
 
-    public aDisciplinas(Long idDisciplina, Collection<aCurso> cursos, String nomeDisciplina, String ementa) {
+    public aDisciplinas(Long idDisciplina, Collection<aCurso> cursos, Collection<aProjetocurso> projetocursos, String nomeDisciplina, String ementa) {
         this.idDisciplina = idDisciplina;
         this.cursos = cursos;
+        this.projetocurso = projetocursos;
         this.nomeDisciplina = nomeDisciplina;
         this.ementa = ementa;
     }
@@ -56,6 +60,14 @@ public class aDisciplinas implements Serializable {
         this.cursos = cursos;
     }
 
+    public Collection<aProjetocurso> getProjetocurso() {
+        return projetocurso;
+    }
+
+    public void setProjetocurso(Collection<aProjetocurso> projetocurso) {
+        this.projetocurso = projetocurso;
+    }
+
     public String getNomeDisciplina() {
         return nomeDisciplina;
     }
@@ -72,8 +84,6 @@ public class aDisciplinas implements Serializable {
         this.ementa = ementa;
     }
 
-    
-    
     
         
     @Override

@@ -25,7 +25,7 @@ public class TurmaDisciplinasRN {
         TypedQuery<aTurmaDisciplinas> query = manager.createQuery("SELECT m FROM aTurmaDisciplinas m",aTurmaDisciplinas.class);
         List<aTurmaDisciplinas> turmaDisciplinasCursos = query.getResultList();
 
-        System.out.println("Turmas Disciplinas:");
+        view.View.msg("Turmas Disciplinas:");
         for (aTurmaDisciplinas m : turmaDisciplinasCursos) {
             view.View.msg(m.getIdTurmaDisciplina()
                     + "-" + m.getDisciplina()

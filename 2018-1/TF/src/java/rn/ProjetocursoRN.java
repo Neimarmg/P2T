@@ -25,9 +25,14 @@ public class ProjetocursoRN {
         TypedQuery<aProjetocurso> query = manager.createQuery("SELECT m FROM aProjetocurso m",aProjetocurso.class);
         List<aProjetocurso> listaProjetos = query.getResultList();
 
-        System.out.println("Projetos:");
+        view.View.msg("Projetos:");
         for (aProjetocurso m : listaProjetos) {
-            view.View.msg(m.getIdProjetoCurso()+ "-" +m.getDescricaoProjeto()+"-" +m.getDatacriacao()+ "-" + m.getModalidadecurso()+ "-" + m.getFilial()+ "-" +m.getValorCurso());
+            view.View.msg(m.getIdProjetoCurso()
+                    + "-" +m.getDescricaoProjeto()
+                    +"-" +m.getDatacriacao()
+                    + "-" + m.getModalidadecurso()
+                    + "-" + m.getFilial()
+                    + "-" +m.getValorCurso());
         }
 
         manager.close();

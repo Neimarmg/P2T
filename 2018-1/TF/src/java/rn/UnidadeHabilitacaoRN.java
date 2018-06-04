@@ -25,7 +25,7 @@ public class UnidadeHabilitacaoRN {
         TypedQuery<aUnidadeHabiltacao> query = manager.createQuery("SELECT m FROM aUnidadeHabiltacao m",aUnidadeHabiltacao.class);
         List<aUnidadeHabiltacao> listaUnidadeHabiltacaos = query.getResultList();
 
-        System.out.println("Unidade Habiltacao:");
+        view.View.msg("Unidade Habiltacao:");
         for (aUnidadeHabiltacao m : listaUnidadeHabiltacaos) {
             view.View.msg(m.getIdUnidadeHabiltacao()
                     + "-" + m.getCurso()
