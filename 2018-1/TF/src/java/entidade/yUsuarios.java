@@ -8,7 +8,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
@@ -24,10 +23,9 @@ public class yUsuarios implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToOne
-    Collection<gPessoa>pessoa;
-    
-    private String idUsuario;
+    @OneToMany
+    Collection<gPessoa>pessoa;    
+    private String idUsuario;    
     private int senha;
     private boolean status;
 
