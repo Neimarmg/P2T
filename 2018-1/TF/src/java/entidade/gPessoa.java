@@ -28,8 +28,6 @@ public class gPessoa implements Serializable {
     private Long idPessoa;
     
     @OneToMany         
-     
-    //@JoinColumn(columnDefinition="idProfissao", referencedColumnName="idUtilitario")
     Collection<gUtilitarios> profissao;
     
     @OneToMany
