@@ -1,6 +1,5 @@
 package ws;
 
-import entidade.aCurso;
 import entidade.aProjetocurso;
 import java.io.IOException;
 import java.util.List;
@@ -18,7 +17,6 @@ import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.core.MediaType;
-import rn.CursoRN;
 import rn.ProjetocursoRN;
 
 /**

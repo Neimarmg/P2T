@@ -1,6 +1,4 @@
 package rn;
-
-
 import entidade.gTipoutilitarios;
 import java.util.List;
 import javax.persistence.EntityManager;

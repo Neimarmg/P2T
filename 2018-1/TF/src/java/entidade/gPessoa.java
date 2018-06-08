@@ -3,15 +3,11 @@ package entidade;
 
 import java.io.Serializable;
 import java.util.Collection;
-import javax.jws.Oneway;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
-import javax.persistence.TableGenerator;
-import javax.persistence.UniqueConstraint;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
@@ -31,22 +27,18 @@ public class gPessoa implements Serializable {
     Collection<gUtilitarios> profissao;
     
     @OneToMany
-    Collection<gUtilitarios> tipoPessoa;
-    
+    Collection<gTipoPessoa>tipoPessoa;    
     
     private String nome;
     private String cpf;
     private String rg;
     private boolean ativa;
     private String cref;
-    
-    //@Temporal(TemporalType.DATE)
-    //private Date dataNascimento; 
-    
+
     public gPessoa() {
     }
 
-    public gPessoa(Long idPessoa, Collection<gUtilitarios> profissao, Collection<gUtilitarios> tipoPessoa, String nome, String cpf, String rg, boolean ativa, String cref) {
+    public gPessoa(Long idPessoa, Collection<gUtilitarios> profissao, Collection<gTipoPessoa> tipoPessoa, String nome, String cpf, String rg, boolean ativa, String cref) {
         this.idPessoa = idPessoa;
         this.profissao = profissao;
         this.tipoPessoa = tipoPessoa;
@@ -73,11 +65,11 @@ public class gPessoa implements Serializable {
         this.profissao = profissao;
     }
 
-    public Collection<gUtilitarios> getTipoPessoa() {
+    public Collection<gTipoPessoa> getTipoPessoa() {
         return tipoPessoa;
     }
 
-    public void setTipoPessoa(Collection<gUtilitarios> tipoPessoa) {
+    public void setTipoPessoa(Collection<gTipoPessoa> tipoPessoa) {
         this.tipoPessoa = tipoPessoa;
     }
 
@@ -122,8 +114,6 @@ public class gPessoa implements Serializable {
     }
 
     
-    
-        
 
     
       
