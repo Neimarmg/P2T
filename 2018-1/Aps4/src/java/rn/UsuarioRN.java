@@ -1,5 +1,4 @@
 package rn;
-
 import entidade.yUsuarios;
 import java.util.List;
 import javax.persistence.EntityManager;

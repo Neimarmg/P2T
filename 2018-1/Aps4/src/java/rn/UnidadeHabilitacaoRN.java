@@ -1,6 +1,4 @@
 package rn;
-
-
 import entidade.aUnidadeHabiltacao;
 import java.util.List;
 import javax.persistence.EntityManager;

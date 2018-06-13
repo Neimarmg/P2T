@@ -3,12 +3,11 @@ package entidade;
 
 import java.io.Serializable;
 import java.util.Collection;
-import javafx.print.Collation;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.OneToMany;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
@@ -23,10 +22,10 @@ public class yPerfil implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idPerfil;
-    @OneToOne
+    @OneToMany
     Collection<gFiliais>filial;
     
-    @OneToOne
+    @OneToMany
     Collection<gUtilitarios>tipoPerfil;
     private String descricaoPerfil;
 

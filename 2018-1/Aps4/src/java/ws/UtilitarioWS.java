@@ -1,6 +1,5 @@
 package ws;
 
-import entidade.aCurso;
 import entidade.gUtilitarios;
 import java.io.IOException;
 import java.util.List;
