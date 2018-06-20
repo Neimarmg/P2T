@@ -6,6 +6,8 @@ body {
 	font: 12px/1.4 Verdana, Arial, Helvetica, sans-serif;
 	text-align: center;
 }
+
+
 .grid-container {
   display: grid;
   height: 100%;
@@ -14,4 +16,11 @@ body {
   grid-template-rows: 1fr 1fr 1fr;
   grid-template-areas: ". . . ." ". . . ." ". . . .";
 }
-       
+      
+
+main {
+	width:670px;
+	margin: 20px 10px 50px 50px;	
+	float:center;
+
+	}
