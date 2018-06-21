@@ -23,7 +23,18 @@ function buscarMotores(){
 }
 
 function montarHTML(listaMotores){
-    var str = "<dl>";
+     
+    var str ="<fieldset>"+
+                "<legend>Cadastro</legend> "+
+            "<form>"
+    str+= "</br>"
+    str+= "</label>Nome:"
+    str+= "</input>" +listaMotores[0].uso
+    
+    str+= "</fieldset>"+"</br>"+"</br>"
+            "</form>"
+    
+    str += "<dl>";
     str+= "<dd>";
     str+= "<figure>";
     str+= "<img src='"+ listaMotores[0].imagem+
