@@ -1,26 +1,43 @@
+ 
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+display: block;
+}
 body {
-	background: #D0E4F5;
-	color:#333;
-	margin: 0; 
-	padding: 0;
-	font: 12px/1.4 Verdana, Arial, Helvetica, sans-serif;
-	text-align: center;
+    line-height: 1;
 }
 
-
-.grid-container {
-  display: grid;
-  height: 100%;
-  
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  grid-template-areas: ". . . ." ". . . ." ". . . .";
+ol, ul {
+    list-style: none;
 }
-      
 
-main {
-	width:670px;
-	margin: 20px 10px 50px 50px;	
-	float:center;
+blockquote, q {
+    quotes: none;
+}
 
-	}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+body {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    color:#333
+}
+
+#footer {
+    height: 40px;
+    width: 100%;
+    background: #33FF66;
+    clear: both;
+    position: fixed
+}
+
+    

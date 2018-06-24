@@ -2,7 +2,7 @@ var elementoBody = document.querySelector("body");
 elementoBody.onload = carregarMotores;
 
 function carregarMotores(){
-    setInterval(buscarMotores,3000);    
+    setInterval(buscarMotores,2000);    
 }
 var i=0;
 function buscarMotores(){
@@ -30,11 +30,12 @@ function montarHTML(listaMotores){
             "' alt='"+listaMotores[0].nome+"' />";
     str+= "</figure>";
     str+= "</dd>";
-    str+= "<dt>";
+    str+= "<dt>"+document.getElementsByTagNameNS("h1");
     str+= "<a href='#'>"+listaMotores[0].nome+"</a>";
     str+= "</dt>";
     str+= "<dd>" +listaMotores[0].descricao+"</dd>";
     str+= "<dd>Uso: "+listaMotores[0].uso+"</dd>";
+
     str+= "</dl>";
     
     var elementoMain = document.querySelector("main");

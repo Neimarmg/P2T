@@ -5,12 +5,38 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <html>
+<html>
     <head>
         <title>Lista de cursos</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="../estilos/geral.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="../estilos/gestaodecursos.css" rel="stylesheet" type="text/css" media="all" />
     </head>
     <body>
-        <div>TODO write content</div>
+        </br>
+        <fieldset id="buttonPrincipais">
+            
+            <legend>Gestão de cursos</legend>                 
+
+            <p>
+                <button id="gestaoProjetos" onclick="abreGestaoProjetos" name="gestaoProjetos">
+                    <img src="../images/projetos.png"/> Gestão de projetos                
+                </button>
+            </p>
+            <p>
+                <button id="listarCursos" onclick="abreListaCursos" name="listarCursos">
+                    <img src="../images/livroAberto.png"/> Consultar cursos                  
+                </button> 
+            </p>                 
+            <p>
+                <button id="listarTurmaDisciplina" onclick="AbreListaTurmaDisciplina" name="listaTurmarDisciplina">
+                   <img src="../images/prancheta.png"/> Turmas               
+                </button>
+            </p>
+
+        </fieldset>
+       
     </body>
+    <script src="gestaodecursos.js"></script>
 </html>
