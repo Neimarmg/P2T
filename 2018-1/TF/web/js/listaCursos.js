@@ -1,4 +1,4 @@
-document.getElementById("formulario").onsubmit = function(event){
+/*document.getElementById("formulario").onsubmit = function(event){
      event.preventDefault();
      console.log("Salvar Curso");
      salvarCurso();
@@ -9,7 +9,7 @@ document.getElementById("formulario").onsubmit = function(event){
 var elementoBody = document.querySelector("body");
 elementoBody.onload = buscarCursos;
 
-
+*/
 
 function buscarCursos() {
     let xhttp = new XMLHttpRequest();
@@ -22,34 +22,34 @@ function buscarCursos() {
             montarHTML(listaCurso);
         }
     }
-    xhttp.open("GET", "http://localhost:8084/TF/api/curso/", true);
+    xhttp.open("GET", "http://localhost:8084/TF/api/curso/14", true);
     xhttp.send();
     
 }
 
 function montarHTML(listaCursos) {
-     
+ 
     document.querySelector("table").innerHTML =
             `<tr>
                 <th>idCurso</th>
                 <th>nomeCurso</th> 
-                <th>modalidadecursos</th>
+                <th>idModalidade</th>
              </tr> `;
     for (let ind in listaCursos) {
         let tr = document.createElement("tr");        
         let linha = 
             <td>${listaCursos[ind].idCurso}</td>;
             <td>${listaCursos[ind].nomeCurso}</td>;
-            <td>${listaCursos[ind].modalidadecursos}</td>;
+            <td>${listaCursos[ind].idModalidade}</td>;
         tr.innerHTML = linha;
         document.querySelector("table").appendChild(tr);
        
-    }
+  
 }
 
 
 
-
+/*
 
 function ligaLuz(){
      document.getElementById("btn").src="../images/novo.png";
@@ -58,3 +58,4 @@ function ligaLuz(){
 function apagaLuz(){
     document.getElementById("btn").src="../images/salvar.png";
 }
+*/
