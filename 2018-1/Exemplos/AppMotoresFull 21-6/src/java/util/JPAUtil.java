@@ -9,7 +9,7 @@ import javax.persistence.Persistence;
  * @author LHRIES
  */
 public class JPAUtil {
-    private static String PUNAME = "AppMotoresX2PU";
+    private static String PUNAME = "AppMotoresFullPU";
     private static EntityManagerFactory factory = 
             Persistence.createEntityManagerFactory(PUNAME);
    

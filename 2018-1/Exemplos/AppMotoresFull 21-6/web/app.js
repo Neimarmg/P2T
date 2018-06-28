@@ -1,4 +1,4 @@
-document.getElementById("formulario").onsubmit = function(event){
+document.getElementById("table").onsubmit = function(event){
      event.preventDefault();
      console.log("Salvar Motor");
      salvarMotor();

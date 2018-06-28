@@ -19,9 +19,10 @@ function buscarMotores(){
         }
     }
     
-    xhttp.open("GET","http://localhost:8084/AppMotoresX2/api/motor",true);
+    xhttp.open("GET","http://localhost:8084/AppMotoresFull/api/motor",true);
     xhttp.send();
 }
+
 
 function montarHTML(listaMotores){
     var str = "";

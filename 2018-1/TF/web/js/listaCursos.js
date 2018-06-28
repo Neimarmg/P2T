@@ -1,30 +1,24 @@
-/*document.getElementById("formulario").onsubmit = function(event){
-     event.preventDefault();
-     console.log("Salvar Curso");
-     salvarCurso();
-     //limparCamposFormulario();//Adicionar no final da requisição do POST          
-     //buscarMotores(); //Adicionar no final da requisição do POST
-};
 
-var elementoBody = document.querySelector("body");
-elementoBody.onload = buscarCursos;
+function carregarCursos(){
+    buscarCursos()();
+    setInterval(buscarCursos(),15000);    
+}
 
-*/
-
-function buscarCursos() {
-    let xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            let main = document.querySelector("main");
-
-            let listaCurso = JSON.parse(this.responseText);
-            console.log(listaCurso);
-            montarHTML(listaCurso);
-        }
+function buscarCursos(){
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function(){
+        if(readyState==4 && this.status==200){
+            var main = document.querySelector("main");
+            
+            var listaCursos = JSON.parse(responseText);
+            
+            montarHTML(listaCursos);
+            console.log(this.responseText);
+      }
     }
-    xhttp.open("GET", "http://localhost:8084/TF/api/curso/14", true);
-    xhttp.send();
     
+    xhttp.open("GET","http://localhost:8084/AppMotoresFull/api/motor",true);
+    xhttp.send();
 }
 
 function montarHTML(listaCursos) {
@@ -33,18 +27,19 @@ function montarHTML(listaCursos) {
             `<tr>
                 <th>idCurso</th>
                 <th>nomeCurso</th> 
-                <th>idModalidade</th>
-             </tr> `;
+                
+             </tr>`;
     for (let ind in listaCursos) {
         let tr = document.createElement("tr");        
         let linha = 
             <td>${listaCursos[ind].idCurso}</td>;
             <td>${listaCursos[ind].nomeCurso}</td>;
-            <td>${listaCursos[ind].idModalidade}</td>;
+      
         tr.innerHTML = linha;
         document.querySelector("table").appendChild(tr);
        
   
+    }
 }
 
 
