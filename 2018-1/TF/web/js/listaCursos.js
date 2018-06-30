@@ -8,7 +8,7 @@ function buscarCursos(){
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function(){
         if(this.readyState===4 && this.status===200){
-            var main = document.querySelector("main");
+           //var main = document.querySelector("main");
             
             var listaCursos = JSON.parse(this.responseText);
             
@@ -17,7 +17,7 @@ function buscarCursos(){
       }
     }
     
-    xhttp.open("GET","http://localhost:8080/TF/api/curso",true);
+    xhttp.open("GET","http://localhost:8084/TF/api/curso/",true);
     xhttp.send();
 }
 
@@ -26,17 +26,17 @@ function montarHTML(listaCursos) {
     document.querySelector("table").innerHTML =
             `<tr>
                 <th>idCurso</th>
-                <th>nomeCurso</th> 
-                
+                <th>nomeCurso</th>
+                <th>Modalidede</th>
              </tr>`;
-    for (let ind in listaCursos) {
+    for (let i in listaCursos) {
         let tr = document.createElement("tr");        
         let linha = 
-                `
-                <td>${listaCursos[ind].idCurso}</td>
-                <td>${listaCursos[ind].nomeCurso}</td>
+                `<td>${listaCursos[i].idCurso}</td>
+                <td>${listaCursos[i].nomeCurso}</td>               
+                <td>${"ss"}</td>
                 `;
-      
+       
         tr.innerHTML = linha;
         document.querySelector("table").appendChild(tr);
     }
