@@ -1,10 +1,52 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : 20/06/2018, 10:30:24
-    Author     : neimarmoises
-*/
+body{
+    font-family: verdana;
+    background-color: #C7C8CA;
+}
 
+fieldset{
+  border-radius: 10px;
+  background-color: #ffffff;
+}
+
+#fieldsetFundo{
+  border-radius: 10px;
+  background-color: #FFFDF0;
+  border-color:  #FFFDF0;
+}
+h5{
+    font-weight: bold;
+    color: #2FA83B;
+}
+
+button {
+  font-size: 14px;
+  padding: 2px 15px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  border: 1px solid #3866A3;
+  background-color: #ffffff;
+}
+
+#thead {
+  background: #85BFFF;
+  border-bottom: 1px solid #444444;
+  font-weight: bold;
+  color: #FFFFFF;
+  border-left: 1px solid #D0E4F5;
+}
+
+#td{
+  border: 1px solid #FFFFFF;
+  border-collapse: collapse;
+  padding: 3px 2px;
+}
+
+#tr{
+  background: #0B6FA4;
+  border-bottom: 5px solid #FFFFFF;
+}
+
+#btnLista{
+ 
+}

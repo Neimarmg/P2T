@@ -24,18 +24,26 @@ function buscarCursos(){
 function montarHTML(listaCursos) {
  
     document.querySelector("table").innerHTML =
-            `<tr>
-                <th>idCurso</th>
-                <th>nomeCurso</th>
-                <th>Modalidede</th>
+            `<tr id="tr">
+                <th id="thead">id curso</th>
+                <th id="thead">Nome curso</th>
+                <th id="thead">Modalidade curso</th>
+                
+                <th id="thead"></th>
              </tr>`;
     for (let i in listaCursos) {
         let tr = document.createElement("tr");        
         let linha = 
-                `<td>${listaCursos[i].idCurso}</td>
-                <td>${listaCursos[i].nomeCurso}</td>               
-                <td>${"ss"}</td>
-                `;
+               `<td id="td">${listaCursos[i].idCurso}</td>
+                <td id="td">${listaCursos[i].nomeCurso}</td>               
+                <td id="td">${listaCursos[i].descricao}</td> 
+                
+                <td id="td">
+                    <button id="btnLista"> 
+                        <img src="../images/lupa.png" id="btn"/>                    
+                    </button>
+                </td>
+            `;
        
         tr.innerHTML = linha;
         document.querySelector("table").appendChild(tr);

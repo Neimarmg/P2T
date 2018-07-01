@@ -9,8 +9,39 @@ and open the template in the editor.
         <title>Lista de turmas disciplinas</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+         <link href="../estilos/listaturmadisciplinas.css" rel="stylesheet" type="text/css" media="all" />
+    
     </head>
-    <body>
-        <div>TODO write content</div>
+    <body onload="buscaTurmaDisciplina()">
+        <fieldset> 
+        <h5> Turmas disciplinas </h5>
+            </br>
+            <fieldset id="fieldsetFundo"> 
+                <select>
+                     <option value="volvo">Volvo</option>
+                    
+                </select>
+                
+                <button>               
+                    <img src="../images/novo.png" id="btnNovo"/>
+                </button> 
+
+                <button>               
+                    <img src="../images/atualizar.png" id="btnAtualizar"/>
+                </button> 
+
+                <button>               
+                    <img src="../images/retornar.png" id="btnRetornar"/>
+                </button> 
+            </fieldset> 
+            <p>
+            <thead id="thead">
+                    <table class="tableheader"></table>
+                </thead>
+            </p>
+            <script src="../js/listaturmadisciplinas.js"></script>
+            
+        </fieldset>
     </body>
 </html>
