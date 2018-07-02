@@ -9,38 +9,40 @@ and open the template in the editor.
         <title>Lista de cursos</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
         <link href="../estilos/listadecursos.css" rel="stylesheet" type="text/css" media="all" />
-       
+        <link href="../estilos/gTablesDefealts.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="../estilos/gButtonDefauts.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="../estilos/gFieldsetDefaults.css" rel="stylesheet" type="text/css" media="all" />
         
     </head>
    
     <body onload="buscarCursos()">
+        <p></p>
         <fieldset> 
-        <h5> Lista de cursos </h5>
-            </br>
-            <fieldset id="fieldsetFundo"> 
-                <button>               
-                    <img src="../images/novo.png" id="btnNovo"/>
-                </button> 
+            <h5><img id="imgcabecalho" src="../images/cursos.png"/> Lista de cursos</h5>
+                </br>
+                <fieldset id="fieldsetFundo"> 
+                    <button>               
+                        <img src="../images/novo.png" id="btnNovo"/>
+                    </button> 
 
-                <button>               
-                    <img src="../images/atualizar.png" id="btnAtualizar"/>
-                </button> 
+                    <button>               
+                        <img src="../images/atualizar.png" id="btnAtualizar"/>
+                    </button> 
 
-                <button>               
-                    <img src="../images/retornar.png" id="btnRetornar"/>
-                </button> 
-            </fieldset> 
-            <p>
-            <thead id="thead">
-                    <table class="tableheader"></table>
-                </thead>
-            </p>
+                    <button>               
+                        <img src="../images/retornar.png" id="btnRetornar"/>
+                    </button> 
+                </fieldset> 
+                <p>
+                    <thead id="thead">
+                        <table class="tableheader"></table>
+                    </thead>
+                </p>
 
+                <script src="../js/listaCursos.js"></script>
 
-            <script src="../js/listaCursos.js"></script>
-            
         </fieldset>
     </body>
    

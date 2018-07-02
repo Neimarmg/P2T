@@ -31,9 +31,7 @@ function montarHTML(listaTurmaDisciplina) {
                 <th id="thead">Curso</th>
                 <th id="thead">Data inicio</th>
                 <th id="thead">Data fim</th>
-                <th id="thead">
-                    Ativa <input type="checkbox"/>
-                </th>
+                <th id="thead">Ativa</th>
                 
                 <th id="thead"></th>
              </tr>`;
@@ -46,7 +44,10 @@ function montarHTML(listaTurmaDisciplina) {
                 <td id="td">${listaTurmaDisciplina[i].nomeCurso}</td>
                 <td id="td">${listaTurmaDisciplina[i].dataInicio}</td>
                 <td id="td">${listaTurmaDisciplina[i].dataFim}</td>
-                <td id="td">${listaTurmaDisciplina[i].ativa}</td>       
+                <td id="td">
+                    <input type="checkbox">${listaTurmaDisciplina[i].ativa}
+                    </input>               
+                </td>       
                 
                 
                <td id="td">
@@ -71,13 +72,35 @@ function montarHTML(listaTurmaDisciplina) {
 
 
 
-/*
-
-function ligaLuz(){
-     document.getElementById("btn").src="../images/novo.png";
+function carregaMenu(){
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function(){
+        if(this.readyState===4 && this.status===200){
+           //var main = document.querySelector("main");
+            
+            var listaUtilitarios = JSON.parse(this.responseText);
+            
+            montarHTMLMenu()(listaUtilitarios);
+            console.log(this.responseText);
+      }
+    }
+    
+    xhttp.open("GET","http://localhost:8084/TF/api/utilitarios",true);
+    xhttp.send();
 }
 
-function apagaLuz(){
-    document.getElementById("btn").src="../images/salvar.png";
+
+function montarHTMLMenu(listaUtilitarios) {
+ 
+    document.querySelector("select").innerHTML =
+            `<option>Descrição</option>`;
+    for (let i in listaUtilitarios) {
+        let option = document.createElement("option");        
+        let linha = 
+               `<option>${listaUtilitarios[i].nomeUtilitario}</option>    
+            `;
+       
+        option.innerHTML = linha;
+        document.querySelector("select").appendChild(option);
+    }
 }
-*/

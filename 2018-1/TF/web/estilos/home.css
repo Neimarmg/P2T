@@ -12,13 +12,15 @@ dl {
 }
 
 img{
+    border-radius: 10px;
     display: block;    
 }
 
 
 
-#header h1{   
-    height: 100px;   
+#header{   
+    height: 100px;
+    font-size: 13px;
 }
 
 #header img {

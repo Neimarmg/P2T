@@ -10,77 +10,81 @@ and open the template in the editor.
     <title>Home</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
     <link href="../estilos/geral.css" rel="stylesheet" type="text/css" media="all" />
     <link href="../estilos/home.css" rel="stylesheet" type="text/css" media="all" />
- 
+    <link href="../estilos/gButtonDefauts.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="../estilos/gFieldsetDefaults.css" rel="stylesheet" type="text/css" media="all" /> 
 
 </head>
 
 <body id="produtos" >
-     <div>
-               
-        <h1 id="header">
-            <fieldset id="bordaCabecalho">
-                <img id="logo" src="../images/logo.png"/>                     
-                </br>
-                <strong>[GA] Sistema de gestão acadêmica</strong>
-                </br>
+     <fieldset>
+        <div>
+
+            <h5 id="header">
+                <fieldset id="bordaCabecalho">
+                    <img id="logo" src="../images/logo.png"/>                     
+                    </br>
+                    <strong>[GA] Sistema de gestão acadêmica</strong>
+                    </br>
+                </fieldset>
+            </h5>
+
+            <fieldset>
+                <legend>Sistema</legend>                 
+
+                <p>
+                    <button id="buttonPrincipais" onclick="abreListaUniades" name="listarUnidades">
+                        <img src="../images/unidades.png"/> Gestão de unidades                
+                    </button>
+                </p>
+                <p>
+                    <button id="gestaoCursos" onclick="abreGestaoCursos" name="gestaoCursos">
+                        <img src="../images/livros.png"/> Gestão de cursos                  
+                    </button> 
+                </p>                 
+                <p>
+                    <button id="listarTurmaDisciplina" onclick="AbreListaTurmaDisciplina" name="listaTurmarDisciplina">
+                       <img src="../images/consultas.png"/> Marcação de aulas                
+                    </button>
+                </p>
+
             </fieldset>
-        </h1>
-          
-        <fieldset>
-            <legend>Sistema</legend>                 
 
-            <p>
-                <button id="buttonPrincipais" onclick="abreListaUniades" name="listarUnidades">
-                    <img src="../images/unidades.png"/> Gestão de unidades                
-                </button>
-            </p>
-            <p>
-                <button id="gestaoCursos" onclick="abreGestaoCursos" name="gestaoCursos">
-                    <img src="../images/livros.png"/> Gestão de cursos                  
-                </button> 
-            </p>                 
-            <p>
-                <button id="listarTurmaDisciplina" onclick="AbreListaTurmaDisciplina" name="listaTurmarDisciplina">
-                   <img src="../images/consultas.png"/> Marcação de aulas                
-                </button>
-            </p>
+             </br>
 
-        </fieldset>
-
-         </br>
-      
-        <fieldset>
+            <fieldset>
 
 
-            <legend>Administração</legend>            
-            <p>    
-                <button id="abrirCadastroPessoas" onclick="abreCadastroPessoas" name="abrirCadastroPessoas">
-                    <img src="../images/pessoas.png"/> Cadstro de pessoas              
-                </button>
-            </p>
-            <p>
-                <button id="abrirCadastroUsiarios" onclick="abreCadastroUsuarios" name="abrirCadastroUsiarios">
-                    <img src="../images/usuarios.png"/> Usuários                
-                </button> 
-            </p>
-            <p>
-                <button type="reset" id="sairDoSistema" onclick="saiDoSistema" name="sairDoSistema">
-                    <img src="../images/sair.png"/> Sair               
-                </button>
-            </p>
-        </fieldset>
-         
+                <legend>Administração</legend>            
+                <p>    
+                    <button id="abrirCadastroPessoas" onclick="abreCadastroPessoas" name="abrirCadastroPessoas">
+                        <img src="../images/pessoas.png"/> Cadstro de pessoas              
+                    </button>
+                </p>
+                <p>
+                    <button id="abrirCadastroUsiarios" onclick="abreCadastroUsuarios" name="abrirCadastroUsiarios">
+                        <img src="../images/usuarios.png"/> Usuários                
+                    </button> 
+                </p>
+                <p>
+                    <button type="reset" id="sairDoSistema" onclick="saiDoSistema" name="sairDoSistema">
+                        <img src="../images/sair.png"/> Sair               
+                    </button>
+                </p>
+            </fieldset>
 
-        <main>
-            
-        </main>                 
-        
-	<div id="footer">
-            <p>Todods os direitos reservados</p>
+
+            <main>
+
+            </main>                 
+
+            <div id="footer">
+                <p>Todods os direitos reservados</p>
+            </div>
         </div>
-    </div>
+    </fieldset>
 </body>
     <script src="home.js"></script>
 </html>

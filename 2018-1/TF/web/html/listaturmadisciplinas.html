@@ -8,21 +8,24 @@ and open the template in the editor.
     <head>
         <title>Lista de turmas disciplinas</title>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
-         <link href="../estilos/listaturmadisciplinas.css" rel="stylesheet" type="text/css" media="all" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  
+        <link href="../estilos/geral.css" rel="stylesheet" type="text/css" media="all" />        
+        <link href="../estilos/gTablesDefealts.css" rel="stylesheet" type="text/css"/>
+        <link href="../estilos/gInputsDefaults.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="../estilos/gButtonDefauts.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="../estilos/gFieldsetDefaults.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="../estilos/listaturmadisciplinas.css" rel="stylesheet" type="text/css" media="all" />
     
     </head>
     <body onload="buscaTurmaDisciplina()">
+        <p></p>
         <fieldset> 
-        <h5> Turmas disciplinas </h5>
+            <h2> <img id="imgcabecalho" src="../images/disciplina.png"> Turmas disciplinas </h2>
+            
             </br>
             <fieldset id="fieldsetFundo"> 
-                <select>
-                     <option value="volvo">Volvo</option>
-                    
-                </select>
-                
+      
                 <button>               
                     <img src="../images/novo.png" id="btnNovo"/>
                 </button> 
@@ -34,10 +37,12 @@ and open the template in the editor.
                 <button>               
                     <img src="../images/retornar.png" id="btnRetornar"/>
                 </button> 
+                
+                <select onload="carregaMenu()"></select>
             </fieldset> 
             <p>
             <thead id="thead">
-                    <table class="tableheader"></table>
+                     <table class="tableheader"></table>
                 </thead>
             </p>
             <script src="../js/listaturmadisciplinas.js"></script>

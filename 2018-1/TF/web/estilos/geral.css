@@ -1,20 +1,12 @@
- 
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-display: block;
+ body {
+    font-family: Verdana;
+    font-size: 13px;
+    font-family: verdana;
+    background-color: #C7C8CA;
+        
 }
-
-body {
-    line-height: 1;
-}
-
 ol, ul {
     list-style: none;
-}
-
-blockquote, q {
-    quotes: none;
 }
 
 blockquote:before, blockquote:after,
@@ -22,16 +14,8 @@ q:before, q:after {
     content: '';
     content: none;
 }
-table {
-    border-collapse: collapse;
-    border-spacing: 0;
-}
 
-body {
-    font-family: Verdana, Arial, Helvetica, sans-serif;
-    font-size: 13px;
-    color:#333
-}
+
 
 #footer {
     height: 40px;
@@ -40,3 +24,19 @@ body {
     clear: both;
     position: fixed
 }
+
+img{
+    border-radius: 10px;
+}
+
+h2{
+   font-weight: bold;
+   color: #2FA83B;
+}
+
+
+label {    
+    width: 90px;    
+}
+
+

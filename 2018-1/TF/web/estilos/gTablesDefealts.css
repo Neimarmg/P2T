@@ -1,0 +1,22 @@
+
+#thead {
+  background: #85BFFF;
+  font-weight: bold;
+  color: #FFFFFF;
+  border-left: 1px solid #D0E4F5;
+}
+
+#td{
+  border: 1px solid #FFFFFF;
+  border-collapse: collapse;
+  padding: 3px 2px;
+}
+
+#tr{
+  background: #0B6FA4;
+  border-bottom: 5px solid #FFFFFF;
+}
+
+#btnLista{
+ 
+}

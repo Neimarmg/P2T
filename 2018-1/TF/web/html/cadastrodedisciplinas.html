@@ -1,55 +1,58 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
         <title>Cadastro de disciplinas</title>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+        <link href="../estilos/geral.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="../estilos/cadastrodedisciplinas.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="../estilos/gTablesDefealts.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="../estilos/gButtonDefauts.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="../estilos/gFieldsetDefaults.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="../estilos/gInputsDefaults.css" rel="stylesheet" type="text/css" media="all" />
     </head>
-    <body>
-       <h2>Cadastro de disciplinas</h2>
+    <body>     
+       <fieldset>   
+            <h2><img id="imgcabecalho" src="../images/disciplina.png"/>Cadastro de disciplinas</h2>
         
-        <fieldset>
-            <legend>Dados do registro</legend>
-            <p>
-                <label>Id Disciplina:
-                    <input type="text" name="idDisciplina" />                    
-                </label>
-            </p>
+            <fieldset>
+                <legend>Dados do registro</legend>
+                <p>
+                    <label>Id Disciplina:</br>
+                        <input type="text" name="idDisciplina" />                    
+                    </label>
+                </p>
 
-            <p>
-                <label>Nome
-                    <input type="text" name="nome" />                    
-                </label>            
-            </p>   
+                <p>
+                    <label>Nome:</br>
+                        <input type="text" name="nome" />                    
+                    </label>            
+                </p>   
 
-            <p>  
-                <label>Projeto curso
-                    <select id=idProjetoCurso >
-                        <option>Select Country</option>
-                    </select>                   
-                </label>
-            </p> 
-            
-            <p>  
-                <label  >Curso
-                    <select id=idCurso >
-                        <option>Select Country</option>
-                    </select>                   
-                </label>
-            </p>
+                <p>  
+                    <label>Projeto curso:</br>
+                        <select id=idProjetoCurso >
+                            <option>Select Country</option>
+                        </select>                   
+                    </label>
+                </p> 
 
-            <p>
-                <label>Ementa
-                    <textarea type="text" name="ementa" ></textarea>                    
-                </label>        
-            </p>  
-        </fieldset>       
+                <p>  
+                    <label  >Curso:</br>
+                        <select id=idCurso >
+                            <option>Select Country</option>
+                        </select>                   
+                    </label>
+                </p>
+
+                <p>
+                    <label>Ementa:</br>
+                        <textarea type="text" name="ementa" ></textarea>                    
+                    </label>        
+                </p>  
+            </fieldset>       
         
+     
         <p>
             <button id="retornar" onclick="retornarPaginaOrigem" name="retonar">
                 <img src="../images/retornar.png"/>
@@ -64,14 +67,9 @@ and open the template in the editor.
             </button> 
         
             <button id="salvar" onclick="salva" name="salvar">
-                <img src="../images/Salvar.png"/>           
+                <img src="../images/salvar.png"/>           
             </button> 
         </p>
-        
-        <main>
-            
-            
-            
-        </main>
+        </fieldset>   
     </body>
 </html>

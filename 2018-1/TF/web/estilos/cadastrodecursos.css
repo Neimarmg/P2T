@@ -1,8 +1,5 @@
-select{
-  width: 1000px;
-  height: 35px;
-}
-
-body{
-    background-color: red;
+#imgcabecalho{
+    margin: -6%;
+    padding: 70px;
+    width: 70px;    
 }
