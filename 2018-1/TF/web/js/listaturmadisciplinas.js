@@ -17,7 +17,7 @@ function buscaTurmaDisciplina(){
       }
     }
     
-    xhttp.open("GET","http://localhost:8084/TF/api/turmadisciplinas",true);
+    xhttp.open("GET","http://localhost:8084/TF/api/turmadisciplinas/3",true);
     xhttp.send();
 }
 
@@ -78,29 +78,35 @@ function carregaMenu(){
         if(this.readyState===4 && this.status===200){
            //var main = document.querySelector("main");
             
-            var listaUtilitarios = JSON.parse(this.responseText);
+            var listaMenus = JSON.parse(this.responseText);
             
-            montarHTMLMenu()(listaUtilitarios);
+            montarHTMLMenu(listaMenus);
             console.log(this.responseText);
       }
     }
     
-    xhttp.open("GET","http://localhost:8084/TF/api/utilitarios",true);
+    xhttp.open("GET","http://localhost:8084/TF/api/menus",true);
     xhttp.send();
 }
 
 
-function montarHTMLMenu(listaUtilitarios) {
+function montarHTMLMenu(listaMenus) {
  
     document.querySelector("select").innerHTML =
-            `<option>Descrição</option>`;
-    for (let i in listaUtilitarios) {
+            `<option value"idMenu">Descrição</option>
+        `;
+    for (let i in listaMenus) {
         let option = document.createElement("option");        
         let linha = 
-               `<option>${listaUtilitarios[i].nomeUtilitario}</option>    
+               `<option value=${listaMenus[i].idMenu}>
+                    ${listaMenus[i].nomeMenu}
+                </option>    
             `;
-       
+        console.log(document.getElementById('select'));
         option.innerHTML = linha;
         document.querySelector("select").appendChild(option);
+       
     }
 }
+
+
