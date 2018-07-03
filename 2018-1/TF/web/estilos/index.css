@@ -1,2 +1,25 @@
-/*d*/
 
+body{
+    align-items: center;
+}
+
+img{
+     align-items: center;
+     
+}
+
+input{
+     align-items: center;
+}
+
+button{
+     align-items: center;
+}
+
+fieldset{
+     align-items: center;
+}
+
+h5{
+     align-items: center;
+}

@@ -11,33 +11,48 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="../estilos/geral.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="../estilos/home.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="../estilos/gButtonDefauts.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="../estilos/gFieldsetDefaults.css" rel="stylesheet" type="text/css" media="all" /> 
         <link href="../estilos/gestaodecursos.css" rel="stylesheet" type="text/css" media="all" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+   
     </head>
     <body>
-        </br>
-        <fieldset id="buttonPrincipais">
-            
-            <legend>Gestão de cursos</legend>                 
+        <fieldset id="fieldsetFundo">  
+            <h2><img id="imgcabecalho" src="../images/cursos.png"/> Gestão de cursos</h2>
+            <fieldset id="fieldsetFundo">                  
 
-            <p>
-                <button id="gestaoProjetos" onclick="abreGestaoProjetos" name="gestaoProjetos">
-                    <img src="../images/projetos.png"/> Gestão de projetos                
-                </button>
-            </p>
-            <p>
-                <button id="listarCursos" onclick="abreListaCursos" name="listarCursos">
-                    <img src="../images/livroAberto.png"/> Consultar cursos                  
-                </button> 
-            </p>                 
-            <p>
-                <button id="listarTurmaDisciplina" onclick="AbreListaTurmaDisciplina" name="listaTurmarDisciplina">
-                   <img src="../images/prancheta.png"/> Turmas               
-                </button>
-            </p>
+                <p>
+                    <a href="cadastrodeprojetos.html">
+                        <button id="gestaoProjetos" onclick="abreGestaoProjetos" name="gestaoProjetos">
+                            <img src="../images/projetos.png"/> Gestão de projetos                
+                        </button>
+                    </a>
+                </p>
+                <p>
+                    <a href="listadecursos.html">
+                        <button id="listarCursos" onclick="abreListaCursos" name="listarCursos">
+                            <img src="../images/livroAberto.png"/> Consultar cursos                  
+                        </button> 
+                    </a>
+                </p>                 
+                <p>
+                    <a href="listaturmadisciplinas.html">
+                        <button id="listarTurmaDisciplina" onclick="AbreListaTurmaDisciplina" name="listaTurmarDisciplina">
+                           <img src="../images/prancheta.png"/> Turmas               
+                        </button>
+                    </a>
+                </p>   
+                <p>
+                    <a href="home.html">
+                        <button type="reset" id="sairDoSistema" onclick="saiDoSistema" name="sairDoSistema">
+                            <img src="../images/sair.png"/> Sair               
+                        </button>
+                    </p>
 
-        </fieldset>
-       
+            </fieldset>
+            <script src="gestaodecursos.js"></script>
+        </fieldset>  
     </body>
-    <script src="gestaodecursos.js"></script>
+    
 </html>

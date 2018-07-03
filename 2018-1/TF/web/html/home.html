@@ -19,6 +19,7 @@ and open the template in the editor.
 </head>
 
 <body id="produtos" >
+    <p>
      <fieldset>
         <div>
 
@@ -39,15 +40,20 @@ and open the template in the editor.
                         <img src="../images/unidades.png"/> Gestão de unidades                
                     </button>
                 </p>
-                <p>
-                    <button id="gestaoCursos" onclick="abreGestaoCursos" name="gestaoCursos">
-                        <img src="../images/livros.png"/> Gestão de cursos                  
-                    </button> 
+                <p>                    
+                    <a href="gestaodecursos.html">
+                        <button id="gestaoCursos" onclick="abreGestaoCursos" name="gestaoCursos">
+                            <img src="../images/livros.png"/> Gestão de cursos                  
+                        </button>
+                    </a>
                 </p>                 
                 <p>
-                    <button id="listarTurmaDisciplina" onclick="AbreListaTurmaDisciplina" name="listaTurmarDisciplina">
-                       <img src="../images/consultas.png"/> Marcação de aulas                
-                    </button>
+                    <a href="planodeaulas.html">
+                        <button id="listarTurmaDisciplina" onclick="AbreListaTurmaDisciplina" name="listaTurmarDisciplina">
+                           <img src="../images/consultas.png"/> Marcação de aulas                
+                        </button>
+                    </a>
+                        
                 </p>
 
             </fieldset>
@@ -58,21 +64,28 @@ and open the template in the editor.
 
 
                 <legend>Administração</legend>            
-                <p>    
-                    <button id="abrirCadastroPessoas" onclick="abreCadastroPessoas" name="abrirCadastroPessoas">
-                        <img src="../images/pessoas.png"/> Cadstro de pessoas              
-                    </button>
+                <p> 
+                    <a href="cadastropessoas.html">
+                        <button id="abrirCadastroPessoas" onclick="abreCadastroPessoas" name="abrirCadastroPessoas">
+                            <img src="../images/pessoas.png"/> Cadstro de pessoas              
+                        </button>
+                    </a>
                 </p>
                 <p>
-                    <button id="abrirCadastroUsiarios" onclick="abreCadastroUsuarios" name="abrirCadastroUsiarios">
-                        <img src="../images/usuarios.png"/> Usuários                
-                    </button> 
+                    <a href="cadastrodeusuarios.html">
+                        <button id="abrirCadastroUsiarios" onclick="abreCadastroUsuarios" name="abrirCadastroUsiarios">
+                            <img src="../images/usuarios.png"/> Usuários                
+                        </button>
+                    </a>
                 </p>
                 <p>
+                    <a href="../index.html">
                     <button type="reset" id="sairDoSistema" onclick="saiDoSistema" name="sairDoSistema">
                         <img src="../images/sair.png"/> Sair               
                     </button>
                 </p>
+                
+  
             </fieldset>
 
 
@@ -85,6 +98,7 @@ and open the template in the editor.
             </div>
         </div>
     </fieldset>
+    </p>
 </body>
     <script src="home.js"></script>
 </html>

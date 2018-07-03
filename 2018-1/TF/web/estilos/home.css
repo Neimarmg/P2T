@@ -1,4 +1,5 @@
 button{
+  
     width: 229px;
     height: 100px;
     font-family: verdana;
@@ -6,7 +7,8 @@ button{
 }
 
 dl {  
-    margin:auto;
+   margin: 1%;
+   margin-top:1%; 
     float: bottom;
     overflow: hidden;    
 }
@@ -35,3 +37,14 @@ img{
     border-color:#9b52a1; 
 }
 
+#imgcabecalho{
+
+    margin: -7.5%;
+    padding: 70px;
+    width: 70px; 
+
+}
+
+fieldset{
+     margin: 1%;
+}

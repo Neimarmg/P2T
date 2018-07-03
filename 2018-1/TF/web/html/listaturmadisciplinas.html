@@ -18,37 +18,37 @@ and open the template in the editor.
         <link href="../estilos/listaturmadisciplinas.css" rel="stylesheet" type="text/css" media="all" />
     
     </head>
-    <body onload="buscaTurmaDisciplina()">
+    <body onload="buscaTurmaDisciplina()" >
         <p></p>
         <fieldset> 
             <h2> <img id="imgcabecalho" src="../images/disciplina.png"> Turmas disciplinas </h2>
             
             </br>
             <fieldset id="fieldsetFundo"> 
-      
-                <button>               
-                    <img src="../images/novo.png" id="btnNovo"/>
-                </button> 
+                <a href="cadastrodedisciplinas.html">
+                    <button>     
+                        <img src="../images/novo.png" id="btnNovo"/>
+                    </button> 
+                </a>
 
                 <button>               
                     <img src="../images/atualizar.png" id="btnAtualizar"/>
                 </button> 
-
-                <button onclick="carregaMenu()">               
-                    <img src="../images/retornar.png" id="btnRetornar"/>
-                </button> 
                 
-                <select id="menu" name="menu">
-                    
-                </select>
+                <a href="gestaodecursos.html">
+                    <button>               
+                        <img src="../images/retornar.png" id="btnRetornar"/>
+                    </button> 
+                </a>
+                <select onfocus="carregaMenu()"></select>
                 
             </fieldset> 
             <p>
-            <thead id="thead">
-                     <table class="tableheader"></table>
+                <thead id="thead">
+                    <table class="tableheader"></table>
                 </thead>
             </p>
-            <script src="../js/listaturmadisciplinas.js"></script>
+            <script src="../js/View/listaturmadisciplinas.js"></script>
             
         </fieldset>
     </body>

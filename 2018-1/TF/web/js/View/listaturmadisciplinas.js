@@ -11,13 +11,13 @@ function buscaTurmaDisciplina(){
            //var main = document.querySelector("main");
             
             var listaTurmaDisciplina = JSON.parse(this.responseText);
-            
+            console.log(this.responseText);
             montarHTML(listaTurmaDisciplina);
             console.log(this.responseText);
       }
-    }
+    };
     
-    xhttp.open("GET","http://localhost:8084/TF/api/turmadisciplinas/3",true);
+    xhttp.open("GET","http://localhost:8084/TF/api/turmadisciplinas",true);
     xhttp.send();
 }
 
@@ -45,14 +45,16 @@ function montarHTML(listaTurmaDisciplina) {
                 <td id="td">${listaTurmaDisciplina[i].dataInicio}</td>
                 <td id="td">${listaTurmaDisciplina[i].dataFim}</td>
                 <td id="td">
-                    <input type="checkbox">${listaTurmaDisciplina[i].ativa}
+                    <input type="checkbox" value=${listaTurmaDisciplina[i].ativa}>
                     </input>               
                 </td>       
                 
                 
                <td id="td">
                     <button id="btnPlanoAula"> 
-                        <img src="../images/planodeAulas.png" id="btn"/>                    
+        
+                        <img src="../images/planodeAulas.png" id="btn"/> 
+        
                     </button>
           
                     <button id="btnHorarioAturma"> 
@@ -83,7 +85,7 @@ function carregaMenu(){
             montarHTMLMenu(listaMenus);
             console.log(this.responseText);
       }
-    }
+    };
     
     xhttp.open("GET","http://localhost:8084/TF/api/menus",true);
     xhttp.send();
@@ -93,7 +95,7 @@ function carregaMenu(){
 function montarHTMLMenu(listaMenus) {
  
     document.querySelector("select").innerHTML =
-            `<option value"idMenu">Descrição</option>
+            `<option value"idMenu"></option>
         `;
     for (let i in listaMenus) {
         let option = document.createElement("option");        

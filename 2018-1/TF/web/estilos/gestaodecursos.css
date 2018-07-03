@@ -1,20 +1,8 @@
-button{
-    width: 229px;
-    height: 100px;
-    font-family: verdana;
-    
+#imgcabecalho{
+
+    margin: -4.5%;
+    padding: 70px;
+    width: 70px; 
+
 }
-
-dl {  
-    margin:auto;
-    float: bottom;
-    overflow: hidden;    
-}
-
-img{
-    display: block;    
-}
-
-
-
 

@@ -11,13 +11,13 @@ function buscarCursos(){
            //var main = document.querySelector("main");
             
             var listaCursos = JSON.parse(this.responseText);
-            
-            montarHTML(listaCursos);
             console.log(this.responseText);
+            montarHTML(listaCursos);
+            
       }
     }
     
-    xhttp.open("GET","http://localhost:8084/TF/api/curso/",true);
+    xhttp.open("GET","http://localhost:8084/TF/api/curso",true);
     xhttp.send();
 }
 
@@ -39,9 +39,11 @@ function montarHTML(listaCursos) {
                 <td id="td">${listaCursos[i].descricao}</td> 
                 
                 <td id="td">
-                    <button id="btnLista"> 
-                        <img src="../images/lupa.png" id="btn"/>                    
-                    </button>
+                    <a href="cadastrodecursos.html">
+                        <button id="btnLista"> 
+                            <img src="../images/lupa.png" id="btn"/>                    
+                        </button>
+                    </a>
                 </td>
             `;
        
