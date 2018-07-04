@@ -9,53 +9,64 @@ and open the template in the editor.
         <title>Cadastro de professores</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+        <link href="../estilos/geral.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="../estilos/gTablesDefealts.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="../estilos/gButtonDefauts.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="../estilos/gFieldsetDefaults.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="../estilos/gInputsDefaults.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="../estilos/cadastrodeprofessores.css" rel="stylesheet" type="text/css" media="all" />
     </head>
     <body>
-        <h2>Cadastro de prefessores</h2>
         <fieldset>
-            <legend>Dados do registro</legend>
-            <p>
-                <label>Id professor:
-                    <input type="text" name="idProfessor" />                    
-                </label>
-            </p>
+            <h2><img id="imgcabecalho" src="../images/professor.png"/>  Cadastro de prefessores</h2>
+               
+                <p>
+             <h2></h2>
+            <fieldset>
+                <legend>Dados do registro</legend>
+                <p>
+                    <label>Id professor:</br>
+                        <input type="text" name="idProfessor" />                    
+                    </label>
+                </p>
 
-            <p>  
-                <label>Id pessoa:
-                    <select id=idPessoa>
-                        <option>Select Country</option>
-                    </select>                   
-                </label>
-            </p> 
-            
-            <p>
-                <label>Ativo:
-                    <input type="checkbox" name="ativo" />                    
-                </label>        
-            </p> 
-        </fieldset>    
-          
-        
-    <p>
-            <button id="retornar" onclick="retornarPaginaOrigem" name="retonar">
-                <img src="../images/retornar.png"/>
-            </button> 
+                <p>  
+                    <label>Id pessoa:</br>
+                        <select id=idPessoa>
+                            <option>Select Country</option>
+                        </select> 
+                        <a href="cadastropessoas.html">
+                        <img src="../images/mais.png"/>
+                    </a>
+                    </label>
+                </p> 
 
-            <button id="novo" onclick="insere" name="novo">   
-                <img src="../images/novo.png"/>
-            </button> 
-        
-            <button id="excluir" onclick="exclui" name="excluir">    
-                <img src="../images/excluir.png"/>
-            </button> 
-        
-            <button id="salvar" onclick="salva" name="salvar">
-                <img src="../images/Salvar.png"/>           
-            </button> 
-        </p>        
-        <main>          
-            
-        </main>
+                <p>
+                    <label>Ativo:
+                        <input type="checkbox" name="ativo" />                    
+                    </label>        
+                </p> 
+            </fieldset>    
+
+
+        <p>
+                <button id="retornar" onclick="retornarPaginaOrigem" name="retonar">
+                    <img src="../images/retornar.png"/>
+                </button> 
+
+                <button id="novo" onclick="insere" name="novo">   
+                    <img src="../images/novo.png"/>
+                </button> 
+
+                <button id="excluir" onclick="exclui" name="excluir">    
+                    <img src="../images/excluir.png"/>
+                </button> 
+
+                <button id="salvar" onclick="salva" name="salvar">
+                    <img src="../images/Salvar.png"/>           
+                </button> 
+            </p>        
+        </fieldset>
+
     </body>
 </html>

@@ -1,6 +1,11 @@
+
+body{
+    font-family: vardana;
+}
+
 #imgcabecalho{
 
-    margin: -7.5%;
+    margin: 6%;
     padding: 70px;
     width: 70px; 
 

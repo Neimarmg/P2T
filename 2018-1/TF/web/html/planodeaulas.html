@@ -8,10 +8,43 @@ and open the template in the editor.
     <head>
         <title>Plano de aulas</title>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  
+        <link href="../estilos/geral.css" rel="stylesheet" type="text/css" media="all" />        
+        <link href="../estilos/gTablesDefealts.css" rel="stylesheet" type="text/css"/>
+        <link href="../estilos/gInputsDefaults.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="../estilos/gButtonDefauts.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="../estilos/gFieldsetDefaults.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="../estilos/listaturmadisciplinas.css" rel="stylesheet" type="text/css" media="all" />
+    
     </head>
-    <body>
-        <div>TODO write content</div>
+    <body onload="buscaPlanoAula()" >
+        <p></p>
+        <fieldset> 
+            <h2> <img id="imgcabecalho" src="../images/planodeAulas.png"> Plano de aulas </h2>
+            
+            </br>
+            <fieldset id="fieldsetFundo"> 
+  
+
+                <button>               
+                    <img src="../images/atualizar.png" id="btnAtualizar"/>
+                </button> 
+                
+                <a href="listaturmadisciplinas.html">
+                    <button>               
+                        <img src="../images/retornar.png" id="btnRetornar"/>
+                    </button> 
+                </a>          
+                
+            </fieldset> 
+            <p>
+                <thead id="thead">
+                    <table class="tableheader"></table>
+                </thead>
+            </p>
+            <script src="../js/View/Planodeaulas.js"></script>
+            
+        </fieldset>
     </body>
 </html>

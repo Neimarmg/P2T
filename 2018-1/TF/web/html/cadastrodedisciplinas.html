@@ -5,11 +5,10 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">   
         <link href="../estilos/geral.css" rel="stylesheet" type="text/css" media="all" />
-        <link href="../estilos/cadastrodedisciplinas.css" rel="stylesheet" type="text/css" media="all" />
-        <link href="../estilos/gTablesDefealts.css" rel="stylesheet" type="text/css" media="all" />
         <link href="../estilos/gButtonDefauts.css" rel="stylesheet" type="text/css" media="all" />
         <link href="../estilos/gFieldsetDefaults.css" rel="stylesheet" type="text/css" media="all" />
         <link href="../estilos/gInputsDefaults.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="../estilos/cadastrodedisciplinas.css" rel="stylesheet" type="text/css" media="all" />
     </head>
     <body>     
        <fieldset>   
@@ -29,19 +28,26 @@
                     </label>            
                 </p>   
 
-                <p>  
+                <p>
+                    
                     <label>Projeto curso:</br>
                         <select id=idProjetoCurso >
-                            <option>Select Country</option>
-                        </select>                   
+                           
+                        </select>
+                        <a href="cadastrodeprojetos.html">
+                            <img src="../images/mais.png"/>
+                        </a>
                     </label>
                 </p> 
 
                 <p>  
                     <label  >Curso:</br>
                         <select id=idCurso >
-                            <option>Select Country</option>
-                        </select>                   
+                         
+                        </select>
+                        <a href="cadastrodecursos.html">
+                            <img src="../images/mais.png"/>
+                        </a>
                     </label>
                 </p>
 
@@ -54,10 +60,11 @@
         
      
         <p>
-            <button id="retornar" onclick="retornarPaginaOrigem" name="retonar">
-                <img src="../images/retornar.png"/>
-            </button> 
-
+            <a href="cadastrodeturmadisciplina.html">
+                <button id="retornar" onclick="retornarPaginaOrigem" name="retonar">
+                    <img src="../images/retornar.png"/>
+                </button> 
+            </a>    
             <button id="novo" onclick="insere" name="novo">   
                 <img src="../images/novo.png"/>
             </button> 

@@ -6,20 +6,78 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <title>Cadastro de turmas disciplinas</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+        <link href="../estilos/geral.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="../estilos/gButtonDefauts.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="../estilos/gFieldsetDefaults.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="../estilos/gInputsDefaults.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="../estilos/cadastrodeturmadisciplina.css" rel="stylesheet" type="text/css" media="all" />
     </head>
     <body>
   
-        
+         <p></p>   
+        <fieldset>
+            <h2><img id="imgcabecalho" src="../images/turmadisciplina.png"/>  Cadastro de turmas disciplinas</h2>
+            <fieldset>
+                <legend>Dados registro</legend>
+                <p>
+                    <label>id turma disciplina:</br>
+                        <input type="text" name="idTurmaDisciplina" />                    
+                    </label>
+                </p>
+
+                <p>
+                    <label>Data inicio:</br>
+                        <input type="text" name="dataInicio" />                    
+                    </label>            
+                </p>   
+                <p>
+                    <label>Data fim:</br>
+                        <input type="text" name="dataFim" />                    
+                    </label>            
+                </p>  
+                
+                <p>  
+                    <label  >Disciplina:</br>
+                        <select ></select>                   
+                    </label>
+                    <a href="cadastrodedisciplinas.html">
+                        <img src="../images/mais.png"/>
+                    </a>
+                </p>
+                
+                <p>  
+                    <label  >Unidade habilitação:</br>
+                        <select ></select>                   
+                    </label>
+                    <a href="cadastrodehabilitacoes.html">
+                        <img src="../images/mais.png"/>
+                    </a>
+                </p>
+                <p>  
+                    <label  >Turno:</br>
+                        <select ></select>                   
+                    </label>
+                    <a href="">
+                        <img src="../images/mais.png"/>
+                    </a>
+                </p>
+ <p>
+                <label>Ativo:
+                    <input type="checkbox" name="ativo" />                    
+                </label>        
+            </p>                 
+            </fieldset>
+            
         
         <p>
-            <button id="retornar" onclick="retornarPaginaOrigem" name="retonar">
-                <img src="../images/retornar.png"/>
-            </button> 
-
+            <a href="listaturmadisciplinas.html">
+                <button id="retornar" onclick="retornarPaginaOrigem" name="retonar">
+                    <img src="../images/retornar.png"/>
+                </button> 
+            </a>
             <button id="novo" onclick="insere" name="novo">   
                 <img src="../images/novo.png"/>
             </button> 
@@ -29,11 +87,9 @@ and open the template in the editor.
             </button> 
         
             <button id="salvar" onclick="salva" name="salvar">
-                <img src="../images/Salvar.png"/>           
+                <img src="../images/salvar.png"/>           
             </button> 
         </p>      
-        <main>          
-            
-        </main>
+     </fieldset>
     </body>
 </html>

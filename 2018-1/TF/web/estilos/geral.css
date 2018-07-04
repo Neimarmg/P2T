@@ -1,11 +1,18 @@
  body {
     font-family: Verdana;
     font-size: 13px;
-    font-family: verdana;
     background-color: #C7C8CA;
         
 }
+
+label {   
+    font-family: verdana;
+    width: 90px;    
+}
+
+
 ol, ul {
+    font-family: verdana;
     list-style: none;
 }
 
@@ -13,11 +20,13 @@ blockquote:before, blockquote:after,
 q:before, q:after {
     content: '';
     content: none;
+    font-family: verdana;
 }
 
 
 
 #footer {
+    font-family: verdana;
     height: 40px;
     width: 100%;
     background: #33FF66;
@@ -26,17 +35,16 @@ q:before, q:after {
 }
 
 img{
+    font-family: verdana;
     border-radius: 10px;
 }
 
 h2{
+   font-family: verdana;
    font-weight: bold;
    color: #2FA83B;
 }
 
 
-label {    
-    width: 90px;    
-}
 
 
