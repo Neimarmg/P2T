@@ -9,61 +9,69 @@ and open the template in the editor.
         <title>Cadastro de horários do professor</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+        <link href="../estilos/geral.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="../estilos/gTablesDefealts.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="../estilos/gButtonDefauts.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="../estilos/gFieldsetDefaults.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="../estilos/gInputsDefaults.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="../estilos/cadastrodehorariosdoprofessor.css" rel="stylesheet" type="text/css" media="all" />
+
     </head>
     <body>
+        <fieldset>   
+            <h2><img id="imgcabecalho" src="../images/disciplina.png"/>  Cadastro de horários do professor</h2>
         
-        <h2>Cadastro de horários do professor</h2>
-        
-        <fieldset>
-            <legend>Dados do registro</legend>
+            <fieldset>
+                <legend>Dados do registro</legend>
+    
             <p>
-                <label>Id horário professor:
+                <label>Id horário professor:</br>
                     <input type="text" name="idHorarioProfessor" />                    
                 </label>
             </p>
 
             <p>
-                <label>id plano de aulas:
+                <label>id plano de aulas:</br>
                     <input type="text" name="idPlanoDeAulas" />                    
                 </label>            
             </p>  
             
             <p>
-                <label>Valor aula:
+                <label>Valor aula:</br>
                     <input type="text" name="valorAula" />                    
                 </label>            
             </p> 
             
             <p>  
-                <label>Prefessor:
-                    <select id=idProfessor>
-                        <option>Select Country</option>
-                    </select>                   
+                <label>Prefessor:</br>
+                    <select id=idProfessor></select>
+                    <a href="cadastrodeprofessores.html">
+                        <img src="../images/mais.png"/>
+                    </a>
                 </label>
             </p> 
             
         </fieldset>   
               
-    <p>
-            <button id="retornar" onclick="retornarPaginaOrigem" name="retonar">
-                <img src="../images/retornar.png"/>
-            </button> 
+            <p>
+               <a href="javascript:window.history.go(-1)">
+                   <button id="retornar" onclick="retornarPaginaOrigem" name="retonar">
+                       <img src="../images/retornar.png"/>
+                   </button>
+               </a>
 
-            <button id="novo" onclick="insere" name="novo">   
-                <img src="../images/novo.png"/>
-            </button> 
-        
-            <button id="excluir" onclick="exclui" name="excluir">    
-                <img src="../images/excluir.png"/>
-            </button> 
-        
-            <button id="salvar" onclick="salva" name="salvar">
-                <img src="../images/Salvar.png"/>           
-            </button> 
-        </p>        
-        <main>          
-            
-        </main>
+               <button id="novo" onclick="insere" name="novo">   
+                   <img src="../images/novo.png"/>
+               </button> 
+
+               <button id="excluir" onclick="exclui" name="excluir">    
+                   <img src="../images/excluir.png"/>
+               </button> 
+
+               <button id="salvar" onclick="salva" name="salvar">
+                   <img src="../images/salvar.png"/>           
+               </button> 
+           </p>        
+        </fieldset>  
     </body>
 </html>

@@ -18,9 +18,9 @@ and open the template in the editor.
     </head>
     <body>
         <fieldset>
-            <h2><img id="imgcabecalho" src="../images/professor.png"/>  Cadastro de prefessores</h2>
+            <h2><img id="imgcabecalho" src="../images/cadastroProfessores.png"/>  Cadastro de prefessores</h2>
                
-                <p>
+            
              <h2></h2>
             <fieldset>
                 <legend>Dados do registro</legend>
@@ -32,13 +32,12 @@ and open the template in the editor.
 
                 <p>  
                     <label>Id pessoa:</br>
-                        <select id=idPessoa>
-                            <option>Select Country</option>
-                        </select> 
-                        <a href="cadastropessoas.html">
+                        <select id=idPessoa></select> 
+                        
+                    </label>
+                    <a href="cadastropessoas.html">
                         <img src="../images/mais.png"/>
                     </a>
-                    </label>
                 </p> 
 
                 <p>
@@ -50,10 +49,11 @@ and open the template in the editor.
 
 
         <p>
-                <button id="retornar" onclick="retornarPaginaOrigem" name="retonar">
-                    <img src="../images/retornar.png"/>
-                </button> 
-
+                <a href="javascript:window.history.go(-1)">
+                    <button id="retornar" onclick="retornarPaginaOrigem" name="retonar">                    
+                        <img src="../images/retornar.png"/>
+                    </button> 
+                </a>    
                 <button id="novo" onclick="insere" name="novo">   
                     <img src="../images/novo.png"/>
                 </button> 
@@ -63,7 +63,7 @@ and open the template in the editor.
                 </button> 
 
                 <button id="salvar" onclick="salva" name="salvar">
-                    <img src="../images/Salvar.png"/>           
+                    <img src="../images/salvar.png"/>           
                 </button> 
             </p>        
         </fieldset>

@@ -17,7 +17,7 @@ and open the template in the editor.
         <link href="../estilos/cadastrodecursos.css" rel="stylesheet" type="text/css" media="all" />
         
     </head>
-    <body>
+    <body onload="carregaComboBoxModalidadeCurso()">
         <p></p>   
         <fieldset>
             <h2><img id="imgcabecalho" src="../images/cursos.png"/>  Cadastro de cursos</h2>
@@ -35,9 +35,9 @@ and open the template in the editor.
                     </label>            
                 </p>   
 
-                <p>  
+                <p> 
                     <label  >Modalidade curso:</br>
-                        <select ></select>                   
+                        <select id="idModalidade" onfocus="carregaComboBoxModalidadeCurso()"></select>                   
                     </label>
                     <a href="cadastrodemodalidades.html">
                         <img src="../images/mais.png"/>
@@ -46,11 +46,8 @@ and open the template in the editor.
                  
             </fieldset>
             
-            
-       
-
-            <p>
-                <a href="listadecursos.html">
+           <p>
+                <a href="javascript:window.history.go(-1)">
                     <button id="retornar" onclick="retornarPaginaOrigem" name="retonar">
                         <img src="../images/retornar.png"/>
                     </button> 
@@ -69,6 +66,6 @@ and open the template in the editor.
             </p>
 
         </fieldset>
-            
+        <script src="../js/View/Gestaodecursos.js"></script>
     </body>
 </html>

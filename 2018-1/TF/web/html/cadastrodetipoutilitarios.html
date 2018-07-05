@@ -9,31 +9,55 @@ and open the template in the editor.
         <title>Cadastro de tipos de utilitários</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+        <link href="../estilos/geral.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="../estilos/gTablesDefealts.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="../estilos/gButtonDefauts.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="../estilos/gFieldsetDefaults.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="../estilos/gInputsDefaults.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="../estilos/cadastrodetipoutilitarios.css" rel="stylesheet" type="text/css" media="all" />    
+
     </head>
     <body>
-
-
-
-        <p>
-            <button id="retornar" onclick="retornarPaginaOrigem" name="retonar">
-                <img src="../images/retornar.png"/>
-            </button> 
-
-            <button id="novo" onclick="insere" name="novo">   
-                <img src="../images/novo.png"/>
-            </button> 
-        
-            <button id="excluir" onclick="exclui" name="excluir">    
-                <img src="../images/excluir.png"/>
-            </button> 
-        
-            <button id="salvar" onclick="salva" name="salvar">
-                <img src="../images/Salvar.png"/>           
-            </button> 
-        </p>        
-        <main>          
+       <fieldset>
+            <h2><img id="imgcabecalho" src="../images/utilitarios.png"/>  Cadastro de tipos de utilitários</h2>
             
-        </main> 
+            <fieldset>
+                <legend>Dados do registro</legend>
+                    <p>
+                        <label>id Tipo Utilitário:</br>
+                            <input type="text" name="idTipoUtilitario" />                    
+                        </label>
+                    </p>
+
+                    <p>
+                        <label>Decrição:</br>
+                            <input type="text" name="descricao" />                    
+                        </label>        
+                    </p>       
+
+            </fieldset>
+
+            <p>
+                <a href="javascript:window.history.go(-1)">
+                    <button id="retornar" onclick="retornarPaginaOrigem" name="retonar">
+                        <img src="../images/retornar.png"/>
+
+                    </button>
+                 </a>
+
+                <button id="novo" onclick="insere" name="novo">   
+                    <img src="../images/novo.png"/>
+                </button> 
+
+                <button id="excluir" onclick="exclui" name="excluir">    
+                    <img src="../images/excluir.png"/>
+                </button> 
+
+                <button id="salvar" onclick="salvar" name="salvar">
+                    <img src="../images/salvar.png"/>           
+                </button> 
+            </p>        
+        </fieldset>
+
     </body>
 </html>

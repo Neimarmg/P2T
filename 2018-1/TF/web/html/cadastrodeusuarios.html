@@ -6,33 +6,61 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <title>Cadastro de usuários</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+        <link href="../estilos/geral.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="../estilos/gTablesDefealts.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="../estilos/gButtonDefauts.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="../estilos/gFieldsetDefaults.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="../estilos/gInputsDefaults.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="../estilos/cadastrodecursos.css" rel="stylesheet" type="text/css" media="all" />
     </head>
     <body>
+        <fieldset>
+            <h2><img id="imgcabecalho" src="../images/usuarios.png"/>  Cadastro de usuários</h2>
+            <fieldset>
+                <legend>Dados do registro</legend>
+                <p>
+                    <label>id:</br>
+                        <input type="text" name="id" />                    
+                    </label>
+                </p>
 
+                <p>
+                    <label>id Usuário:</br>
+                        <input type="text" name="idUsuario" />                    
+                    </label>        
+                </p>       
 
-        <p>
-            <button id="retornar" onclick="retornarPaginaOrigem" name="retonar">
-                <img src="../images/retornar.png"/>
-            </button> 
+                <p>  
+                    <label  >Nome pessoa:</br>
+                        <select id=idPessoa ></select>                   
+                    </label>
+                    <a href="cadastropessoas.html">
+                        <img src="../images/mais.png"/>
+                    </a>
+                </p>    
 
-            <button id="novo" onclick="insere" name="novo">   
-                <img src="../images/novo.png"/>
-            </button> 
-        
-            <button id="excluir" onclick="exclui" name="excluir">    
-                <img src="../images/excluir.png"/>
-            </button> 
-        
-            <button id="salvar" onclick="salva" name="salvar">
-                <img src="../images/Salvar.png"/>           
-            </button> 
-        </p>        
-        <main>          
-            
-        </main>
+            </fieldset>
+            <p>
+                <a href="javascript:window.history.go(-1)">
+                    <button id="retornar" onclick="retornarPaginaOrigem" name="retonar">
+                        <img src="../images/retornar.png"/>
+                    </button> 
+                </a>    
+                <button id="novo" onclick="insere" name="novo">   
+                    <img src="../images/novo.png"/>
+                </button> 
+
+                <button id="excluir" onclick="exclui" name="excluir">    
+                    <img src="../images/excluir.png"/>
+                </button> 
+
+                <button id="salvar" onclick="salva" name="salvar">
+                    <img src="../images/salvar.png"/>           
+                </button> 
+            </p>        
+        </fieldset>
     </body>
 </html>

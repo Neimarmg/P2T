@@ -1,7 +1,7 @@
  body {
     font-family: Verdana;
     font-size: 13px;
-    background-color: #C7C8CA;
+    background-color: lightgray;
         
 }
 
@@ -45,6 +45,11 @@ h2{
    color: #2FA83B;
 }
 
+#imgcabecalho{
+    margin: 1%;
+    padding: 1px;
+    width: 70px; 
+}
 
 
 

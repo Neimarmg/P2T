@@ -5,51 +5,53 @@
      //limparCamposFormulario();//Adicionar no final da requisição do POST          
      //buscarMotores(); //Adicionar no final da requisição do POST
 };
-
+*/
 var elementoBody = document.querySelector("body");
 elementoBody.onload = buscarCursos;
 
 
 
-function buscarCursos() {
-    let xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            let main = document.querySelector("main");
-
-            let listaCurso = JSON.parse(this.responseText);
-            console.log(listaCurso);
-            montarHTML(listaCurso);
-        }
-    }
-
-    xhttp.open("GET", "http://localhost:8084/TF/api/curso/", true);
+function carregaComboBoxModalidadeCurso(){
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function(){
+        if(this.readyState===4 && this.status===200){
+           //var main = document.querySelector("main");
+            
+            var listaModalidade = JSON.parse(this.responseText);
+            
+            montarHTMLSelecModalidadeCurso(listaModalidade);
+            console.log(this.responseText);
+      }
+    };
+    
+    xhttp.open("GET","http://localhost:8084/TF/api/modalidadecurso",true);
     xhttp.send();
 }
 
-function montarHTML(listaCursos) {
-    document.querySelector("table").innerHTML =
-            `<tr>
-                <th>Nome</th>
-                <th>Descricao</th> 
-                <th>Uso</th>
-             </tr> `;
-    for (let ind in listaCursos) {
 
-
-        let tr = document.createElement("tr");        
+function montarHTMLSelecModalidadeCurso(listaModalidade) {
+ 
+    document.querySelector("select").innerHTML =
+            `<option value"idModalidade"></option>
+        `;
+    for (let i in listaModalidade) {
+        let option = document.createElement("option");        
         let linha = 
-                `   <td>${listaCursos[ind].idCurso}</td>
-                    <td>${listaCursos[ind].modalidadecursos}</td>
-                    <td>${listaCursos[ind].nomeCurso}</td>
-                `;
-        tr.innerHTML = linha;
+               `<option value=${listaModalidade[i].idModalidade}>
+                    ${listaModalidade[i].descricao}
+                </option>    
+            `;
+        console.log(document.getElementById('select'));
+        option.innerHTML = linha;
+        document.querySelector("select").appendChild(option);
         
-        document.querySelector("table").appendChild(tr);
-
     }
 }
-
+function msges(){
+    alert(document.getElementById("idModalidade").innerHTML);
+    
+}
+/*
 function enviarCurso(motor) {
     let xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
@@ -80,4 +82,5 @@ function limparCamposFormulario(){
     document.getElementById("txtdescricao").value="";
     document.getElementById("txtuso").value="";
 }
+
 */

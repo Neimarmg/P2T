@@ -52,7 +52,7 @@ function montarHTML(listaTurmaDisciplina) {
                 
                 
                <td id="td">
-                    <a href="cadastrodeprofessores.html">
+                    <a href="cadastrodehorariosdoprofessor.html">
                         <button id="btnCadastroProfessor">       
                             <img src="../images/professor.png" id="btn"/>        
                         </button>
