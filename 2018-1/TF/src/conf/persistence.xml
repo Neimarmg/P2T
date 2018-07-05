@@ -4,15 +4,25 @@
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <class>entidade.aCurso</class>
     <class>entidade.aDisciplinas</class>
+    <class>entidade.aHorarioProfessor</class>
+    <class>entidade.aHorariosAulas</class>
     <class>entidade.aModalidadecurso</class>
+    <class>entidade.aPlanoDeAula</class>
+    <class>entidade.aProfessor</class>
     <class>entidade.aProjetocurso</class>
+    <class>entidade.aTurmaDisciplinas</class>
+    <class>entidade.aUnidadeHabiltacao</class>
     <class>entidade.gAplicacao</class>
     <class>entidade.gFiliais</class>
     <class>entidade.gMatriz</class>
     <class>entidade.gMenus</class>
     <class>entidade.gPessoa</class>
+    <class>entidade.gPredio</class>
+    <class>entidade.gSalas</class>
+    <class>entidade.gTipoPessoa</class>
     <class>entidade.gTipomenu</class>
     <class>entidade.gTipoutilitarios</class>
+    <class>entidade.gTurnos</class>
     <class>entidade.gUtilitarios</class>
     <class>entidade.yObjetos</class>
     <class>entidade.yPemissoes</class>
@@ -20,10 +30,10 @@
     <class>entidade.yUsuarios</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
-      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://bdacademico.mysql.uhserver.com:3306/bdacademico?zeroDateTimeBehavior=convertToNull"/>
-      <property name="javax.persistence.jdbc.user" value="bdacd"/>
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/bdacademico?zeroDateTimeBehavior=convertToNull"/>
+      <property name="javax.persistence.jdbc.user" value="root"/>
       <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
-      <property name="javax.persistence.jdbc.password" value="masns4@54541E"/>
+      <property name="javax.persistence.jdbc.password" value=""/>
       <property name="javax.persistence.schema-generation.database.action" value="create"/>
     </properties>
   </persistence-unit>

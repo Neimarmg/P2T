@@ -25,6 +25,8 @@ public class aCurso implements Serializable {
 
     @OneToOne
     Collection<aModalidadecurso>modalidadecursos;       
+    //aModalidadecurso modalidadecursos;       
+    
     private String nomeCurso;
     
     

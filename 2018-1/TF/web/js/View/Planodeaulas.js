@@ -17,7 +17,7 @@ function buscaPlanoAula(){
       }
     };
     
-    xhttp.open("GET","http://localhost:8084/TF/api/planodeaula",true);
+    xhttp.open("GET","http://localhost:8080/TF/api/planodeaula",true);
     xhttp.send();
 }
 
@@ -46,7 +46,7 @@ function montarHTML(listaTurmaDisciplina) {
                 <td id="td">${listaTurmaDisciplina[i].conteudo}</td>
                 
                 <td id="td">
-                    <input type="checkbox" value=${listaTurmaDisciplina[i].confirmada}>
+                    <input type="checkbox" value=${listaTurmaDisciplina[i].confirmada} ${listaTurmaDisciplina[i].confirmada ?'checked':''}>
                     </input>               
                 </td>       
                 

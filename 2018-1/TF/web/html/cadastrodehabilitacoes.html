@@ -58,11 +58,13 @@ and open the template in the editor.
 
             </fieldset>    
 
-        <p>
-                <button id="retornar" onclick="retornarPaginaOrigem" name="retonar">
-                    <img src="../images/retornar.png"/>
-                </button> 
-
+        <p> 
+                <a href="javascript:window.history.go(-1)">
+                    <button id="retornar" onclick="retornarPaginaOrigem" name="retonar">
+                        <img src="../images/retornar.png"/>
+                    </button> 
+                </a>
+            
                 <button id="novo" onclick="insere" name="novo">   
                     <img src="../images/novo.png"/>
                 </button> 

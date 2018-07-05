@@ -17,7 +17,7 @@ function buscarCursos(){
       }
     }
     
-    xhttp.open("GET","http://localhost:8084/TF/api/curso",true);
+    xhttp.open("GET","http://localhost:8080/TF/api/curso",true);
     xhttp.send();
 }
 
@@ -36,7 +36,7 @@ function montarHTML(listaCursos) {
         let linha = 
                `<td id="td">${listaCursos[i].idCurso}</td>
                 <td id="td">${listaCursos[i].nomeCurso}</td>               
-                <td id="td">${listaCursos[i].descricao}</td> 
+                <td id="td">${listaCursos[i].modalidadecursos[0].descricao}</td> 
                 
                 <td id="td">
                     <a href="cadastrodecursos.html">
