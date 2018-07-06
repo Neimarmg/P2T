@@ -32,66 +32,46 @@ and open the template in the editor.
             </h5>
 
             <fieldset>
-                <legend>Sistema</legend>                 
+                <legend>Sistema</legend>               
+                <button id="buttonPrincipais" onclick="abreListaUniades" name="listarUnidades">
+                    <img src="../images/unidades.png"/> Gestão de unidades                
+                </button>
 
-                <p>
-                    <button id="buttonPrincipais" onclick="abreListaUniades" name="listarUnidades">
-                        <img src="../images/unidades.png"/> Gestão de unidades                
+                <a href="gestaodecursos.html">
+                    <button id="gestaoCursos" onclick="abreGestaoCursos" name="gestaoCursos">
+                        <img src="../images/livros.png"/> Gestão de cursos                  
                     </button>
-                </p>
-                <p>                    
-                    <a href="gestaodecursos.html">
-                        <button id="gestaoCursos" onclick="abreGestaoCursos" name="gestaoCursos">
-                            <img src="../images/livros.png"/> Gestão de cursos                  
-                        </button>
-                    </a>
-                </p>                 
-                <p>
-                    <a href="planodeaulas.html">
-                        <button id="listarTurmaDisciplina" onclick="AbreListaTurmaDisciplina" name="listaTurmarDisciplina">
-                           <img src="../images/consultas.png"/> Marcação de aulas                
-                        </button>
-                    </a>
-                        
-                </p>
+                </a>
 
+                <a href="planodeaulas.html">
+                    <button id="listarTurmaDisciplina" onclick="AbreListaTurmaDisciplina" name="listaTurmarDisciplina">
+                       <img src="../images/consultas.png"/> Marcação de aulas                
+                    </button>
+                </a>                      
+            
             </fieldset>
-
-             </br>
-
+            
             <fieldset>
 
-
                 <legend>Administração</legend>            
-                <p> 
-                    <a href="cadastropessoas.html">
-                        <button id="abrirCadastroPessoas" onclick="abreCadastroPessoas" name="abrirCadastroPessoas">
-                            <img src="../images/pessoas.png"/> Cadstro de pessoas              
-                        </button>
-                    </a>
-                </p>
-                <p>
-                    <a href="cadastrodeusuarios.html">
-                        <button id="abrirCadastroUsiarios" onclick="abreCadastroUsuarios" name="abrirCadastroUsiarios">
-                            <img src="../images/usuarios.png"/> Usuários                
-                        </button>
-                    </a>
-                </p>
-                <p>
-                    <a href="../index.html">
-                    <button type="reset" id="sairDoSistema" onclick="saiDoSistema" name="sairDoSistema">
-                        <img src="../images/sair.png"/> Sair               
-                    </button>
-                </p>
                 
-  
+                <a href="cadastropessoas.html">
+                    <button id="abrirCadastroPessoas" onclick="abreCadastroPessoas" name="abrirCadastroPessoas">
+                        <img src="../images/pessoas.png"/> Cadstro de pessoas              
+                    </button>
+                </a>
+
+                <a href="cadastrodeusuarios.html">
+                    <button id="abrirCadastroUsiarios" onclick="abreCadastroUsuarios" name="abrirCadastroUsiarios">
+                        <img src="../images/usuarios.png"/> Usuários                
+                    </button>
+                </a>
+
+                <a href="../index.html">
+                <button type="reset" id="sairDoSistema" onclick="saiDoSistema" name="sairDoSistema">
+                    <img src="../images/sair.png"/> Sair               
+                </button>
             </fieldset>
-
-
-            <main>
-
-            </main>                 
-
             <div id="footer">
                 <p>Todods os direitos reservados</p>
             </div>

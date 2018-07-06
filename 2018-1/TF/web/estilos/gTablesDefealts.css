@@ -4,17 +4,23 @@
   font-weight: bold;
   color: #FFFFFF;
   border-left: 1px solid #D0E4F5;
+  
+  
 }
 
 #td{
+  font-size: 11px;
   border: 1px solid #FFFFFF;
   border-collapse: collapse;
-  padding: 3px 2px;
+  padding: 0px 0px;    
+  border-color:  #2FA83B;
+  border-style: dotted; 
 }
 
 #tr{
   background: #0B6FA4;
   border-bottom: 5px solid #FFFFFF;
+  
 }
 
 #btnLista{

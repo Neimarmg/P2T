@@ -56,21 +56,15 @@ function montarHTML(listaTurmaDisciplina) {
                 
                 
                <td id="td">
-                    <a href="planodeaulas.html">
-                        <button id="btnPlanoAula">       
-                            <img src="../images/planodeAulas.png" id="btn"/>        
-                        </button>
+                    <a href="planodeaulas.html">                               
+                        <img src="../images/planodeAulas.png" id="btn"/>  
                     </a>
                     <a href="cadastrodehorarios.html">
-                        <button id="btnHorarioAturma"> 
-                            <img src="../images/horario.png" id="btn"/>                    
-                        </button>
+                        <img src="../images/horario.png" id="btn"/>                    
                     </a>
         
                     <a href="cadastrodeturmadisciplina.html">
-                        <button id="btnTtumaDisc"> 
-                            <img src="../images/lupa.png" id="btn"/>                    
-                        </button>
+                        <img src="../images/lupa.png" id="btn"/>                    
                     </a>    
                 </td>
             `;

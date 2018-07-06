@@ -40,9 +40,7 @@ function montarHTML(listaCursos) {
                 
                 <td id="td">
                     <a href="cadastrodecursos.html">
-                        <button id="btnLista"> 
-                            <img src="../images/lupa.png" id="btn"/>                    
-                        </button>
+                        <img src="../images/lupa.png" id="btn"/>                    
                     </a>
                 </td>
             `;

@@ -1,12 +1,16 @@
 fieldset{
+  border-style: dotted;
   border-radius: 10px;
   background-color: #ffffff;
-  border-color:  #FFFDF0;
+  border: 1px solid #3866A3; 
+  border-color:  #2FA83B;
+  border-style: dotted; 
+  
 }
 
 #fieldsetFundo{
   border-radius: 10px;
-  background-color: #FFFDF0;
+  background-color: #85BFFF;
   border-color:  #FFFDF0;
 }
 
