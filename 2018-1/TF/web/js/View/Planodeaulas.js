@@ -1,4 +1,6 @@
 
+
+
 function carregaPlanAula(){
     buscaPlanoAula();
     setInterval(buscaPlanoAula(),15000);    
@@ -8,8 +10,7 @@ function buscaPlanoAula(){
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function(){
         if(this.readyState===4 && this.status===200){
-           //var main = document.querySelector("main");
-            
+           //var main = document.querySelector("main");            
             var listaTurmaDisciplina = JSON.parse(this.responseText);
             console.log(this.responseText);
             montarHTML(listaTurmaDisciplina);
@@ -17,7 +18,7 @@ function buscaPlanoAula(){
       }
     };
     
-    xhttp.open("GET","http://localhost:8080/TF/api/planodeaula",true);
+    xhttp.open("GET","http://localhost:8084/TF/api/planodeaula",true);
     xhttp.send();
 }
 
@@ -46,7 +47,7 @@ function montarHTML(listaTurmaDisciplina) {
                 <td id="td">${listaTurmaDisciplina[i].conteudo}</td>
                 
                 <td id="td">
-                    <input type="checkbox" value=${listaTurmaDisciplina[i].confirmada} ${listaTurmaDisciplina[i].confirmada ?'checked':''}>
+                    <input id="inputcheckbox" type="checkbox" value=${listaTurmaDisciplina[i].confirmada} ${listaTurmaDisciplina[i].confirmada ?'checked':''}>
                     </input>               
                 </td>       
                 

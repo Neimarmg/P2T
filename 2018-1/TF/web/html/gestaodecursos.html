@@ -5,7 +5,6 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <html>
-<html>
     <head>
         <title>Lista de cursos</title>
         <meta charset="UTF-8">
@@ -15,13 +14,11 @@ and open the template in the editor.
         <link href="../estilos/gButtonDefauts.css" rel="stylesheet" type="text/css" media="all" />
         <link href="../estilos/gFieldsetDefaults.css" rel="stylesheet" type="text/css" media="all" /> 
         <link href="../estilos/gestaodecursos.css" rel="stylesheet" type="text/css" media="all" />
-   
     </head>
-    <body>
+    <body onload="carregaComboBoxCurso()">
         <fieldset >  
             <h2><img id="imgcabecalho" src="../images/cursos.png"/> Gestão de cursos</h2>
             <fieldset>                  
-
                 <p>
                     <a href="cadastrodeprojetos.html">
                         <button id="gestaoProjetos" onclick="abreGestaoProjetos" name="gestaoProjetos">
@@ -51,8 +48,9 @@ and open the template in the editor.
                     </p>
 
             </fieldset>
-            <script src="Gestaodecursos.js"></script>
-        </fieldset>  
+            
+        </fieldset> 
+        <script src="../js/View/CadastrosDeCursos.js"></script>
     </body>
     
 </html>

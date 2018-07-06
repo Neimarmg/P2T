@@ -17,7 +17,7 @@ function buscaTurmaDisciplina(){
       }
     };
     
-    xhttp.open("GET","http://localhost:8080/TF/api/turmadisciplinas",true);
+    xhttp.open("GET","http://localhost:8084/TF/api/turmadisciplinas",true);
     xhttp.send();
 }
 
@@ -25,32 +25,34 @@ function montarHTML(listaTurmaDisciplina) {
  
     document.querySelector("table").innerHTML =
             `<tr id="tr">
-                <th id="thead">id </th>
-                <th id="thead">id Disc</th>
+                <th id="thead">id</th>
+                <th id="thead">Projeto</th>
                 <th id="thead">Disciplina</th>
                 <th id="thead">Turno</th>
                 <th id="thead">Curso</th>
+                <th id="thead">Unidade Habilição</th>
                 <th id="thead">Data inicio</th>
                 <th id="thead">Data fim</th>
-                <th id="thead">Ativa</th>
-                
+                <th id="thead">Ativa</th> 
+    
                 <th id="thead"></th>
              </tr>`;
     for (let i in listaTurmaDisciplina) {
         let tr = document.createElement("tr");  
         let linha = 
                `<td id="td">${listaTurmaDisciplina[i].idTurmaDisciplina}</td>
-                <td id="td">${listaTurmaDisciplina[i].disciplina[0].idDisciplina}</td>
+                <td id="td">${listaTurmaDisciplina[i].disciplina[0].projetocurso[0].descricaoProjeto}</td>
                 <td id="td">${listaTurmaDisciplina[i].disciplina[0].nomeDisciplina}</td>
                 <td id="td">${listaTurmaDisciplina[i].turno[0].descricao}</td>
                 <td id="td">${listaTurmaDisciplina[i].disciplina[0].cursos[0].nomeCurso}</td>
+                <td id="td">${listaTurmaDisciplina[i].unidadeHabiltacao[0].filial[0].descricao}</td>
                 <td id="td">${listaTurmaDisciplina[i].dataInicio}</td>
                 <td id="td">${listaTurmaDisciplina[i].dataFim}</td>
                 <td id="td">
-                    <input type="checkbox" value=${listaTurmaDisciplina[i].ativa} ${listaTurmaDisciplina[i].ativa ?'checked':''}>
+                    <input id="inputcheckbox" type="checkbox" value=${listaTurmaDisciplina[i].ativa} ${listaTurmaDisciplina[i].ativa ?'checked':''}>
         
                     </input>               
-                </td>       
+                </td>      
                 
                 
                <td id="td">
@@ -93,7 +95,7 @@ function carregaMenu(){
       }
     };
     
-    xhttp.open("GET","http://localhost:8080/TF/api/menus",true);
+    xhttp.open("GET","http://localhost:8084/TF/api/menus",true);
     xhttp.send();
 }
 

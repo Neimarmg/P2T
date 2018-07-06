@@ -27,7 +27,20 @@ textArea{
 input:hover, textarea:hover{ 
          background: #FFF7C8; border:1px solid #FFF7C8;
 }
- 
+
+#inputcheckbox{
+    border: 0px #f0f0f0 auto;
+    width: 13px;
+    padding: 5px;
+    border-radius:4px;
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    box-shadow: 1px 1px 2px #333333;    
+    -moz-box-shadow: 1px 1px 2px #333333;
+    -webkit-box-shadow: 1px 1px 2px #333333;
+
+}
+
 input[type=submit]{
         background:#FFF7C8;
         color:#FFF7C8;
