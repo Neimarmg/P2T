@@ -10,7 +10,7 @@ function carregaComboBoxCurso(){
       }
     };
     
-    xhttp.open("GET","http://localhost:8084/TF/api/curso",true);
+    xhttp.open("GET","http://localhost:8080/TF/api/curso",true);
     xhttp.send();
 }
 

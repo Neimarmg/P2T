@@ -18,7 +18,7 @@ function buscaPlanoAula(){
       }
     };
     
-    xhttp.open("GET","http://localhost:8084/TF/api/planodeaula",true);
+    xhttp.open("GET","http://localhost:8080/TF/api/planodeaula",true);
     xhttp.send();
 }
 
@@ -53,21 +53,15 @@ function montarHTML(listaTurmaDisciplina) {
                 
                 
                <td id="td">
-                    <a href="cadastrodehorariosdoprofessor.html">
-                        <button id="btnCadastroProfessor">       
-                            <img src="../images/professor.png" id="btn"/>        
-                        </button>
-                    </a>
+                    <a href="cadastrodehorariosdoprofessor.html">  
+                        <img src="../images/professor.png" id="btn"/>        
+                  </a>
                     <a href="cadastrodehorarios.html">
-                        <button id="btnHorarioAturma"> 
-                            <img src="../images/horario.png" id="btn"/>                    
-                        </button>
+                        <img src="../images/horario.png" id="btn"/>                    
                     </a>
         
                     <a href="cadastrodeturmadisciplina.html">
-                        <button id="btnTtumaDisc"> 
-                            <img src="../images/lupa.png" id="btn"/>                    
-                        </button>
+                        <img src="../images/lupa.png" id="btn"/>                    
                     </a>    
                 </td>
             `;

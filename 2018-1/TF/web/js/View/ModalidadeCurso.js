@@ -8,7 +8,7 @@ function carregaComboBoxModalidadeCurso(){
             console.log(this.responseText);
       }      
     };    
-    xhttp.open("GET","http://localhost:8084/TF/api/modalidadecurso",true);
+    xhttp.open("GET","http://localhost:8080/TF/api/modalidadecurso",true);
     xhttp.send();
 }
 

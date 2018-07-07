@@ -17,7 +17,7 @@ function buscaTurmaDisciplina(){
       }
     };
     
-    xhttp.open("GET","http://localhost:8084/TF/api/turmadisciplinas",true);
+    xhttp.open("GET","http://localhost:8080/TF/api/turmadisciplinas",true);
     xhttp.send();
 }
 
@@ -89,7 +89,7 @@ function carregaMenu(){
       }
     };
     
-    xhttp.open("GET","http://localhost:8084/TF/api/menus",true);
+    xhttp.open("GET","http://localhost:8080/TF/api/menus",true);
     xhttp.send();
 }
 

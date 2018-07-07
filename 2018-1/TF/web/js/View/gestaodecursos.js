@@ -18,7 +18,7 @@ function enviarCurso(motor) {
             buscarCursos();
         }
     }
-    xhttp.open("POST","http://localhost:8084/TF/api/curso/novo", true);
+    xhttp.open("POST","http://localhost:8080/TF/api/curso/novo", true);
     xhttp.setRequestHeader("content-type","application/json");
     xhttp.send(JSON.stringify(motor));
 }
