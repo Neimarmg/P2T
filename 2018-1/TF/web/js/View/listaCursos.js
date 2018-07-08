@@ -38,7 +38,7 @@ function montarHTML(listaCursos) {
                 <td id="td">${listaCursos[i].nomeCurso}</td>               
                 <td id="td">${listaCursos[i].modalidadecursos[0].descricao}</td> 
                 
-                <td id="td">
+                <td id="btnLista">
                     <a href="cadastrodecursos.html">
                         <img src="../images/lupa.png" id="btn"/>                    
                     </a>

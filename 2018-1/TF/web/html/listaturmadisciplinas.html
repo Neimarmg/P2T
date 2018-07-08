@@ -17,7 +17,8 @@ and open the template in the editor.
         <link href="../estilos/listaturmadisciplinas.css" rel="stylesheet" type="text/css" media="all" />
     
     </head>
-    <body onload="buscaTurmaDisciplina()" >
+    <body 
+        onload="buscaTurmaDisciplina()">
         <p></p>
         <fieldset> 
             <h2> <img id="imgcabecalho" src="../images/disciplina.png"> Turmas disciplinas </h2>
@@ -36,7 +37,7 @@ and open the template in the editor.
                     </button> 
                 </a>
 
-                <button>               
+                <button onclick="atualizarTela(buscaTurmaDisciplina(),0)">               
                     <img src="../images/atualizar.png" id="btnAtualizar"/>
                 </button> 
                 
@@ -49,6 +50,7 @@ and open the template in the editor.
                 </thead>
             </p>
             <script src="../js/View/listaturmadisciplinas.js"></script>
+            <script src="../js/Controller/Util.js"></script>
             
         </fieldset>
     </body>

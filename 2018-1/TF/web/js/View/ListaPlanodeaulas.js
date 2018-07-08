@@ -27,23 +27,24 @@ function montarHTML(listaTurmaDisciplina) {
     document.querySelector("table").innerHTML =
             `<tr id="tr">
                 <th id="thead">id </th>
-                <th id="thead">id Disciplina</th>
-                <th id="thead">id Turno</th>
+                <th id="thead">Disc</th>
+                <th id="thead">Turno</th>
                 <th id="thead">Data</th>
-                <th id="thead">id horario</th>
-                <th id="thead">Conteudo</th>
-                <th id="thead">Confirmação</th>
+                <th id="thead">Hora inicio</th>
+                <th id="thead">Conteúdo</th>
+                <th id="thead">Confirmada</th>
                 
                 <th id="thead"></th>
              </tr>`;
+    
     for (let i in listaTurmaDisciplina) {
         let tr = document.createElement("tr");        
         let linha = 
                `<td id="td">${listaTurmaDisciplina[i].idPlanoDeAula}</td>
-                <td id="td">${listaTurmaDisciplina[i].idTurmaDisciplina}</td>
-                <td id="td">${listaTurmaDisciplina[i].idTurno}</td>
+                <td id="td">${listaTurmaDisciplina[i].horariosAulas[0].turmaDisciplinas[0].disciplina[0].nomeDisciplina}</td>
+                <td id="td">${listaTurmaDisciplina[i].horariosAulas[0].turno[0].descricao}</td>
                 <td id="td">${listaTurmaDisciplina[i].dataAula}</td>
-                <td id="td">${listaTurmaDisciplina[i].idHorariosAulas}</td>
+                  <td id="td"GUTILITARIOS_GAPLICACAO>${listaTurmaDisciplina[i].horariosAulas[0].turno[0].horaInicio}</td>
                 <td id="td">${listaTurmaDisciplina[i].conteudo}</td>
                 
                 <td id="td">
@@ -52,17 +53,17 @@ function montarHTML(listaTurmaDisciplina) {
                 </td>       
                 
                 
-               <td id="td">
+               <td id="btnLista">
                     <a href="cadastrodehorariosdoprofessor.html">  
-                        <img src="../images/professor.png" id="btn"/>        
+                        <img src="../images/professor.png" id="btn"/>
                   </a>
                     <a href="cadastrodehorarios.html">
-                        <img src="../images/horario.png" id="btn"/>                    
-                    </a>
+                        <img src="../images/horario.png" id="btn"/>
+                   </a>
         
                     <a href="cadastrodeturmadisciplina.html">
-                        <img src="../images/lupa.png" id="btn"/>                    
-                    </a>    
+                        <img src="../images/lupa.png" id="btn"/>               
+                      </a>    
                 </td>
             `;
        

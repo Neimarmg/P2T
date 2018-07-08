@@ -55,8 +55,8 @@ function montarHTML(listaTurmaDisciplina) {
                 </td>      
                 
                 
-               <td id="td">
-                    <a href="planodeaulas.html">                               
+               <td id="btnLista">
+                    <a href="listaplanodeaulas.html">                               
                         <img src="../images/planodeAulas.png" id="btn"/>  
                     </a>
                     <a href="cadastrodehorarios.html">

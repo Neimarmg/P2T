@@ -1,28 +1,38 @@
 
 #thead {
-  background: #85BFFF;
-  font-weight: bold;
-  color: #FFFFFF;
-  border-left: 1px solid #D0E4F5;
-  
-  
+    background: #85BFFF;
+    font-weight: bold;
+    color: #FFFFFF;
+    padding: 6px 2px;
+    border-left: 1px solid #D0E4F5;
 }
 
 #td{
-  font-size: 11px;
-  border: 1px solid #FFFFFF;
-  border-collapse: collapse;
-  padding: 0px 0px;    
-  border-color:  #2FA83B;
-  border-style: dotted; 
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    font-size: 11px;
+    border: 1px solid #FFFFFF; 
+    padding: 5px 10px;    
+    border-color:  #2FA83B;
+    border-style: dotted; 
+    border-collapse: separate;
 }
 
 #tr{
-  background: #0B6FA4;
-  border-bottom: 5px solid #FFFFFF;
-  
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    background: #0B6FA4;
+    border-bottom: 5px solid #FFFFFF;
+}
+
+tr td {
+    border:1px solid #FF0000;
 }
 
 #btnLista{
- 
+    font-size: 11px;
+    border: 1px solid #FFFFFF;
+    border-collapse: collapse;
+    padding: 5px 10px;   
+
 }

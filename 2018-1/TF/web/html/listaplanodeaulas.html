@@ -31,17 +31,17 @@ and open the template in the editor.
                     </button> 
                 </a>
 
-                <button>               
+                <button onclick="atualizarTela(buscaPlanoAula(),0)">               
                     <img src="../images/atualizar.png" id="btnAtualizar"/>
                 </button> 
             </fieldset> 
             <p>
-                <thead id="thead">
+                <thead id="thead" onload="atualizarTela(buscaPlanoAula(),1000)">
                     <table class="tableheader"></table>
                 </thead>
             </p>
-            <script src="../js/View/Planodeaulas.js"></script>
-            
+            <script src="../js/View/ListaPlanodeaulas.js"></script>
+            <script src="../js/Controller/Util.js"></script>
         </fieldset>
     </body>
 </html>
