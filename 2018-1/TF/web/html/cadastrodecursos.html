@@ -25,7 +25,7 @@ and open the template in the editor.
                 <legend>Dados registro</legend>
                 <p>
                     <label>id Curso:</br>
-                        <input id ="idCurso" name="Curso" value="10"/>                   
+                        <input id="idCurso" name="Curso" value=""/>                   
                     </label>
                 </p>
 
@@ -37,31 +37,29 @@ and open the template in the editor.
 
                 <p> 
                     <label  >Modalidade curso:</br>
-                        <select ></select>                   
+                        <select id="idModalidade"></select>                   
                     </label>
                     <a href="cadastrodemodalidades.html">
                         <img id="btnMais" src="../images/mais.png"/>
                     </a>
-                </p>   
-                 
-              
-            </fieldset>
-            
+                </p>
+            </fieldset>            
            <p>
                 <a href="javascript:window.history.go(-1)">
                     <button id="retornar" name="retonar">
                         <img src="../images/retornar.png"/>
                     </button> 
                 </a>
-               <button id="novo" name="novo" onclick="val()">   
+               
+               <button id="novo"  type="submit" name="novo" onclick="enviarCurso()">   
                     <img src="../images/novo.png"/>
                 </button> 
 
-                <button id="excluir" name="excluir">    
+                <button type="submit" id="excluir" name="excluir">    
                     <img src="../images/excluir.png"/>
                 </button> 
 
-                <button id="salvar" name="salvar">
+                <button type="submit" id="salvar" name="salvar">
                     <img src="../images/salvar.png"/>           
                 </button> 
             </p>

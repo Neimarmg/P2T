@@ -1,16 +1,17 @@
-/*document.getElementById("formulario").onsubmit = function(event){
-     event.preventDefault();
-     console.log("Salvar Curso");
-     salvarCurso();
+document.getElementById("#novo").onsubmit = function(event){
+    event.preventDefault();
+     //console.log("Salvar Curso");
+    salvarCurso();
+    
      //limparCamposFormulario();//Adicionar no final da requisição do POST          
      //buscarMotores(); //Adicionar no final da requisição do POST
 };
-*/
 
 
-/*
 
-function enviarCurso(motor) {
+
+
+function enviarCurso(curso) {
     let xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
         if (this.readyState === 4 && this.status === 201) {
@@ -20,28 +21,30 @@ function enviarCurso(motor) {
     }
     xhttp.open("POST","http://localhost:8080/TF/api/curso/novo", true);
     xhttp.setRequestHeader("content-type","application/json");
-    xhttp.send(JSON.stringify(motor));
+    xhttp.send(JSON.stringify(curso));
 }
 
 function salvarCurso(){
-    let nome = document.getElementById("txtnome").value;
-    let descricao = document.getElementById("txtdescricao").value;
-    let uso = document.getElementById("txtuso").value;
+    let idcurso = document.getElementById("idCurso").value;
+    let descricao = document.getElementById("nomeCurso").value;
+    let idModalidade = document.getElementById("idModalidade").value;
     
-    let motor = {};
-    motor.nome = nome;
+    let curso = {};
+    motor.nome = idcurso;
     motor.descricao = descricao;
-    motor.uso = uso;
+    motor.idModalidade = idModalidade;
     
-    enviarCurso(motor);
+    enviarCurso(curso);
 }
+
+/*
 function limparCamposFormulario(){
     document.getElementById("txtnome").value="";
     document.getElementById("txtdescricao").value="";
     document.getElementById("txtuso").value="";
 }
 
-*/
+
 
 
 
