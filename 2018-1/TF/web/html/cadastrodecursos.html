@@ -25,7 +25,7 @@ and open the template in the editor.
                 <legend>Dados registro</legend>
                 <p>
                     <label>id Curso:</br>
-                        <input type="text" name="idCurso" />                    
+                        <input id ="idCurso" name="Curso" value="10"/>                   
                     </label>
                 </p>
 
@@ -49,24 +49,25 @@ and open the template in the editor.
             
            <p>
                 <a href="javascript:window.history.go(-1)">
-                    <button id="retornar" onclick="retornarPaginaOrigem" name="retonar">
+                    <button id="retornar" name="retonar">
                         <img src="../images/retornar.png"/>
                     </button> 
                 </a>
-                <button id="novo" onclick="insere" name="novo">   
+               <button id="novo" name="novo" onclick="val()">   
                     <img src="../images/novo.png"/>
                 </button> 
 
-                <button id="excluir" onclick="exclui" name="excluir">    
+                <button id="excluir" name="excluir">    
                     <img src="../images/excluir.png"/>
                 </button> 
 
-                <button id="salvar" onclick="salva" name="salvar">
+                <button id="salvar" name="salvar">
                     <img src="../images/salvar.png"/>           
                 </button> 
             </p>
 
         </fieldset>
         <script src="../js/View/ModalidadeCurso.js"></script>
+        <script src="../js/View/CadastrosDeCursos.js"></script>
     </body>
 </html>

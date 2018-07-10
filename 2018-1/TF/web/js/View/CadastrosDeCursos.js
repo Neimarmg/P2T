@@ -1,14 +1,14 @@
-document.getElementById("formulario").onsubmit = function(event){
+/*document.getElementById("formulario").onsubmit = function(event){
      event.preventDefault();
      console.log("Salvar Curso");
      salvarCurso();
      //limparCamposFormulario();//Adicionar no final da requisição do POST          
      //buscarMotores(); //Adicionar no final da requisição do POST
 };
+*/
 
 
-
-
+/*
 
 function enviarCurso(motor) {
     let xhttp = new XMLHttpRequest();
@@ -18,7 +18,7 @@ function enviarCurso(motor) {
             buscarCursos();
         }
     }
-    xhttp.open("POST","http://localhost:8084/TF/api/curso/novo", true);
+    xhttp.open("POST","http://localhost:8080/TF/api/curso/novo", true);
     xhttp.setRequestHeader("content-type","application/json");
     xhttp.send(JSON.stringify(motor));
 }
@@ -41,29 +41,7 @@ function limparCamposFormulario(){
     document.getElementById("txtuso").value="";
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+*/
 
 
 
@@ -103,3 +81,13 @@ function montarHTMLComboBoxCurso(listaComboBoxCurso) {
        
     }
 }
+
+
+
+
+/*
+function val() {
+     
+    console.log(document.querySelector("#idCurso").value="12" );
+ 
+}*/
