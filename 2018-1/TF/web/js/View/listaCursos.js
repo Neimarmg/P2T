@@ -34,9 +34,9 @@ function montarHTML(listaCursos) {
     for (let i in listaCursos) {
         let tr = document.createElement("tr");        
         let linha = 
-               `<td id="td">${listaCursos[i].idCurso}</td>
-                <td id="td">${listaCursos[i].nomeCurso}</td>               
-                <td id="td">${listaCursos[i].modalidadecursos[0].descricao}</td> 
+               `<td id="td" type="text" value=${listaCursos[i].idCurso}> ${listaCursos[i].idCurso}</td>
+                <td id="td" type="text" value=${listaCursos[i].nomeCurso}> ${listaCursos[i].nomeCurso}</td>               
+                <td id="td" type="text" value=${listaCursos[i].modalidadecursos[0].idModalidade}> ${listaCursos[i].modalidadecursos[0].descricao}</td> 
                 
                 <td id="btnLista">
                     <a href="cadastrodecursos.html">
@@ -52,12 +52,11 @@ function montarHTML(listaCursos) {
 
 
 
+
 /*
-
-function ligaLuz(){
-     document.getElementById("btn").src="../images/novo.png";
+function buscavalor{
+    window.*alert(document.getElementById("td").value;
 }
-
 function apagaLuz(){
     document.getElementById("btn").src="../images/salvar.png";
 }

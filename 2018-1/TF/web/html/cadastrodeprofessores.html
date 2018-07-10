@@ -16,7 +16,8 @@ and open the template in the editor.
         <link href="../estilos/gInputsDefaults.css" rel="stylesheet" type="text/css" media="all" />
         <link href="../estilos/cadastrodeprofessores.css" rel="stylesheet" type="text/css" media="all" />
     </head>
-    <body>
+    <body
+        onload="carregaComboBoxPessoa()">
         <fieldset>
             <h2><img id="imgcabecalho" src="../images/cadastroProfessores.png"/>  Cadastro de prefessores</h2>
                
@@ -31,7 +32,7 @@ and open the template in the editor.
                 </p>
 
                 <p>  
-                    <label>Id pessoa:</br>
+                    <label>Pessoa:</br>
                         <select id=idPessoa></select> 
                         
                     </label>
@@ -48,7 +49,7 @@ and open the template in the editor.
             </fieldset>    
 
 
-        <p>
+            <p>
                 <a href="javascript:window.history.go(-1)">
                     <button id="retornar" onclick="retornarPaginaOrigem" name="retonar">                    
                         <img src="../images/retornar.png"/>
@@ -67,6 +68,6 @@ and open the template in the editor.
                 </button> 
             </p>        
         </fieldset>
-
+        <script src="../js/View/CadastroDePessoas.js"></script>  
     </body>
 </html>
