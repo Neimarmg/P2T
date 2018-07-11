@@ -31,18 +31,19 @@ and open the template in the editor.
 
                 <p>
                     <label>Decrição do curso:</br>
-                        <input type="text" name="nomeCurso" />                    
+                        <input id="curso" type="text" name="nomeCurso" />                    
                     </label>            
                 </p>   
-
+                              
                 <p> 
                     <label  >Modalidade curso:</br>
-                        <select id="idModalidade"></select>                   
+                        <select id="idModalidade" ></select>                   
                     </label>
                     <a href="cadastrodemodalidades.html">
                         <img id="btnMais" src="../images/mais.png"/>
                     </a>
-                </p>
+                </p>               
+                
             </fieldset>            
            <p>
                 <a href="javascript:window.history.go(-1)">
@@ -51,17 +52,18 @@ and open the template in the editor.
                     </button> 
                 </a>
                
-               <button id="novo"  type="submit" name="novo" onclick="enviarCurso()">   
+               <button id="novo"  type="submit" name="novo">   
                     <img src="../images/novo.png"/>
                 </button> 
 
                 <button type="submit" id="excluir" name="excluir">    
                     <img src="../images/excluir.png"/>
-                </button> 
-
-                <button type="submit" id="salvar" name="salvar">
+                </button>                 
+                
+                <button type="submit" id="salvar" name="salvar" onclick="salvarCurso()"/>
                     <img src="../images/salvar.png"/>           
-                </button> 
+                </button>
+                
             </p>
 
         </fieldset>

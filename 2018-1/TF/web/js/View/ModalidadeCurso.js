@@ -22,7 +22,7 @@ function montarHTMLSelecModalidadeCurso(listaModalidadeCurso) {
         let option = document.createElement("option");        
         let linha = 
                `<option value=${listaModalidadeCurso[i].idModalidade}>
-                    ${listaModalidadeCurso[i].descricao}
+                    ${listaModalidadeCurso[i].idModalidade}
                 </option>    
             `;
         console.log(document.getElementById('select'));

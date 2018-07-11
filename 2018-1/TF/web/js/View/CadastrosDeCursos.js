@@ -1,13 +1,14 @@
-document.getElementById("#novo").onsubmit = function(event){
+document.getElementById("#formulario").onsubmit = function(event){
     event.preventDefault();
-     //console.log("Salvar Curso");
+    console.log("Salvar Curso");
     salvarCurso();
-    
+    limparCamposFormulario();
      //limparCamposFormulario();//Adicionar no final da requisição do POST          
      //buscarMotores(); //Adicionar no final da requisição do POST
 };
 
-
+var elementoBody = document.querySelector("body");
+elementoBody.onload = carregarCursos();
 
 
 
@@ -15,8 +16,8 @@ function enviarCurso(curso) {
     let xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
         if (this.readyState === 4 && this.status === 201) {
-            limparCamposFormulario();
-            buscarCursos();
+           // limparCamposFormulario();
+            salvarCurso();
         }
     }
     xhttp.open("POST","http://localhost:8080/TF/api/curso/novo", true);
@@ -25,23 +26,25 @@ function enviarCurso(curso) {
 }
 
 function salvarCurso(){
-    let idcurso = document.getElementById("idCurso").value;
-    let descricao = document.getElementById("nomeCurso").value;
-    let idModalidade = document.getElementById("idModalidade").value;
+    let nomecursos = document.querySelector("#curso").value;
+    let idModalidade = document.querySelector("#idModalidade").value;;
     
+    console.log(nomecursos);
+    console.log(idModalidade);
+       
     let curso = {};
-    motor.nome = idcurso;
-    motor.descricao = descricao;
-    motor.idModalidade = idModalidade;
+    
+    curso.nomecursos = nomecursos;
+    curso.idModalidade = idModalidade;
     
     enviarCurso(curso);
 }
 
-/*
+
 function limparCamposFormulario(){
-    document.getElementById("txtnome").value="";
-    document.getElementById("txtdescricao").value="";
-    document.getElementById("txtuso").value="";
+    document.getElementById("curso").value="";
+    document.getElementById("idModalidade").value="";
+    document.getElementById("idCurso").value="";
 }
 
 
@@ -87,8 +90,8 @@ function montarHTMLComboBoxCurso(listaComboBoxCurso) {
 
 
 
-
 /*
+
 function val() {
      
     console.log(document.querySelector("#idCurso").value="12" );
