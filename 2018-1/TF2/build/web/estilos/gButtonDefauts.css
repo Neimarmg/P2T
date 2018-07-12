@@ -1,0 +1,15 @@
+button {
+  background-color: #ffffff;  
+  font-size: 12px;
+  padding: 2px 20px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 12px;  
+  border: 1px solid #3866A3;  
+  border-style: dotted; 
+  
+}
+
+#btnMais{
+  
+}

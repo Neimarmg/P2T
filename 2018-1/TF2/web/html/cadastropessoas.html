@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Cadastro de pessoas</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="../estilos/geral.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="../estilos/gButtonDefauts.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="../estilos/gFieldsetDefaults.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="../estilos/gInputsDefaults.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="../estilos/cadastropessoas.css" rel="stylesheet" type="text/css" media="all" />
+    </head>
+    <body>
+        <p></p>   
+        <fieldset>
+            <h2><img id="imgcabecalho" src="../images/pessoas.png"/>  Cadastro de pessoas</h2>
+            <fieldset>
+                <legend>Dados do registro</legend>
+                <p>
+                    <label>Id pessoa:</br>
+                        <input type="text" name="idPessoa" />                    
+                    </label>
+                </p>
+
+                <p>
+                    <label>Nome:</br>
+                        <input type="text" name="nome" />                    
+                    </label>            
+                </p>   
+                <p>
+                    <label>Rg:</br>
+                        <input type="text" name="rg" />                    
+                    </label>            
+                </p> 
+                <p>
+                    <label>CPF:</br>
+                        <input type="text" name="cpf" />                    
+                    </label>            
+                </p> 
+                <p>
+                    <label>Cref:</br>
+                        <input type="text" name="cref" />                    
+                    </label>            
+                </p>   
+                <p>  
+                    <label>Tipo pessoa:</br>
+                        <select id=idtipoPessoa></select> 
+                        <a href="cadastrodeutilitarios.html">
+                           <img src="../images/mais.png">
+                        </a> 
+
+                    </label>  
+
+                </p> 
+
+                <p>  
+                    <label  >Profissão:</br>
+                        <select id=idProfissa > </select> 
+
+                    </label>
+                    <a href="cadastrodeutilitarios.html">
+                        <img src="../images/mais.png">
+                    </a>
+                </p>
+
+                <p>
+                    <label>Ativo:
+                        <input id="inputcheckbox" type="checkbox" name="ativo" />                    
+                    </label>        
+                </p> 
+            </fieldset>       
+        
+        <p>
+            
+            <a href="javascript:window.history.go(-1)">
+                <button id="retornar" onclick="retornarPaginaOrigem" name="retonar">
+                    <img src="../images/retornar.png"/>
+                </button> 
+            </a>
+            <button id="novo" onclick="insere" name="novo">   
+                <img src="../images/novo.png"/>
+            </button> 
+        
+            <button id="excluir" onclick="exclui" name="excluir">    
+                <img src="../images/excluir.png"/>
+            </button> 
+        
+            <button id="salvar" onclick="salva" name="salvar">
+                <img src="../images/salvar.png"/>           
+            </button> 
+        </p>        
+    </fieldset>
+
+    </body>
+</html>

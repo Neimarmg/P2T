@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>        
+        <title>Cadastro de curso</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="../estilos/geral.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="../estilos/gTablesDefealts.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="../estilos/gButtonDefauts.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="../estilos/gFieldsetDefaults.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="../estilos/gInputsDefaults.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="../estilos/cadastrodecursos.css" rel="stylesheet" type="text/css" media="all" />
+        
+    </head>
+    <body onload="carregaComboBoxModalidadeCurso()">
+        <p></p>   
+        <fieldset>
+            <h2><img id="imgcabecalho" src="../images/cursos.png"/>  Cadastro de cursos</h2>
+            <form id="formulario">
+                <fieldset>
+                    <legend>Dados registro</legend>
+
+                    <p>
+                        <label>id Curso:</br>
+                            <input id="idCurso" type="text" name="id"/>                   
+                        </label>
+                    </p>
+
+                    <p>
+                        <label>Decrição do curso:</br>
+                            <input id="nomeCurso" type="text" name="Curso"/>                    
+                        </label>            
+                    </p>   
+
+                    <p> 
+                        <label  >Modalidade curso:</br>
+                            <select id="idModalidade" name="Modalidade"></select>                   
+                        </label>
+                        <a href="cadastrodemodalidades.html">
+                            <img id="btnMais" src="../images/mais.png"/>
+                        </a>
+                    </p>               
+
+                </fieldset>            
+               <p>
+                    <a href="javascript:window.history.go(-1)">
+                        <button type="button" id="retornar" name="retonar">
+                            <img src="../images/retornar.png"/>
+                        </button> 
+                    </a>
+
+                   <button type="button" id="novo"  name="novo">   
+                        <img src="../images/novo.png"/>
+                    </button> 
+
+                   <button type="button" id="excluir" name="excluir" onclick="deleta()" >    
+                        <img src="../images/excluir.png"/>
+                    </button>                 
+
+                   <button type="submit" id="salva" onclick="inserir()"/>
+                        <img src="../images/salvar.png"/>           
+                    </button>
+
+                </p>
+            </form>
+        </fieldset>
+        <script src="../js/View/ModalidadeCurso.js"></script>
+        <script src="../js/View/CadastrosDeCursos.js"></script>
+
+    </body>
+</html>

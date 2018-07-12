@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Lista de turmas disciplinas</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+        <link href="../estilos/geral.css" rel="stylesheet" type="text/css" media="all" />        
+        <link href="../estilos/gTablesDefealts.css" rel="stylesheet" type="text/css"/>
+        <link href="../estilos/gInputsDefaults.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="../estilos/gButtonDefauts.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="../estilos/gFieldsetDefaults.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="../estilos/listaturmadisciplinas.css" rel="stylesheet" type="text/css" media="all" />
+    
+    </head>
+    <body 
+        onload="buscaTurmaDisciplina()">
+        <p></p>
+        <fieldset> 
+            <h2> <img id="imgcabecalho" src="../images/disciplina.png"> Turmas disciplinas </h2>
+            
+            </br>
+            <fieldset id="fieldsetFundo"> 
+                <a href="gestaodecursos.html">
+                    <button>               
+                        <img src="../images/retornar.png" id="btnRetornar"/>
+                    </button> 
+                </a>
+ 
+                <a href="cadastrodeturmadisciplina.html">
+                    <button>     
+                        <img src="../images/novo.png" id="btnNovo"/>
+                    </button> 
+                </a>
+
+                <button onclick="atualizarTela(buscaTurmaDisciplina(),0)">               
+                    <img src="../images/atualizar.png" id="btnAtualizar"/>
+                </button> 
+                
+               <select onfocus="carregaMenu()"></select>
+                
+            </fieldset> 
+            <p>
+                <thead id="thead">
+                    <table class="tableheader"></table>
+                </thead>
+            </p>
+            <script src="../js/View/listaturmadisciplinas.js"></script>
+            <script src="../js/Controller/Util.js"></script>
+            
+        </fieldset>
+    </body>
+</html>

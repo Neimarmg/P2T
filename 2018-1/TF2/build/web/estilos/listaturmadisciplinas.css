@@ -1,0 +1,19 @@
+body{
+    font-family: verdana;
+ 
+}
+
+#imgcabecalho{
+   margin: 1%;
+   margin-top:1%; 
+   width:60px;  
+   height:60px;
+   -moz-border-radius:4px;
+   -webkit-border-radius:4px;
+}
+
+select{
+    width:200px;
+    margin-left: 4%;
+
+}

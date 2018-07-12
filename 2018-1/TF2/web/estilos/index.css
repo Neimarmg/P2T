@@ -1,0 +1,26 @@
+
+body{
+    align-items: center;
+}
+
+img{
+     align-items: center;
+     
+}
+
+input{
+     align-items: center;
+}
+
+button{
+     align-items: center;
+     padding: 2px 80px;
+}
+
+fieldset{
+     align-items: center;
+}
+
+h5{
+     align-items: center;
+}

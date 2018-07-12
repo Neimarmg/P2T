@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Lista de cursos</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+         <link href="../estilos/geral.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="../estilos/listadecursos.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="../estilos/gTablesDefealts.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="../estilos/gButtonDefauts.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="../estilos/gFieldsetDefaults.css" rel="stylesheet" type="text/css" media="all" />
+        
+    </head>
+   
+    <body onload="buscarCursos()">
+        <p></p>
+        <fieldset> 
+            <h2><img id="imgcabecalho" src="../images/cursos.png"/> Lista de cursos</h2>
+                </br>
+                <fieldset id="fieldsetFundo"> 
+                    <a href="gestaodecursos.html">
+                        <button>               
+                            <img src="../images/retornar.png" id="btnRetornar"/>
+                        </button> 
+                    </a>
+ 
+                    <a href="cadastrodecursos.html">
+                        <button>               
+                            <img src="../images/novo.png" id="btnNovo"/>
+                        </button> 
+                    </a>
+                    <button onclick="atualizarTela(buscarCursos(),0)">                        
+                        <img src="../images/atualizar.png" id="btnAtualizar"/>
+                    </button> 
+                    
+               </fieldset> 
+                <p>
+                    <thead id="thead">
+                        <table class="tableheader"></table>
+                    </thead>
+                </p>
+
+                <script src="../js/View/listaCursos.js"></script>
+                <script src="../js/Controller/Util.js"></script>        
+        </fieldset>
+    </body>
+   
+</html>

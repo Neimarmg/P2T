@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Cadastro de projetos</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="../estilos/geral.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="../estilos/gTablesDefealts.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="../estilos/gButtonDefauts.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="../estilos/gFieldsetDefaults.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="../estilos/gInputsDefaults.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="../estilos/cadastrodeprojetos.css" rel="stylesheet" type="text/css" media="all" />
+    </head>
+    <body onload="carregaComboBoxModalidadeCurso()">
+        <fieldset>   
+            <h2><img id="imgcabecalho" src="../images/projetos.png"/>  Cadastro de projeto de cursos</h2>
+            <h2></h2>
+            <fieldset>
+                <legend>Dados do registro</legend>
+                <p>
+                    <label>Id projeto:</br>
+                        <input type="text" name="idProjeto" />                    
+                    </label>
+                </p>
+                
+                <p>
+                    <label>Nome projeto:</br>
+                        <input type="text" name="descricaoProjeto" />                    
+                    </label>
+                </p>
+                <p>
+                    <label>Valor curso:</br>
+                        <input type="text" name="valorCurso" />                    
+                    </label>
+                </p>
+                <p>
+                    <label>Data Inicio:</br>
+                        <input type="text" name="dataInicio" />                    
+                    </label>            
+                </p>  
+
+                <p>
+                    <label>Data fim:</br>
+                        <input type="text" name="dataFim" />                    
+                    </label>            
+                </p> 
+
+                <p>  
+                    <label>Modalidade:</br>
+                        <select id="idModalidade"></select>                   
+                    </label>
+                </p> 
+                 <p>  
+                    <label>Filial:</br>
+                        <select id="idFilial"></select>                   
+                    </label>
+                </p> 
+
+                <p>
+                    <label>Ativo:
+                        <input id="inputcheckbox" type="checkbox" name="ativo" />                    
+                    </label>        
+                </p> 
+            </fieldset> 
+            <fieldset>
+                <legend>Lista de disciplinas</legend>
+                <form>
+                  <table></table>
+                </form>
+            </fieldset> 
+
+       <p>
+                <a href="gestaodecursos.html">
+                    <button id="retornar" onclick="retornarPaginaOrigem" name="retonar">
+                        <img src="../images/retornar.png"/>
+                    </button> 
+                </a>    
+                <button id="novo" onclick="insere" name="novo">   
+                    <img src="../images/novo.png"/>
+                </button> 
+
+                <button id="excluir" onclick="exclui" name="excluir">    
+                    <img src="../images/excluir.png"/>
+                </button> 
+
+                <button id="salvar" onclick="salva" name="salvar">
+                    <img src="../images/salvar.png"/>           
+                </button> 
+            </p>
+        </fieldset>
+        <main>          
+            
+        </main>
+        <script src="../js/View/ModalidadeCurso.js"></script>
+    </body>
+</html>

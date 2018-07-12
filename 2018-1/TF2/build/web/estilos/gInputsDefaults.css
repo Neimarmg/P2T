@@ -1,0 +1,70 @@
+input{   
+    border-radius:4px;
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    box-shadow: 1px 1px 2px #333333;    
+    -moz-box-shadow: 1px 1px 2px #333333;
+    -webkit-box-shadow: 1px 1px 2px #333333;
+    background: #FFF7C8; 
+    border:1px solid #FFF7C8;
+    width:220px;
+    padding: 8px;
+}
+ 
+textArea{    
+    border: 1px solid #FFF7C8;
+    background:#FFF7C8;
+    width:230px;
+    height:50px;
+    border-radius:4px;
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    box-shadow: 1px 1px 2px #333333;    
+    -moz-box-shadow: 1px 1px 2px #333333;
+    -webkit-box-shadow: 1px 1px 2px #333333;
+}
+ 
+input:hover, textarea:hover{ 
+         background: #FFF7C8; border:1px solid #FFF7C8;
+}
+
+#inputcheckbox{
+    border: 0px #f0f0f0 auto;
+    width: 13px;
+    padding: 5px;
+    border-radius:4px;
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    box-shadow: 1px 1px 2px #333333;    
+    -moz-box-shadow: 1px 1px 2px #333333;
+    -webkit-box-shadow: 1px 1px 2px #333333;
+
+}
+
+input[type=submit]{
+        background:#FFF7C8;
+        color:#FFF7C8;
+}
+
+select{   
+    border-radius:4px;
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    box-shadow: 1px 1px 2px #333333;    
+    -moz-box-shadow: 1px 1px 2px #333333;
+    -webkit-box-shadow: 1px 1px 2px #333333;
+    background: #FFF7C8; 
+    border:1px solid #FFF7C8;
+    width:240px;
+    padding: 5px;
+}
+
+
+
+option{
+    height: 6px;
+    border: 1px solid #cbcbcb;
+    padding-left: 12px;
+    padding-top: 8px;    
+  }
+ 
