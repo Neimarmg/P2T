@@ -1,18 +1,19 @@
    /* global err, ok */
-
-    function  inserir() {
+    
+    
+   function  inserir() {
          let curso ={};
         //event.preventDefault();
         let idCurso = document.querySelector("#idCurso").value;
         let nomeCurso = document.querySelector("#nomeCurso").value;
-        let modalidadecursos = "[{idModalidade: "+document.querySelector("#idModalidade").value+"}]";
         
+        let modalidadecursos = JSON.parse("[{\"idModalidade\":" +document.querySelector("#idModalidade").value+"}]");
         
-  
         curso.nomeCurso = nomeCurso;
         curso.modalidadecursos = modalidadecursos;
        
-        console.log("sss         "+JSON.stringify(curso));
+        console.log("sss  "+JSON.stringify(curso));
+        
         enviaCurso(curso);
         
        
@@ -22,11 +23,19 @@
     function enviaCurso(curso) {
         let xhttp = new XMLHttpRequest();
         
-        xhttp.open("POST","http://localhost:8082/TF/api/curso/novo", true);
+        xhttp.open("POST","http://localhost:8080/TF/api/curso/novo", true);
         xhttp.setRequestHeader("content-type", "application/json");
         xhttp.send(JSON.stringify(curso));
     }
 
+
+    function deleta() {
+        let idCurso = document.querySelector("#idCurso").value;
+        let xhttp = new XMLHttpRequest();        
+        xhttp.open("DELETE","http://localhost:8080/TF/api/curso/"+idCurso);
+        xhttp.setRequestHeader("content-type", "application/json");
+        xhttp.send();
+    }
 
 
 

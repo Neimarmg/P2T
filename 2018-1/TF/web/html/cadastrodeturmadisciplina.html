@@ -15,8 +15,10 @@ and open the template in the editor.
         <link href="../estilos/gInputsDefaults.css" rel="stylesheet" type="text/css" media="all" />
         <link href="../estilos/cadastrodeturmadisciplina.css" rel="stylesheet" type="text/css" media="all" />
     </head>
-    <body 
-        onload="carregaComboBoxDisciplinasTurma()">
+    <body  
+        onload="carregaComboBoxUnidadesHabilitacoes()"
+         
+        >
   
          <p></p>   
         <fieldset>
@@ -42,7 +44,7 @@ and open the template in the editor.
                 
                 <p>  
                     <label  >Unidade habilitação:</br>
-                        <select id="unidadeHabiltacao" ></select>                   
+                        <select id="idUnidadeHabiltacao"></select>                   
                     </label>
                     <a href="cadastrodehabilitacoes.html">
                         <img src="../images/mais.png"/>
@@ -51,7 +53,7 @@ and open the template in the editor.
                 
                 <p>  
                     <label  >Disciplina:</br>
-                        <select  id="idDisciplinas" ></select>                   
+                        <select  id="idDisciplinas"></select>                   
                     </label>
                     <a href="cadastrodedisciplinas.html">
                         <img src="../images/mais.png"/>
@@ -97,5 +99,6 @@ and open the template in the editor.
          
     </body>
     <script src="../js/View/Cadastrodeturmadisciplina.js"></script>
+    <script src="../js/View/cadastrodehabilitacoes.js"></script>
 
 </html>

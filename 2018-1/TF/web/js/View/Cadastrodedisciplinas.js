@@ -10,25 +10,15 @@ function carregaComboBoxDisciplinas(){
       }
     };
     
-    xhttp.open("GET","http://localhost:8080/TF/api/disciplina",true);
+    xhttp.open("GET","http://localhost:80800/TF/api/disciplina",true);
     xhttp.send();
 }
 
 
 function montarHTMLComboBoxDisciplinas(listaComboBoxDisciplinas) {
-    document.createElement("select").innerHTML =
-            `<option value"idUnidadeHabiltacao"></option>
-        `;
-    for (let i in listaComboBoxDisciplinas) {
-        let option = document.createElement("option");        
-        let linha = 
-               `<option value=${listaComboBoxDisciplinas[i].idDisciplina}>
-                    ${listaComboBoxDisciplinas[i].nomeDisciplina}
-                </option>    
-            `;
-       
-        option.innerHTML = linha;
-        document.querySelector("select").appendChild(option);
+    for (let i in listaComboBoxDisciplinas) {        
+        let linha =+`<option value=${listaComboBoxDisciplinas[i].idDisciplina}>${listaComboBoxDisciplinas[i].nomeDisciplina}</option>`;
+        document.getElementById("#idDisciplinas").innerHTML = linha;
        
     }
 }

@@ -1,7 +1,7 @@
 class Urls{
        
     static get Porta(){
-        return 8080;
+        return "8080";
     }    
     
     static get host(){

@@ -12,8 +12,7 @@ function buscarCursos(){
             
             var listaCursos = JSON.parse(this.responseText);
             console.log(this.responseText);
-            montarHTML(listaCursos);
-            
+            montarHTML(listaCursos);            
       }
     }
     
@@ -39,7 +38,7 @@ function montarHTML(listaCursos) {
                 <td id="td" type="text" value=${listaCursos[i].modalidadecursos[0].idModalidade}> ${listaCursos[i].modalidadecursos[0].descricao}</td> 
                 
                 <td id="btnLista">
-                    <a href="cadastrodecursos.html">
+                    <a href="cadastrodecursos.html?id=${listaCursos[i].idCurso}">
                         <img src="../images/lupa.png" id="btn"/>                    
                     </a>
                 </td>
