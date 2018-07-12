@@ -1,56 +1,37 @@
-document.getElementById("#formulario").onsubmit = function(event){
-    event.preventDefault();
-    console.log("Salvar Curso");
-    salvarCurso();
-    limparCamposFormulario();
-     //limparCamposFormulario();//Adicionar no final da requisição do POST          
-     //buscarMotores(); //Adicionar no final da requisição do POST
-};
+   /* global err, ok */
 
-var elementoBody = document.querySelector("body");
-elementoBody.onload = carregarCursos();
-
-
-
-function enviarCurso(curso) {
-    let xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function () {
-        if (this.readyState === 4 && this.status === 201) {
-           // limparCamposFormulario();
-            salvarCurso();
-        }
-    }
-    xhttp.open("POST","http://localhost:8080/TF/api/curso/novo", true);
-    xhttp.setRequestHeader("content-type","application/json");
-    xhttp.send(JSON.stringify(curso));
-}
-
-function salvarCurso(){
-    let nomecursos = document.querySelector("#curso").value;
-    let idModalidade = document.querySelector("#idModalidade").value;;
-    
-    console.log(nomecursos);
-    console.log(idModalidade);
+    function  inserir() {
+         let curso ={};
+        //event.preventDefault();
+        let idCurso = document.querySelector("#idCurso").value;
+        let nomeCurso = document.querySelector("#nomeCurso").value;
+        let modalidadecursos = "[{idModalidade: "+document.querySelector("#idModalidade").value+"}]";
+        
+        
+  
+        curso.nomeCurso = nomeCurso;
+        curso.modalidadecursos = modalidadecursos;
        
-    let curso = {};
+        console.log("sss         "+JSON.stringify(curso));
+        enviaCurso(curso);
+        
+       
+    }
     
-    curso.nomecursos = nomecursos;
-    curso.idModalidade = idModalidade;
-    
-    enviarCurso(curso);
-}
 
-
-function limparCamposFormulario(){
-    document.getElementById("curso").value="";
-    document.getElementById("idModalidade").value="";
-    document.getElementById("idCurso").value="";
-}
+    function enviaCurso(curso) {
+        let xhttp = new XMLHttpRequest();
+        
+        xhttp.open("POST","http://localhost:8082/TF/api/curso/novo", true);
+        xhttp.setRequestHeader("content-type", "application/json");
+        xhttp.send(JSON.stringify(curso));
+    }
 
 
 
 
 
+/*
 
 function carregaComboBoxCurso(){
     var xhttp = new XMLHttpRequest();
@@ -87,13 +68,5 @@ function montarHTMLComboBoxCurso(listaComboBoxCurso) {
        
     }
 }
+*/
 
-
-
-/*
-
-function val() {
-     
-    console.log(document.querySelector("#idCurso").value="12" );
- 
-}*/

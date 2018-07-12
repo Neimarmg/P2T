@@ -21,53 +21,56 @@ and open the template in the editor.
         <p></p>   
         <fieldset>
             <h2><img id="imgcabecalho" src="../images/cursos.png"/>  Cadastro de cursos</h2>
-            <fieldset>
-                <legend>Dados registro</legend>
-                <p>
-                    <label>id Curso:</br>
-                        <input id="idCurso" name="Curso" value=""/>                   
-                    </label>
-                </p>
+            <form id="formulario">
+                <fieldset>
+                    <legend>Dados registro</legend>
 
-                <p>
-                    <label>Decrição do curso:</br>
-                        <input id="curso" type="text" name="nomeCurso" />                    
-                    </label>            
-                </p>   
-                              
-                <p> 
-                    <label  >Modalidade curso:</br>
-                        <select id="idModalidade" ></select>                   
-                    </label>
-                    <a href="cadastrodemodalidades.html">
-                        <img id="btnMais" src="../images/mais.png"/>
+                    <p>
+                        <label>id Curso:</br>
+                            <input id="idCurso" type="text" name="id"/>                   
+                        </label>
+                    </p>
+
+                    <p>
+                        <label>Decrição do curso:</br>
+                            <input id="nomeCurso" type="text" name="Curso"/>                    
+                        </label>            
+                    </p>   
+
+                    <p> 
+                        <label  >Modalidade curso:</br>
+                            <select id="idModalidade" name="Modalidade"></select>                   
+                        </label>
+                        <a href="cadastrodemodalidades.html">
+                            <img id="btnMais" src="../images/mais.png"/>
+                        </a>
+                    </p>               
+
+                </fieldset>            
+               <p>
+                    <a href="javascript:window.history.go(-1)">
+                        <button type="button" id="retornar" name="retonar">
+                            <img src="../images/retornar.png"/>
+                        </button> 
                     </a>
-                </p>               
-                
-            </fieldset>            
-           <p>
-                <a href="javascript:window.history.go(-1)">
-                    <button id="retornar" name="retonar">
-                        <img src="../images/retornar.png"/>
+
+                   <button type="button" id="novo"  name="novo">   
+                        <img src="../images/novo.png"/>
                     </button> 
-                </a>
-               
-               <button id="novo"  type="submit" name="novo">   
-                    <img src="../images/novo.png"/>
-                </button> 
 
-                <button type="submit" id="excluir" name="excluir">    
-                    <img src="../images/excluir.png"/>
-                </button>                 
-                
-                <button type="submit" id="salvar" name="salvar" onclick="salvarCurso()"/>
-                    <img src="../images/salvar.png"/>           
-                </button>
-                
-            </p>
+                   <button type="button" id="excluir" name="excluir">    
+                        <img src="../images/excluir.png"/>
+                    </button>                 
 
+                   <button type="submit" id="salva" onclick="inserir()"/>
+                        <img src="../images/salvar.png"/>           
+                    </button>
+
+                </p>
+            </form>
         </fieldset>
         <script src="../js/View/ModalidadeCurso.js"></script>
         <script src="../js/View/CadastrosDeCursos.js"></script>
+
     </body>
 </html>
